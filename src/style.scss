@@ -1,0 +1,13 @@
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
+
+iframe {
+  display: none;
+}
+
+body {
+  font-family: arial;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}

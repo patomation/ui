@@ -12,4 +12,26 @@ describe('<Link />', () => {
     mount(<Link />)
   });
 
+  it("hovers", () => {
+
+    let hover = null;
+
+    const component = mount(<Link onHover={ boolean =>{
+      hover = boolean;
+    }} />);
+
+    component.simulate('mouseenter')
+    expect(hover).toEqual(true)
+
+    component.simulate('mouseleave')
+    expect(hover).toEqual(false)
+
+  });
+
+  it("accepts background && color prop", () => {
+    const component = mount(<Link background="blue" color="red" />);
+    expect(component.find('a').props().style.background).toEqual('blue');
+    expect(component.find('a').props().style.color).toEqual('red');
+  });
+
 });

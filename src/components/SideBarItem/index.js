@@ -7,7 +7,7 @@ import Icon from '../Icon';
 export default (props) => {
 
   const [hover, setHover] = useState(false);
-  const { className, onClick, background, color, icon, style, hoverStyle, title } = props;
+  const { className, onClick, background, color, icon, style, hoverStyle, title, onHover } = props;
 
   return(
     <button
@@ -15,9 +15,11 @@ export default (props) => {
       onClick={onClick}
       onMouseEnter={()=>{
         setHover(true);
+        onHover(true);
       }}
       onMouseLeave={()=>{
         setHover(false);
+        onHover(false);
       }}
       style={{
         ...styles.container,

@@ -12,4 +12,10 @@ describe('<IconButton />', () => {
     mount(<IconButton />)
   });
 
+  it("accepts background && color prop", () => {
+    const component = mount(<IconButton background="blue" color="red" />);
+    expect(component.find('div').props().style.background).toEqual('blue');
+    expect(component.find('div').props().style.color).toEqual('red');
+  });
+
 });

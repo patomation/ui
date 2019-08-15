@@ -11,5 +11,5 @@ describe('<SideBar />', () => {
   it("renders", () => {
     mount(<SideBar />)
   });
-
+  
 });

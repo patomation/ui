@@ -11,5 +11,5 @@ describe('<User />', () => {
   it("renders", () => {
     mount(<User />)
   });
-
+  
 });

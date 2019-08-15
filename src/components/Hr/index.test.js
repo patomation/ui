@@ -12,4 +12,10 @@ describe('<Hr />', () => {
     mount(<Hr />)
   });
 
+  it("accepts background && color prop", () => {
+    const component = mount(<Hr background="blue" color="red" />);
+    expect(component.find('hr').props().style.background).toEqual('blue');
+    expect(component.find('hr').props().style.color).toEqual('red');
+  });
+
 });

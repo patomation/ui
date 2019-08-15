@@ -28,9 +28,10 @@ describe('<Button />', () => {
 
   });
 
-  it("accepts background color prop", () => {
-    const button = mount(<Button background="blue" />);
-    expect(button.find('button').props().style.background).toEqual('blue');
+  it("accepts background && color prop", () => {
+    const component = mount(<Button background="blue" color="red" />);
+    expect(component.find('button').props().style.background).toEqual('blue');
+    expect(component.find('button').props().style.color).toEqual('red');
   });
 
 });

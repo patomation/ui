@@ -12,4 +12,10 @@ describe('<Nav />', () => {
     mount(<Nav />)
   });
 
+  it("accepts background && color prop", () => {
+    const component = mount(<Nav background="blue" color="red" />);
+    expect(component.find('nav').props().style.background).toEqual('blue');
+    expect(component.find('nav').props().style.color).toEqual('red');
+  });
+
 });

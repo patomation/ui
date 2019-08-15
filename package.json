@@ -37,5 +37,10 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "nodemon": "^1.19.1"
+  },
+  "jest": {
+    "watchPathIgnorePatterns" : [
+      "src/serviceWorker.js"
+    ]
   }
 }

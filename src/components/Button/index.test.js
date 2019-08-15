@@ -12,4 +12,25 @@ describe('<Button />', () => {
     mount(<Button />)
   });
 
+  it("hovers", () => {
+
+    let hover = null;
+
+    const button = mount(<Button onHover={ boolean =>{
+      hover = boolean;
+    }} />);
+
+    button.simulate('mouseenter')
+    expect(hover).toEqual(true)
+
+    button.simulate('mouseleave')
+    expect(hover).toEqual(false)
+
+  });
+
+  it("accepts background color prop", () => {
+    const button = mount(<Button background="blue" />);
+    expect(button.find('button').props().style.background).toEqual('blue');
+  });
+
 });

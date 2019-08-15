@@ -1,7 +1,8 @@
 {
   "name": "react-ui-components",
   "version": "0.1.0",
-  "private": true,
+  "main": "src/components/index.js",
+  "private": false,
   "dependencies": {
     "material-icons": "^0.3.1",
     "node-sass": "^4.12.0",
@@ -13,6 +14,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "watch:components": "nodemon --watch src/components/ --ignore index.js --ignore [*.js] node utilities/build.components.index.js"
   },
@@ -32,6 +34,8 @@
     ]
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "nodemon": "^1.19.1"
   }
 }

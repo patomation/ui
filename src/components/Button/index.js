@@ -4,7 +4,7 @@ import styles from './styles.js'
 export default (props) => {
 
   const [hover, setHover] = useState(false);
-  const { className, onClick, children, background, color, style, hoverStyle, type } = props;
+  const { className, onClick, children, background, color, style, hoverStyle, type, onHover } = props;
 
   return(
     <button
@@ -12,9 +12,11 @@ export default (props) => {
       onClick={onClick}
       onMouseEnter={()=>{
         setHover(true);
+        onHover(true);
       }}
       onMouseLeave={()=>{
         setHover(false);
+        onHover(false);
       }}
       style={{
         ...styles.default,

@@ -1,9 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+Enzyme.configure({ adapter: new Adapter() });
+
 import Heading from './index.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Heading Tag='h1' />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('<Heading />', () => {
+
+  it("renders", () => {
+    mount(<Heading Tag='h1' />)
+  });
+
 });

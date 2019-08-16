@@ -13,16 +13,18 @@ describe('<SideBarItem />', () => {
   });
 
   it("hovers", () => {
-
     let hover = null;
-
-    const component = mount(<SideBarItem onHover={ boolean =>{
+    let component = mount(<SideBarItem onHover={ boolean =>{
       hover = boolean;
     }} />);
-
     component.simulate('mouseenter')
     expect(hover).toEqual(true)
-
+    component.simulate('mouseleave')
+    expect(hover).toEqual(false)
+    //It does't callback if callback undefined
+    component = mount(<SideBarItem onHover={undefined} />);
+    component.simulate('mouseenter')
+    expect(hover).toEqual(false)
     component.simulate('mouseleave')
     expect(hover).toEqual(false)
 

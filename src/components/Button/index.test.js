@@ -13,20 +13,22 @@ describe('<Button />', () => {
   });
 
   it("hovers", () => {
-
     let hover = null;
-
-    const button = mount(<Button onHover={ boolean =>{
+    let button = mount(<Button onHover={ boolean =>{
       hover = boolean;
     }} />);
-
     button.simulate('mouseenter')
     expect(hover).toEqual(true)
-
     button.simulate('mouseleave')
     expect(hover).toEqual(false)
-
+    //It does not callback if callback undefined
+    button = mount(<Button onHover={undefined} />);
+    button.simulate('mouseenter')
+    expect(hover).toEqual(false)
+    button.simulate('mouseleave')
+    expect(hover).toEqual(false)
   });
+
 
   it("accepts background && color prop", () => {
     const component = mount(<Button background="blue" color="red" />);

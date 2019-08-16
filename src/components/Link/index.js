@@ -11,11 +11,11 @@ export default (props) => {
     <a
       onMouseEnter={()=>{
         setHover(true);
-        onHover(true);
+        if(onHover) onHover(true);
       }}
       onMouseLeave={()=>{
         setHover(false);
-        onHover(false);
+        if(onHover) onHover(false);
       }}
       href={href}
       onClick={onClick}

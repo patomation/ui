@@ -12,11 +12,11 @@ export default (props) => {
       onClick={onClick}
       onMouseEnter={()=>{
         setHover(true);
-        onHover(true);
+        if(onHover) onHover(true);
       }}
       onMouseLeave={()=>{
         setHover(false);
-        onHover(false);
+        if(onHover) onHover(false);
       }}
       style={{
         ...styles.default,

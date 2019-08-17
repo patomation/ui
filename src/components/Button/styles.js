@@ -13,13 +13,17 @@ export default {
     textDecoration: 'none',
     margin: '0',
   },
-  type:{
+  kind:{
     normal:{
       background: '#0069ed',
       color: '#ffffff',
       hover: {
         background: 'red',
         transition: 'background 250ms ease-in-out, transform 150ms ease'
+      },
+      disabled: {
+        background: 'gray',
+        cursor: 'auto',
       }
     },
     outline:{
@@ -29,6 +33,10 @@ export default {
       hover:{
         border: '1px solid rgba(255,255,255,1)',
         transition: 'background 250ms ease-in-out, transform 150ms ease'
+      },
+      disabled: {
+        color: "gray",
+        border: '1px solid gray',
       }
     },
     text:{
@@ -41,6 +49,9 @@ export default {
       hover: {
         opacity: '1',
         transition: 'background 250ms ease-in-out, transform 150ms ease'
+      },
+      disabled: {
+        color: 'gray'
       }
     },
     none:{

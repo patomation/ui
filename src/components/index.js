@@ -1,12 +1,13 @@
-import 'material-icons';
-
 export {default as Button} from './Button';
+export {default as Center} from './Center';
+export {default as Code} from './Code';
 export {default as Header} from './Header';
 export {default as Heading} from './Heading';
 export {default as Hr} from './Hr';
 export {default as Icon} from './Icon';
 export {default as IconButton} from './IconButton';
 export {default as Link} from './Link';
+export {default as Login} from './Login';
 export {default as Nav} from './Nav';
 export {default as NavItem} from './NavItem';
 export {default as Panel} from './Panel';

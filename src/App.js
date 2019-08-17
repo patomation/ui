@@ -54,7 +54,7 @@ function App() {
               flexGrow: 0
             }}
             color="#ffffff"
-            type='text'>Go to Docs</Button>
+            kind='text'>Go to Docs</Button>
 
           <IconButton
             style={{
@@ -89,7 +89,7 @@ function App() {
           <Button
             style={{
               flexGrow: 0
-            }} type="outline">Web setup</Button>
+            }} kind="outline">Web setup</Button>
           <IconButton
             style={{
               flexGrow: 0,

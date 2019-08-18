@@ -5,8 +5,8 @@ export default {
 
   },
   icon:{
-    position: 'relative',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    // position: 'relative',
+    // top: '50%',
+    // transform: 'translateY(-50%)',
   }
 }

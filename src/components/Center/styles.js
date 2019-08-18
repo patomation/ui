@@ -1,6 +1,6 @@
 export default {
   container:{
-    position: 'absolute',
+    position: 'relative',
     top: '0',
     height: '100%',
     width: '100%'

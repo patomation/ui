@@ -5,7 +5,8 @@ export default (props) => {
 
   const [hover, setHover] = useState(false);
   const {
-    className, type, disabled, onClick, children,
+    className, type, disabled, onClick,
+    children, title,
     background, color, style, hoverStyle, disabledStyle,
     onHover, kind
   } = props;
@@ -35,7 +36,7 @@ export default (props) => {
         ...hoverStyle
       }}>
 
-        {children}
+        { children || title }
 
     </button>
   )

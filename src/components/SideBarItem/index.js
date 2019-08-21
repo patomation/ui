@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './styles.js'
 
 import Icon from '../Icon';
-
+import Grid from '../Grid';
 
 export default (props) => {
 
@@ -10,7 +10,7 @@ export default (props) => {
   const { className, onClick, background, color, icon, style, hoverStyle, title, onHover } = props;
 
   return(
-    <button
+    <Grid
       className={className}
       onClick={onClick}
       onMouseEnter={()=>{
@@ -27,16 +27,17 @@ export default (props) => {
         ...( color ? { color: color } : null ),
         ...( hover ? {...styles.hover, ...hoverStyle} : null ),
         ...style
-      }}>
+      }}
+      col={4}>
 
-        <div style={styles.iconContainer}>
-          <Icon name={icon} />
-        </div>
+      <Icon
+        name={icon}
+        style={styles.icon}/>
 
-        <div style={styles.titleContainer}>
-          <div style={styles.title}>{title}</div>
-        </div>
+      <div style={styles.title}>
+        {title}
+      </div>
 
-    </button>
+    </Grid>
   )
 }

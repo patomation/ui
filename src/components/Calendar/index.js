@@ -32,7 +32,10 @@ const isSameDay = (dayOne, dayTwo) => {
 
 export default (props) => {
 
-  const { className, background, color, style, events } = props;
+  const {
+    className, background, color, style,
+    events, onClick
+  } = props;
 
   const [ date, setDate ] = useState(moment());
   const [ today, setToday ] = useState(moment());
@@ -104,7 +107,10 @@ export default (props) => {
             <Button
               key={`day_${index}`}
               onClick={()=>{
-                console.log(eventsThisDay);
+                onClick({
+                  day: day,
+                  events: eventsThisDay
+                })
               }}
               style={{
                 ...{

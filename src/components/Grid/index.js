@@ -6,7 +6,8 @@ export default (props) => {
   const {
     className, children,
     background, color, style,
-    col, row, gap
+    col, row, gap,
+    onMouseEnter, onMouseLeave
   } = props;
 
   //Extract number and unit
@@ -45,7 +46,9 @@ export default (props) => {
         ...( background ? { background: background } : null ),
         ...( color ? { color: color } : null ),
         ...style
-      }}>
+      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
 
       {children}
 

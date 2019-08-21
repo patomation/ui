@@ -33,7 +33,7 @@ export default (props) => {
         ...style,
         ...( hover ? (styles.kind[ kind || 'normal' ].hover) : null),
         ...( disabled ? ( styles.kind[ kind || 'normal' ].disabled || disabledStyle ) : null),
-        ...hoverStyle
+        ...( hover ? hoverStyle: null),
       }}>
 
         { children || title }

@@ -1,6 +1,7 @@
 export default {
   container:{
-    position: 'absolute',
+    position: 'fixed',
+    zIndex: '200',
     top: '0',
     left: '0',
     width: '100%',

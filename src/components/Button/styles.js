@@ -12,11 +12,19 @@ export default {
     borderRadius: config.size.corners,
     textDecoration: 'none',
     margin: '0',
+    userSelect: 'none',
+    WebkitUserSelect: 'none',
+    KhtmlUserSelect: 'none',
+    MozUserSelect: 'none',
+    MsUserSelect: 'none',
   },
   kind:{
     normal:{
       background: '#0069ed',
       color: '#ffffff',
+      active: {
+        background: 'gold'
+      },
       hover: {
         background: 'red',
         transition: 'background 250ms ease-in-out, transform 150ms ease'
@@ -30,6 +38,9 @@ export default {
       background: 'none',
       color: "#ffffff",
       border: '1px solid rgba(255,255,255,0.75)',
+      active: {
+        background: 'gold'
+      },
       hover:{
         border: '1px solid rgba(255,255,255,1)',
         transition: 'background 250ms ease-in-out, transform 150ms ease'
@@ -46,6 +57,9 @@ export default {
       fontWeight: 'bold',
       textAlign: 'center',
       lineHeight: 0,
+      active: {
+        color: 'gold'
+      },
       hover: {
         opacity: '1',
         transition: 'background 250ms ease-in-out, transform 150ms ease'

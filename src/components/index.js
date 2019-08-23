@@ -12,6 +12,7 @@ export {default as Hr} from './Hr';
 export {default as Icon} from './Icon';
 export {default as IconButton} from './IconButton';
 export {default as Input} from './Input';
+export {default as Keyboard} from './Keyboard';
 export {default as Link} from './Link';
 export {default as List} from './List';
 export {default as Login} from './Login';

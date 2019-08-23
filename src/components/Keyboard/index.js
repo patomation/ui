@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './styles.js';
 import keys from './keys.js';
-import hotkey from 'hotkey';
+import hotkey from '@patomation/hotkey';
 
 import Grid from '../Grid'
 import Button from '../Button'
@@ -12,6 +12,11 @@ export default (props) => {
     className, children,
     background, color, style,
     onDown, onUp,
+    buttonStyle,
+    hoverStyle,
+    activeStyle,
+    disabledStyle
+
   } = props;
 
   return(
@@ -23,9 +28,6 @@ export default (props) => {
         ...( color ? { color: color } : null ),
         ...style
       }}>
-
-      <h2> Keyboard </h2>
-
       <Grid col={30} gap={'5px'}>
         {keys.map( (key, index) => {
           const { name, span } = key;
@@ -57,12 +59,18 @@ export default (props) => {
             onUp={handleUp}
             active={active}
             key={`key_${index}`}
+            hoverStyle={hoverStyle}
+            activeStyle={activeStyle}
+            disabledStyle={disabledStyle}
             style={{
-              //Makes button into grid item
-              gridColumn: `auto / span ${span}`,
-              //For better centering
-              paddingLeft: 0,
-              paddingRight: 0,
+              ...{
+                //Makes button into grid item
+                gridColumn: `auto / span ${span}`,
+                //For better centering
+                paddingLeft: 0,
+                paddingRight: 0,
+              },
+              ...buttonStyle
             }}>
             {name}
           </Button>

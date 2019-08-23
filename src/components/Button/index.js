@@ -35,7 +35,6 @@ export default (props) => {
     //Handle callback
     if(onUp) onUp();
   }
-
   return(
     <button
       type={type}
@@ -88,9 +87,11 @@ export default (props) => {
         ...( color ? { color: color } : null),
         ...style,
         ...( hover ? (styles.kind[ kind || 'normal' ].hover) : null),
-        ...( disabled ? ( styles.kind[ kind || 'normal' ].disabled || disabledStyle ) : null),
         ...( hover ? hoverStyle : null),
-        ...( active ? (styles.kind[ kind || 'normal' ].active || activeStyle) : null),
+        ...( disabled ? ( styles.kind[ kind || 'normal' ].disabled || disabledStyle ) : null),
+        ...( disabled ? disabledStyle : null),
+        ...( active ? (styles.kind[ kind || 'normal' ].active) : null),
+        ...( active ? activeStyle : null),
       }}>
 
         { children || title }

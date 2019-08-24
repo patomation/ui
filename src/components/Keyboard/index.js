@@ -11,6 +11,7 @@ export default (props) => {
   const {
     className, children,
     background, color, style,
+    gap,
     onDown, onUp,
     buttonStyle,
     hoverStyle,
@@ -19,16 +20,24 @@ export default (props) => {
 
   } = props;
 
+  console.log('gap?', gap);
   return(
     <div
-      className={className}
+      className={`keyboard ${className || ''}`}
       style={{
         ...styles.container,
         ...( background ? { background: background } : null ),
         ...( color ? { color: color } : null ),
         ...style
       }}>
-      <Grid col={30} gap={'5px'}>
+      <Grid
+        col={30}
+        row={5}
+        gap={gap !== undefined ? gap : '5px'}
+        style={{
+          height: '100%'
+        }}>
+
         {keys.map( (key, index) => {
           const { name, span } = key;
           const [ active, setActive ] = useState(false);
@@ -66,6 +75,7 @@ export default (props) => {
               ...{
                 //Makes button into grid item
                 gridColumn: `auto / span ${span}`,
+                gridRow: `auto / span 1`,
                 //For better centering
                 paddingLeft: 0,
                 paddingRight: 0,

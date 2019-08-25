@@ -42,6 +42,7 @@ export default (props) => {
         ...{
           gridGap: (gap || '0'),
           gridTemplateColumns: repeat(col, ( subtractGap ? `calc(${width}% - ${subtractGap})` : `${width}%`) ),
+          gridTemplateRows: repeat(row, ( subtractGap ? `calc(${height}% - ${subtractGap})` : `${height}%`) ),
         },
         ...( background ? { background: background } : null ),
         ...( color ? { color: color } : null ),

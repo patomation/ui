@@ -3,7 +3,11 @@ import styles from './styles.js'
 
 export default (props) => {
 
-  const { className, children, menu, style, menuStyle, contentStyle } = props;
+  const {
+    className, children, menu,
+    style, menuStyle, contentStyle,
+    menuWidth
+  } = props;
 
   return(
     <div
@@ -13,17 +17,19 @@ export default (props) => {
         ...style
       }}>
 
-      <div style={{
+      <menu style={{
         ...styles.menu,
+        ...( menuWidth ? { width: menuWidth } : null ),
         ...menuStyle
       }}>
 
         {menu}
 
-      </div>
+      </menu>
 
       <div style={{
         ...styles.content,
+        ...( menuWidth ? { marginLeft: menuWidth } : null ),
         ...contentStyle
       }}>
 

@@ -8,6 +8,8 @@ export default {
     backgroundColor: '#36494e',
     color: "#a9cef4",
     height: '100%',
+    margin: 0,
+    padding: 0,
     width: config.size.sideBar,
     position:'fixed',
     overflowY: 'scroll',

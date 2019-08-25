@@ -11,6 +11,8 @@ export default (props) => {
   const {
     className, children,
     background, color, style,
+    enabled,  //Object of keys used to show what is enabled. The value doesn't matter.
+    hideDisabled, //Totally hide disabled
     gap,
     onDown, onUp,
     buttonStyle,
@@ -20,7 +22,6 @@ export default (props) => {
 
   } = props;
 
-  console.log('gap?', gap);
   return(
     <div
       className={`keyboard ${className || ''}`}
@@ -63,6 +64,10 @@ export default (props) => {
             handleUp();
           })
 
+          if(enabled && !enabled.hasOwnProperty(name.toLowerCase()) && hideDisabled){
+            return null;
+          }
+
           return <Button
             onDown={handleDown}
             onUp={handleUp}
@@ -71,6 +76,7 @@ export default (props) => {
             hoverStyle={hoverStyle}
             activeStyle={activeStyle}
             disabledStyle={disabledStyle}
+            disabled={enabled ? !enabled.hasOwnProperty(name.toLowerCase()) : null}
             style={{
               ...{
                 //Makes button into grid item
@@ -82,7 +88,9 @@ export default (props) => {
               },
               ...buttonStyle
             }}>
+
             {name}
+
           </Button>
         })}
       </Grid>

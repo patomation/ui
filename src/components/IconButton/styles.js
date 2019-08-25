@@ -1,12 +1,18 @@
 export default {
   container:{
     display: 'inline-block',
-    cursor: 'pointer'
-
+    cursor: 'pointer',
+    textAlign: 'center',
+    opacity: '0.5'
   },
   icon:{
-    // position: 'relative',
-    // top: '50%',
-    // transform: 'translateY(-50%)',
+    userSelect: 'none',
+    WebkitUserSelect: 'none',
+    KhtmlUserSelect: 'none',
+    MozUserSelect: 'none',
+    MsUserSelect: 'none',
+  },
+  active:{
+    opacity: '1.0',
   }
 }

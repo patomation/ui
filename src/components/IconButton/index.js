@@ -5,7 +5,12 @@ import Icon from '../Icon';
 
 export default (props) => {
 
-  const { onClick, className, background, color, style, icon, iconStyle } = props;
+  const {
+    onClick, className,
+    background, color, style,
+    name, icon, iconStyle,
+    active, activeStyle
+  } = props;
 
   return(
     <div
@@ -15,7 +20,9 @@ export default (props) => {
         ...styles.container,
         ...( background ? { background: background } : null ),
         ...( color ? { color: color } : null),
-        ...style
+        ...style,
+        ...( active ? styles.active : null),
+        ...( active ? activeStyle : null),
       }}>
 
       <Icon
@@ -23,7 +30,7 @@ export default (props) => {
           ...iconStyle,
           ...styles.icon
         }}
-        name={icon}/>
+        name={icon || name}/>
 
     </div>
   )

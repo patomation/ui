@@ -13,12 +13,13 @@ export default (props) => {
   },[props.active])
 
   const {
-    className, type, disabled,
+    className, type, disabled, enabled,
     onClick, onMouseDown, onMouseUp, onTouchStart, onTouchEnd,
+    onMouseEnter, onMouseLeave,
     onDown, onUp,
-    children, title,
+    children, title, //Child or title works for the button label
     background, color, style,
-    hoverStyle, disabledStyle, activeStyle,
+    hoverStyle, disabledStyle, activeStyle, enabledStyle,
     onHover, kind
   } = props;
 
@@ -74,11 +75,14 @@ export default (props) => {
       onClick={onClick}
       onMouseEnter={()=>{
         setHover(true);
-        if(onHover) onHover(true);
+        if(onMouseEnter) onMouseEnter(); //I find it more usefull to bubble up these events
+        if(onHover) onHover(true); //This was here for testing. This may get depreciated.
       }}
       onMouseLeave={()=>{
         setHover(false);
-        if(onHover) onHover(false);
+        if(onMouseLeave) onMouseLeave();  //I find it more usefull to bubble up these events
+        if(onHover) onHover(false); //This was here for testing. This may get depreciated.
+        setActive(false); //Make it not active anymore
       }}
       style={{
         ...styles.default,
@@ -88,6 +92,8 @@ export default (props) => {
         ...style,
         ...( hover ? (styles.kind[ kind || 'normal' ].hover) : null),
         ...( hover ? hoverStyle : null),
+        ...( enabled ? ( styles.kind[ kind || 'normal' ].enabled || enabledStyle ) : null),
+        ...( enabled ? enabledStyle : null),
         ...( disabled ? ( styles.kind[ kind || 'normal' ].disabled || disabledStyle ) : null),
         ...( disabled ? disabledStyle : null),
         ...( active ? (styles.kind[ kind || 'normal' ].active) : null),

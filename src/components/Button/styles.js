@@ -32,6 +32,9 @@ export default {
       disabled: {
         background: 'gray',
         cursor: 'auto',
+      },
+      enabled:{
+        background: '#40e0d0',
       }
     },
     outline:{
@@ -48,7 +51,8 @@ export default {
       disabled: {
         color: "gray",
         border: '1px solid gray',
-      }
+      },
+      enabled:{}
     },
     text:{
       padding: 0,
@@ -66,7 +70,8 @@ export default {
       },
       disabled: {
         color: 'gray'
-      }
+      },
+      enabled:{}
     },
     none:{
 

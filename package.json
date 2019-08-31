@@ -1,6 +1,6 @@
 {
   "name": "@patomation/react-ui-components",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "main": "lib/index.js",
   "private": false,
   "scripts": {
@@ -12,7 +12,7 @@
     "watch:components": "nodemon --watch src/components/ --ignore index.js --ignore [*.js] node utilities/build.components.index.js"
   },
   "dependencies": {
-    "@patomation/hotkey": "^1.0.0",
+    "@patomation/hotkey": "^1.0.1",
     "formik": "^1.5.8",
     "material-icons": "^0.3.1",
     "moment": "^2.24.0",

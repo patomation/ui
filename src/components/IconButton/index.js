@@ -7,9 +7,9 @@ export default (props) => {
 
   const {
     onClick, className,
-    background, color, style,
-    name, icon, iconStyle,
-    active, activeStyle
+    background, color,
+    style, iconStyle, titleStyle, activeStyle,
+    name, icon, active, title
   } = props;
 
   return(
@@ -23,15 +23,23 @@ export default (props) => {
         ...style,
         ...( active ? styles.active : null),
         ...( active ? activeStyle : null),
+        ...(title ? {display: 'flex'} : null)
       }}>
 
       <Icon
         style={{
-          ...iconStyle,
-          ...styles.icon
+          ...styles.icon,
+          ...iconStyle
         }}
         name={icon || name}/>
 
+      {title? <div
+        style={{
+          ...styles.title,
+          ...titleStyle
+        }}>
+        {title}
+      </div> :null}
     </div>
   )
 }

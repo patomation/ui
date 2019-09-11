@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "private": false,
   "scripts": {
-    "build": "babel src --out-dir lib --ignore \"**/*.test.js\"",
+    "build": "babel src --out-dir lib --ignore \"**/*.test.js\""
   },
   "dependencies": {
     "@patomation/hotkey": "^1.3.1",

@@ -27,7 +27,7 @@ export default (props) => {
 
       </menu>
 
-      <div style={{
+      <main style={{
         ...styles.content,
         ...( menuWidth ? { marginLeft: menuWidth } : null ),
         ...contentStyle
@@ -35,7 +35,7 @@ export default (props) => {
 
         {children}
 
-      </div>
+      </main>
 
     </div>
   )

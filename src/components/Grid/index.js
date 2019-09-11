@@ -36,7 +36,7 @@ export default (props) => {
 
   return(
     <div
-      className={className}
+      className={`grid ${className || ''}`}
       style={{
         ...styles.container,
         ...{

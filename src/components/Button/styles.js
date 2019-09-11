@@ -17,17 +17,17 @@ export default {
     KhtmlUserSelect: 'none',
     MozUserSelect: 'none',
     MsUserSelect: 'none',
+    transition: 'background 150ms ease-in-out, transform 150ms ease'
   },
   kind:{
     normal:{
       background: '#0069ed',
       color: '#ffffff',
       active: {
-        background: 'gold'
+        filter: 'brightness(130%)',
       },
       hover: {
-        background: 'red',
-        transition: 'background 250ms ease-in-out, transform 150ms ease'
+        filter: 'brightness(85%)'
       },
       disabled: {
         background: 'gray',
@@ -45,8 +45,7 @@ export default {
         background: 'gold'
       },
       hover:{
-        border: '1px solid rgba(255,255,255,1)',
-        transition: 'background 250ms ease-in-out, transform 150ms ease'
+        border: '1px solid rgba(255,255,255,1)'
       },
       disabled: {
         color: "gray",
@@ -65,8 +64,7 @@ export default {
         color: 'gold'
       },
       hover: {
-        opacity: '1',
-        transition: 'background 250ms ease-in-out, transform 150ms ease'
+        opacity: '1'
       },
       disabled: {
         color: 'gray'

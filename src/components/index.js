@@ -4,6 +4,7 @@ export {default as Center} from './Center';
 export {default as Code} from './Code';
 export {default as Collapse} from './Collapse';
 export {default as Content} from './Content';
+export {default as DragDrop} from './DragDrop';
 export {default as Grid} from './Grid';
 export {default as Gutter} from './Gutter';
 export {default as Header} from './Header';

@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styles from './styles.js';
 
 import moment from 'moment';
 
 import Grid from '../Grid';
-import List from '../List';
 import Button from '../Button';
 import IconButton from '../IconButton';
 
@@ -38,7 +37,7 @@ export default (props) => {
   } = props;
 
   const [ date, setDate ] = useState(moment());
-  const [ today, setToday ] = useState(moment());
+  const today = moment();
   const month = moment(date).format('MMMM');
   const year = moment(date).format('YYYY');
 

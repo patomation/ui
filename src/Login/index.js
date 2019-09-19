@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.js'
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import validationSchema from './validationSchema.js';
 import Button from '../Button';
 import Input from '../Input';

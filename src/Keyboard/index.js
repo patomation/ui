@@ -9,7 +9,7 @@ import Button from '../Button'
 export default (props) => {
 
   const {
-    className, children,
+    className,
     background, color, style,
     enabled,  //Object of keys used to show what is enabled. The value doesn't matter.
     hideDisabled, //Totally hide disabled

@@ -11,7 +11,7 @@ export default (props) => {
   const speed = 400;
 
   const [ height, setHeight ] = useState(null);
-  let element;
+  let element = null;
   useEffect(()=>{
     if(element){
       setHeight(`${element.clientHeight}px`);
@@ -19,7 +19,7 @@ export default (props) => {
     //Callback when animation completes
     if(collapse && onComplete) setTimeout(onComplete, speed)
 
-  },[collapse])
+  },[collapse, onComplete, element])
 
   return(
     <div

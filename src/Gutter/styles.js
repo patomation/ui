@@ -1,7 +1,11 @@
 import config from '../config.js';
 
 export default {
-  container:{
+  horizontal:{
     paddingBottom: config.size.gutters
+  },
+  vertical: {
+    paddingLeft: config.size.gutters,
+    paddingBottom: 0
   }
 }

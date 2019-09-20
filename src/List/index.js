@@ -17,7 +17,7 @@ export default (props) => {
         ...listStyle
       }}>
 
-      {data.map( (item, index) =>
+      {data ? data.map( (item, index) =>
         <li
           key={`item_${index}`}
           style={{
@@ -28,7 +28,7 @@ export default (props) => {
             {item}
 
         </li>
-      )}
+      ) : null}
 
     </ul>
   )

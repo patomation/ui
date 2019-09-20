@@ -4,10 +4,14 @@ import styles from './styles.js'
 import Icon from '../Icon';
 import Grid from '../Grid';
 
-export default (props) => {
+export default ({
+  className, onClick,
+  background, color, icon,
+  style, hoverStyle,
+  title, onHover
+}) => {
 
   const [hover, setHover] = useState(false);
-  const { className, onClick, background, color, icon, style, hoverStyle, title, onHover } = props;
 
   return(
     <Grid

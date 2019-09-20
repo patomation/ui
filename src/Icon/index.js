@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.js'
-import 'material-icons'
+import '../../node_modules/material-icons/iconfont/material-icons.css'
 
 export default (props) => {
 

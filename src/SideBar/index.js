@@ -1,13 +1,11 @@
 import React from 'react';
 import styles from './styles.js'
 
-export default (props) => {
-
-  const {
-    className, children, menu,
-    style, menuStyle, contentStyle,
-    menuWidth
-  } = props;
+export default ({
+  className, children, menu,
+  style, menuStyle, contentStyle,
+  menuWidth
+}) => {
 
   return(
     <div

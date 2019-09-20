@@ -29,12 +29,11 @@ const isSameDay = (dayOne, dayTwo) => {
   return moment(dayOne).format('DD-MM-YYYY') === moment(dayTwo).format('DD-MM-YYYY')
 }
 
-export default (props) => {
+export default ({
+  className, background, color, style,
+  events, onClick
+}) => {
 
-  const {
-    className, background, color, style,
-    events, onClick
-  } = props;
 
   const [ date, setDate ] = useState(moment());
   const today = moment();
@@ -50,12 +49,17 @@ export default (props) => {
   ];
 
   const getEvents = (day) => {
-    return events.reduce((accumulator, currentValue) => {
-      if( isSameDay(day, currentValue.start) ){
-        accumulator.push(currentValue);
-      }
-      return accumulator;
-    },[]);
+    if(events){
+      return events.reduce((accumulator, currentValue) => {
+        if( isSameDay(day, currentValue.start) ){
+          accumulator.push(currentValue);
+        }
+        return accumulator;
+      },[]);
+
+    } else {
+      return []
+    }
   }
 
   return(

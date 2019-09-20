@@ -1,27 +1,25 @@
 import React, {useState, useEffect} from 'react';
 import styles from './styles.js'
 
-export default (props) => {
-
+export default ({
+  className, type, disabled, enabled, active,
+  onClick, onMouseDown, onMouseUp, onTouchStart, onTouchEnd,
+  onMouseEnter, onMouseLeave,
+  onDown, onUp,
+  children, title, //Child or title works for the button label
+  background, color, style,
+  hoverStyle, disabledStyle, activeStyle, enabledStyle,
+  onHover, kind,
+  center //If prop is used at all then a div will be added to the outside with textAlign center
+}) => {
   const [hover, setHover] = useState(false);
   const [touched, setTouched] = useState(false);
-  const [active, setActive] = useState(props.active || false);
+  const [isActive, setActive] = useState(active || false);
 
   //Allow it to be set to active from the ouseside
   useEffect(()=>{
-    setActive(props.active)
-  },[props.active])
-
-  const {
-    className, type, disabled, enabled,
-    onClick, onMouseDown, onMouseUp, onTouchStart, onTouchEnd,
-    onMouseEnter, onMouseLeave,
-    onDown, onUp,
-    children, title, //Child or title works for the button label
-    background, color, style,
-    hoverStyle, disabledStyle, activeStyle, enabledStyle,
-    onHover, kind
-  } = props;
+    setActive(active)
+  },[active])
 
   const handleDown = () => {
     //Make ui active
@@ -36,8 +34,8 @@ export default (props) => {
     //Handle callback
     if(onUp) onUp();
   }
-  return(
-    <button
+
+  const button = <button
       type={type}
       disabled={disabled}
       className={className}
@@ -96,12 +94,15 @@ export default (props) => {
         ...( enabled ? enabledStyle : null),
         ...( disabled ? ( styles.kind[ kind || 'normal' ].disabled || disabledStyle ) : null),
         ...( disabled ? disabledStyle : null),
-        ...( active ? (styles.kind[ kind || 'normal' ].active) : null),
-        ...( active ? activeStyle : null),
+        ...( isActive ? (styles.kind[ kind || 'normal' ].active) : null),
+        ...( isActive ? activeStyle : null),
       }}>
 
         { children || title }
 
     </button>
-  )
+
+  // If center is defined wrap button with div with textAlign center
+  return center ? <div style={{textAlign: 'center'}}> { button } </div> : button
+
 }

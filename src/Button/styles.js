@@ -21,8 +21,8 @@ export default {
   },
   kind:{
     normal:{
-      background: '#0069ed',
-      color: '#ffffff',
+      background: config.color.button.background,
+      color: config.color.button.color,
       active: {
         filter: 'brightness(130%)',
       },

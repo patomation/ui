@@ -1,9 +1,11 @@
 export {default as Brand} from './Brand';
 export {default as Button} from './Button';
 export {default as Calendar} from './Calendar';
+export {default as Carousel} from './Carousel';
 export {default as Center} from './Center';
 export {default as Code} from './Code';
 export {default as Collapse} from './Collapse';
+export {default as config} from './config.js';
 export {default as Content} from './Content';
 export {default as DragDrop} from './DragDrop';
 export {default as Footer} from './Footer';

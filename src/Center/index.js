@@ -1,23 +1,27 @@
 import React from 'react';
 import styles from './styles.js'
 
-export default (props) => {
+const Center = ({
+  className, children,
+  style, containerStyle, contentStyle,
+}) =>
 
-  const { className, children, style } = props;
+<div className={className}
+  style={{
+    ...styles.container,
+    ...style,
+    ...containerStyle
+  }}>
 
-  return(
-    <div className={className}
-      style={{
-        ...styles.container,
-        ...style
-      }}>
+  <div style={{
+    ...styles.content,
+    ...contentStyle
+  }}>
 
-      <div style={styles.content}>
+    {children}
 
-        {children}
+  </div>
 
-      </div>
+</div>
 
-    </div>
-  )
-}
+export default Center

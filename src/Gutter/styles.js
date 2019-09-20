@@ -6,6 +6,7 @@ export default {
   },
   vertical: {
     paddingLeft: config.size.gutters,
-    paddingBottom: 0
+    paddingBottom: 0,
+    display: 'inline',
   }
 }

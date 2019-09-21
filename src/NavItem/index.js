@@ -42,7 +42,7 @@ NavItem.propTypes = {
   onClick: PropTypes.func,
   href: PropTypes.string,
   title: PropTypes.string,
-  active: PropTypes.boolean,
+  active: PropTypes.bool,
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object

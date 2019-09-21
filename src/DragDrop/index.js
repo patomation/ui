@@ -57,7 +57,7 @@ DragDrop.propTypes = {
   onDrop: PropTypes.func,
   onDragLeave: PropTypes.func,
   onDrag: PropTypes.func,
-  draggable: PropTypes.boolean
+  draggable: PropTypes.bool
 }
 
 export default DragDrop

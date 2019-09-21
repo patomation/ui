@@ -53,7 +53,7 @@ IconButton.propTypes = {
   activeStyle: PropTypes.string,
   name: PropTypes.string,
   icon: PropTypes.func,
-  active: PropTypes.boolean,
+  active: PropTypes.bool,
   title: PropTypes.string
 }
 

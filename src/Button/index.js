@@ -111,8 +111,8 @@ Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
   disabled: PropTypes.string,
-  enabled: PropTypes.boolean,
-  active: PropTypes.boolean,
+  enabled: PropTypes.bool,
+  active: PropTypes.bool,
   onClick: PropTypes.func,
   onMouseDown: PropTypes.func,
   onMouseUp: PropTypes.func,
@@ -133,7 +133,7 @@ Button.propTypes = {
   enabledStyle: PropTypes.string,
   onHover: PropTypes.func,
   kind: PropTypes.string,
-  center: PropTypes.boolean
+  center: PropTypes.bool
 }
 
 export default Button

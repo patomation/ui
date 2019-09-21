@@ -38,8 +38,8 @@ Image.propTypes = {
   style: PropTypes.object,
   containerStyle: PropTypes.func,
   imageStyle: PropTypes.string,
-  bg: PropTypes.boolean,
-  square: PropTypes.boolean
+  bg: PropTypes.bool,
+  square: PropTypes.bool
 }
 
 export default Image

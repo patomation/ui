@@ -5,15 +5,14 @@ const Footer = ({
   className, children, onClick,
   background, color, style
 }) => {
-
-  return(
+  return (
     <footer
       onClick={onClick}
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
 

@@ -4,14 +4,13 @@ import styles from './styles.js'
 const Hr = ({
   className, background, color, style
 }) => {
-
-  return(
+  return (
     <hr
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }} />
   )

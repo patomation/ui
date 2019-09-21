@@ -1,14 +1,13 @@
 
-
 export default {
-  container:{
+  container: {
     display: 'grid',
     // gridGap: '0',
     // gridTemplateColumns: repeat(columns, `${width}%` ),
-    justifyItems: 'stretch',
+    justifyItems: 'stretch'
   },
-  item:{
+  item: {
     gridColumn: 'auto / span auto',
-    gridRow: '0 / span 0',
+    gridRow: '0 / span 0'
   }
 }

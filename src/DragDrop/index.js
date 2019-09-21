@@ -7,36 +7,35 @@ const DragDrop = ({
   className, children,
   background, color, style,
   onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
-  draggable,
+  draggable
 }) => {
-
   const [over, setOver] = useToggle(false)
 
-  return(
+  return (
     <div
       className={className}
-      draggable={draggable !== undefined ? draggable : true} //Use draggable prop but default to true
+      draggable={draggable !== undefined ? draggable : true} // Use draggable prop but default to true
       onDragStart={onDragStart}
       onDrag={onDrag}
-      onDragOver={(e)=>{
-        //Lets us drop stuff here
+      onDragOver={(e) => {
+        // Lets us drop stuff here
         e.preventDefault()
-        //Allow only one drg over event at one time.
-        //Prevent retriggering
-        if(!over) {
+        // Allow only one drg over event at one time.
+        // Prevent retriggering
+        if (!over) {
           setOver(true)
-          if(onDragOver) onDragOver(e)
+          if (onDragOver) onDragOver(e)
         }
       }}
-      onDragLeave={()=>{
+      onDragLeave={() => {
         setOver(false)
-        if(onDragLeave) onDragLeave()
+        if (onDragLeave) onDragLeave()
       }}
       onDrop={onDrop}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
 

@@ -7,15 +7,15 @@ const Icon = ({
   name, icon,
   background, color, style
 }) => {
-
-  return(
+  return (
     <span
       className={`material-icons ${className}`}
       style={{
         ...styles,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
-        ...style}}>
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
+        ...style
+      }}>
 
       { children || name || icon }
 

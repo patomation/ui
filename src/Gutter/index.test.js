@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Gutter from './index.js'
 
 describe('<Gutter />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Gutter />)
   })
-
 })

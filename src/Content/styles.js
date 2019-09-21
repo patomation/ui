@@ -1,5 +1,5 @@
 export default {
-  container:{
-    flex: '1 1 auto',
-  },
+  container: {
+    flex: '1 1 auto'
+  }
 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.js'
 import Panel from '../Panel'
 import Center from '../Center'
@@ -9,40 +9,39 @@ const Modal = ({
   className, children,
   background, color, style
 }) => {
-
   const [open, setOpen] = useState(show || false)
 
   const close = () => {
     setOpen(false)
-    if(onClose) onClose(false)
+    if (onClose) onClose(false)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     setOpen(show)
-  },[show])
+  }, [show])
 
-  if(open){
-    return(
+  if (open) {
+    return (
       <div
         className={ `modal ${className}` }
         style={{
           ...styles.container,
-          ...( background ? { background: background } : null ),
-          ...( color ? { color: color } : null ),
+          ...(background ? { background: background } : null),
+          ...(color ? { color: color } : null),
           ...style
         }}>
 
         <Center>
-        <Panel style={styles.panel}>
+          <Panel style={styles.panel}>
 
-          <IconButton
-            onClick={close}
-            style={styles.close}
-            icon='close' />
+            <IconButton
+              onClick={close}
+              style={styles.close}
+              icon='close' />
 
-          {children}
+            {children}
 
-        </Panel>
+          </Panel>
         </Center>
 
       </div>
@@ -50,7 +49,6 @@ const Modal = ({
   } else {
     return null
   }
-
 }
 
 export default Modal

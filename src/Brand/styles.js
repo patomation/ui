@@ -1,5 +1,5 @@
 export default {
-  container:{
+  container: {
     flexGrow: 1
-  },
+  }
 }

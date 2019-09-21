@@ -1,14 +1,14 @@
 export default {
   container: {
     cursor: 'pointer',
-    padding: '0.25rem 0',
+    padding: '0.25rem 0'
   },
-  hover:{
-    background: 'rgba(255,255,255, 0.1)',
+  hover: {
+    background: 'rgba(255,255,255, 0.1)'
   },
   icon: {
     textAlign: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   title: {
     justifyContent: 'center',

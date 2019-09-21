@@ -7,18 +7,18 @@ const Brand = ({
   background, color, style
 }) =>
 
-<span
-  onClick={onClick}
-  className={className}
-  style={{
-    ...styles.container,
-    ...( background ? { background: background } : null ),
-    ...( color ? { color: color } : null ),
-    ...style
-  }}>
+  <span
+    onClick={onClick}
+    className={className}
+    style={{
+      ...styles.container,
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
+      ...style
+    }}>
 
-  {children}
+    {children}
 
-</span>
+  </span>
 
 export default Brand

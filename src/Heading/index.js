@@ -5,15 +5,14 @@ const Heading = ({
   Tag, className, onClick, children,
   background, color, style
 }) => {
-
-  return(
+  return (
     <Tag
       className={className}
       onClick={onClick}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
 

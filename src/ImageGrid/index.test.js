@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import ImageGrid from './index.js'
 
 describe('<ImageGrid />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<ImageGrid />)
   })
-
 })

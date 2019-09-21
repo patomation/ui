@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Modal from './index.js'
 
 describe('<Modal />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Modal />)
   })
-
 })

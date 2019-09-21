@@ -1,11 +1,11 @@
 import config from '../config.js'
 
 export default {
-  container:{
+  container: {
     width: '100%',
-    display: 'block',
+    display: 'block'
   },
-  input:{
+  input: {
     width: '100%',
     display: 'block',
     fontFamily: 'sans-serif',
@@ -17,17 +17,17 @@ export default {
     textDecoration: 'none',
     margin: '0',
     WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
-    MozBoxSizing: 'border-box',    /* Firefox, other Gecko */
-    boxSizing: 'border-box',       /* Opera/IE 8+ */
+    MozBoxSizing: 'border-box', /* Firefox, other Gecko */
+    boxSizing: 'border-box' /* Opera/IE 8+ */
   },
   inputError: {
-    border: '1px solid red',
+    border: '1px solid red'
   },
-  error:{
+  error: {
     width: '100%',
     display: 'block',
     textAlign: 'center',
     color: 'red',
-    padding: '0.5rem 0',
+    padding: '0.5rem 0'
   }
 }

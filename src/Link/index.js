@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './styles.js'
 
 const Link = ({
@@ -7,28 +7,27 @@ const Link = ({
   color, style, href, hoverStyle,
   onHover
 }) => {
-
   const [hover, setHover] = useState(false)
 
-  return(
+  return (
     <a
-      onMouseEnter={()=>{
+      onMouseEnter={() => {
         setHover(true)
-        if(onHover) onHover(true)
+        if (onHover) onHover(true)
       }}
-      onMouseLeave={()=>{
+      onMouseLeave={() => {
         setHover(false)
-        if(onHover) onHover(false)
+        if (onHover) onHover(false)
       }}
       href={href}
       onClick={onClick}
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style,
-        ...( hover ? { ...styles.hover, ...hoverStyle } : null)
+        ...(hover ? { ...styles.hover, ...hoverStyle } : null)
       }}>
 
       {children}

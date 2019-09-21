@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Brand from './index.js'
 
 describe('<Brand />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Brand />)
   })
-
 })

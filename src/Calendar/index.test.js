@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Calendar from './index.js'
 
 describe('<Calendar />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Calendar />)
   })
-
 })

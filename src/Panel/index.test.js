@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Panel from './index.js'
 
 describe('<Panel />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Panel />)
   })
-
 })

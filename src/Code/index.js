@@ -5,15 +5,14 @@ const Code = ({
   className, children, onClick,
   background, color, style
 }) => {
-
-  return(
+  return (
     <div
       onClick={onClick}
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
 

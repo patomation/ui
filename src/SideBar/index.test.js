@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import SideBar from './index.js'
 
 describe('<SideBar />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<SideBar />)
   })
-
 })

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './styles.js'
 
 import Icon from '../Icon'
@@ -10,26 +10,25 @@ const SideBarItem = ({
   style, hoverStyle,
   title, onHover
 }) => {
-
   const [hover, setHover] = useState(false)
 
-  return(
+  return (
     <Grid
       className={className}
       onClick={onClick}
-      onMouseEnter={()=>{
+      onMouseEnter={() => {
         setHover(true)
-        if(onHover) onHover(true)
+        if (onHover) onHover(true)
       }}
-      onMouseLeave={()=>{
+      onMouseLeave={() => {
         setHover(false)
-        if(onHover) onHover(false)
+        if (onHover) onHover(false)
       }}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
-        ...( hover ? {...styles.hover, ...hoverStyle} : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
+        ...(hover ? { ...styles.hover, ...hoverStyle } : null),
         ...style
       }}
       col={4}>
@@ -45,6 +44,5 @@ const SideBarItem = ({
     </Grid>
   )
 }
-
 
 export default SideBarItem

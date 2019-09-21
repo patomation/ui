@@ -4,9 +4,8 @@ import styles from './styles.js'
 const List = ({
   className, data,
   style, listStyle, itemStyle
- }) => {
-
-  return(
+}) => {
+  return (
     <ul
       className={className}
       style={{
@@ -15,7 +14,7 @@ const List = ({
         ...listStyle
       }}>
 
-      {data ? data.map( (item, index) =>
+      {data ? data.map((item, index) =>
         <li
           key={`item_${index}`}
           style={{
@@ -23,7 +22,7 @@ const List = ({
             ...itemStyle
           }}>
 
-            {item}
+          {item}
 
         </li>
       ) : null}

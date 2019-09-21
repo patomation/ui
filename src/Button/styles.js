@@ -19,41 +19,41 @@ export default {
     MsUserSelect: 'none',
     transition: 'background 150ms ease-in-out, transform 150ms ease'
   },
-  kind:{
-    normal:{
+  kind: {
+    normal: {
       background: config.color.button.background,
       color: config.color.button.color,
       active: {
-        filter: 'brightness(130%)',
+        filter: 'brightness(130%)'
       },
       hover: {
         filter: 'brightness(85%)'
       },
       disabled: {
         background: 'gray',
-        cursor: 'auto',
+        cursor: 'auto'
       },
-      enabled:{
-        background: '#40e0d0',
+      enabled: {
+        background: '#40e0d0'
       }
     },
-    outline:{
+    outline: {
       background: 'none',
-      color: "#ffffff",
+      color: '#ffffff',
       border: '1px solid rgba(255,255,255,0.75)',
       active: {
         background: 'gold'
       },
-      hover:{
+      hover: {
         border: '1px solid rgba(255,255,255,1)'
       },
       disabled: {
-        color: "gray",
-        border: '1px solid gray',
+        color: 'gray',
+        border: '1px solid gray'
       },
-      enabled:{}
+      enabled: {}
     },
-    text:{
+    text: {
       padding: 0,
       background: 'none',
       opacity: '0.75',
@@ -69,9 +69,9 @@ export default {
       disabled: {
         color: 'gray'
       },
-      enabled:{}
+      enabled: {}
     },
-    none:{
+    none: {
 
     }
   }

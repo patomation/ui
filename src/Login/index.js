@@ -10,14 +10,13 @@ const Login = ({
   className, background, color, style,
   onSubmit
 }) => {
-
-  return(
+  return (
     <div
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
       <Formik
@@ -38,7 +37,7 @@ const Login = ({
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting,
+          isSubmitting
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit}>

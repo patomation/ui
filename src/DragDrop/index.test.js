@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import DragDrop from './index.js'
 
 describe('<DragDrop />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<DragDrop />)
   })
-
 })

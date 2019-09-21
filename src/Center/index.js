@@ -3,25 +3,25 @@ import styles from './styles.js'
 
 const Center = ({
   className, children,
-  style, containerStyle, contentStyle,
+  style, containerStyle, contentStyle
 }) =>
 
-<div className={className}
-  style={{
-    ...styles.container,
-    ...style,
-    ...containerStyle
-  }}>
+  <div className={className}
+    style={{
+      ...styles.container,
+      ...style,
+      ...containerStyle
+    }}>
 
-  <div style={{
-    ...styles.content,
-    ...contentStyle
-  }}>
+    <div style={{
+      ...styles.content,
+      ...contentStyle
+    }}>
 
-    {children}
+      {children}
+
+    </div>
 
   </div>
-
-</div>
 
 export default Center

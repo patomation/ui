@@ -8,17 +8,16 @@ const NavItem = ({
   onClick, href, title, active,
   background, color, style
 }) => {
-
-  return(
+  return (
     <Link
       href={href}
       onClick={onClick}
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
-        ...( active ? { opacity: 1 } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
+        ...(active ? { opacity: 1 } : null),
         ...style
       }}>
 
@@ -27,8 +26,9 @@ const NavItem = ({
       <div style={{
         ...styles.bottomBar,
         ...{
-          background: ( active ? '#ffffff' : null )
-        }}
+          background: (active ? '#ffffff' : null)
+        }
+      }
       }></div>
 
     </Link>

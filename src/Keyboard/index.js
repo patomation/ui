@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './styles.js'
 import keys from './keys.js'
 import hotkey from '@patomation/hotkey'
@@ -9,8 +9,8 @@ import Button from '../Button'
 const Keyboard = ({
   className,
   background, color, style,
-  enabled,  //Object of keys used to show what is enabled. The value doesn't matter.
-  hideDisabled, //Totally hide disabled
+  enabled, // Object of keys used to show what is enabled. The value doesn't matter.
+  hideDisabled, // Totally hide disabled
   gap,
   onDown, onUp,
   buttonStyle,
@@ -19,14 +19,13 @@ const Keyboard = ({
   disabledStyle
 
 }) => {
-
-  return(
+  return (
     <div
       className={`keyboard ${className || ''}`}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
       <Grid
@@ -37,32 +36,32 @@ const Keyboard = ({
           height: '100%'
         }}>
 
-        {keys.map( (key, index) => {
+        {keys.map((key, index) => {
           const { name, span } = key
-          const [ active, setActive ] = useState(false)
+          const [active, setActive] = useState(false)
 
           const handleDown = () => {
-            if(onDown) onDown(name.toLowerCase())
+            if (onDown) onDown(name.toLowerCase())
           }
 
           const handleUp = () => {
-            if(onUp) onUp(name.toLowerCase())
+            if (onUp) onUp(name.toLowerCase())
           }
 
-          //Set hotkey
+          // Set hotkey
           hotkey(name.toLowerCase())
-          .down(() => {
-            //Set button active if hotkey used
-            setActive(true)
-            handleDown()
-          })
-          .up(() => {
-            //Set button to deactive after hotkey used
-            setActive(false)
-            handleUp()
-          })
+            .down(() => {
+            // Set button active if hotkey used
+              setActive(true)
+              handleDown()
+            })
+            .up(() => {
+            // Set button to deactive after hotkey used
+              setActive(false)
+              handleUp()
+            })
 
-          if(enabled && !enabled.hasOwnProperty(name.toLowerCase()) && hideDisabled){
+          if (enabled && !enabled.hasOwnProperty(name.toLowerCase()) && hideDisabled) {
             return null
           }
 
@@ -77,12 +76,12 @@ const Keyboard = ({
             disabled={enabled ? !enabled.hasOwnProperty(name.toLowerCase()) : null}
             style={{
               ...{
-                //Makes button into grid item
+                // Makes button into grid item
                 gridColumn: `auto / span ${span}`,
-                gridRow: `auto / span 1`,
-                //For better centering
+                gridRow: 'auto / span 1',
+                // For better centering
                 paddingLeft: 0,
-                paddingRight: 0,
+                paddingRight: 0
               },
               ...buttonStyle
             }}>
@@ -95,6 +94,5 @@ const Keyboard = ({
     </div>
   )
 }
-
 
 export default Keyboard

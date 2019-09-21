@@ -5,16 +5,16 @@ import Hr from '../Hr'
 const Panel = ({
   className, children, header, style
 }) => {
-
-  return(
+  return (
     <div
       className={className}
       style={{
         ...styles.container,
-        ...style}}>
+        ...style
+      }}>
 
-      {(header ?
-        <div style={styles.header}>
+      {(header
+        ? <div style={styles.header}>
 
           {header}
 

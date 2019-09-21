@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Input from './index.js'
 
 describe('<Input />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Input />)
   })
-
 })

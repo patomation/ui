@@ -6,11 +6,7 @@ const Input = ({
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style
 }) => {
-
-
-
-
-  return(
+  return (
     <div
       className={className}
       style={{
@@ -29,25 +25,24 @@ const Input = ({
         onClick={onClick}
         style={{
           ...styles.input,
-          ...( background ? { background: background } : null ),
-          ...( color ? { color: color } : null ),
+          ...(background ? { background: background } : null),
+          ...(color ? { color: color } : null),
           ...inputStyle,
-          ...( error ? (inputErrorStyle || styles.inputError) : null )
+          ...(error ? (inputErrorStyle || styles.inputError) : null)
         }}/>
 
-        <div
-          style={{
-            ...( error ? styles.error : null ),
-            ...( error ? errorStyle : null )
-          }}>
+      <div
+        style={{
+          ...(error ? styles.error : null),
+          ...(error ? errorStyle : null)
+        }}>
 
-          {error}
-
-        </div>
-
+        {error}
 
       </div>
-    )
+
+    </div>
+  )
 }
 
 export default Input

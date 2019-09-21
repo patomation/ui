@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Collapse from './index.js'
 
 describe('<Collapse />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Collapse />)
   })
-
 })

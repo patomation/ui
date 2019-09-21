@@ -1,7 +1,7 @@
 export default {
 
   default: {
-    container:{
+    container: {
 
     },
     image: {
@@ -9,21 +9,21 @@ export default {
     }
   },
 
-  background:{
-    container:{
+  background: {
+    container: {
       position: 'absolute',
       zIndex: '-10',
       left: 0,
       top: 0,
       width: '100%',
       height: '100%',
-      overflow: 'hidden',
+      overflow: 'hidden'
     },
     image: {
       position: 'absolute',
       left: 0,
       top: '-50%',
-      width: '100%',
+      width: '100%'
     }
   },
 
@@ -31,19 +31,17 @@ export default {
     container: {
       position: 'relative',
       overflow: 'hidden',
-      height:'0',
-      width:'100%',
-      paddingBottom:'100%',
+      height: '0',
+      width: '100%',
+      paddingBottom: '100%'
     },
     image: {
       position: 'absolute',
       width: '100%',
       height: '100%',
-      objectFit: 'cover',
+      objectFit: 'cover'
 
     }
   }
-
-
 
 }

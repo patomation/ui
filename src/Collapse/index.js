@@ -5,21 +5,19 @@ const Collapse = ({
   className, children, style,
   collapse, onComplete
 }) => {
-
   const speed = 400
 
-  const [ height, setHeight ] = useState(null)
+  const [height, setHeight] = useState(null)
   let element = null
-  useEffect(()=>{
-    if(element){
+  useEffect(() => {
+    if (element) {
       setHeight(`${element.clientHeight}px`)
     }
-    //Callback when animation completes
-    if(collapse && onComplete) setTimeout(onComplete, speed)
+    // Callback when animation completes
+    if (collapse && onComplete) setTimeout(onComplete, speed)
+  }, [collapse, onComplete, element])
 
-  },[collapse, onComplete, element])
-
-  return(
+  return (
     <div
       ref={ elm => {
         element = elm
@@ -29,7 +27,7 @@ const Collapse = ({
         ...styles.container,
         ...{
           transition: `width ${speed}ms ease-out, height ${speed}ms ease-out`,
-          height: (collapse ?'0px' : height )
+          height: (collapse ? '0px' : height)
         },
         ...style
       }}>

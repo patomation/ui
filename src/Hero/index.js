@@ -9,20 +9,18 @@ const Hero = ({
   children, title, description,
   image
 }) => {
-
-
-  return(
+  return (
     <header
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
 
-      { title ?
-        <h1 style={{
+      { title
+        ? <h1 style={{
           ...styles.title,
           ...titleStyle
         }}>
@@ -31,8 +29,8 @@ const Hero = ({
 
       { description ? <Gutter /> : null}
 
-      { description ?
-        <p style={{
+      { description
+        ? <p style={{
           ...styles.description,
           ...descriptionStyle
         }}>
@@ -46,7 +44,6 @@ const Hero = ({
       <Image
         src={image}
         type={'background'}/>
-
 
     </header>
   )

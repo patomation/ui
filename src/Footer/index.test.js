@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Footer from './index.js'
 
 describe('<Footer />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Footer />)
   })
-
 })

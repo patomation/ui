@@ -6,8 +6,7 @@ const SideBar = ({
   style, menuStyle, contentStyle,
   menuWidth
 }) => {
-
-  return(
+  return (
     <div
       className={className}
       style={{
@@ -17,7 +16,7 @@ const SideBar = ({
 
       <menu style={{
         ...styles.menu,
-        ...( menuWidth ? { width: menuWidth } : null ),
+        ...(menuWidth ? { width: menuWidth } : null),
         ...menuStyle
       }}>
 
@@ -27,7 +26,7 @@ const SideBar = ({
 
       <main style={{
         ...styles.content,
-        ...( menuWidth ? { marginLeft: menuWidth } : null ),
+        ...(menuWidth ? { marginLeft: menuWidth } : null),
         ...contentStyle
       }}>
 

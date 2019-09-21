@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Keyboard from './index.js'
 
 describe('<Keyboard />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Keyboard />)
   })
-
 })

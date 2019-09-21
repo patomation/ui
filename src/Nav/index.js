@@ -1,22 +1,22 @@
 import React from 'react'
 import styles from './styles.js'
 
- const Nav = ({
+const Nav = ({
   className, children,
   background, color, style
 }) =>
 
-<nav
-  className={className}
-  style={{
-    ...styles.container,
-    ...( background ? { background: background } : null ),
-    ...( color ? { color: color } : null ),
-    ...style
-  }}>
+  <nav
+    className={className}
+    style={{
+      ...styles.container,
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
+      ...style
+    }}>
 
-  {children}
+    {children}
 
-</nav>
+  </nav>
 
 export default Nav

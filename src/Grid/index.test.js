@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Grid from './index.js'
 
 describe('<Grid />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Grid />)
   })
-
 })

@@ -5,14 +5,13 @@ const Content = ({
   className, children,
   background, color, style
 }) => {
-
-  return(
+  return (
     <main
       className={className}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style
       }}>
 

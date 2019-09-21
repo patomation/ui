@@ -9,20 +9,18 @@ const IconButton = ({
   style, iconStyle, titleStyle, activeStyle,
   name, icon, active, title
 }) => {
-
-
-  return(
+  return (
     <div
       className={className}
       onClick={onClick}
       style={{
         ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null),
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
         ...style,
-        ...( active ? styles.active : null),
-        ...( active ? activeStyle : null),
-        ...(title ? {display: 'flex'} : null)
+        ...(active ? styles.active : null),
+        ...(active ? activeStyle : null),
+        ...(title ? { display: 'flex' } : null)
       }}>
 
       <Icon
@@ -32,13 +30,13 @@ const IconButton = ({
         }}
         name={icon || name}/>
 
-      {title? <div
+      {title ? <div
         style={{
           ...styles.title,
           ...titleStyle
         }}>
         {title}
-      </div> :null}
+      </div> : null}
     </div>
   )
 }

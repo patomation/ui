@@ -1,9 +1,9 @@
 export default {
-  list:{
+  list: {
     listStyle: 'none',
     margin: '0'
   },
   item: {
-    
+
   }
 }

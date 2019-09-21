@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import Carousel from './index.js'
 
 describe('<Carousel />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Carousel />)
   })
-
 })

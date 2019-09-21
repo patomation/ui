@@ -5,21 +5,20 @@ import Icon from '../Icon'
 const Spinner = ({
   icon, className, background, color, style
 }) => {
-
-  return(
+  return (
     <div>
-    <style>{styles.keyframes.spinCounterClockwise}</style>
+      <style>{styles.keyframes.spinCounterClockwise}</style>
 
-    <Icon
-      name={icon || 'sync'}
-      className={className}
-      style={{
-        ...styles.container,
-        ...( background ? { background: background } : null ),
-        ...( color ? { color: color } : null ),
-        ...style
-      }} />
-      </div>
+      <Icon
+        name={icon || 'sync'}
+        className={className}
+        style={{
+          ...styles.container,
+          ...(background ? { background: background } : null),
+          ...(color ? { color: color } : null),
+          ...style
+        }} />
+    </div>
   )
 }
 

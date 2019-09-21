@@ -3,14 +3,16 @@
 //load global DOM document to use enzyme's mount()
 import 'jsdom-global/register';
 
-// Fixes Error: matchMedia not present, legacy browsers require a polyfill
-window.matchMedia = window.matchMedia || function() {
-  return {
-    matches : false,
-    addListener : function() {},
-    removeListener: function() {}
-  };
-};
+// // Fixes Error: matchMedia not present, legacy browsers require a polyfill
+if(window) {
+  window.matchMedia = window.matchMedia || function() {
+    return {
+      matches : false,
+      addListener : function() {},
+      removeListener: function() {}
+    }
+  }
+}
 
 //Import configure from enzyme
 import { configure } from 'enzyme';

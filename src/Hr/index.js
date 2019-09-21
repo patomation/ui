@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Hr = ({
@@ -14,6 +15,13 @@ const Hr = ({
         ...style
       }} />
   )
+}
+
+Hr.propTypes = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Hr

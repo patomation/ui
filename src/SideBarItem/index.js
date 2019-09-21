@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 import Icon from '../Icon'
@@ -43,6 +44,18 @@ const SideBarItem = ({
 
     </Grid>
   )
+}
+
+SideBarItem.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  icon: PropTypes.func,
+  style: PropTypes.object,
+  hoverStyle: PropTypes.string,
+  title: PropTypes.string,
+  onHover: PropTypes.func
 }
 
 export default SideBarItem

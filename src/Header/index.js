@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Header = ({
@@ -20,6 +21,15 @@ const Header = ({
 
     </header>
   )
+}
+
+Header.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Header

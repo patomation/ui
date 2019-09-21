@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import keys from './keys.js'
 import hotkey from '@patomation/hotkey'
@@ -61,7 +62,7 @@ const Keyboard = ({
               handleUp()
             })
 
-          if (enabled && !enabled.hasOwnProperty(name.toLowerCase()) && hideDisabled) {
+          if (enabled && !Object.prototype.hasOwnProperty.call(enabled, name.toLowerCase()) && hideDisabled) {
             return null
           }
 
@@ -73,7 +74,7 @@ const Keyboard = ({
             hoverStyle={hoverStyle}
             activeStyle={activeStyle}
             disabledStyle={disabledStyle}
-            disabled={enabled ? !enabled.hasOwnProperty(name.toLowerCase()) : null}
+            disabled={enabled ? !Object.prototype.hasOwnProperty.call(enabled, name.toLowerCase()) : null}
             style={{
               ...{
                 // Makes button into grid item
@@ -93,6 +94,22 @@ const Keyboard = ({
       </Grid>
     </div>
   )
+}
+
+Keyboard.propTypes = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  enabled: PropTypes.boolean,
+  hideDisabled: PropTypes.boolean,
+  gap: PropTypes.string,
+  onDown: PropTypes.func,
+  onUp: PropTypes.func,
+  buttonStyle: PropTypes.func,
+  hoverStyle: PropTypes.string,
+  activeStyle: PropTypes.string,
+  disabledStyle: PropTypes.string
 }
 
 export default Keyboard

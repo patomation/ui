@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import Panel from '../Panel'
 import Center from '../Center'
@@ -49,6 +50,16 @@ const Modal = ({
   } else {
     return null
   }
+}
+
+Modal.propTypes = {
+  show: PropTypes.string,
+  onClose: PropTypes.func,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Modal

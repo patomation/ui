@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Link = ({
@@ -34,6 +35,18 @@ const Link = ({
 
     </a>
   )
+}
+
+Link.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  onClick: PropTypes.func,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  href: PropTypes.string,
+  hoverStyle: PropTypes.string,
+  onHover: PropTypes.func
 }
 
 export default Link

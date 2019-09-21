@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import ReactSlick from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -30,5 +31,13 @@ const Carousel = ({
     {children}
 
   </ReactSlick>
+
+Carousel.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
+}
 
 export default Carousel

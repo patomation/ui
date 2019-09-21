@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Brand = ({
@@ -20,5 +21,14 @@ const Brand = ({
     {children}
 
   </span>
+
+Brand.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  onClick: PropTypes.func,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
+}
 
 export default Brand

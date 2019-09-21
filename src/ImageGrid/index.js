@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 import { Grid, Image } from '../'
@@ -31,5 +32,16 @@ const ImageGrid = ({
     )}
 
   </Grid>
+
+ImageGrid.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  col: PropTypes.string,
+  row: PropTypes.string,
+  gap: PropTypes.string
+}
 
 export default ImageGrid

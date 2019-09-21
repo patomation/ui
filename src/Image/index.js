@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Image = ({
@@ -28,5 +29,17 @@ const Image = ({
       }} />
 
   </div>
+
+Image.propTypes = {
+  className: PropTypes.string,
+  src: PropTypes.string,
+  type: PropTypes.string,
+  alt: PropTypes.string,
+  style: PropTypes.object,
+  containerStyle: PropTypes.func,
+  imageStyle: PropTypes.string,
+  bg: PropTypes.boolean,
+  square: PropTypes.boolean
+}
 
 export default Image

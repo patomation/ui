@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import { Formik } from 'formik'
 import validationSchema from './validationSchema.js'
@@ -79,6 +80,14 @@ const Login = ({
       </Formik>
     </div>
   )
+}
+
+Login.propTypes = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  onSubmit: PropTypes.func
 }
 
 export default Login

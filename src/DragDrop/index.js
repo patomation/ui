@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 import useToggle from '@patomation/usetoggle'
@@ -43,6 +44,20 @@ const DragDrop = ({
 
     </div>
   )
+}
+
+DragDrop.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  onDragStart: PropTypes.func,
+  onDragOver: PropTypes.func,
+  onDrop: PropTypes.func,
+  onDragLeave: PropTypes.func,
+  onDrag: PropTypes.func,
+  draggable: PropTypes.boolean
 }
 
 export default DragDrop

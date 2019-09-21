@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 import Icon from '../Icon'
@@ -39,6 +40,21 @@ const IconButton = ({
       </div> : null}
     </div>
   )
+}
+
+IconButton.propTypes = {
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  iconStyle: PropTypes.func,
+  titleStyle: PropTypes.string,
+  activeStyle: PropTypes.string,
+  name: PropTypes.string,
+  icon: PropTypes.func,
+  active: PropTypes.boolean,
+  title: PropTypes.string
 }
 
 export default IconButton

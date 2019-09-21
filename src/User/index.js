@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const User = ({
@@ -9,6 +10,11 @@ const User = ({
       <img alt='user' style={styles.image} src={image} />
     </div>
   )
+}
+
+User.propTypes = {
+  style: PropTypes.object,
+  image: PropTypes.string
 }
 
 export default User

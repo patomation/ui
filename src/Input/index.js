@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Input = ({
@@ -43,6 +44,25 @@ const Input = ({
 
     </div>
   )
+}
+
+Input.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  value: PropTypes.string,
+  error: PropTypes.string,
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  containerStyle: PropTypes.func,
+  inputStyle: PropTypes.string,
+  inputErrorStyle: PropTypes.string,
+  errorStyle: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Input

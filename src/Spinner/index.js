@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import Icon from '../Icon'
 
@@ -20,6 +21,14 @@ const Spinner = ({
         }} />
     </div>
   )
+}
+
+Spinner.propTypes = {
+  icon: PropTypes.func,
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Spinner

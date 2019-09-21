@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 import Link from '../Link'
@@ -33,6 +34,18 @@ const NavItem = ({
 
     </Link>
   )
+}
+
+NavItem.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  onClick: PropTypes.func,
+  href: PropTypes.string,
+  title: PropTypes.string,
+  active: PropTypes.boolean,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default NavItem

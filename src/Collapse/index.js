@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Collapse = ({
@@ -36,6 +37,14 @@ const Collapse = ({
 
     </div>
   )
+}
+
+Collapse.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  style: PropTypes.object,
+  collapse: PropTypes.string,
+  onComplete: PropTypes.func
 }
 
 export default Collapse

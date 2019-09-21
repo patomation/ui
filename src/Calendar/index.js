@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 import moment from 'moment'
@@ -138,6 +139,15 @@ const Calendar = ({
 
     </div>
   )
+}
+
+Calendar.propTypes = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  events: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default Calendar

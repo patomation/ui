@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Button = ({
@@ -104,6 +105,35 @@ const Button = ({
 
   // If center is defined wrap button with div with textAlign center
   return center ? <div style={{ textAlign: 'center' }}> { button } </div> : button
+}
+
+Button.propTypes = {
+  className: PropTypes.string,
+  type: PropTypes.string,
+  disabled: PropTypes.string,
+  enabled: PropTypes.boolean,
+  active: PropTypes.boolean,
+  onClick: PropTypes.func,
+  onMouseDown: PropTypes.func,
+  onMouseUp: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  onTouchEnd: PropTypes.func,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
+  onDown: PropTypes.func,
+  onUp: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  title: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  hoverStyle: PropTypes.string,
+  disabledStyle: PropTypes.string,
+  activeStyle: PropTypes.string,
+  enabledStyle: PropTypes.string,
+  onHover: PropTypes.func,
+  kind: PropTypes.string,
+  center: PropTypes.boolean
 }
 
 export default Button

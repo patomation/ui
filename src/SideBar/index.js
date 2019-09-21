@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const SideBar = ({
@@ -36,6 +37,16 @@ const SideBar = ({
 
     </div>
   )
+}
+
+SideBar.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  menu: PropTypes.string,
+  style: PropTypes.object,
+  menuStyle: PropTypes.string,
+  contentStyle: PropTypes.func,
+  menuWidth: PropTypes.string
 }
 
 export default SideBar

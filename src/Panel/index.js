@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import Hr from '../Hr'
 
@@ -27,6 +28,13 @@ const Panel = ({
 
     </div>
   )
+}
+
+Panel.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  header: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Panel

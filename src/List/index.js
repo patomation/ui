@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const List = ({
@@ -29,6 +30,14 @@ const List = ({
 
     </ul>
   )
+}
+
+List.propTypes = {
+  className: PropTypes.string,
+  data: PropTypes.string,
+  style: PropTypes.object,
+  listStyle: PropTypes.string,
+  itemStyle: PropTypes.string
 }
 
 export default List

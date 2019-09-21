@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 
 const Center = ({
@@ -23,5 +24,13 @@ const Center = ({
     </div>
 
   </div>
+
+Center.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  style: PropTypes.object,
+  containerStyle: PropTypes.func,
+  contentStyle: PropTypes.func
+}
 
 export default Center

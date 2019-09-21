@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './styles.js'
 import { Gutter, Image } from '../'
 
@@ -47,6 +48,20 @@ const Hero = ({
 
     </header>
   )
+}
+
+Hero.propTypes = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  titleStyle: PropTypes.string,
+  descriptionStyle: PropTypes.func,
+  imageStyle: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  title: PropTypes.string,
+  description: PropTypes.func,
+  image: PropTypes.string
 }
 
 export default Hero

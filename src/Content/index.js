@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const { className, children, background, color, style } = props
+const Content = ({
+  className, children,
+  background, color, style
+}) => {
 
   return(
     <main
@@ -20,3 +21,5 @@ export default (props) => {
     </main>
   )
 }
+
+export default Content

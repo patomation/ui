@@ -29,7 +29,7 @@ const isSameDay = (dayOne, dayTwo) => {
   return moment(dayOne).format('DD-MM-YYYY') === moment(dayTwo).format('DD-MM-YYYY')
 }
 
-export default ({
+const Calendar = ({
   className, background, color, style,
   events, onClick
 }) => {
@@ -143,3 +143,5 @@ export default ({
     </div>
   )
 }
+
+export default Calendar

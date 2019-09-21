@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const { className, background, color, style } = props
+const Hr = ({
+  className, background, color, style
+}) => {
 
   return(
     <hr
@@ -16,3 +16,5 @@ export default (props) => {
       }} />
   )
 }
+
+export default Hr

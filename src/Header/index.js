@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const { className, onClick, children, background, color, style } = props
+const Header = ({
+  className, onClick, children,
+  background, color, style
+}) => {
 
   return(
     <header
@@ -21,3 +22,5 @@ export default (props) => {
     </header>
   )
 }
+
+export default Header

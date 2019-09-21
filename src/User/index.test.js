@@ -4,9 +4,7 @@ import { mount } from 'enzyme'
 import User from './index.js'
 
 describe('<User />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<User />)
   })
-
 })

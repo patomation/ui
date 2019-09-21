@@ -1,13 +1,12 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
+const Input = ({
+  type, name, onChange, onBlur, value, error, placeholder,
+  className, onClick, background, color,
+  containerStyle, inputStyle, inputErrorStyle, errorStyle, style
+}) => {
 
-  const {
-    type, name, onChange, onBlur, value, error, placeholder,
-    className, onClick, background, color,
-    containerStyle, inputStyle, inputErrorStyle, errorStyle, style
-  } = props
 
 
 
@@ -50,3 +49,5 @@ export default (props) => {
       </div>
     )
 }
+
+export default Input

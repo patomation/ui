@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
+ const User = ({
+   style, image
+ }) => {
   return(
-    <div style={{...styles.container, ...props.style}}>
-      <img alt='user' style={styles.image} src={props.image} />
+    <div style={{...styles.container, ...style}}>
+      <img alt='user' style={styles.image} src={image} />
     </div>
   )
 }
+
+export default User

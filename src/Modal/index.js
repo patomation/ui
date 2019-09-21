@@ -4,13 +4,11 @@ import Panel from '../Panel'
 import Center from '../Center'
 import IconButton from '../IconButton'
 
-export default (props) => {
-
-  const {
-    show, onClose,
-    className, children,
-    background, color, style
-  } = props
+const Modal = ({
+  show, onClose,
+  className, children,
+  background, color, style
+}) => {
 
   const [open, setOpen] = useState(show || false)
 
@@ -54,3 +52,5 @@ export default (props) => {
   }
 
 }
+
+export default Modal

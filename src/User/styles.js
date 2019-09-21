@@ -5,7 +5,7 @@ export default {
     width: '25px',
     height: '25px',
     display: 'inline-block',
-    cursor:'pointer'
+    cursor: 'pointer'
   },
   image: {
     width: '100%'

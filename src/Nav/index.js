@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default ({
+ const Nav = ({
   className, children,
   background, color, style
 }) =>
@@ -18,3 +18,5 @@ export default ({
   {children}
 
 </nav>
+
+export default Nav

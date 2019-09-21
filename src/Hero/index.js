@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.js'
 import { Gutter, Image } from '../'
 
-export default ({
+const Hero = ({
   className,
   background, color,
   style, titleStyle, descriptionStyle, imageStyle,
@@ -51,3 +51,5 @@ export default ({
     </header>
   )
 }
+
+export default Hero

@@ -2,9 +2,9 @@ import React from 'react'
 import styles from './styles.js'
 import Hr from '../Hr'
 
-export default (props) => {
-
-  const { className, children, header, style } = props
+const Panel = ({
+  className, children, header, style
+}) => {
 
   return(
     <div
@@ -28,3 +28,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Panel

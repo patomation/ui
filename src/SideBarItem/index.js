@@ -4,7 +4,7 @@ import styles from './styles.js'
 import Icon from '../Icon'
 import Grid from '../Grid'
 
-export default ({
+const SideBarItem = ({
   className, onClick,
   background, color, icon,
   style, hoverStyle,
@@ -45,3 +45,6 @@ export default ({
     </Grid>
   )
 }
+
+
+export default SideBarItem

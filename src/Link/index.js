@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 import styles from './styles.js'
 
-export default (props) => {
+const Link = ({
+  className, children,
+  onClick, background,
+  color, style, href, hoverStyle,
+  onHover
+}) => {
 
   const [hover, setHover] = useState(false)
-
-  const { className, children, onClick, background, color, style, href, hoverStyle, onHover } = props
 
   return(
     <a
@@ -33,3 +36,5 @@ export default (props) => {
     </a>
   )
 }
+
+export default Link

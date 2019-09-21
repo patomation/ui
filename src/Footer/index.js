@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const { className, children, onClick, background, color, style } = props
+const Footer = ({
+  className, children, onClick,
+  background, color, style
+}) => {
 
   return(
     <footer
@@ -21,3 +22,5 @@ export default (props) => {
     </footer>
   )
 }
+
+export default Footer

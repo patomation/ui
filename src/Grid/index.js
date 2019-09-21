@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const {
-    className, children,
-    background, color, style,
-    col, row, gap,
-    onMouseEnter, onMouseLeave
-  } = props
+const Grid = ({
+  className, children,
+  background, color, style,
+  col, row, gap,
+  onMouseEnter, onMouseLeave
+}) => {
 
   //Extract number and unit
   const extract = (string) => {
@@ -28,7 +26,7 @@ export default (props) => {
 
   const repeat = (amount, string) => {
     let content = ''
-    for (var i = 0 i < amount i++) {
+    for (var i = 0; i < amount; i++) {
       content += (string + ' ')
     }
     return content
@@ -56,3 +54,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Grid

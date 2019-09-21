@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default ({
+const Brand = ({
   className, children,
   onClick,
   background, color, style
@@ -20,3 +20,5 @@ export default ({
   {children}
 
 </span>
+
+export default Brand

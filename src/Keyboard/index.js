@@ -6,21 +6,19 @@ import hotkey from '@patomation/hotkey'
 import Grid from '../Grid'
 import Button from '../Button'
 
-export default (props) => {
+const Keyboard = ({
+  className,
+  background, color, style,
+  enabled,  //Object of keys used to show what is enabled. The value doesn't matter.
+  hideDisabled, //Totally hide disabled
+  gap,
+  onDown, onUp,
+  buttonStyle,
+  hoverStyle,
+  activeStyle,
+  disabledStyle
 
-  const {
-    className,
-    background, color, style,
-    enabled,  //Object of keys used to show what is enabled. The value doesn't matter.
-    hideDisabled, //Totally hide disabled
-    gap,
-    onDown, onUp,
-    buttonStyle,
-    hoverStyle,
-    activeStyle,
-    disabledStyle
-
-  } = props
+}) => {
 
   return(
     <div
@@ -97,3 +95,6 @@ export default (props) => {
     </div>
   )
 }
+
+
+export default Keyboard

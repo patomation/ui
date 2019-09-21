@@ -3,9 +3,11 @@ import styles from './styles.js'
 
 import Link from '../Link'
 
-export default (props) => {
-
-  const { className, children, onClick, href, title, active, background, color, style } = props
+const NavItem = ({
+  className, children,
+  onClick, href, title, active,
+  background, color, style
+}) => {
 
   return(
     <Link
@@ -32,3 +34,5 @@ export default (props) => {
     </Link>
   )
 }
+
+export default NavItem

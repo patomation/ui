@@ -3,14 +3,12 @@ import styles from './styles.js'
 
 import useToggle from '@patomation/usetoggle'
 
-export default (props) => {
-
-  const {
-    className, children,
-    background, color, style,
-    onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
-    draggable,
-  } = props
+const DragDrop = ({
+  className, children,
+  background, color, style,
+  onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
+  draggable,
+}) => {
 
   const [over, setOver] = useToggle(false)
 
@@ -47,3 +45,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default DragDrop

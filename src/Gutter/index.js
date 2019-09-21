@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default ({
+const Gutter = ({
   className, style, disabled, vertical
 }) =>
 
@@ -15,3 +15,5 @@ disabled !== true ?
   }}>
 </div>
 : null
+
+export default Gutter

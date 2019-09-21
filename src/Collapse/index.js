@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const {
-    className, children, style,
-    collapse, onComplete
-  } = props
+const Collapse = ({
+  className, children, style,
+  collapse, onComplete
+}) => {
 
   const speed = 400
 
@@ -41,3 +39,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Collapse

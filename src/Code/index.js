@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const { className, children, onClick, background, color, style } = props
+const Code = ({
+  className, children, onClick,
+  background, color, style
+}) => {
 
   return(
     <div
@@ -21,3 +22,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Code

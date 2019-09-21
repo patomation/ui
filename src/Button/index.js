@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styles from './styles.js'
 
-export default ({
+const Button = ({
   className, type, disabled, enabled, active,
   onClick, onMouseDown, onMouseUp, onTouchStart, onTouchEnd,
   onMouseEnter, onMouseLeave,
@@ -106,3 +106,5 @@ export default ({
   return center ? <div style={{textAlign: 'center'}}> { button } </div> : button
 
 }
+
+export default Button

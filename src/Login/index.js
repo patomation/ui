@@ -5,12 +5,11 @@ import validationSchema from './validationSchema.js'
 import Button from '../Button'
 import Input from '../Input'
 import Gutter from '../Gutter'
-export default (props) => {
 
-  const {
-    className, background, color, style,
-    onSubmit
-  } = props
+const Login = ({
+  className, background, color, style,
+  onSubmit
+}) => {
 
   return(
     <div
@@ -82,3 +81,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Login

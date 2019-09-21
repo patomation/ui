@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default ({
+const Image = ({
   className, src, type, alt,
   style, containerStyle, imageStyle,
   bg, square //Image modes
@@ -28,3 +28,5 @@ export default ({
     }} />
 
 </div>
+
+export default Image

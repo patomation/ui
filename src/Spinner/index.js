@@ -2,9 +2,9 @@ import React from 'react'
 import styles from './styles.js'
 import Icon from '../Icon'
 
-export default (props) => {
-
-  const { icon, className, background, color, style } = props
+const Spinner = ({
+  icon, className, background, color, style
+}) => {
 
   return(
     <div>
@@ -22,3 +22,5 @@ export default (props) => {
       </div>
   )
 }
+
+export default Spinner

@@ -3,14 +3,13 @@ import styles from './styles.js'
 
 import Icon from '../Icon'
 
-export default (props) => {
+const IconButton = ({
+  onClick, className,
+  background, color,
+  style, iconStyle, titleStyle, activeStyle,
+  name, icon, active, title
+}) => {
 
-  const {
-    onClick, className,
-    background, color,
-    style, iconStyle, titleStyle, activeStyle,
-    name, icon, active, title
-  } = props
 
   return(
     <div
@@ -43,3 +42,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default IconButton

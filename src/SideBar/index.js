@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default ({
+const SideBar = ({
   className, children, menu,
   style, menuStyle, contentStyle,
   menuWidth
@@ -38,3 +38,5 @@ export default ({
     </div>
   )
 }
+
+export default SideBar

@@ -1,12 +1,10 @@
 import React from 'react'
 import styles from './styles.js'
 
-export default (props) => {
-
-  const {
-    className, data,
-    style, listStyle, itemStyle
-   } = props
+const List = ({
+  className, data,
+  style, listStyle, itemStyle
+ }) => {
 
   return(
     <ul
@@ -33,3 +31,5 @@ export default (props) => {
     </ul>
   )
 }
+
+export default List

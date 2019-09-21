@@ -39,8 +39,8 @@ export default [
   {name:'J', span: 2},
   {name:'K', span: 2},
   {name:'L', span: 2},
-  {name:';', span: 2},
-  {name:'&quot;', span: 2},
+  {name:'', span: 2},
+  {name:'&quot', span: 2},
   {name:'enter', span: 4},
 
   {name:'shift', span: 5},

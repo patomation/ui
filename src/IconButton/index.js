@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
-import Icon from '../Icon';
+import Icon from '../Icon'
 
 export default (props) => {
 
@@ -10,7 +10,7 @@ export default (props) => {
     background, color,
     style, iconStyle, titleStyle, activeStyle,
     name, icon, active, title
-  } = props;
+  } = props
 
   return(
     <div

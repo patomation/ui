@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
-import Link from '../Link';
+import Link from '../Link'
 
 export default (props) => {
 
-  const { className, children, onClick, href, title, active, background, color, style } = props;
+  const { className, children, onClick, href, title, active, background, color, style } = props
 
   return(
     <Link

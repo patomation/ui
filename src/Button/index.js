@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react'
 import styles from './styles.js'
 
 export default ({
@@ -12,9 +12,9 @@ export default ({
   onHover, kind,
   center //If prop is used at all then a div will be added to the outside with textAlign center
 }) => {
-  const [hover, setHover] = useState(false);
-  const [touched, setTouched] = useState(false);
-  const [isActive, setActive] = useState(active || false);
+  const [hover, setHover] = useState(false)
+  const [touched, setTouched] = useState(false)
+  const [isActive, setActive] = useState(active || false)
 
   //Allow it to be set to active from the ouseside
   useEffect(()=>{
@@ -23,16 +23,16 @@ export default ({
 
   const handleDown = () => {
     //Make ui active
-    setActive(true);
+    setActive(true)
     //Handle callback
-    if(onDown) onDown();
+    if(onDown) onDown()
   }
 
   const handleUp = () => {
     //Make ui de-active
-    setActive(false);
+    setActive(false)
     //Handle callback
-    if(onUp) onUp();
+    if(onUp) onUp()
   }
 
   const button = <button
@@ -40,47 +40,47 @@ export default ({
       disabled={disabled}
       className={className}
       onTouchStart={() => {
-        handleDown();
-        setTouched(true);
+        handleDown()
+        setTouched(true)
         //Expose event to the oustide
-        if (onTouchStart) onTouchStart();
+        if (onTouchStart) onTouchStart()
       }}
       onTouchEnd={() => {
         handleUp()
         //Expose event to the oustide
-        if (onTouchEnd) onTouchEnd();
+        if (onTouchEnd) onTouchEnd()
        }}
       onMouseDown={() => {
         //Ignore this event if touched
         if(!touched) {
-          handleDown();
+          handleDown()
           //Expose event to the oustide
-          if (onMouseDown) onMouseDown();
+          if (onMouseDown) onMouseDown()
         }
       }}
       onMouseUp={() => {
         //Ignore this event if touched
         if(!touched) {
-          handleUp();
+          handleUp()
           //Expose event to the oustide
-          if (onMouseUp) onMouseUp();
+          if (onMouseUp) onMouseUp()
 
         //Since onMouseUp gets called with touch events set touched false here...
         } else {
-          setTouched(false);
+          setTouched(false)
         }
       }}
       onClick={onClick}
       onMouseEnter={()=>{
-        setHover(true);
-        if(onMouseEnter) onMouseEnter(); //I find it more usefull to bubble up these events
-        if(onHover) onHover(true); //This was here for testing. This may get depreciated.
+        setHover(true)
+        if(onMouseEnter) onMouseEnter() //I find it more usefull to bubble up these events
+        if(onHover) onHover(true) //This was here for testing. This may get depreciated.
       }}
       onMouseLeave={()=>{
-        setHover(false);
-        if(onMouseLeave) onMouseLeave();  //I find it more usefull to bubble up these events
-        if(onHover) onHover(false); //This was here for testing. This may get depreciated.
-        setActive(false); //Make it not active anymore
+        setHover(false)
+        if(onMouseLeave) onMouseLeave()  //I find it more usefull to bubble up these events
+        if(onHover) onHover(false) //This was here for testing. This may get depreciated.
+        setActive(false) //Make it not active anymore
       }}
       style={{
         ...styles.default,

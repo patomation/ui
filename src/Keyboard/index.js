@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import styles from './styles.js';
-import keys from './keys.js';
-import hotkey from '@patomation/hotkey';
+import React, {useState} from 'react'
+import styles from './styles.js'
+import keys from './keys.js'
+import hotkey from '@patomation/hotkey'
 
 import Grid from '../Grid'
 import Button from '../Button'
@@ -20,7 +20,7 @@ export default (props) => {
     activeStyle,
     disabledStyle
 
-  } = props;
+  } = props
 
   return(
     <div
@@ -40,8 +40,8 @@ export default (props) => {
         }}>
 
         {keys.map( (key, index) => {
-          const { name, span } = key;
-          const [ active, setActive ] = useState(false);
+          const { name, span } = key
+          const [ active, setActive ] = useState(false)
 
           const handleDown = () => {
             if(onDown) onDown(name.toLowerCase())
@@ -55,17 +55,17 @@ export default (props) => {
           hotkey(name.toLowerCase())
           .down(() => {
             //Set button active if hotkey used
-            setActive(true);
-            handleDown();
+            setActive(true)
+            handleDown()
           })
           .up(() => {
             //Set button to deactive after hotkey used
-            setActive(false);
-            handleUp();
+            setActive(false)
+            handleUp()
           })
 
           if(enabled && !enabled.hasOwnProperty(name.toLowerCase()) && hideDisabled){
-            return null;
+            return null
           }
 
           return <Button

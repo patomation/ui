@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
 export default (props) => {
@@ -6,7 +6,7 @@ export default (props) => {
   const {
     className, data,
     style, listStyle, itemStyle
-   } = props;
+   } = props
 
   return(
     <ul

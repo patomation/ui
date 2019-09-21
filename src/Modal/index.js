@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react'
 import styles from './styles.js'
 import Panel from '../Panel'
 import Center from '../Center'
@@ -10,9 +10,9 @@ export default (props) => {
     show, onClose,
     className, children,
     background, color, style
-  } = props;
+  } = props
 
-  const [open, setOpen] = useState(show || false);
+  const [open, setOpen] = useState(show || false)
 
   const close = () => {
     setOpen(false)
@@ -21,7 +21,7 @@ export default (props) => {
 
   useEffect(()=>{
     setOpen(show)
-  },[show]);
+  },[show])
 
   if(open){
     return(
@@ -50,7 +50,7 @@ export default (props) => {
       </div>
     )
   } else {
-    return null;
+    return null
   }
 
 }

@@ -1,12 +1,12 @@
-import React from 'react';
-import { mount } from 'enzyme';
+import React from 'react'
+import { mount } from 'enzyme'
 
-import Carousel from './index.js';
+import Carousel from './index.js'
 
 describe('<Carousel />', () => {
 
   it("renders", () => {
     mount(<Carousel />)
-  });
+  })
 
-});
+})

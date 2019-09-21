@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
-import useToggle from '@patomation/usetoggle';
+import useToggle from '@patomation/usetoggle'
 
 export default (props) => {
 
@@ -10,9 +10,9 @@ export default (props) => {
     background, color, style,
     onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
     draggable,
-  } = props;
+  } = props
 
-  const [over, setOver] = useToggle(false);
+  const [over, setOver] = useToggle(false)
 
   return(
     <div
@@ -22,17 +22,17 @@ export default (props) => {
       onDrag={onDrag}
       onDragOver={(e)=>{
         //Lets us drop stuff here
-        e.preventDefault();
+        e.preventDefault()
         //Allow only one drg over event at one time.
         //Prevent retriggering
         if(!over) {
-          setOver(true);
-          if(onDragOver) onDragOver(e);
+          setOver(true)
+          if(onDragOver) onDragOver(e)
         }
       }}
       onDragLeave={()=>{
-        setOver(false);
-        if(onDragLeave) onDragLeave();
+        setOver(false)
+        if(onDragLeave) onDragLeave()
       }}
       onDrop={onDrop}
       style={{

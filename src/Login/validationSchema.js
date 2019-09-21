@@ -1,4 +1,4 @@
-import * as Yup from 'yup';
+import * as Yup from 'yup'
 
 export default Yup.object().shape({
   email: Yup.string()
@@ -6,4 +6,4 @@ export default Yup.object().shape({
     .required('Required'),
   password: Yup.string()
     .required('Required')
-});
+})

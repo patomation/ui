@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import styles from './styles.js'
 
 export default (props) => {
@@ -6,15 +6,15 @@ export default (props) => {
   const {
     className, children, style,
     collapse, onComplete
-  } = props;
+  } = props
 
-  const speed = 400;
+  const speed = 400
 
-  const [ height, setHeight ] = useState(null);
-  let element = null;
+  const [ height, setHeight ] = useState(null)
+  let element = null
   useEffect(()=>{
     if(element){
-      setHeight(`${element.clientHeight}px`);
+      setHeight(`${element.clientHeight}px`)
     }
     //Callback when animation completes
     if(collapse && onComplete) setTimeout(onComplete, speed)

@@ -7,13 +7,13 @@ export default {
   keyframes: {
     spinCounterClockwise:`
       @keyframes spin {
-        from {transform:rotate(360deg);}
-        to {transform:rotate(0deg);}
+        from {transform:rotate(360deg)}
+        to {transform:rotate(0deg)}
       }`,
     spinClockwise:`
       @keyframes spin {
-        from {transform:rotate(0deg);}
-        to {transform:rotate(360deg);}
+        from {transform:rotate(0deg)}
+        to {transform:rotate(360deg)}
       }`,
   },
 }

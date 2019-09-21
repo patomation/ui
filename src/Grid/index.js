@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
 export default (props) => {
@@ -8,12 +8,12 @@ export default (props) => {
     background, color, style,
     col, row, gap,
     onMouseEnter, onMouseLeave
-  } = props;
+  } = props
 
   //Extract number and unit
   const extract = (string) => {
     const number = string.match(/\d+/)[0],
-          unit = string.replace(number, '');
+          unit = string.replace(number, '')
     return {
       number,
       unit
@@ -21,17 +21,17 @@ export default (props) => {
   }
 
   //We have to subtract the gap amount for each column
-  const subtractGap = gap ? ((extract(gap).number*(col - 1))/col) + extract(gap).unit : null;
+  const subtractGap = gap ? ((extract(gap).number*(col - 1))/col) + extract(gap).unit : null
 
   let  width = 100/col,
-       height = 100/row; //TODO actually have row prop do something
+       height = 100/row //TODO actually have row prop do something
 
   const repeat = (amount, string) => {
     let content = ''
-    for (var i = 0; i < amount; i++) {
+    for (var i = 0 i < amount i++) {
       content += (string + ' ')
     }
-    return content;
+    return content
   }
 
   return(

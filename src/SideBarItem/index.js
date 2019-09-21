@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import styles from './styles.js'
 
-import Icon from '../Icon';
-import Grid from '../Grid';
+import Icon from '../Icon'
+import Grid from '../Grid'
 
 export default ({
   className, onClick,
@@ -11,19 +11,19 @@ export default ({
   title, onHover
 }) => {
 
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(false)
 
   return(
     <Grid
       className={className}
       onClick={onClick}
       onMouseEnter={()=>{
-        setHover(true);
-        if(onHover) onHover(true);
+        setHover(true)
+        if(onHover) onHover(true)
       }}
       onMouseLeave={()=>{
-        setHover(false);
-        if(onHover) onHover(false);
+        setHover(false)
+        if(onHover) onHover(false)
       }}
       style={{
         ...styles.container,

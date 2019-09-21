@@ -1,12 +1,12 @@
-import React from 'react';
-import { mount } from 'enzyme';
+import React from 'react'
+import { mount } from 'enzyme'
 
-import Input from './index.js';
+import Input from './index.js'
 
 describe('<Input />', () => {
 
   it("renders", () => {
     mount(<Input />)
-  });
+  })
 
-});
+})

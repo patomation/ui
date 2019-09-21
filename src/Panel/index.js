@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 import Hr from '../Hr'
 
 export default (props) => {
 
-  const { className, children, header, style } = props;
+  const { className, children, header, style } = props
 
   return(
     <div

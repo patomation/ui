@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
-import { Formik } from 'formik';
-import validationSchema from './validationSchema.js';
-import Button from '../Button';
-import Input from '../Input';
-import Gutter from '../Gutter';
+import { Formik } from 'formik'
+import validationSchema from './validationSchema.js'
+import Button from '../Button'
+import Input from '../Input'
+import Gutter from '../Gutter'
 export default (props) => {
 
   const {
     className, background, color, style,
     onSubmit
-  } = props;
+  } = props
 
   return(
     <div
@@ -28,8 +28,8 @@ export default (props) => {
           onSubmit(
             values,
             () => {
-              setSubmitting(false);
-            });
+              setSubmitting(false)
+            })
         }}
       >
         {({

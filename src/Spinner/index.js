@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
-import Icon from '../Icon';
+import Icon from '../Icon'
 
 export default (props) => {
 
-  const { icon, className, background, color, style } = props;
+  const { icon, className, background, color, style } = props
 
   return(
     <div>

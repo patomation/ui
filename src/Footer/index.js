@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
 export default (props) => {
 
-  const { className, children, onClick, background, color, style } = props;
+  const { className, children, onClick, background, color, style } = props
 
   return(
     <footer

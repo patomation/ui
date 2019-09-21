@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
 
 export default (props) => {
@@ -7,7 +7,7 @@ export default (props) => {
     type, name, onChange, onBlur, value, error, placeholder,
     className, onClick, background, color,
     containerStyle, inputStyle, inputErrorStyle, errorStyle, style
-  } = props;
+  } = props
 
 
 

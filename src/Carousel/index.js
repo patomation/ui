@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import styles from './styles.js'
-import ReactSlick from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ReactSlick from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const Carousel = ({
   className, children,

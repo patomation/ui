@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import styles from './styles.js';
+import React, {useState} from 'react'
+import styles from './styles.js'
 
-import moment from 'moment';
+import moment from 'moment'
 
-import Grid from '../Grid';
-import Button from '../Button';
-import IconButton from '../IconButton';
+import Grid from '../Grid'
+import Button from '../Button'
+import IconButton from '../IconButton'
 
 const daysInMonth = (date) => {
   //Get total dates
-  let totalDays = moment(date).daysInMonth();
+  let totalDays = moment(date).daysInMonth()
   //Store date objects in array
-  let days = [];
+  let days = []
   //Loop over total days
   while(totalDays){
     days.push(moment(date).date(totalDays))
@@ -35,10 +35,10 @@ export default ({
 }) => {
 
 
-  const [ date, setDate ] = useState(moment());
-  const today = moment();
-  const month = moment(date).format('MMMM');
-  const year = moment(date).format('YYYY');
+  const [ date, setDate ] = useState(moment())
+  const today = moment()
+  const month = moment(date).format('MMMM')
+  const year = moment(date).format('YYYY')
 
   let days = [
     //Add blank days
@@ -46,16 +46,16 @@ export default ({
     //The rest of the calendar days
     ...daysInMonth(date)
     //Todo add blank days for the end of the month
-  ];
+  ]
 
   const getEvents = (day) => {
     if(events){
       return events.reduce((accumulator, currentValue) => {
         if( isSameDay(day, currentValue.start) ){
-          accumulator.push(currentValue);
+          accumulator.push(currentValue)
         }
-        return accumulator;
-      },[]);
+        return accumulator
+      },[])
 
     } else {
       return []
@@ -104,7 +104,7 @@ export default ({
       <Grid col={7}>
         {days.map( (day, index) => {
 
-          let eventsThisDay = getEvents(day);
+          let eventsThisDay = getEvents(day)
 
           return (
             <Button

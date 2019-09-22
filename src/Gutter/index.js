@@ -20,7 +20,7 @@ const Gutter = ({
 Gutter.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
   vertical: PropTypes.bool
 }
 

@@ -10,30 +10,29 @@ const Carousel = ({
   background, color, style,
   autoplay, autoplaySpeed
 }) =>
-  typeof children !== 'string' ?
-  <ReactSlick
-    className={className}
-    style={{
-      ...styles.container,
-      ...(background ? { background: background } : null),
-      ...(color ? { color: color } : null),
-      ...style
-    }}
-    settings={{
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    }}
-    autoplay={autoplay === undefined ? true : autoplay}
-    autoplaySpeed={autoplaySpeed || 3000}>
+  typeof children !== 'string'
+    ? <ReactSlick
+      className={className}
+      style={{
+        ...styles.container,
+        ...(background ? { background: background } : null),
+        ...(color ? { color: color } : null),
+        ...style
+      }}
+      settings={{
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }}
+      autoplay={autoplay === undefined ? true : autoplay}
+      autoplaySpeed={autoplaySpeed || 3000}>
 
-    {children}
+      {children}
 
-  </ReactSlick>
-  : null
-
+    </ReactSlick>
+    : null
 
 Carousel.propTypes = {
   className: PropTypes.string,

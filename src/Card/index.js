@@ -2,24 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 
-import { Panel, Grid, Image, Center, Gutter } from '../'
+import { Panel, Image } from '../'
 
 const Card = ({
   className,
   children, middle, bottom,
   background, color, style,
-  image, alt,
+  image, alt
 }) =>
 
   <Panel
     className={className}
     style={{
       ...styles.container,
-      ...( background ? { background: background } : null ),
-      ...( color ? { color: color } : null ),
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
       ...style
     }}
-    containerStyle={{margin: 0}}
+    containerStyle={{ margin: 0 }}
     contentStyle={{
       padding: 0,
       display: 'flex',
@@ -28,29 +28,29 @@ const Card = ({
       justifyContent: 'flex-start',
       alignItems: 'stretch',
       alignContent: 'stretch',
-      height: '100%',
+      height: '100%'
     }}>
 
     <Image src={image} alt={alt} rectangle />
 
-    { middle || children ?
-      <div style={{
+    { middle || children
+      ? <div style={{
         padding: '1rem',
         flex: '1 1 auto'
       }}>
         {middle || children}
       </div>
-    : null }
+      : null }
 
-    {bottom ?
-      <div style={{
+    {bottom
+      ? <div style={{
         paddingBottom: '1rem',
         paddingLeft: '1rem',
         paddingRight: '1rem'
       }}>
         {bottom}
       </div>
-    : null }
+      : null }
 
   </Panel>
 
@@ -63,8 +63,7 @@ Card.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   image: PropTypes.string,
-  alt: PropTypes.string,
+  alt: PropTypes.string
 }
-
 
 export default Card

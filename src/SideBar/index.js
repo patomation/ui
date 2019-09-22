@@ -7,7 +7,7 @@ const SideBar = ({
   className, children, menu,
   style, menuStyle, contentStyle,
   width,
-  right //Menu position. Defaults to left
+  right // Menu position. Defaults to left
 }) => {
   return (
     <div
@@ -20,7 +20,7 @@ const SideBar = ({
       <menu style={{
         ...styles.menu,
         ...(width ? { width: width } : null),
-        ...(right ? {right: 0} : null),
+        ...(right ? { right: 0 } : null),
         ...menuStyle
       }}>
 
@@ -31,10 +31,10 @@ const SideBar = ({
       <main style={{
         ...styles.content,
         ...(right ? {
-            marginRight : width || config.size.sideBar
-          } : {
-            marginLeft: width || config.size.sideBar
-          }),
+          marginRight: width || config.size.sideBar
+        } : {
+          marginLeft: width || config.size.sideBar
+        }),
         ...contentStyle
       }}>
 
@@ -53,7 +53,7 @@ SideBar.propTypes = {
   style: PropTypes.object,
   menuStyle: PropTypes.object,
   contentStyle: PropTypes.object,
-  menuWidth: PropTypes.string,
+  width: PropTypes.string,
   right: PropTypes.bool
 }
 

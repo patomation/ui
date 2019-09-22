@@ -24,15 +24,22 @@ const ImageGrid = ({
     row={row}
     gap={gap || config.size.gutters}>
 
-
     {images
-      ? images.map( image => <Image src={image} square />)
-      : React.Children.map(children, (child, index) => {
-      if (check(child, 'props.children[0].props.src')) {
-        return <Image src={child.props.children[0].props.src} square />
-      }
+      ? images.map((image, index) =>
+        <Image
+          key={`image-grid-image-${index}`}
+          src={image}
+          square />)
+
+      : React.Children.map(children, (child, index) =>
+        check(child, 'props.children[0].props.src')
+          ? <Image
+            key={`image-grid-image-${index}`}
+            src={child.props.children[0].props.src}
+            square />
+          : null
+      )
     }
-    )}
 
   </Grid>
 

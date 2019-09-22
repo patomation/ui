@@ -6,7 +6,7 @@ import Hr from '../Hr'
 const Panel = ({
   className, children, header,
   style, containerStyle, contentStyle,
-  padding, //Padding for inner content
+  padding // Padding for inner content
 }) => {
   return (
     <div
@@ -28,7 +28,7 @@ const Panel = ({
       <div style={{
         ...styles.content,
         ...contentStyle,
-        ...( padding ? { padding: padding } : null)
+        ...(padding ? { padding: padding } : null)
       }}>
         {children}
       </div>

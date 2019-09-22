@@ -49,7 +49,7 @@ export default {
       overflow: 'hidden',
       height: '0',
       width: '100%',
-      paddingBottom: '56%', //16:9 aspect ratio = 56%
+      paddingBottom: '56%', // 16:9 aspect ratio = 56%
       textAlign: 'left'
     },
     image: {

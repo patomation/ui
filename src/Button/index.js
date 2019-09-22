@@ -110,7 +110,7 @@ const Button = ({
 Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
   enabled: PropTypes.bool,
   active: PropTypes.bool,
   onClick: PropTypes.func,

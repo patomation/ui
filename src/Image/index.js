@@ -5,7 +5,7 @@ import styles from './styles.js'
 const Image = ({
   className, src, type, alt,
   style, containerStyle, imageStyle,
-  bg, square // Image modes
+  bg, square, rectangle // Image modes
 }) =>
 
   <div
@@ -14,6 +14,7 @@ const Image = ({
       ...styles.default.container,
       ...(type === 'background' ? styles.background.container : null),
       ...(square === true ? styles.square.container : null),
+      ...(rectangle === true ? styles.rectangle.container : null),
       ...style,
       ...containerStyle
     }}>
@@ -25,6 +26,7 @@ const Image = ({
         ...styles.default.image,
         ...(type === 'background' ? styles.background.image : null),
         ...(square === true ? styles.square.image : null),
+        ...(rectangle === true ? styles.rectangle.image : null),
         ...imageStyle
       }} />
 
@@ -36,10 +38,11 @@ Image.propTypes = {
   type: PropTypes.string,
   alt: PropTypes.string,
   style: PropTypes.object,
-  containerStyle: PropTypes.func,
-  imageStyle: PropTypes.string,
+  containerStyle: PropTypes.object,
+  imageStyle: PropTypes.object,
   bg: PropTypes.bool,
-  square: PropTypes.bool
+  square: PropTypes.bool,
+  rectangle: PropTypes.bool
 }
 
 export default Image

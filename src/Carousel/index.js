@@ -7,9 +7,10 @@ import 'slick-carousel/slick/slick-theme.css'
 
 const Carousel = ({
   className, children,
-  background, color, style
+  background, color, style,
+  autoplay, autoplaySpeed
 }) =>
-
+  typeof children !== 'string' ?
   <ReactSlick
     className={className}
     style={{
@@ -25,19 +26,23 @@ const Carousel = ({
       slidesToShow: 1,
       slidesToScroll: 1
     }}
-    autoplay={true}
-    autoplaySpeed={3000}>
+    autoplay={autoplay === undefined ? true : autoplay}
+    autoplaySpeed={autoplaySpeed || 3000}>
 
     {children}
 
   </ReactSlick>
+  : null
+
 
 Carousel.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,
   color: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
+  autoplay: PropTypes.bool,
+  autoplaySpeed: PropTypes.number
 }
 
 export default Carousel

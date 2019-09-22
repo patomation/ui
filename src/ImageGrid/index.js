@@ -7,7 +7,7 @@ import config from '../config'
 import check from '../../utility/check'
 
 const ImageGrid = ({
-  className, children,
+  className, children, images,
   background, color, style,
   col, row, gap
 }) =>
@@ -20,11 +20,14 @@ const ImageGrid = ({
       ...(color ? { color: color } : null),
       ...style
     }}
-    col={col}
+    col={col || 3}
     row={row}
     gap={gap || config.size.gutters}>
 
-    {React.Children.map(children, (child, index) => {
+
+    {images
+      ? images.map( image => <Image src={image} square />)
+      : React.Children.map(children, (child, index) => {
       if (check(child, 'props.children[0].props.src')) {
         return <Image src={child.props.children[0].props.src} square />
       }
@@ -36,6 +39,7 @@ const ImageGrid = ({
 ImageGrid.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  images: PropTypes.array,
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,

@@ -7,7 +7,7 @@
     "prepare": "npm run build",
     "build": "babel src --out-dir lib --ignore \"**/*.test.js\"",
     "watch:src": "nodemon --watch ./src -x \"yarn build\"",
-    "lint": "./node_modules/.bin/eslint src",
+    "lint": "./node_modules/.bin/eslint .",
     "dev": "yarn watch:src",
     "test": "jest",
     "coverage": "jest --coverage"

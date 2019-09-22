@@ -1,42 +1,42 @@
-//Deep check of nested ojects
+// Deep check of nested ojects
 const deepCheck = (object, keys) => {
-  //Reduce array of keys to boolean true or false
-  //Loop through each key defined in the keys array and see if its defined
+  // Reduce array of keys to boolean true or false
+  // Loop through each key defined in the keys array and see if its defined
   return keys.reduce((acc, key) => {
     // If object had key acc true
-    if(object.hasOwnProperty(key)){
-      //Mutate object to be next nested object
+    if (Object.prototype.hasOwnProperty.call(object, key)) {
+      // Mutate object to be next nested object
       object = object[key]
-      //Set accumulator to true
+      // Set accumulator to true
       acc = true
     } else {
-      //If key is not set accumulator to false
+      // If key is not set accumulator to false
       acc = false
     }
-    //Return accumulator each time.
+    // Return accumulator each time.
     return acc
-  }, false) //Default is false. unless changed to true
+  }, false) // Default is false. unless changed to true
 }
 
-//Chose a check
+// Chose a check
 const check = (object, keys) => {
-  //Must be an object
+  // Must be an object
   if (typeof object !== 'object') return false
 
-  //Handle Array of keys
-  if(typeof keys === 'object' && keys.length > 0) {
+  // Handle Array of keys
+  if (typeof keys === 'object' && keys.length > 0) {
     return deepCheck(object, keys)
 
-  //Parse string of keys ie object.key.key[0].key
+  // Parse string of keys ie object.key.key[0].key
   } else if (typeof keys === 'string') {
-    //Covert string into array of keys and use deepCheck
+    // Covert string into array of keys and use deepCheck
     return deepCheck(
       object,
-      keys.split('.').reduce( (acc, key) => {
-        //Support [0] array index braket props
-        if(key.includes('[')){
-          acc.push( key.split('[')[0] )
-          acc.push( key.split('[')[1].replace(']','') )
+      keys.split('.').reduce((acc, key) => {
+        // Support [0] array index braket props
+        if (key.includes('[')) {
+          acc.push(key.split('[')[0])
+          acc.push(key.split('[')[1].replace(']', ''))
         } else {
           acc.push(key)
         }
@@ -45,7 +45,7 @@ const check = (object, keys) => {
     )
   }
 
-  //return false just in case
+  // return false just in case
   return false
 }
 

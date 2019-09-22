@@ -4,14 +4,17 @@ import styles from './styles.js'
 import Hr from '../Hr'
 
 const Panel = ({
-  className, children, header, style
+  className, children, header,
+  style, containerStyle, contentStyle,
+  padding, //Padding for inner content
 }) => {
   return (
     <div
       className={className}
       style={{
         ...styles.container,
-        ...style
+        ...style,
+        ...containerStyle
       }}>
 
       {(header
@@ -22,7 +25,11 @@ const Panel = ({
         </div> : null)}
       {(header ? <Hr /> : null)}
 
-      <div style={styles.content}>
+      <div style={{
+        ...styles.content,
+        ...contentStyle,
+        ...( padding ? { padding: padding } : null)
+      }}>
         {children}
       </div>
 
@@ -33,8 +40,11 @@ const Panel = ({
 Panel.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  header: PropTypes.string,
-  style: PropTypes.object
+  header: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  style: PropTypes.object,
+  containerStyle: PropTypes.object,
+  contentStyle: PropTypes.object,
+  padding: PropTypes.string
 }
 
 export default Panel

@@ -1,16 +1,8 @@
 export default {
-  container: {
-    position: 'relative',
-    top: '0',
-    height: '100%',
-    width: '100%'
-  },
-  content: {
-    display: 'inline-block',
+  center: {
     position: 'relative',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%,-50%)'
-    // textAlign: 'center'
   }
 }

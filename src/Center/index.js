@@ -4,33 +4,31 @@ import styles from './styles.js'
 
 const Center = ({
   className, children,
-  style, containerStyle, contentStyle
+  background, color, style,
+  width
 }) =>
 
-  <div className={className}
+  <div
+    className={className}
     style={{
-      ...styles.container,
-      ...style,
-      ...containerStyle
+      ...styles.center,
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
+      ...(width ? { width: width } : null),
+      ...style
     }}>
 
-    <div style={{
-      ...styles.content,
-      ...contentStyle
-    }}>
-
-      {children}
-
-    </div>
+    {children}
 
   </div>
 
 Center.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  background: PropTypes.string,
+  color: PropTypes.string,
   style: PropTypes.object,
-  containerStyle: PropTypes.object,
-  contentStyle: PropTypes.object
+  width: PropTypes.string
 }
 
 export default Center

@@ -49,7 +49,7 @@ const SideBar = ({
 SideBar.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  menu: PropTypes.string,
+  menu: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   style: PropTypes.object,
   menuStyle: PropTypes.object,
   contentStyle: PropTypes.object,

@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import config from '../config.js'
 
 const SideBar = ({
   className, children, menu,
   style, menuStyle, contentStyle,
-  menuWidth
+  width,
+  right //Menu position. Defaults to left
 }) => {
   return (
     <div
@@ -17,7 +19,8 @@ const SideBar = ({
 
       <menu style={{
         ...styles.menu,
-        ...(menuWidth ? { width: menuWidth } : null),
+        ...(width ? { width: width } : null),
+        ...(right ? {right: 0} : null),
         ...menuStyle
       }}>
 
@@ -27,7 +30,11 @@ const SideBar = ({
 
       <main style={{
         ...styles.content,
-        ...(menuWidth ? { marginLeft: menuWidth } : null),
+        ...(right ? {
+            marginRight : width || config.size.sideBar
+          } : {
+            marginLeft: width || config.size.sideBar
+          }),
         ...contentStyle
       }}>
 
@@ -46,7 +53,8 @@ SideBar.propTypes = {
   style: PropTypes.object,
   menuStyle: PropTypes.object,
   contentStyle: PropTypes.object,
-  menuWidth: PropTypes.string
+  menuWidth: PropTypes.string,
+  right: PropTypes.bool
 }
 
 export default SideBar

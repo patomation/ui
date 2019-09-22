@@ -16,14 +16,8 @@ export default {
     overflowX: 'hidden'
   },
   content: {
-    marginLeft: config.size.sideBar,
     display: 'flex',
     flexFlow: 'column',
     height: '100%'
-    // position: 'fixed',
-    // height: '100%',
-    // width: `calc(100% - ${config.size.sideBar})`,
-    // overflow: 'hidden scroll'
   }
-
 }

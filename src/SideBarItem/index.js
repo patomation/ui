@@ -53,7 +53,7 @@ SideBarItem.propTypes = {
   color: PropTypes.string,
   icon: PropTypes.func,
   style: PropTypes.object,
-  hoverStyle: PropTypes.string,
+  hoverStyle: PropTypes.object,
   title: PropTypes.string,
   onHover: PropTypes.func
 }

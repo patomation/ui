@@ -58,10 +58,10 @@ Input.propTypes = {
   onClick: PropTypes.func,
   background: PropTypes.string,
   color: PropTypes.string,
-  containerStyle: PropTypes.func,
-  inputStyle: PropTypes.string,
-  inputErrorStyle: PropTypes.string,
-  errorStyle: PropTypes.string,
+  containerStyle: PropTypes.object,
+  inputStyle: PropTypes.object,
+  inputErrorStyle: PropTypes.object,
+  errorStyle: PropTypes.object,
   style: PropTypes.object
 }
 

@@ -48,11 +48,11 @@ IconButton.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
-  iconStyle: PropTypes.func,
-  titleStyle: PropTypes.string,
-  activeStyle: PropTypes.string,
+  iconStyle: PropTypes.object,
+  titleStyle: PropTypes.object,
+  activeStyle: PropTypes.object,
   name: PropTypes.string,
-  icon: PropTypes.func,
+  icon: PropTypes.string,
   active: PropTypes.bool,
   title: PropTypes.string
 }

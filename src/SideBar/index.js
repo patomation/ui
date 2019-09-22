@@ -44,8 +44,8 @@ SideBar.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   menu: PropTypes.string,
   style: PropTypes.object,
-  menuStyle: PropTypes.string,
-  contentStyle: PropTypes.func,
+  menuStyle: PropTypes.object,
+  contentStyle: PropTypes.object,
   menuWidth: PropTypes.string
 }
 

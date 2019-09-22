@@ -21,7 +21,7 @@ Gutter.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   disabled: PropTypes.string,
-  vertical: PropTypes.string
+  vertical: PropTypes.bool
 }
 
 export default Gutter

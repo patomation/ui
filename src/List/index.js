@@ -36,8 +36,8 @@ List.propTypes = {
   className: PropTypes.string,
   data: PropTypes.string,
   style: PropTypes.object,
-  listStyle: PropTypes.string,
-  itemStyle: PropTypes.string
+  listStyle: PropTypes.object,
+  itemStyle: PropTypes.object
 }
 
 export default List

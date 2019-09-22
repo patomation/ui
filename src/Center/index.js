@@ -29,8 +29,8 @@ Center.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   style: PropTypes.object,
-  containerStyle: PropTypes.func,
-  contentStyle: PropTypes.func
+  containerStyle: PropTypes.object,
+  contentStyle: PropTypes.object
 }
 
 export default Center

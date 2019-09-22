@@ -45,7 +45,7 @@ Link.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   href: PropTypes.string,
-  hoverStyle: PropTypes.string,
+  hoverStyle: PropTypes.object,
   onHover: PropTypes.func
 }
 

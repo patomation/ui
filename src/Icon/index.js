@@ -8,6 +8,11 @@ const Icon = ({
   name, icon,
   background, color, style
 }) => {
+  // Filter name
+  if (name) {
+    if (name === 'play') name = 'play_arrow'
+  }
+
   return (
     <span
       className={`material-icons ${className}`}

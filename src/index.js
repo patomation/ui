@@ -1,6 +1,7 @@
 export { default as Brand } from './Brand'
 export { default as Button } from './Button'
 export { default as Calendar } from './Calendar'
+export { default as Card } from './Card'
 export { default as Carousel } from './Carousel'
 export { default as Center } from './Center'
 export { default as Code } from './Code'

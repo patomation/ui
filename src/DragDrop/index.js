@@ -16,7 +16,12 @@ const DragDrop = ({
     <div
       className={className}
       draggable={draggable !== undefined ? draggable : true} // Use draggable prop but default to true
-      onDragStart={onDragStart}
+      onDragStart={e => {
+        //Allow firefox to drag n drop - We have to setData with anything to make it work....
+        e.dataTransfer.setData('text', '');
+        //Buble up
+        if(onDragStart) onDragStart(e)
+      }}
       onDrag={onDrag}
       onDragOver={(e) => {
         // Lets us drop stuff here

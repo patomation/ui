@@ -1,0 +1,14 @@
+iframe {
+  display: none;
+}
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: arial;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  -webkit-touch-callout: none;
+}

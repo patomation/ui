@@ -60,7 +60,7 @@ Hero.propTypes = {
   imageStyle: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   title: PropTypes.string,
-  description: PropTypes.func,
+  description: PropTypes.string,
   image: PropTypes.string
 }
 

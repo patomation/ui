@@ -50,8 +50,8 @@ ImageGrid.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
-  col: PropTypes.string,
-  row: PropTypes.string,
+  col: PropTypes.number,
+  row: PropTypes.number,
   gap: PropTypes.string
 }
 

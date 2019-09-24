@@ -20,6 +20,8 @@ const Keyboard = ({
   disabledStyle
 
 }) => {
+  const [active, setActive] = useState([])
+
   return (
     <div
       className={`keyboard ${className || ''}`}
@@ -39,7 +41,6 @@ const Keyboard = ({
 
         {keys.map((key, index) => {
           const { name, span } = key
-          const [active, setActive] = useState(false)
 
           const handleDown = () => {
             if (onDown) onDown(name.toLowerCase())
@@ -53,12 +54,20 @@ const Keyboard = ({
           hotkey(name.toLowerCase())
             .down(() => {
             // Set button active if hotkey used
-              setActive(true)
+              setActive((lastActive) => {
+                const nextActive = [...lastActive]
+                nextActive[index] = true
+                return nextActive
+              })
               handleDown()
             })
             .up(() => {
             // Set button to deactive after hotkey used
-              setActive(false)
+              setActive((lastActive) => {
+                const nextActive = [...lastActive]
+                nextActive[index] = false
+                return nextActive
+              })
               handleUp()
             })
 
@@ -69,7 +78,7 @@ const Keyboard = ({
           return <Button
             onDown={handleDown}
             onUp={handleUp}
-            active={active}
+            active={active[index]}
             key={`key_${index}`}
             hoverStyle={hoverStyle}
             activeStyle={activeStyle}

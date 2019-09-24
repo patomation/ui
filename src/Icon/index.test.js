@@ -9,8 +9,8 @@ describe('<Icon />', () => {
   })
 
   it('accepts background && color prop', () => {
-    const component = mount(<Icon background="blue" color="red" />)
-    expect(component.find('span').props().style.background).toEqual('blue')
-    expect(component.find('span').props().style.color).toEqual('red')
+    const component = mount(<Icon name='star' background="blue" color="red" />)
+    expect(component.find('svg').props().style.backgroundColor).toEqual('blue')
+    expect(component.find('svg').props().fill).toEqual('red')
   })
 })

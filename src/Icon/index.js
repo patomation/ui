@@ -1,42 +1,57 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import 'material-icons'
+import svgPaths from './svgPaths.json'
 
+// { children || name || icon }
 const Icon = ({
   className, children,
   name, icon,
-  background, color, style
+  background, color, style,
+  width
 }) => {
-  // Filter name
-  if (name) {
-    if (name === 'play') name = 'play_arrow'
-  }
+  if (name === 'play') name = 'play_arrow'
 
-  return (
-    <span
-      className={`material-icons ${className}`}
-      style={{
-        ...styles,
-        ...(background ? { background: background } : null),
-        ...(color ? { color: color } : null),
-        ...style
-      }}>
+  const { path, size } = svgPaths[children || name || icon] || { path: null, size: null }
 
-      { children || name || icon }
+  const Tag = (width) ? 'div' : 'span'
 
-    </span>
-  )
+  return path && size
+    ? <Tag style={{
+      ...styles.container,
+      ...(width ? { width: width } : null),
+      ...style
+    }}>
+      <svg
+        className={className}
+        style={{
+          ...styles.icon,
+          ...(background ? { backgroundColor: background } : null)
+        }}
+        fill={color}
+        xmlns="http://www.w3.org/2000/svg"
+        width={width ? null : size}
+        height={width ? null : size}
+        preserveAspectRatio="xMidYMid meet"
+        version="1.1"
+        viewBox={`0 0 ${size} ${size}`}
+      >
+        <path
+          d={path}
+        />
+      </svg>
+    </Tag> : null
 }
 
 Icon.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes.string,
   name: PropTypes.string,
   icon: PropTypes.func,
   background: PropTypes.string,
   color: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
+  width: PropTypes.string
 }
 
 export default Icon

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import svgPaths from './svgPaths.json'
+import svgPaths from './svgPaths.js'
 
 // { children || name || icon }
 const Icon = ({

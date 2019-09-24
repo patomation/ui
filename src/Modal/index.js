@@ -53,7 +53,7 @@ const Modal = ({
 }
 
 Modal.propTypes = {
-  show: PropTypes.string,
+  show: PropTypes.bool,
   onClose: PropTypes.func,
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),

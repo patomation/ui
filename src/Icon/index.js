@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import '../../node_modules/material-icons/iconfont/material-icons.css'
+import 'material-icons'
 
 const Icon = ({
   className, children,

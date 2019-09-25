@@ -8,7 +8,7 @@ const IconButton = ({
   onClick, className,
   background, color,
   style, iconStyle, titleStyle, activeStyle,
-  name, icon, active, title
+  name, icon, active, title, width
 }) => {
   return (
     <div
@@ -25,6 +25,8 @@ const IconButton = ({
       }}>
 
       <Icon
+        width={width}
+        color={color}
         style={{
           ...styles.icon,
           ...iconStyle

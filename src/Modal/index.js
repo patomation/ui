@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import Panel from '../Panel'
-import Center from '../Center'
-import IconButton from '../IconButton'
+import { Panel, Center, IconButton, Clickable } from '../'
 
 const Modal = ({
   show, onClose,
@@ -32,10 +30,16 @@ const Modal = ({
           ...style
         }}>
 
+        <Clickable
+          onClick={close}
+          style={styles.background}>
+        </Clickable>
+
         <Center>
           <Panel style={styles.panel}>
 
             <IconButton
+              width='1rem'
               onClick={close}
               style={styles.close}
               icon='close' />

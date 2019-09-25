@@ -15,7 +15,13 @@ export default {
   close: {
     position: 'fixed',
     top: '1.5rem',
-    right: '1.5rem'
-
+    right: '1.5rem',
+    display: 'block',
+    zIndex: 10
+  },
+  background: {
+    position: 'absolute',
+    top: 0, left: 0,
+    width: '100%', height: '100%'
   }
 }

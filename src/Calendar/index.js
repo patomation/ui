@@ -32,12 +32,14 @@ const isSameDay = (dayOne, dayTwo) => {
 
 const Calendar = ({
   className, background, color, style,
-  events, onClick
+  events, onClick, selectedColor
 }) => {
   const [date, setDate] = useState(moment())
   const today = moment()
   const month = moment(date).format('MMMM')
   const year = moment(date).format('YYYY')
+
+  const [selectedDay, setSelectedDay] = useState()
 
   const days = [
     // Add blank days
@@ -107,19 +109,29 @@ const Calendar = ({
             <Button
               key={`day_${index}`}
               onClick={() => {
-                onClick({
-                  day: day,
-                  events: eventsThisDay
-                })
+                // Selected Day must be after today
+                if (today.diff(day) < 0) {
+                  setSelectedDay(day)
+                  if (onClick) {
+                    onClick({
+                      day: day,
+                      events: eventsThisDay
+                    })
+                  }
+                }
               }}
               style={{
-                ...{
-                  color: '#000000',
-                  background: 'none'
-                },
+                color: '#000000',
+                background: 'none',
+                paddingLeft: 0,
+                paddingRight: 0,
                 // Highlight today
                 ...(today.format('DD-MM-YYYY') === moment(day).format('DD-MM-YYYY') ? {
                   background: 'rgba(0,0,0,0.5)'
+                } : null),
+                // Highlight selected day
+                ...(moment(selectedDay).format('DD-MM-YYYY') === moment(day).format('DD-MM-YYYY') ? {
+                  background: selectedColor || 'gold'
                 } : null),
                 // Highlight Apointments
                 ...(eventsThisDay.length > 0 ? {
@@ -147,7 +159,8 @@ Calendar.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   events: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  selectedColor: PropTypes.string
 }
 
 export default Calendar

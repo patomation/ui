@@ -12,20 +12,25 @@ export default {
     MozUserSelect: 'none',
     MsUserSelect: 'none',
     position: 'relative',
-    top: 'calc(50% - 10px)'
+    // top: 'calc(50% - 10px)'
+    // top: '50%',
+    // transform: 'translateY(-50%)',
+    // height: '100%'
+    display: 'inline-block'
   },
   title: {
-    flexGrow: 1,
-    textAlign: 'left',
+    // flexGrow: 1,
+    // textAlign: 'left',
     paddingLeft: '0.25rem',
-    lineHeight: '20px',
-    position: 'relative',
-    top: 'calc(50% - 10px)',
+    // lineHeight: '20px',
+    // position: 'relative',
+    // top: 'calc(50% - 10px)',
     userSelect: 'none',
     WebkitUserSelect: 'none',
     KhtmlUserSelect: 'none',
     MozUserSelect: 'none',
-    MsUserSelect: 'none'
+    MsUserSelect: 'none',
+    display: 'inline-block'
   },
   active: {
     opacity: '1.0'

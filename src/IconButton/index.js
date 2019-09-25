@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 
-import Icon from '../Icon'
+import { Icon } from '../'
 
 const IconButton = ({
   onClick, className,
@@ -18,14 +18,14 @@ const IconButton = ({
         ...styles.container,
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
+        ...(width ? { width: width } : null),
         ...style,
         ...(active ? styles.active : null),
-        ...(active ? activeStyle : null),
-        ...(title ? { display: 'flex' } : null)
+        ...(active ? activeStyle : null)
       }}>
 
       <Icon
-        width={width}
+        responsive={!!width}
         color={color}
         style={{
           ...styles.icon,
@@ -56,7 +56,8 @@ IconButton.propTypes = {
   name: PropTypes.string,
   icon: PropTypes.string,
   active: PropTypes.bool,
-  title: PropTypes.string
+  title: PropTypes.string,
+  width: PropTypes.string
 }
 
 export default IconButton

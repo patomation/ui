@@ -8,19 +8,19 @@ const Clickable = ({
   background, color, style
 }) =>
 
-<div
-  onClick={onClick}
-  className={className}
-  style={{
-    ...styles.container,
-    ...( background ? { background: background } : null ),
-    ...( color ? { color: color } : null ),
-    ...style
-  }}>
+  <div
+    onClick={onClick}
+    className={className}
+    style={{
+      ...styles.container,
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
+      ...style
+    }}>
 
-  {children}
+    {children}
 
-</div>
+  </div>
 
 Clickable.propTypes = {
   className: PropTypes.string,
@@ -30,6 +30,5 @@ Clickable.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object
 }
-
 
 export default Clickable

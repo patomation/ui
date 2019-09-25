@@ -1,12 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Clickable from './index.js';
+import Clickable from './index.js'
 
 describe('<Clickable />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Clickable />)
-  });
-
-});
+  })
+})

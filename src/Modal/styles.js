@@ -10,18 +10,20 @@ export default {
   },
   panel: {
     background: '#ffffff',
-    padding: '2rem'
+    padding: '0rem'
   },
   close: {
     position: 'fixed',
     top: '1.5rem',
     right: '1.5rem',
     display: 'block',
-    zIndex: 10
+    zIndex: 100
   },
   background: {
     position: 'absolute',
-    top: 0, left: 0,
-    width: '100%', height: '100%'
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%'
   }
 }

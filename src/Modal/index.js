@@ -39,7 +39,7 @@ const Modal = ({
           <Panel style={styles.panel}>
 
             <IconButton
-              width='1rem'
+              color={color}
               onClick={close}
               style={styles.close}
               icon='close' />

@@ -4,7 +4,8 @@ export default {
     display: 'grid',
     // gridGap: '0',
     // gridTemplateColumns: repeat(columns, `${width}%` ),
-    justifyItems: 'stretch'
+    justifyItems: 'stretch',
+    alignItems: 'center'
   },
   item: {
     gridColumn: 'auto / span auto',

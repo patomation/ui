@@ -27,24 +27,9 @@ const GridLayout = ({
   })}
 </style>
 <Grid
-  col={3}
+  col={col}
   onClick={onClick}
   className={'grid-layout ' + className}
-  style={{
-    ...styles.container,
-    ...(background ? { background: background } : null),
-    ...(color ? { color: color } : null),
-    ...style
-  }}>
-
-  {children}
-
-</Grid>
-<Grid
-  col={3}
-  breakWidth='961px'
-  onClick={onClick}
-  className={className}
   style={{
     ...styles.container,
     ...(background ? { background: background } : null),

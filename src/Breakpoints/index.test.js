@@ -1,12 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Breakpoints from './index.js';
+import Breakpoints from './index.js'
 
 describe('<Breakpoints />', () => {
-
-  it("renders", () => {
+  it('renders', () => {
     mount(<Breakpoints />)
-  });
-
-});
+  })
+})

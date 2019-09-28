@@ -39,11 +39,10 @@ const List = ({
 
           {child}
 
-          { index !== children.length-1 ? <Gutter/> : null }
+          { index !== children.length - 1 ? <Gutter/> : null }
 
         </li>
       ) : null}
-
 
     </ul>
   )

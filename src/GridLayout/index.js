@@ -4,8 +4,6 @@ import styles from './styles.js'
 import config from '../config.js'
 import { Grid } from '../'
 import mediaQuery from '../../utility/mediaQuery.js'
-import extract from '../../utility/extract.js'
-
 
 const GridLayout = ({
   className, children,
@@ -13,27 +11,29 @@ const GridLayout = ({
   background, color, style,
   col
 }) => {
+  const { lg } = config.size.media
 
-const { lg } = config.size.media;
-
-return (<>
+  return (<>
 
 <style>
-  {mediaQuery({max:lg, css:{
-    '.grid-layout': {
-      gridTemplateColumns: '100% !important',
+  {mediaQuery({
+    max: lg,
+    css: {
+      '.grid-layout': {
+        gridTemplateColumns: '100% !important'
       // gridTemplateColumns: `repeat(auto-fit, minmax(${extract(lg).number/(col || 2)}${extract(lg).unit}, 1fr)) !important`
+      }
     }
-  }})}
+  })}
 </style>
 <Grid
   col={3}
   onClick={onClick}
-  className={'grid-layout '+ className}
+  className={'grid-layout ' + className}
   style={{
     ...styles.container,
-    ...( background ? { background: background } : null ),
-    ...( color ? { color: color } : null ),
+    ...(background ? { background: background } : null),
+    ...(color ? { color: color } : null),
     ...style
   }}>
 
@@ -47,8 +47,8 @@ return (<>
   className={className}
   style={{
     ...styles.container,
-    ...( background ? { background: background } : null ),
-    ...( color ? { color: color } : null ),
+    ...(background ? { background: background } : null),
+    ...(color ? { color: color } : null),
     ...style
   }}>
 
@@ -56,7 +56,8 @@ return (<>
 
 </Grid>
 </>
-)}
+  )
+}
 
 GridLayout.propTypes = {
   className: PropTypes.string,
@@ -67,6 +68,5 @@ GridLayout.propTypes = {
   style: PropTypes.object,
   col: PropTypes.number
 }
-
 
 export default GridLayout

@@ -7,5 +7,4 @@ const extract = (string) => {
   }
 }
 
-
 export default extract

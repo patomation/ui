@@ -41,7 +41,7 @@ const Grid = ({
         gridTemplateColumns: repeat(col, (subtractGap ? `calc(${width}% - ${subtractGap})` : `${width}%`)),
         ...(row ? {
           gridTemplateRows: repeat(row, (subtractGap ? `calc(${height}% - ${subtractGap})` : `${height}%`))
-        } : null ),
+        } : null),
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
         ...style

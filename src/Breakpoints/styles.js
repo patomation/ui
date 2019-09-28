@@ -1,9 +1,9 @@
 export default {
-  container:{
+  container: {
     background: 'gold',
     position: 'fixed',
     top: '0',
     width: '100%',
     zIndex: 200
-  },
+  }
 }

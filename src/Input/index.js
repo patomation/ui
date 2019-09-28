@@ -7,7 +7,6 @@ const Input = ({
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style
 }) => {
-
   const InputType = type === 'textarea' ? 'textarea' : 'input'
 
   return (

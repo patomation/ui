@@ -37,11 +37,11 @@ const Grid = ({
       className={`grid ${className || ''}`}
       style={{
         ...styles.container,
-        ...{
-          gridGap: (gap || '0'),
-          gridTemplateColumns: repeat(col, (subtractGap ? `calc(${width}% - ${subtractGap})` : `${width}%`)),
+        gridGap: (gap || '0'),
+        gridTemplateColumns: repeat(col, (subtractGap ? `calc(${width}% - ${subtractGap})` : `${width}%`)),
+        ...(row ? {
           gridTemplateRows: repeat(row, (subtractGap ? `calc(${height}% - ${subtractGap})` : `${height}%`))
-        },
+        } : null ),
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
         ...style

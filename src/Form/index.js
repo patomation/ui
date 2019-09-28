@@ -11,7 +11,7 @@ import initialValues from './initialValues.js'
 
 const Form = ({
   className,
-  background, color, style,
+  background, color, style, buttonStyle, inputStyle,
   onSubmit, fields
 
 }) => {
@@ -49,8 +49,9 @@ const Form = ({
           <form onSubmit={handleSubmit}>
 
             {fields.map( field => {
-              const { name, type, placeholder } = field
+              const { name, type, placeholder, label } = field
               return <span key={`field_${name}`}>
+                {label ? <div>{label}</div>: null}
                 <Input
                   name={name}
                   type={type || 'text'}
@@ -59,6 +60,7 @@ const Form = ({
                   onBlur={handleBlur}
                   value={values[name]}
                   error={errors[name] && touched[name] && errors[name]}
+                  inputStyle={inputStyle}
                 />
                 <Gutter disabled={(errors[name] && touched[name] && errors[name]) !== undefined}/>
               </span>
@@ -68,7 +70,8 @@ const Form = ({
               type='submit'
               disabled={isSubmitting}
               style={{
-                width: '100%'
+                width: '100%',
+                ...buttonStyle
               }}>
               Submit
             </Button>
@@ -85,13 +88,16 @@ Form.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   onSubmit: PropTypes.func,
-  fields: PropTypes.arrayOf({
+  fields: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
+    label: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     validation: PropTypes.string
-  })
+  })),
+  buttonStyle: PropTypes.object,
+  inputStyle: PropTypes.object
 }
 
 export default Form

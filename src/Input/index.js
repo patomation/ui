@@ -7,6 +7,9 @@ const Input = ({
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style
 }) => {
+
+  const InputType = type === 'textarea' ? 'textarea' : 'input'
+
   return (
     <div
       className={className}
@@ -16,9 +19,10 @@ const Input = ({
         ...containerStyle
       }}>
 
-      <input
+      <InputType
         type={type}
         name={name}
+        cols="10"
         onChange={onChange}
         onBlur={onBlur}
         placeholder={placeholder}

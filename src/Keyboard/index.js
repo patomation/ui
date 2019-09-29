@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import keys from './keys.js'
 import hotkey from '@patomation/hotkey'
 
@@ -24,7 +25,7 @@ const Keyboard = ({
 
   return (
     <div
-      className={`keyboard ${className || ''}`}
+      className={concat('keyboard', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),
@@ -32,6 +33,7 @@ const Keyboard = ({
         ...style
       }}>
       <Grid
+        className='keyboard__grid'
         col={30}
         row={5}
         gap={gap !== undefined ? gap : '5px'}
@@ -76,6 +78,7 @@ const Keyboard = ({
           }
 
           return <Button
+            className='keyboard__button'
             onDown={handleDown}
             onUp={handleUp}
             active={active[index]}

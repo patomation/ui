@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Button = ({
   className, type, disabled, enabled, active,
@@ -39,7 +40,7 @@ const Button = ({
   const button = <button
     type={type}
     disabled={disabled}
-    className={className}
+    className={concat('button', className)}
     onTouchStart={() => {
       handleDown()
       setTouched(true)

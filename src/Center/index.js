@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Center = ({
   className, children,
@@ -9,7 +10,7 @@ const Center = ({
 }) =>
 
   <div
-    className={className}
+    className={concat('center', className)}
     style={{
       ...styles.center,
       ...(background ? { background: background } : null),

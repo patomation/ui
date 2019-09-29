@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Code = ({
   className, children, onClick,
@@ -9,7 +10,7 @@ const Code = ({
   return (
     <div
       onClick={onClick}
-      className={className}
+      className={concat('code', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),

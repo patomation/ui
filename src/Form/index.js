@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import { Formik } from 'formik'
 import Button from '../Button'
 import Input from '../Input'
@@ -18,7 +19,7 @@ const Form = ({
   return (
     fields
       ? <div
-        className={className}
+        className={concat('form', className)}
         style={{
           ...styles.container,
           ...(background ? { background: background } : null),

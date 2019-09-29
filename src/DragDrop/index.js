@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 import useToggle from '@patomation/usetoggle'
 
@@ -14,7 +15,7 @@ const DragDrop = ({
 
   return (
     <div
-      className={className}
+      className={concat('dragdrop', className)}
       draggable={draggable !== undefined ? draggable : true} // Use draggable prop but default to true
       onDragStart={e => {
         // Allow firefox to drag n drop - We have to setData with anything to make it work....

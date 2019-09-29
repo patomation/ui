@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import ReactSlick from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -9,7 +10,7 @@ import { IconButton } from '../'
 const Arrow = ({ className, style, onClick, to, color }) => {
   return (
     <IconButton
-      className={'slick-arrow'}
+      className={concat('carousel__arrow', 'slick-arrow')}
       onClick={onClick}
       color={color || 'white'}
       name={to === 'next' ? 'keyboard_arrow_right' : 'keyboard_arrow_left'}
@@ -41,7 +42,7 @@ const Carousel = ({
 }) =>
   typeof children !== 'string'
     ? <ReactSlick
-      className={'carousel ' + className}
+      className={concat('carousel', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),

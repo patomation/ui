@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Image = ({
   className, src, type, alt,
@@ -9,7 +10,7 @@ const Image = ({
 }) =>
 
   <div
-    className={className}
+    className={concat('image', className)}
     style={{
       ...styles.default.container,
       ...(type === 'background' ? styles.background.container : null),

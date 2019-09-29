@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import config from '../config.js'
 
 const SideBar = ({
@@ -11,32 +12,36 @@ const SideBar = ({
 }) => {
   return (
     <div
-      className={className}
+      className={concat('sidebar', className)}
       style={{
         ...styles.container,
         ...style
       }}>
 
-      <menu style={{
-        ...styles.menu,
-        ...(width ? { width: width } : null),
-        ...(right ? { right: 0 } : null),
-        ...menuStyle
-      }}>
+      <menu
+        className='sidebar__menu'
+        style={{
+          ...styles.menu,
+          ...(width ? { width: width } : null),
+          ...(right ? { right: 0 } : null),
+          ...menuStyle
+        }}>
 
         {menu}
 
       </menu>
 
-      <main style={{
-        ...styles.content,
-        ...(right ? {
-          marginRight: width || config.size.sideBar
-        } : {
-          marginLeft: width || config.size.sideBar
-        }),
-        ...contentStyle
-      }}>
+      <main
+        className='sidebar__content'
+        style={{
+          ...styles.content,
+          ...(right ? {
+            marginRight: width || config.size.sideBar
+          } : {
+            marginLeft: width || config.size.sideBar
+          }),
+          ...contentStyle
+        }}>
 
         {children}
 

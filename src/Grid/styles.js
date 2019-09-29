@@ -4,9 +4,9 @@ export default {
     display: 'grid',
     // gridGap: '0',
     // gridTemplateColumns: repeat(columns, `${width}%` ),
-    // justifyItems: 'stretch',
-    justifyItems: 'center',
-    alignItems: 'center'
+    // justifyItems: 'center',
+    // alignItems: 'center'
+    justifyItems: 'stretch'
   },
   item: {
     gridColumn: 'auto / span auto',

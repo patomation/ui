@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-
-import { Panel, Image } from '../'
+import concat from '../../utility/concat.js'
+import { Panel, Image, Grid } from '../'
 
 const Card = ({
   className,
@@ -12,7 +12,7 @@ const Card = ({
 }) =>
 
   <Panel
-    className={className}
+    className={concat('card', className)}
     style={{
       ...styles.container,
       ...(background ? { background: background } : null),
@@ -31,27 +31,32 @@ const Card = ({
       height: '100%'
     }}>
 
-    <Image src={image} alt={alt} rectangle />
+    <Image className='card__image' src={image} alt={alt} rectangle />
 
-    { middle || children
-      ? <div style={{
-        padding: '1rem',
-        flex: '1 1 auto'
-      }}>
-        {middle || children}
-      </div>
-      : null }
+    <Grid col={1} className='card__grid'>
+      { middle || children
+        ? <div
+          className='card__middle'
+          style={{
+            padding: '1rem',
+            flex: '1 1 auto'
+          }}>
+          {middle || children}
+        </div>
+        : null }
 
-    {bottom
-      ? <div style={{
-        paddingBottom: '1rem',
-        paddingLeft: '1rem',
-        paddingRight: '1rem'
-      }}>
-        {bottom}
-      </div>
-      : null }
-
+      {bottom
+        ? <div
+          className='card__bottom'
+          style={{
+            paddingBottom: '1rem',
+            paddingLeft: '1rem',
+            paddingRight: '1rem'
+          }}>
+          {bottom}
+        </div>
+        : null }
+    </Grid>
   </Panel>
 
 Card.propTypes = {

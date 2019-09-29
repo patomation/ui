@@ -1,18 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const User = ({
-  style, image
+  className, style, image
 }) => {
   return (
-    <div style={{ ...styles.container, ...style }}>
-      <img alt='user' style={styles.image} src={image} />
+    <div
+      className={concat('user', className)}
+      style={{ ...styles.container, ...style }}>
+      <img
+        className='user__image'
+        alt='user'
+        style={styles.image}
+        src={image} />
     </div>
   )
 }
 
 User.propTypes = {
+  className: PropTypes.string,
   style: PropTypes.object,
   image: PropTypes.string
 }

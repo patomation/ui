@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Brand = ({
   className, children,
@@ -10,7 +11,7 @@ const Brand = ({
 
   <span
     onClick={onClick}
-    className={className}
+    className={concat('brand', className)}
     style={{
       ...styles.container,
       ...(background ? { background: background } : null),

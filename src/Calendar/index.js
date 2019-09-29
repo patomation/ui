@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 import moment from 'moment'
 
@@ -64,7 +65,7 @@ const Calendar = ({
 
   return (
     <div
-      className={className}
+      className={concat('calendar', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),

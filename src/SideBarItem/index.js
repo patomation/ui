@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 import Icon from '../Icon'
 import Grid from '../Grid'
@@ -15,7 +16,7 @@ const SideBarItem = ({
 
   return (
     <Grid
-      className={className}
+      className={concat('sidebaritem', className)}
       onClick={onClick}
       onMouseEnter={() => {
         setHover(true)
@@ -35,10 +36,13 @@ const SideBarItem = ({
       col={4}>
 
       <Icon
+        className='sidebaritem__icon'
         name={icon}
         style={styles.icon}/>
 
-      <div style={styles.title}>
+      <div
+        className='sidebaritem__title'
+        style={styles.title}>
         {title}
       </div>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Input = ({
   type, name, onChange, onBlur, value, error, placeholder,
@@ -11,7 +12,7 @@ const Input = ({
 
   return (
     <div
-      className={className}
+      className={concat('input', className)}
       style={{
         ...styles.container,
         ...style,
@@ -19,6 +20,7 @@ const Input = ({
       }}>
 
       <InputType
+        className='input__input'
         type={type}
         name={name}
         cols="10"
@@ -36,6 +38,7 @@ const Input = ({
         }}/>
 
       <div
+        className='input__error'
         style={{
           ...(error ? styles.error : null),
           ...(error ? errorStyle : null)

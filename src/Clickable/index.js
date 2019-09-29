@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Clickable = ({
   className, children,
@@ -10,7 +11,7 @@ const Clickable = ({
 
   <div
     onClick={onClick}
-    className={className}
+    className={concat('clickable', className)}
     style={{
       ...styles.container,
       ...(background ? { background: background } : null),

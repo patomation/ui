@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Footer = ({
   className, children, onClick,
@@ -9,7 +10,7 @@ const Footer = ({
   return (
     <footer
       onClick={onClick}
-      className={className}
+      className={concat('footer', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),

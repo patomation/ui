@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Collapse = ({
   className, children, style,
@@ -23,7 +24,7 @@ const Collapse = ({
       ref={ elm => {
         element = elm
       }}
-      className={className}
+      className={concat('collapse', className)}
       style={{
         ...styles.container,
         ...{

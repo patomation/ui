@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import Hr from '../Hr'
 
 const Panel = ({
@@ -10,7 +11,7 @@ const Panel = ({
 }) => {
   return (
     <div
-      className={className}
+      className={concat('panel', className)}
       style={{
         ...styles.container,
         ...style,
@@ -18,18 +19,22 @@ const Panel = ({
       }}>
 
       {(header
-        ? <div style={styles.header}>
+        ? <div
+          className='panel__header'
+          style={styles.header}>
 
           {header}
 
         </div> : null)}
       {(header ? <Hr /> : null)}
 
-      <div style={{
-        ...styles.content,
-        ...contentStyle,
-        ...(padding ? { padding: padding } : null)
-      }}>
+      <div
+        className='panel__content'
+        style={{
+          ...styles.content,
+          ...contentStyle,
+          ...(padding ? { padding: padding } : null)
+        }}>
         {children}
       </div>
 

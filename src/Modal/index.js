@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import { Panel, Center, IconButton, Clickable } from '../'
 
 const Modal = ({
@@ -22,7 +23,7 @@ const Modal = ({
   if (open) {
     return (
       <div
-        className={ `modal ${className}` }
+        className={concat('modal', className)}
         style={{
           ...styles.container,
           ...(background ? { background: background } : null),
@@ -31,14 +32,18 @@ const Modal = ({
         }}>
 
         <Clickable
+          className='modal__clickable'
           onClick={close}
           style={styles.background}>
         </Clickable>
 
-        <Center>
-          <Panel style={styles.panel}>
+        <Center className='modal__center'>
+          <Panel
+            className='modal__panel'
+            style={styles.panel}>
 
             <IconButton
+              className='modal__close'
               color={color}
               onClick={close}
               style={styles.close}

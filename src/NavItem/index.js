@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 import Link from '../Link'
 
@@ -13,7 +14,7 @@ const NavItem = ({
     <Link
       href={href}
       onClick={onClick}
-      className={className}
+      className={concat('navitem', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),
@@ -24,13 +25,15 @@ const NavItem = ({
 
       { children || title }
 
-      <div style={{
-        ...styles.bottomBar,
-        ...{
-          background: (active ? '#ffffff' : null)
+      <div
+        className='navitem__bottombar'
+        style={{
+          ...styles.bottomBar,
+          ...{
+            background: (active ? '#ffffff' : null)
+          }
         }
-      }
-      }></div>
+        }></div>
 
     </Link>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Nav = ({
   className, children,
@@ -8,7 +9,7 @@ const Nav = ({
 }) =>
 
   <nav
-    className={className}
+    className={concat('nav', className)}
     style={{
       ...styles.container,
       ...(background ? { background: background } : null),

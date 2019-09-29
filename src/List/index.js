@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import { Gutter } from '../'
 
 const List = ({
@@ -9,7 +10,7 @@ const List = ({
 }) => {
   return (
     <ul
-      className={className}
+      className={concat('list', className)}
       style={{
         ...styles.list,
         ...style,

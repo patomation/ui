@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 import { Grid, Image } from '../'
 import config from '../config'
@@ -13,7 +14,7 @@ const ImageGrid = ({
 }) =>
 
   <Grid
-    className={className || 'image-grid'}
+    className={concat('imagegrid', className)}
     style={{
       ...styles.container,
       ...(background ? { background: background } : null),
@@ -28,6 +29,7 @@ const ImageGrid = ({
       ? images.map((image, index) =>
         <Image
           key={`image-grid-image-${index}`}
+          className='imagegrid__image'
           src={image}
           square />)
 
@@ -36,6 +38,7 @@ const ImageGrid = ({
           ? <Image
             key={`image-grid-image-${index}`}
             src={child.props.children[0].props.src}
+            className='imagegrid__image'
             square />
           : null
       )

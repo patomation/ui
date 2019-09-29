@@ -1,7 +1,7 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Shape = ({
   className, children,
@@ -12,13 +12,14 @@ const Shape = ({
 
   <div
     onClick={onClick}
-    className={className}
+    className={concat('shape', className)}
     style={{
       ...styles.container,
       ...style
     }}>
 
     <div
+      className='shape__shape'
       style={{
         ...styles.shape,
         ...(background ? { background: background } : null),

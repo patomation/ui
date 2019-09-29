@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
+import extract from '../../utility/extract.js' // eslint-disable-line
 
 const Grid = ({
   className, children,
   background, color, style,
   col, row, gap,
-  onMouseEnter, onMouseLeave
+  onMouseEnter, onMouseLeave,
+  breakWidth
 }) => {
   // Extract number and unit
   const extract = (string) => {
@@ -34,11 +37,14 @@ const Grid = ({
 
   return (
     <div
-      className={`grid ${className || ''}`}
+      className={concat('grid', className)}
       style={{
         ...styles.container,
         gridGap: (gap || '0'),
         gridTemplateColumns: repeat(col, (subtractGap ? `calc(${width}% - ${subtractGap})` : `${width}%`)),
+        ...(breakWidth ? {
+          gridTemplateColumns: `repeat(auto-fit, minmax(${extract(breakWidth).number / (col || 2)}${extract(breakWidth).unit}, 1fr))`
+        } : null),
         ...(row ? {
           gridTemplateRows: repeat(row, (subtractGap ? `calc(${height}% - ${subtractGap})` : `${height}%`))
         } : null),
@@ -64,6 +70,7 @@ Grid.propTypes = {
   col: PropTypes.number,
   row: PropTypes.number,
   gap: PropTypes.string,
+  breakWidth: PropTypes.string,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import { Gutter, Image } from '../'
 
 const Hero = ({
@@ -12,7 +13,7 @@ const Hero = ({
 }) => {
   return (
     <header
-      className={className}
+      className={concat('hero', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),
@@ -21,20 +22,22 @@ const Hero = ({
       }}>
 
       { title
-        ? <h1 style={{
-          ...styles.title,
-          ...titleStyle
-        }}>
+        ? <h1 className='hero__title'
+          style={{
+            ...styles.title,
+            ...titleStyle
+          }}>
           { title }
         </h1> : null }
 
       { description ? <Gutter /> : null}
 
       { description
-        ? <p style={{
-          ...styles.description,
-          ...descriptionStyle
-        }}>
+        ? <p className='hero__description'
+          style={{
+            ...styles.description,
+            ...descriptionStyle
+          }}>
           { description }
         </p> : null }
 
@@ -43,6 +46,7 @@ const Hero = ({
       { children }
 
       <Image
+        className='hero__image'
         src={image}
         type={'background'}/>
 

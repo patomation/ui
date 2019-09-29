@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import Icon from '../Icon'
 
 const Spinner = ({
   icon, className, background, color, style
 }) => {
   return (
-    <div>
+    <div className={concat('spinner', className)}>
       <style>{styles.keyframes.spinCounterClockwise}</style>
 
       <Icon
+        className='spinner__icon'
         name={icon || 'sync'}
-        className={className}
         style={{
           ...styles.container,
           ...(background ? { background: background } : null),

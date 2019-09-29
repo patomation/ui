@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import svgPaths from './svgPaths.js'
 
 // { children || name || icon }
@@ -16,7 +17,7 @@ const Icon = ({
 
   return path && size
     ? <svg
-      className={className}
+      className={concat('icon', className)}
       style={{
         ...styles.icon,
         ...(background ? { backgroundColor: background } : null),

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Heading = ({
   Tag, className, onClick, children,
@@ -8,7 +9,7 @@ const Heading = ({
 }) => {
   return (
     <Tag
-      className={className}
+      className={concat('heading', className)}
       onClick={onClick}
       style={{
         ...styles.container,

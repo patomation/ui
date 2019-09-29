@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 import { Icon } from '../'
 
@@ -12,7 +13,7 @@ const IconButton = ({
 }) => {
   return (
     <div
-      className={className}
+      className={concat('iconbutton', className)}
       onClick={onClick}
       style={{
         ...styles.container,
@@ -25,6 +26,7 @@ const IconButton = ({
       }}>
 
       <Icon
+        className='iconbutton__icon'
         responsive={!!width}
         color={color}
         style={{
@@ -34,6 +36,7 @@ const IconButton = ({
         name={icon || name}/>
 
       {title ? <div
+        className='iconbutton__title'
         style={{
           ...styles.title,
           ...titleStyle

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 
 const Content = ({
   className, children,
@@ -8,7 +9,7 @@ const Content = ({
 }) => {
   return (
     <main
-      className={className}
+      className={concat('content', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),

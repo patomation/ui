@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import config from '../config.js'
 import { Grid } from '../'
 import mediaQuery from '../../utility/mediaQuery.js'
@@ -9,7 +10,7 @@ const GridLayout = ({
   className, children,
   onClick,
   background, color, style,
-  col
+  col, gap
 }) => {
   const { lg } = config.size.media
 
@@ -28,8 +29,9 @@ const GridLayout = ({
 </style>
 <Grid
   col={col}
+  gap={gap}
   onClick={onClick}
-  className={'grid-layout ' + className}
+  className={concat('gridlayout', className)}
   style={{
     ...styles.container,
     ...(background ? { background: background } : null),
@@ -51,7 +53,8 @@ GridLayout.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
-  col: PropTypes.number
+  col: PropTypes.number,
+  gap: PropTypes.string
 }
 
 export default GridLayout

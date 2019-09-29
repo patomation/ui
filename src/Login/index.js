@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
+import concat from '../../utility/concat.js'
 import { Formik } from 'formik'
 import validationSchema from './validationSchema.js'
 import Button from '../Button'
@@ -13,7 +14,7 @@ const Login = ({
 }) => {
   return (
     <div
-      className={className}
+      className={concat('login', className)}
       style={{
         ...styles.container,
         ...(background ? { background: background } : null),

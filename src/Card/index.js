@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
-import { Panel, Image, Grid } from '../'
+import { Panel, Image } from '../'
 
 const Card = ({
   className,
@@ -33,7 +33,6 @@ const Card = ({
 
     <Image className='card__image' src={image} alt={alt} rectangle />
 
-    <Grid col={1} className='card__grid'>
       { middle || children
         ? <div
           className='card__middle'
@@ -56,7 +55,7 @@ const Card = ({
           {bottom}
         </div>
         : null }
-    </Grid>
+
   </Panel>
 
 Card.propTypes = {

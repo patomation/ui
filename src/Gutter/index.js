@@ -5,18 +5,21 @@ import concat from '../../utility/concat.js'
 
 const Gutter = ({
   className, style, disabled, vertical
-}) =>
+}) => {
 
-  disabled !== true
-    ? <div
+  const Tag = vertical ? 'span' : 'div'
+
+  return disabled !== true
+    ? <Tag
       className={concat('gutter', className)}
       style={{
         ...styles.horizontal,
         ...(vertical === true ? styles.vertical : null),
         ...style
       }}>
-    </div>
+    </Tag>
     : null
+}
 
 Gutter.propTypes = {
   className: PropTypes.string,

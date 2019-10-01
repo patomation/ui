@@ -2,17 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
+import config from '../config.js'
 
-import { Icon } from '../'
+import { Icon, Button, Badge } from '../'
 
 const IconButton = ({
   onClick, className,
   background, color,
   style, iconStyle, titleStyle, activeStyle,
-  name, icon, active, title, width
+  name, icon, active, title, width,
+  badge
 }) => {
   return (
-    <div
+    <Button
+      kind='none'
       className={concat('iconbutton', className)}
       onClick={onClick}
       style={{
@@ -28,7 +31,7 @@ const IconButton = ({
       <Icon
         className='iconbutton__icon'
         responsive={!!width}
-        color={color}
+        color={color || config.color.primary}
         style={{
           ...styles.icon,
           ...iconStyle
@@ -43,7 +46,15 @@ const IconButton = ({
         }}>
         {title}
       </div> : null}
-    </div>
+
+      {badge
+        ? <Badge
+          icon={typeof badge === 'string' ? badge : null}>
+          {typeof badge === 'number' ? badge : null}
+        </Badge>
+        : null}
+
+    </Button>
   )
 }
 
@@ -60,7 +71,9 @@ IconButton.propTypes = {
   icon: PropTypes.string,
   active: PropTypes.bool,
   title: PropTypes.string,
-  width: PropTypes.string
+  width: PropTypes.string,
+  badge: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
+
 }
 
 export default IconButton

@@ -1,5 +1,6 @@
 export default {
   container: {
+    position: 'relative',
     display: 'inline-block',
     cursor: 'pointer',
     textAlign: 'center'

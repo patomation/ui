@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import { Shape, Icon } from '../'
 import concat from '../../utility/concat.js'
-
+/**
+* a badge component that can be added to Icons to convey information
+*/
 const Badge = ({
   className,
   children, icon,
@@ -61,6 +63,9 @@ const Badge = ({
   </div>
 
 Badge.propTypes = {
+  /**
+  * Exposes additional className
+  */
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   icon: PropTypes.string,
@@ -68,6 +73,9 @@ Badge.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object
+}
+
+Badge.defaultProps = {
 }
 
 export default Badge

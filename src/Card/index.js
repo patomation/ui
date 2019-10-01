@@ -20,41 +20,25 @@ const Card = ({
       ...style
     }}
     containerStyle={{ margin: 0 }}
-    contentStyle={{
-      padding: 0,
-      display: 'flex',
-      flexDirection: 'column',
-      flexWrap: 'nowrap',
-      justifyContent: 'flex-start',
-      alignItems: 'stretch',
-      alignContent: 'stretch',
-      height: '100%'
-    }}>
+    contentStyle={styles.content}>
 
     <Image className='card__image' src={image} alt={alt} rectangle />
 
-      { middle || children
-        ? <div
-          className='card__middle'
-          style={{
-            padding: '1rem',
-            flex: '1 1 auto'
-          }}>
-          {middle || children}
-        </div>
-        : null }
+    { middle || children
+      ? <div
+        className='card__middle'
+        style={styles.middle}>
+        {middle || children}
+      </div>
+      : null }
 
-      {bottom
-        ? <div
-          className='card__bottom'
-          style={{
-            paddingBottom: '1rem',
-            paddingLeft: '1rem',
-            paddingRight: '1rem'
-          }}>
-          {bottom}
-        </div>
-        : null }
+    {bottom
+      ? <div
+        className='card__bottom'
+        style={styles.bottom}>
+        {bottom}
+      </div>
+      : null }
 
   </Panel>
 

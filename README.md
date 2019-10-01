@@ -1,6 +1,46 @@
 
 # React Ui Components
 
+A React js UI component library using material design principles.
+Includes all the building blocks to build a Gatsby website or a regular web app.
+Inline styles used but classes are available to override things.
+A config file exists for customizing global sizes and colors.
+Tested and linted JavaScript goodness.
+
+## Installation
+```
+yarn add @patomation/react-ui-components
+```
+or
+```
+npm install @patomation/react-ui-components --save
+```
+
+## Usage
+
+```javascript
+import { Hero, Button, Icon, Footer } from '@patomation/react-ui-components'
+
+const myComponent = () => {
+  <div>
+    <Hero
+      image='/images/hero_image.jpg'
+      title='My Cool Site'
+      description='well met'>
+
+    <Button title='cool beans' />
+
+    <Icon name='star' /> {/* Supports svg material icons no font required */}
+
+    <Footer>Footer Stuff</Footer>
+  </div>
+}
+
+export default MyComponent
+
+```
+
+
 ## Components
  - [Badge](src/Badge/doc.md)
  - [Brand](src/Brand/doc.md)

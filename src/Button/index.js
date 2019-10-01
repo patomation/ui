@@ -87,6 +87,9 @@ const Button = ({
     style={{
       ...styles.default,
       ...(styles.kind[kind || 'normal']),
+      ...(kind === 'outline' && color ? {
+        border: `1px solid ${color}`
+      } : null),
       ...(background ? { background: background } : null),
       ...(color ? { color: color } : null),
       ...style,

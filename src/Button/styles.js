@@ -39,13 +39,13 @@ export default {
     },
     outline: {
       background: 'none',
-      color: '#ffffff',
-      border: '1px solid rgba(255,255,255,0.75)',
+      color: config.color.button.background,
+      border: `1px solid ${config.color.button.background}`,
       active: {
-        background: 'gold'
+        filter: 'brightness(130%)'
       },
       hover: {
-        border: '1px solid rgba(255,255,255,1)'
+        filter: 'brightness(85%)'
       },
       disabled: {
         color: 'gray',
@@ -72,7 +72,19 @@ export default {
       enabled: {}
     },
     none: {
-
+      background: 'none',
+      padding: 0,
+      active: {
+        filter: 'brightness(130%)'
+      },
+      hover: {
+        filter: 'brightness(85%)'
+      },
+      disabled: {
+        cursor: 'auto'
+      },
+      enabled: {
+      }
     }
   }
 }

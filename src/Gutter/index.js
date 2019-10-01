@@ -6,7 +6,6 @@ import concat from '../../utility/concat.js'
 const Gutter = ({
   className, style, disabled, vertical
 }) => {
-
   const Tag = vertical ? 'span' : 'div'
 
   return disabled !== true

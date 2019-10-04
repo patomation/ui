@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
 import config from '../config.js'
 
 import { Icon, Button, Badge } from '../'
-
+/**
+* a clickable icon button with hover and an optional title
+**/
 const IconButton = ({
   onClick, className,
   background, color,
   style, iconStyle, titleStyle, activeStyle,
+  hoverColor,
   name, icon, active, title, width,
   badge
 }) => {
+  const [hover, setHover] = useState(false)
+
   return (
     <Button
       kind='none'
@@ -26,12 +31,15 @@ const IconButton = ({
         ...style,
         ...(active ? styles.active : null),
         ...(active ? activeStyle : null)
-      }}>
+      }}
+      onHover={setHover}>
 
       <Icon
         className='iconbutton__icon'
         responsive={!!width}
-        color={color || config.color.primary}
+        color={ hover
+          ? (hoverColor || color || config.color.primary)
+          : (color || config.color.primary) }
         style={{
           ...styles.icon,
           ...iconStyle
@@ -72,6 +80,7 @@ IconButton.propTypes = {
   active: PropTypes.bool,
   title: PropTypes.string,
   width: PropTypes.string,
+  hoverColor: PropTypes.string,
   badge: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
 
 }

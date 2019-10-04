@@ -6,14 +6,18 @@ import concat from '../../utility/concat.js'
 const Clickable = ({
   className, children,
   onClick,
-  background, color, style
+  background, color, style,
+  disabled
 }) =>
 
   <div
-    onClick={onClick}
+    onClick={() => {
+      if (onClick && !disabled) onClick()
+    }}
     className={concat('clickable', className)}
     style={{
       ...styles.container,
+      ...(disabled ? styles.disabled : null),
       ...(background ? { background: background } : null),
       ...(color ? { color: color } : null),
       ...style
@@ -29,7 +33,8 @@ Clickable.propTypes = {
   onClick: PropTypes.func,
   background: PropTypes.string,
   color: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
+  disabled: PropTypes.bool
 }
 
 export default Clickable

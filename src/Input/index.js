@@ -31,6 +31,7 @@ const Input = ({
         onClick={onClick}
         style={{
           ...styles.input,
+          ...(type === 'textarea' ? styles.textarea : null),
           ...(background ? { background: background } : null),
           ...(color ? { color: color } : null),
           ...inputStyle,

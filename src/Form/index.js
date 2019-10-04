@@ -10,10 +10,15 @@ import Gutter from '../Gutter'
 import schema from './schema.js'
 import initialValues from './initialValues.js'
 
+/**
+* A simple dynamic form component
+*/
 const Form = ({
   className, children,
   background, color, style, buttonStyle, inputStyle,
-  onSubmit, fields
+  onSubmit, fields,
+  labels, placeholders,
+  submitButton, exposeSubmit
 
 }) => {
   return (
@@ -46,54 +51,91 @@ const Form = ({
             handleChange,
             handleBlur,
             handleSubmit,
-            isSubmitting
-          /* and other goodies */
-          }) => (
-            <form onSubmit={handleSubmit}>
+            isSubmitting,
+            submitForm
+          }) => {
+          // pass up submitForm function in case we want it outside
+            if (exposeSubmit) exposeSubmit(submitForm)
 
-              {children}
+            return (
+              <form onSubmit={handleSubmit} className='form__form'>
 
-              {fields.map(field => {
-                const { name, type, placeholder, label } = field
-                return <span key={`field_${name}`}>
-                  {label ? <label>{label}</label> : null}
-                  <Input
-                    name={name}
-                    type={type || 'text'}
-                    placeholder={placeholder || name.replace(/^./, name[0].toUpperCase())}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values[name]}
-                    error={errors[name] && touched[name] && errors[name]}
-                    inputStyle={inputStyle}
-                  />
-                  <Gutter disabled={(errors[name] && touched[name] && errors[name]) !== undefined}/>
-                </span>
-              })}
+                {children}
 
-              <Button
-                type='submit'
-                disabled={isSubmitting}
-                style={{
-                  width: '100%',
-                  ...buttonStyle
-                }}>
-              Submit
-              </Button>
-            </form>
-          )}
+                {fields.map(field => {
+                  const { name, type, placeholder, label } = field
+                  return <div
+                    key={`field_${name}`}
+                    className={`form__field_${name}`}>
+                    {labels ? <label>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
+                    <Input
+                      name={name}
+                      type={type || 'text'}
+                      placeholder={ placeholders ? placeholder || name.replace(/^./, name[0].toUpperCase()) : null }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values[name]}
+                      error={errors[name] && touched[name] && errors[name]}
+                      inputStyle={inputStyle}
+                    />
+                    <Gutter disabled={(errors[name] && touched[name] && errors[name]) !== undefined}/>
+                  </div>
+                })}
+
+                { submitButton === false
+                  ? null
+                  : submitButton !== undefined
+                    ? React.cloneWithProps(submitButton, {
+                      type: 'submit',
+                      disabled: isSubmitting
+                    })
+                    : <Button
+                      type='submit'
+                      disabled={isSubmitting}
+                      style={{
+                        width: '100%',
+                        ...buttonStyle
+                      }}>
+                    Submit
+                    </Button>
+                }
+              </form>
+            )
+          }}
         </Formik>
       </div> : null
   )
 }
 
 Form.propTypes = {
+  /**
+  * set parrent classname
+  */
   className: PropTypes.string,
+  /**
+  * children appended to top of form before dynamic inputs
+  * optional inputs or elements can be added to the form if need be
+  */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * background color
+  **/
   background: PropTypes.string,
+  /**
+  * font color
+  **/
   color: PropTypes.string,
+  /**
+  * style object can override parrent container styles
+  **/
   style: PropTypes.object,
+  /**
+  * form submit event, returns values and callback. Callback sets the form back to submitting=false
+  **/
   onSubmit: PropTypes.func,
+  /**
+  *
+  **/
   fields: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     label: PropTypes.string,
@@ -103,7 +145,25 @@ Form.propTypes = {
     validation: PropTypes.string
   })),
   buttonStyle: PropTypes.object,
-  inputStyle: PropTypes.object
+  inputStyle: PropTypes.object,
+  /**
+  * Enable labels
+  **/
+  labels: PropTypes.bool,
+  /**
+  * Enable placeholders
+  **/
+  placeholders: PropTypes.bool,
+  /**
+  * submitButton false will turn off submit button
+  * including a button/ node will replace the default button but add disabled and type=submit
+  **/
+  submitButton: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.node
+  ]),
+
+  exposeSubmit: PropTypes.func
 }
 
 export default Form

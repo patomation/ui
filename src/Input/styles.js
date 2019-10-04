@@ -20,6 +20,10 @@ export default {
     MozBoxSizing: 'border-box', /* Firefox, other Gecko */
     boxSizing: 'border-box' /* Opera/IE 8+ */
   },
+  textarea: {
+    resize: 'none',
+    height: '5rem'
+  },
   inputError: {
     border: '1px solid red'
   },

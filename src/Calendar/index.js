@@ -131,7 +131,7 @@ const Calendar = ({
                   background: 'rgba(0,0,0,0.5)'
                 } : null),
                 // Highlight selected day
-                ...(moment(selectedDay).format('DD-MM-YYYY') === moment(day).format('DD-MM-YYYY') ? {
+                ...(selectedDay && moment(selectedDay).format('DD-MM-YYYY') === moment(day).format('DD-MM-YYYY') ? {
                   background: selectedColor || 'gold'
                 } : null),
                 // Highlight Apointments
@@ -140,7 +140,6 @@ const Calendar = ({
                 } : null)
               }}
               hoverStyle={{
-                background: 'rgba(0,0,0,0.2)'
               }}>
 
               {day ? moment(day).format('D') : ''}

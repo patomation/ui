@@ -4,6 +4,5 @@ export default (fields) => {
     acc[name] = value || '' // Use blank string if no initial value is defined
     return acc
   }, {})
-  console.log(values)
   return values
 }

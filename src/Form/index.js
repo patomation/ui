@@ -21,6 +21,8 @@ const Form = ({
   submitButton, exposeSubmit
 
 }) => {
+  console.log('submitButton', submitButton)
+
   return (
     fields
       ? <div
@@ -51,12 +53,8 @@ const Form = ({
             handleChange,
             handleBlur,
             handleSubmit,
-            isSubmitting,
-            submitForm
+            isSubmitting
           }) => {
-          // pass up submitForm function in case we want it outside
-            if (exposeSubmit) exposeSubmit(submitForm)
-
             return (
               <form onSubmit={handleSubmit} className='form__form'>
 
@@ -82,22 +80,15 @@ const Form = ({
                   </div>
                 })}
 
-                { submitButton === false
-                  ? null
-                  : submitButton !== undefined
-                    ? React.cloneWithProps(submitButton, {
-                      type: 'submit',
-                      disabled: isSubmitting
-                    })
-                    : <Button
-                      type='submit'
-                      disabled={isSubmitting}
-                      style={{
-                        width: '100%',
-                        ...buttonStyle
-                      }}>
-                    Submit
-                    </Button>
+                { submitButton || <Button
+                  type='submit'
+                  disabled={isSubmitting}
+                  style={{
+                    width: '100%',
+                    ...buttonStyle
+                  }}>
+                      Submit
+                </Button>
                 }
               </form>
             )
@@ -155,13 +146,9 @@ Form.propTypes = {
   **/
   placeholders: PropTypes.bool,
   /**
-  * submitButton false will turn off submit button
-  * including a button/ node will replace the default button but add disabled and type=submit
+  * Replace default submit button, make sure to include type=submit on the button
   **/
-  submitButton: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.node
-  ]),
+  submitButton: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 
   exposeSubmit: PropTypes.func
 }

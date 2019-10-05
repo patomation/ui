@@ -7,6 +7,7 @@ export default {
   },
   input: {
     width: '100%',
+    minHeight: '42px', // Keeps all the inputs a consistent height 42 = height of date input that is larger because of up/down arrows. thanks chrome
     display: 'block',
     fontFamily: 'sans-serif',
     fontSize: '1rem',

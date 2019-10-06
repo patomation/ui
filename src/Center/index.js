@@ -8,18 +8,25 @@ const Center = ({
   background, color, style,
   width
 }) =>
-
   <div
-    className={concat('center', className)}
+    className='center'
     style={{
-      ...styles.center,
+      ...styles.container,
       ...(background ? { background: background } : null),
       ...(color ? { color: color } : null),
-      ...(width ? { width: width } : null),
       ...style
     }}>
 
-    {children}
+    <div
+      className={concat('center__content', className)}
+      style={{
+        ...styles.content,
+        ...(width ? { width: width } : null)
+      }}>
+
+      {children}
+
+    </div>
 
   </div>
 

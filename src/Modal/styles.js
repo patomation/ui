@@ -14,8 +14,8 @@ export default {
   },
   close: {
     position: 'fixed',
-    top: '1.5rem',
-    right: '1.5rem',
+    top: '2rem',
+    right: '2rem',
     display: 'block',
     zIndex: 100
   },

@@ -16,13 +16,14 @@ const Arrow = ({ className, style, onClick, to, color }) => {
       name={to === 'next' ? 'keyboard_arrow_right' : 'keyboard_arrow_left'}
       width='3rem'
       iconStyle={{
-        top: '50%'
+        top: '0'
       }}
       style={{
         ...style,
         ...styles.arrow,
         ...(to === 'next' ? { right: 0 } : null),
-        ...(to === 'prev' ? { left: 0 } : null)
+        ...(to === 'prev' ? { left: 0 } : null),
+        height: '100%'
       }}/>)
 }
 
@@ -59,7 +60,8 @@ const Carousel = ({
         nextArrow: <Arrow to='next'/>,
         prevArrow: <Arrow to='prev'/>
       }}
-      autoplay={autoplay === undefined ? true : autoplay}
+      // autoplay={autoplay === undefined ? true : autoplay}
+      autoplay={false}
       autoplaySpeed={autoplaySpeed || 3000}>
 
       {children}

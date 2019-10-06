@@ -38,6 +38,7 @@ const Modal = ({
         </Clickable>
 
         <Center className='modal__center'>
+
           <Panel
             className='modal__panel'
             style={styles.panel}>

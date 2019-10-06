@@ -4,7 +4,7 @@ function equalTo (ref, msg) {
   return this.test({
     name: 'equalTo',
     exclusive: false,
-    message: msg || '${path} must be the same as ${reference}',
+    message: msg || '${path} must be the same as ${reference}', /* eslint-disable-line */
     params: {
       reference: ref.path
     },

@@ -30,4 +30,10 @@ describe('<SideBarItem />', () => {
   //   expect(component.find('button').props().style.background).toEqual('blue')
   //   expect(component.find('button').props().style.color).toEqual('red')
   // })
+
+  it('accepts background && color prop', () => {
+    const component = mount(<SideBarItem background="blue" color="red" />)
+    expect(component.find('div.sidebaritem').props().style.background).toEqual('blue')
+    expect(component.find('div.sidebaritem').props().style.color).toEqual('red')
+  })
 })

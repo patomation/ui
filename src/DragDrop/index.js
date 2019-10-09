@@ -16,7 +16,7 @@ const DragDrop = ({
   return (
     <div
       className={concat('dragdrop', className)}
-      draggable={draggable !== undefined ? draggable : true} // Use draggable prop but default to true
+      draggable={draggable} // Use draggable prop but default to true
       onDragStart={e => {
         // Allow firefox to drag n drop - We have to setData with anything to make it work....
         e.dataTransfer.setData('text', '')
@@ -65,6 +65,10 @@ DragDrop.propTypes = {
   onDragLeave: PropTypes.func,
   onDrag: PropTypes.func,
   draggable: PropTypes.bool
+}
+
+DragDrop.defaultProps = {
+  draggable: true
 }
 
 export default DragDrop

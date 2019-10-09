@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
+import { Button, Input } from '../'
 import { Formik } from 'formik'
-import Button from '../Button'
-import Input from '../Input'
-import Gutter from '../Gutter'
 
 import schema from './schema.js'
 import initialValues from './initialValues.js'
@@ -19,10 +17,7 @@ const Form = ({
   onSubmit, fields,
   labels, placeholders,
   submitButton, exposeSubmit
-
 }) => {
-  console.log('submitButton', submitButton)
-
   return (
     fields
       ? <div
@@ -64,8 +59,9 @@ const Form = ({
                   const { name, type, placeholder, label } = field
                   return <div
                     key={`field_${name}`}
+                    id="test"
                     className={`form__field_${name}`}>
-                    {labels ? <label>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
+                    {labels ? <label className='form__feild__label'>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
                     <Input
                       name={name}
                       type={type || 'text'}
@@ -76,7 +72,6 @@ const Form = ({
                       error={errors[name] && touched[name] && errors[name]}
                       inputStyle={inputStyle}
                     />
-                    <Gutter disabled={(errors[name] && touched[name] && errors[name]) !== undefined}/>
                   </div>
                 })}
 

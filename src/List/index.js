@@ -51,7 +51,7 @@ const List = ({
 
 List.propTypes = {
   className: PropTypes.string,
-  data: PropTypes.object,
+  data: PropTypes.array,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   style: PropTypes.object,
   listStyle: PropTypes.object,

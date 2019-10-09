@@ -8,6 +8,12 @@ describe('<NavItem />', () => {
     mount(<NavItem />)
   })
 
+  it('accepts active prop', () => {
+    const component = mount(<NavItem active={true} />)
+    expect(component.find('a').props().style.opacity).toEqual(1)
+    expect(component.find('div.navitem__bottombar').props().style.background).toEqual('#ffffff')
+  })
+
   it('accepts background && color prop', () => {
     const component = mount(<NavItem background="blue" color="red" />)
     expect(component.find('a').props().style.background).toEqual('blue')

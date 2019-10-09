@@ -56,7 +56,7 @@ const Carousel = ({
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: arrows === undefined ? true : arrows,
+        arrows: arrows,
         nextArrow: <Arrow to='next'/>,
         prevArrow: <Arrow to='prev'/>
       }}
@@ -78,6 +78,10 @@ Carousel.propTypes = {
   autoplay: PropTypes.bool,
   autoplaySpeed: PropTypes.number,
   arrows: PropTypes.bool
+}
+
+Carousel.defaultProps = {
+  arrows: true
 }
 
 export default Carousel

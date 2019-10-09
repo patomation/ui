@@ -5,10 +5,8 @@ import concat from '../../utility/concat.js'
 
 const Collapse = ({
   className, children, style,
-  collapse, onComplete
+  collapse, onComplete, speed
 }) => {
-  const speed = 400
-
   const [height, setHeight] = useState(null)
   let element = null
   useEffect(() => {
@@ -17,7 +15,7 @@ const Collapse = ({
     }
     // Callback when animation completes
     if (collapse && onComplete) setTimeout(onComplete, speed)
-  }, [collapse, onComplete, element])
+  }, [collapse, onComplete, element, speed])
 
   return (
     <div
@@ -44,8 +42,13 @@ Collapse.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   style: PropTypes.object,
-  collapse: PropTypes.string,
-  onComplete: PropTypes.func
+  collapse: PropTypes.bool,
+  onComplete: PropTypes.func,
+  speed: PropTypes.number
+}
+
+Collapse.defaultProps = {
+  speed: 400
 }
 
 export default Collapse

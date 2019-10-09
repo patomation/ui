@@ -12,7 +12,7 @@ const Tabs = ({
 }) =>
 
   <Grid
-    className={concat('Tabs', className)}
+    className={concat('tabs', className)}
     col={data.length}
     gap='1rem'
     style={{
@@ -24,7 +24,7 @@ const Tabs = ({
 
     {data.map((item, index) =>
       <Clickable
-        className='Tabs__Tab'
+        className='tabs__tab'
         disabled={step ? active === item || index > data.indexOf(active) : null}
         onClick={() => {
           if (onClick) onClick(item, index)

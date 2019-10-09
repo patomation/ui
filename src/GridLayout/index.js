@@ -7,9 +7,7 @@ import { Grid } from '../'
 import mediaQuery from '../../utility/mediaQuery.js'
 
 const GridLayout = ({
-  className, children,
-  onClick,
-  background, color, style,
+  className, children, style,
   col, gap
 }) => {
   const { lg } = config.size.media
@@ -30,12 +28,9 @@ const GridLayout = ({
 <Grid
   col={col}
   gap={gap}
-  onClick={onClick}
   className={concat('gridlayout', className)}
   style={{
     ...styles.container,
-    ...(background ? { background: background } : null),
-    ...(color ? { color: color } : null),
     ...style
   }}>
 
@@ -49,9 +44,6 @@ const GridLayout = ({
 GridLayout.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
-  background: PropTypes.string,
-  color: PropTypes.string,
   style: PropTypes.object,
   col: PropTypes.number,
   gap: PropTypes.string

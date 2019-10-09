@@ -28,7 +28,11 @@ const firstDayOfMonth = (date) => {
 }
 
 const isSameDay = (dayOne, dayTwo) => {
-  return moment(dayOne).format('DD-MM-YYYY') === moment(dayTwo).format('DD-MM-YYYY')
+  const dayOneDate = moment(dayOne).format('YYYY-MM-DD')
+  const dayTwoDate = moment(dayTwo).format('YYYY-MM-DD')
+  const result = dayOneDate === dayTwoDate
+
+  return result
 }
 
 const Calendar = ({
@@ -52,11 +56,11 @@ const Calendar = ({
 
   const getEvents = (day) => {
     if (events) {
-      return events.reduce((accumulator, currentValue) => {
-        if (isSameDay(day, currentValue.start)) {
-          accumulator.push(currentValue)
+      return events.reduce((acc, item) => {
+        if (isSameDay(day, item.start)) {
+          acc.push(item)
         }
-        return accumulator
+        return acc
       }, [])
     } else {
       return []
@@ -74,22 +78,26 @@ const Calendar = ({
       }}>
       <div style={{ display: 'flex' }}>
         <IconButton
+          className='calendar__prevyear'
           onClick={() => {
             setDate(moment(date).subtract(1, 'year'))
           }}
           icon="first_page"/>
         <IconButton
+          className='calendar__prevmonth'
           onClick={() => {
             setDate(moment(date).subtract(1, 'months'))
           }}
           icon="chevron_left"/>
-        <div style={{ flexGrow: 1, textAlign: 'center' }}>{month} {year}</div>
+        <div className='calendar__title' style={{ flexGrow: 1, textAlign: 'center' }}>{month} {year}</div>
         <IconButton
+          className='calendar__nextmonth'
           onClick={() => {
             setDate(moment(date).add(1, 'months'))
           }}
           icon="chevron_right"/>
         <IconButton
+          className='calendar__nextyear'
           onClick={() => {
             setDate(moment(date).add(1, 'year'))
           }}
@@ -108,6 +116,7 @@ const Calendar = ({
 
           return (
             <Button
+              className={`day_${moment(day).format('YYYY-MM-DD')}`}
               key={`day_${index}`}
               onClick={() => {
                 // Selected Day must be after today
@@ -127,11 +136,11 @@ const Calendar = ({
                 paddingLeft: 0,
                 paddingRight: 0,
                 // Highlight today
-                ...(today.format('DD-MM-YYYY') === moment(day).format('DD-MM-YYYY') ? {
+                ...(today.format('YYYY-MM-DD') === moment(day).format('YYYY-MM-DD') ? {
                   background: 'rgba(0,0,0,0.5)'
                 } : null),
                 // Highlight selected day
-                ...(selectedDay && moment(selectedDay).format('DD-MM-YYYY') === moment(day).format('DD-MM-YYYY') ? {
+                ...(selectedDay && moment(selectedDay).format('YYYY-MM-DD') === moment(day).format('YYYY-MM-DD') ? {
                   background: selectedColor || 'gold'
                 } : null),
                 // Highlight Apointments
@@ -158,7 +167,7 @@ Calendar.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
-  events: PropTypes.string,
+  events: PropTypes.array,
   onClick: PropTypes.func,
   selectedColor: PropTypes.string
 }

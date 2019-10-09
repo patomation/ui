@@ -82,7 +82,7 @@ const Button = ({
     }}
     onMouseLeave={() => {
       setHover(false)
-      if (onMouseLeave) onMouseLeave() // I find it more usefull to bubble up these events
+      if (onMouseLeave) onMouseLeave() // I find it more usefull to bubble up these events. Why is this here?
       if (onHover) onHover(false) // This was here for testing. This may get depreciated.
       setActive(false) // Make it not active anymore
     }}
@@ -97,9 +97,9 @@ const Button = ({
       ...style,
       ...(hover ? (styles.kind[kind || 'normal'].hover) : null),
       ...(hover ? hoverStyle : null),
-      ...(enabled ? (styles.kind[kind || 'normal'].enabled || enabledStyle) : null),
+      ...(enabled ? (styles.kind[kind || 'normal'].enabled) : null),
       ...(enabled ? enabledStyle : null),
-      ...(disabled ? (styles.kind[kind || 'normal'].disabled || disabledStyle) : null),
+      ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null),
       ...(disabled ? disabledStyle : null),
       ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
       ...(isActive ? activeStyle : null)

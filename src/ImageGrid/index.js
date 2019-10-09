@@ -5,7 +5,7 @@ import concat from '../../utility/concat.js'
 
 import { Grid, Image } from '../'
 import config from '../config'
-import check from '../../utility/check'
+import find from '@patomation/find'
 
 const ImageGrid = ({
   className, children, images,
@@ -33,15 +33,17 @@ const ImageGrid = ({
           src={image}
           square />)
 
-      : React.Children.map(children, (child, index) =>
-        check(child, 'props.children[0].props.src')
-          ? <Image
-            key={`image-grid-image-${index}`}
-            src={child.props.children[0].props.src}
-            className='imagegrid__image'
-            square />
-          : null
-      )
+      : React.Children.map(children, (child, index) => {
+        const src = find('src', child)
+        return (
+          src
+            ? <Image
+              key={`image-grid-image-${index}`}
+              src={src}
+              className='imagegrid__image'
+              square />
+            : null)
+      })
     }
 
   </Grid>

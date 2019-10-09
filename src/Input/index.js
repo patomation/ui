@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
+import { Gutter } from '../'
 
 const Input = ({
   type, name, onChange, onBlur, value, error, placeholder,
@@ -50,7 +51,11 @@ const Input = ({
             ...styles.error,
             ...errorStyle
           }}>
+
           {error}
+
+          <Gutter />
+
         </div>
         : null }
 

@@ -5,6 +5,7 @@ export default {
     color: '#ffffff',
     display: 'flex',
     background: config.color.violet,
-    padding: config.size.gutters
+    padding: config.size.gutters,
+    alignItems: 'center'
   }
 }

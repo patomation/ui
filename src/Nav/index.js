@@ -17,6 +17,19 @@ const Nav = ({
       ...style
     }}>
 
+    <style>
+      {`
+      .nav a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .nav > span {
+        margin-right: 1rem !important;
+      }
+
+    `}
+    </style>
+
     {children}
 
   </nav>

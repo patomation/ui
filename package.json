@@ -1,6 +1,6 @@
 {
   "name": "@patomation/react-ui-components",
-  "version": "0.13.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "private": false,
   "scripts": {

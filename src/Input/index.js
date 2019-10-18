@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
-import { Gutter } from '../'
+import { Error } from '../'
 
 const Input = ({
   type, name, onChange, onBlur, value, error, placeholder,
@@ -23,29 +23,33 @@ const Input = ({
 
       { label ? <label className='input__label'>{label}</label> : null }
 
-      <InputType
-        className='input__input'
-        type={type}
-        name={name}
-        cols="10" // Todo look into if we need this anymore or should it be textarea ? rows
-        min={min}
-        max={max}
-        onChange={onChange}
-        onBlur={onBlur}
-        placeholder={placeholder}
-        value={value}
-        onClick={onClick}
-        style={{
-          ...styles.input,
-          ...(type === 'textarea' ? styles.textarea : null),
-          ...(background ? { background: background } : null),
-          ...(color ? { color: color } : null),
-          ...inputStyle,
-          ...(error ? (inputErrorStyle || styles.inputError) : null)
-        }}/>
+      <span style={{
+        ...styles.border,
+        ...(error ? (inputErrorStyle || styles.errorBorder) : null)
+      }}>
+        <InputType
+          className='input__input'
+          type={type}
+          name={name}
+          cols="10" // Todo look into if we need this anymore or should it be textarea ? rows
+          min={min}
+          max={max}
+          onChange={onChange}
+          onBlur={onBlur}
+          placeholder={placeholder}
+          value={value}
+          onClick={onClick}
+          style={{
+            ...styles.input,
+            ...(type === 'textarea' ? styles.textarea : null),
+            ...(background ? { background: background } : null),
+            ...(color ? { color: color } : null),
+            ...inputStyle
+          }}/>
+      </span>
 
       { typeof error === 'string'
-        ? <div
+        ? <Error
           className='input__error'
           style={{
             ...styles.error,
@@ -54,9 +58,7 @@ const Input = ({
 
           {error}
 
-          <Gutter />
-
-        </div>
+        </Error>
         : null }
 
     </div>

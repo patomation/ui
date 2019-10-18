@@ -5,34 +5,43 @@ export default {
     width: '100%',
     display: 'block'
   },
-  input: {
-    width: '100%',
-    minHeight: '42px', // Keeps all the inputs a consistent height 42 = height of date input that is larger because of up/down arrows. thanks chrome
+  border: {
     display: 'block',
+    width: '100%',
+    border: '1px solid rgba(0,0,0, 0.20)',
+    borderRadius: config.size.corners,
+    WebkitBorderRadius: config.size.corners,
+    MozBorderRadius: config.size.corners,
+    MozOverflow: 'hidden',
+    overflow: 'hidden',
+    height: '42px'
+  },
+  input: {
+    WebkitAppearance: 'none', // Disable chrome styles
+    MozAppearance: 'none', // Disable firefox styles
+    border: 'none',
+    height: '100%',
+    width: '100%',
+    margin: 0,
+    padding: 0,
+    WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
+    MozBoxSizing: 'border-box', /* Firefox, other Gecko */
+    boxSizing: 'border-box', /* Opera/IE 8+ */
+    // width: '100%',
     fontFamily: 'sans-serif',
     fontSize: '1rem',
     textAlign: 'center',
-    border: '1px solid rgba(0,0,0,0.25)',
-    padding: '0.5rem 1rem',
-    borderRadius: config.size.corners,
-    textDecoration: 'none',
-    margin: '0',
-    WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
-    MozBoxSizing: 'border-box', /* Firefox, other Gecko */
-    boxSizing: 'border-box' /* Opera/IE 8+ */
+    textDecoration: 'none'
   },
   textarea: {
     resize: 'none',
     height: '5rem'
   },
-  inputError: {
-    border: '1px solid red'
+
+  errorBorder: {
+    border: '2px solid red'
   },
   error: {
-    width: '100%',
-    display: 'block',
-    textAlign: 'center',
-    color: 'red',
-    padding: '0.5rem 0'
+    padding: '1rem 0 0 0'
   }
 }

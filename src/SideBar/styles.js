@@ -16,7 +16,7 @@ export default {
     overflowX: 'hidden'
   },
   content: {
-    display: 'flex',
+    // display: 'flex', //We had this for some reason
     flexFlow: 'column',
     height: '100%'
   }

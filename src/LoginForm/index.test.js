@@ -1,11 +1,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Login from './index.js'
+import LoginForm from './index.js'
 
-describe('<Login />', () => {
+describe('<LoginForm />', () => {
   it('renders', () => {
-    mount(<Login />)
+    mount(<LoginForm />)
   })
 
   // TODO
@@ -21,8 +21,8 @@ describe('<Login />', () => {
   // })
 
   it('accepts background && color prop', () => {
-    const component = mount(<Login background="blue" color="red" />)
-    expect(component.find('div.login').props().style.background).toEqual('blue')
-    expect(component.find('div.login').props().style.color).toEqual('red')
+    const component = mount(<LoginForm background="blue" color="red" />)
+    expect(component.find('div.login-form').props().style.background).toEqual('blue')
+    expect(component.find('div.login-form').props().style.color).toEqual('red')
   })
 })

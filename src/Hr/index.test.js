@@ -8,9 +8,13 @@ describe('<Hr />', () => {
     mount(<Hr />)
   })
 
-  it('accepts background && color prop', () => {
-    const component = mount(<Hr background="blue" color="red" />)
-    expect(component.find('hr').props().style.background).toEqual('blue')
-    expect(component.find('hr').props().style.color).toEqual('red')
+  it('accepts color prop', () => {
+    const component = mount(<Hr color="red" />)
+    expect(component.find('hr').props().style.border).toEqual('1px solid red')
+  })
+
+  it('accepts opacity prop', () => {
+    const component = mount(<Hr opacity={0.5} />)
+    expect(component.find('hr').props().style.opacity).toEqual(0.5)
   })
 })

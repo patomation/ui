@@ -4,7 +4,7 @@ import { act } from 'react-dom/test-utils'
 
 import Form from './index.js'
 import { Input } from '../'
-import { Formik } from 'formik'
+// import { Formik } from 'formik'
 
 describe('<Form />', () => {
   it('renders', () => {

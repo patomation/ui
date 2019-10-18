@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
-import { Button, Input } from '../'
+import { Button, Input, Grid } from '../'
 import { Formik } from 'formik'
 
 import schema from './schema.js'
@@ -52,39 +52,41 @@ const Form = ({
           }) => {
             return (
               <form onSubmit={handleSubmit} className='form__form'>
+                <Grid gap='1rem'>
 
-                {children}
+                  {children}
 
-                {fields.map(field => {
-                  const { name, type, placeholder, label } = field
-                  return <div
-                    key={`field_${name}`}
-                    id="test"
-                    className={`form__field_${name}`}>
-                    {labels ? <label className='form__feild__label'>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
-                    <Input
-                      name={name}
-                      type={type || 'text'}
-                      placeholder={ placeholders ? placeholder || name.replace(/^./, name[0].toUpperCase()) : null }
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values[name]}
-                      error={errors[name] && touched[name] && errors[name]}
-                      inputStyle={inputStyle}
-                    />
-                  </div>
-                })}
+                  {fields.map(field => {
+                    const { name, type, placeholder, label } = field
+                    return <div
+                      key={`field_${name}`}
+                      id="test"
+                      className={`form__field_${name}`}>
+                      {labels ? <label className='form__feild__label'>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
+                      <Input
+                        name={name}
+                        type={type || 'text'}
+                        placeholder={ placeholders ? placeholder || name.replace(/^./, name[0].toUpperCase()) : null }
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values[name]}
+                        error={errors[name] && touched[name] && errors[name]}
+                        inputStyle={inputStyle}
+                      />
+                    </div>
+                  })}
 
-                { submitButton || <Button
-                  type='submit'
-                  disabled={isSubmitting}
-                  style={{
-                    width: '100%',
-                    ...buttonStyle
-                  }}>
-                      Submit
-                </Button>
-                }
+                  { submitButton || <Button
+                    type='submit'
+                    disabled={isSubmitting}
+                    style={{
+                      width: '100%',
+                      ...buttonStyle
+                    }}>
+                        Submit
+                  </Button>
+                  }
+                </Grid>
               </form>
             )
           }}

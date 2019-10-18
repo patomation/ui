@@ -25,3 +25,4 @@ yarn.lock
 package-lock.json
 lib
 temp
+vim.exe.stackdump

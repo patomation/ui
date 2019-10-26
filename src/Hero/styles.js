@@ -6,10 +6,10 @@ export default {
     color: '#ffffff'
   },
   title: {
-    textShadow: '0 0 5px rgba(0,0,0,0.5)'
+    textShadow: '0 0 5px rgba(0,0,0,0.75)'
   },
   description: {
-    textShadow: '0 0 5px rgba(0,0,0,0.5)'
+    textShadow: '0 0 5px rgba(0,0,0,0.75)'
   },
   image: {
     position: 'absolute',
@@ -17,5 +17,12 @@ export default {
     top: 0,
     width: '100%',
     zIndex: '-10'
+  },
+  background:{
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    zIndex: '-20'
   }
 }

@@ -16,7 +16,6 @@ const Hero = ({
       className={concat('hero', className)}
       style={{
         ...styles.container,
-        ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
         ...style
       }}>
@@ -49,6 +48,14 @@ const Hero = ({
         className='hero__image'
         src={image}
         type={'background'}/>
+
+      <div
+       className='hero__background'
+       style={{
+         ...styles.background,
+         ...(background ? { background: background } : null),
+       }}
+      ></div>
 
     </header>
   )

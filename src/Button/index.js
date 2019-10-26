@@ -105,6 +105,14 @@ const Button = ({
       ...(isActive ? activeStyle : null)
     }}>
 
+    <style>
+      {`
+      button::-moz-focus-inner {
+        border: 0;
+      }
+    `}
+    </style>
+
     { children || title }
 
   </button>

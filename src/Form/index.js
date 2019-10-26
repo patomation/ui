@@ -52,7 +52,7 @@ const Form = ({
           }) => {
             return (
               <form onSubmit={handleSubmit} className='form__form'>
-                <Grid gap='1rem'>
+                <Grid gap='1rem' className='form__grid'>
 
                   {children}
 
@@ -60,7 +60,6 @@ const Form = ({
                     const { name, type, placeholder, label } = field
                     return <div
                       key={`field_${name}`}
-                      id="test"
                       className={`form__field_${name}`}>
                       {labels ? <label className='form__feild__label'>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
                       <Input
@@ -78,6 +77,7 @@ const Form = ({
 
                   { submitButton || <Button
                     type='submit'
+                    center
                     disabled={isSubmitting}
                     style={{
                       width: '100%',

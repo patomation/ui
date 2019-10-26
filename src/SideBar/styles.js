@@ -1,5 +1,3 @@
-import config from '../config.js'
-
 export default {
   container: {
     height: '100%'
@@ -10,9 +8,8 @@ export default {
     height: '100%',
     margin: 0,
     padding: 0,
-    width: config.size.sideBar,
     position: 'fixed',
-    overflowY: 'scroll',
+    overflowY: 'auto', // Was scroll
     overflowX: 'hidden'
   },
   content: {

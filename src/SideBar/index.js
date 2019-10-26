@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../../utility/concat.js'
-import config from '../config.js'
 
 const SideBar = ({
   className, children, menu,
@@ -22,7 +21,7 @@ const SideBar = ({
         className='sidebar__menu'
         style={{
           ...styles.menu,
-          ...(width ? { width: width } : null),
+          width,
           ...(right ? { right: 0 } : null),
           ...menuStyle
         }}>
@@ -36,9 +35,9 @@ const SideBar = ({
         style={{
           ...styles.content,
           ...(right ? {
-            marginRight: width || config.size.sideBar
+            marginRight: width
           } : {
-            marginLeft: width || config.size.sideBar
+            marginLeft: width
           }),
           ...contentStyle
         }}>
@@ -60,6 +59,10 @@ SideBar.propTypes = {
   contentStyle: PropTypes.object,
   width: PropTypes.string,
   right: PropTypes.bool
+}
+
+SideBar.defaultProps = {
+  width: '200px'
 }
 
 export default SideBar

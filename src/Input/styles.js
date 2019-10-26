@@ -24,6 +24,7 @@ export default {
     width: '100%',
     margin: 0,
     padding: 0,
+    paddingLeft: '1rem',
     WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
     MozBoxSizing: 'border-box', /* Firefox, other Gecko */
     boxSizing: 'border-box', /* Opera/IE 8+ */
@@ -35,7 +36,7 @@ export default {
   },
   textarea: {
     resize: 'none',
-    height: '5rem'
+    paddingTop: '1rem'
   },
 
   errorBorder: {

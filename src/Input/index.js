@@ -25,13 +25,14 @@ const Input = ({
 
       <span style={{
         ...styles.border,
-        ...(error ? (inputErrorStyle || styles.errorBorder) : null)
+        ...(error ? (inputErrorStyle || styles.errorBorder) : null),
+        ...(type === 'textarea' ? { height: '6rem' } : null)
       }}>
         <InputType
           className='input__input'
           type={type}
           name={name}
-          cols="10" // Todo look into if we need this anymore or should it be textarea ? rows
+          rows={10} // Todo look into if we need this anymore or should it be textarea ? rows
           min={min}
           max={max}
           onChange={onChange}

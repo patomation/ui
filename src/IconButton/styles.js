@@ -22,7 +22,7 @@ export default {
   title: {
     // flexGrow: 1,
     // textAlign: 'left',
-    paddingLeft: '0.25rem',
+    paddingLeft: '1rem',
     // lineHeight: '20px',
     // position: 'relative',
     // top: 'calc(50% - 10px)',

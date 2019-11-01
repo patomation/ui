@@ -2,6 +2,7 @@ import React from 'react';
 
 //Kitchen Sink - Admin Pannel
 import {
+  Animate,
   // Badge,
   Brand,
   // Breakpoints,
@@ -89,6 +90,12 @@ const AdminDemo = () =>
         <User
           image="http://patomation.github.io/assets/images/Patrick-Profile-Picture-1.png"/>
     </Row>
+
+    <Gutter/>
+
+    <Animate fadeIn left time={2}>
+      Test
+    </Animate>
 
     <Gutter/>
 

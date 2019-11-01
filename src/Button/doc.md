@@ -1,6 +1,5 @@
 ## Button
-Child or title works for the button label
-  background
+stardardized button component
 
 ### Props:
 

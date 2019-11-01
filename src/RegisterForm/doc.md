@@ -1,4 +1,4 @@
-## Register
+## RegisterForm
 and other goodies
 
 ### Props:
@@ -6,3 +6,4 @@ and other goodies
 #### className
  - type: string,
   background
+

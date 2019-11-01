@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import concat from '../../utility/concat.js'
-import extract from '../../utility/extract.js' // eslint-disable-line
+import concat from '../_utility/concat.js'
+import extract from '../_utility/extract.js' // eslint-disable-line
 
 const Grid = ({
   className, children,

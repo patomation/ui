@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import concat from '../../utility/concat.js'
+import concat from '../_utility/concat.js'
 import { Error } from '../'
 
 const Input = ({
@@ -36,6 +36,22 @@ const Input = ({
           min={min}
           max={max}
           onChange={onChange}
+          // onChange={ e => {
+          //   //Convert strings to numbers
+          //   // onChange(e)
+          //   const newevent = {
+          //     ...e,
+          //     ...{
+          //       target: {
+          //         value: isNaN(e.target.value)
+          //           ? e.target.value // If Not a Number use uneffected value
+          //           : parseInt(e.target.value) //If number convert string to number
+          //       }
+          //     }
+          //   }
+          //   console.log(e);
+          //   console.log(newevent);
+          // }}
           onBlur={onBlur}
           placeholder={placeholder}
           value={value}

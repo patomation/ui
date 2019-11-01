@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import concat from '../../utility/concat.js'
+import concat from '../_utility/concat.js'
 
 const Gutter = ({
   className, style, disabled, vertical

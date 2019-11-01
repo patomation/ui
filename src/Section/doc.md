@@ -1,4 +1,4 @@
-## Clickable
+## Section
 
 
 ### Props:

@@ -5,5 +5,5 @@
 
 #### className
  - type: string,
-  background
+  color
 

@@ -1,43 +1,14 @@
 ## Form
-and other goodies
+A simple dynamic form component
 
 ### Props:
 
 #### className
- - type: string
-
-#### children
- - type: union
-   - type: arrayOf(PropTypes
-   - type: node
-
-#### background
- - type: string
-
-#### color
- - type: string
-
-#### style
- - type: object
-
-#### onSubmit
- - type: func
-
-#### fields
- - type: arrayOf(PropTypes
-
-#### label
- - type: string
-
-#### type
- - type: string
-
-#### placeholder
- - type: string
-
-#### required
- - type: bool
-
-#### validation
- - type: string
+set parrent classname
+ - type: string,
+  
+   children appended to top of form before dynamic inputs
+   optional inputs or elements can be added to the form if need be
+  
+  children
 

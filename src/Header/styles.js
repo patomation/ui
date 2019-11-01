@@ -6,6 +6,7 @@ export default {
     backgroundColor: '#597081',
     padding: `${config.size.gutters}`,
     paddingTop: config.size.gutters,
-    flex: '0 1 auto'
+    flex: '0 1 auto',
+    overflow: 'hidden'
   }
 }

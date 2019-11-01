@@ -1,5 +1,5 @@
 ## Carousel
-
+autoplay
 
 ### Props:
 

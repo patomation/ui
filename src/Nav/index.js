@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import concat from '../../utility/concat.js'
+import concat from '../_utility/concat.js'
 
 const Nav = ({
   className, children,
   background, color, style
 }) =>
-
+// .nav > span {
+//   margin-right: 1rem !important;
+// }
   <nav
     className={concat('nav', className)}
     style={{
@@ -23,14 +25,20 @@ const Nav = ({
         color: #ffffff;
         text-decoration: none;
       }
-      .nav > span {
-        margin-right: 1rem !important;
-      }
+      `}
 
-    `}
+
     </style>
 
-    {children}
+    {React.Children.map(children, child => {
+      return React.cloneElement(
+        child,
+        {
+          style: {
+            marginRight: '1rem'
+          }
+        })
+    })}
 
   </nav>
 

@@ -1,6 +1,7 @@
 
 export default {
   container: {
+    display: '-ms-grid',
     display: 'grid',
     // gridGap: '0',
     // gridTemplateColumns: repeat(columns, `${width}%` ),

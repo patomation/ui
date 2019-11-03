@@ -21,12 +21,12 @@ const RegisterForm = ({
       }}>
       <Formik
         initialValues={{
-          firstName: 'bob',
-          lastName: 'boberson',
-          email: 'email@gmail.com',
-          email2: 'email@gmail.com',
-          password: 'password',
-          password2: 'password'
+          firstName: '',
+          lastName: '',
+          email: '',
+          email2: '',
+          password: '',
+          password2: ''
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {

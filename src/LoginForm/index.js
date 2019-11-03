@@ -20,7 +20,7 @@ const LoginForm = ({
         ...style
       }}>
       <Formik
-        initialValues={{ email: 'email@gmail.com', password: 'password' }}
+        initialValues={{ email: '', password: '' }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           onSubmit(

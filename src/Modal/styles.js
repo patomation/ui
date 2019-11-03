@@ -10,11 +10,12 @@ export default {
   },
   panel: {
     background: '#ffffff',
-    padding: '0rem'
+    padding: '0rem',
+    margin: '0 auto'
   },
   close: {
     position: 'fixed',
-    top: '2rem',
+    top: '1rem',
     right: '2rem',
     display: 'block',
     zIndex: 100

@@ -7,7 +7,8 @@ import { Panel, Center, IconButton, Clickable } from '../'
 const Modal = ({
   show, onClose,
   className, children,
-  background, color, style
+  background, color, style,
+  width, maxWidth
 }) => {
   const [open, setOpen] = useState(show || false)
 
@@ -37,11 +38,15 @@ const Modal = ({
           style={styles.background}>
         </Clickable>
 
-        <Center className='modal__center'>
+        <Center
+          className='modal__center'
+          {...{
+            width,
+            maxWidth
+          }}>
 
           <Panel
-            className='modal__panel'
-            style={styles.panel}>
+            className='modal__panel'>
 
             <IconButton
               className='modal__close'
@@ -69,7 +74,9 @@ Modal.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,
   color: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
+  maxWidth: PropTypes.string,
+  width: PropTypes.string,
 }
 
 export default Modal

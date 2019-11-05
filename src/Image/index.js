@@ -16,8 +16,8 @@ const Image = ({
       ...(square === true ? styles.square.container : null),
       ...(rectangle === true ? styles.rectangle.container : null),
       ...(background === true ? {
-        ...styles.background.container,
-        background: `url(${src})`
+        background: `url(${src}) no-repeat center center fixed`,
+        ...styles.background.container
       } : null),
       ...style,
       ...containerStyle

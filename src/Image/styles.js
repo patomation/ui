@@ -17,13 +17,11 @@ export default {
       top: 0,
       width: '100%',
       height: '100%',
-      overflow: 'hidden'
-    },
-    image: {
-      position: 'absolute',
-      left: 0,
-      top: '-50%',
-      width: '100%'
+      overflow: 'hidden',
+      backgroundSize: 'cover',
+      WebkitBackgroundSize: 'cover',
+      MozBackgroundSize: 'cover',
+      ObackgroundSize: 'cover'
     }
   },
 

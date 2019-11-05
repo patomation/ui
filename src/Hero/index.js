@@ -47,7 +47,7 @@ const Hero = ({
       <Image
         className='hero__image'
         src={image}
-        type={'background'}/>
+        background />
 
       <div
        className='hero__background'

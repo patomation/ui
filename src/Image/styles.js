@@ -21,7 +21,7 @@ export default {
       WebkitBackgroundSize: 'cover',
       MozBackgroundSize: 'cover',
       ObackgroundSize: 'cover',
-      backgroundSize: 'cover',
+      backgroundSize: 'cover'
     }
   },
 

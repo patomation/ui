@@ -1,4 +1,4 @@
-const name = `slidein`
+const name = 'slidein'
 
 const animation = (time = 0.5) => {
   return `${name} ${time}s forwards`
@@ -6,7 +6,7 @@ const animation = (time = 0.5) => {
 
 animation.style = {
   transform: 'translateX(-100%)',
-  WebkitTransform: 'translateX(-100%)',
+  WebkitTransform: 'translateX(-100%)'
 }
 
 animation.keyframes = `

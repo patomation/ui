@@ -34,7 +34,7 @@ export default {
     textAlign: 'center',
     textDecoration: 'none'
   },
-  option:{
+  option: {
 
   },
   errorBorder: {

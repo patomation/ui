@@ -19,7 +19,7 @@ export default {
     height: '100%',
     zIndex: '-10'
   },
-  background:{
+  background: {
     position: 'absolute',
     left: 0,
     top: 0,

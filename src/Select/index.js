@@ -11,8 +11,6 @@ const Select = ({
   label,
   options
 }) => {
-
-
   return (
     <div
       className={concat('select', className)}
@@ -23,7 +21,7 @@ const Select = ({
       }}>
 
       <style>
-      {`
+        {`
         select:-moz-focusring {
           color: transparent;
           text-shadow: 0 0 0 #000;
@@ -63,9 +61,9 @@ const Select = ({
                 ...styles.option,
                 ...optionStyle
               }}
-              >
-                {label}
-              </option>
+            >
+              {label}
+            </option>
           )}
 
         </select>
@@ -104,7 +102,9 @@ Select.propTypes = {
   selectErrorStyle: PropTypes.object,
   errorStyle: PropTypes.object,
   style: PropTypes.object,
-  label: PropTypes.string
+  label: PropTypes.string,
+  optionStyle: PropTypes.object,
+  options: PropTypes.array
 }
 
 export default Select

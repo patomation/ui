@@ -27,7 +27,6 @@ const Nav = ({
       }
       `}
 
-
     </style>
 
     {React.Children.map(children, child => {

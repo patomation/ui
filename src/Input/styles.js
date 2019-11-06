@@ -9,7 +9,7 @@ export default {
     display: 'block',
     width: '100%',
     border: '1px solid rgba(0,0,0, 0.20)',
-    paddingRight: '1px', //border fix
+    paddingRight: '1px', // border fix
     borderRadius: config.size.corners,
     WebkitBorderRadius: config.size.corners,
     MozBorderRadius: config.size.corners,
@@ -26,7 +26,7 @@ export default {
     margin: 0,
     padding: 0,
     paddingLeft: '1rem',
-    paddingRight: '1px', //border fix
+    paddingRight: '1px', // border fix
     WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
     MozBoxSizing: 'border-box', /* Firefox, other Gecko */
     boxSizing: 'border-box', /* Opera/IE 8+ */

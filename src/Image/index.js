@@ -23,7 +23,7 @@ const Image = ({
       ...containerStyle
     }}>
     { !background
-    ? <img
+      ? <img
         src={src}
         alt={alt || 'image'}
         style={{
@@ -31,8 +31,8 @@ const Image = ({
           ...(square === true ? styles.square.image : null),
           ...(rectangle === true ? styles.rectangle.image : null),
           ...imageStyle
-      }} />
-    : null }
+        }} />
+      : null }
   </div>
 
 Image.propTypes = {

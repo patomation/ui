@@ -50,11 +50,11 @@ const Hero = ({
         background />
 
       <div
-       className='hero__background'
-       style={{
-         ...styles.background,
-         ...(background ? { background: background } : null),
-       }}
+        className='hero__background'
+        style={{
+          ...styles.background,
+          ...(background ? { background: background } : null)
+        }}
       ></div>
 
     </header>

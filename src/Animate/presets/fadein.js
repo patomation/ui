@@ -1,4 +1,4 @@
-const name = `fadein`
+const name = 'fadein'
 
 const animation = (time = 0.5) => {
   return `${name} ${time}s`

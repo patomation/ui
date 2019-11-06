@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 
-import fadein from './presets/fadein'
+// import fadein from './presets/fadein'
 
 const Animate = ({
   className, children, style,
-  fadeIn, slideIn,
+  fadeIn, slideIn
 
 }) => <>
   <style>
-  {`
+    {`
     @keyframes slide-in {
       100% { transform: translateX(0%); }
     }
@@ -32,7 +32,7 @@ const Animate = ({
       // position: 'relative',
       transform: 'translateX(-100%)',
       WebkitTransform: 'translateX(-100%)',
-      animation: 'slide-in 0.5s forwards',
+      animation: 'slide-in 0.5s forwards'
       // WebkitAnimation: 'slide-in 0.5s forwards, fade-in 0.75s forwards',
       // WebkitAnimation: 'fadein 2s',  /* Safari, Chrome and Opera > 12.1 */
       //    MozAnimation: 'fadein 2s', /* Firefox < 16 */
@@ -49,7 +49,9 @@ const Animate = ({
 Animate.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  style: PropTypes.object
+  style: PropTypes.object,
+  fadeIn: PropTypes.bool,
+  slideIn: PropTypes.bool
 }
 
 export default Animate

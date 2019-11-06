@@ -76,7 +76,7 @@ Modal.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   maxWidth: PropTypes.string,
-  width: PropTypes.string,
+  width: PropTypes.string
 }
 
 export default Modal

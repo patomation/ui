@@ -23,7 +23,8 @@ export default {
     height: '100%',
     width: '100%',
     margin: 0,
-    padding: 0,
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
     WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
     MozBoxSizing: 'border-box', /* Firefox, other Gecko */
     boxSizing: 'border-box', /* Opera/IE 8+ */

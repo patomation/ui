@@ -60,8 +60,7 @@ const Carousel = ({
         nextArrow: <Arrow to='next'/>,
         prevArrow: <Arrow to='prev'/>
       }}
-      // autoplay={autoplay === undefined ? true : autoplay}
-      autoplay={false}
+      autoplay={autoplay}
       autoplaySpeed={autoplaySpeed || 3000}>
 
       {children}
@@ -81,7 +80,8 @@ Carousel.propTypes = {
 }
 
 Carousel.defaultProps = {
-  arrows: true
+  arrows: true,
+  autoplay: false
 }
 
 export default Carousel

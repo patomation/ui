@@ -6,21 +6,22 @@ import concat from '../_utility/concat.js'
 const Center = ({
   className, children,
   background, color, style,
-  width, maxWidth
+  width, maxWidth,
+  disabled
 }) =>
   <div
-    className='center'
+    className={concat('center', className)}
     style={{
-      ...styles.container,
+      ...(!disabled ? styles.container : null),
       ...(background ? { background: background } : null),
       ...(color ? { color: color } : null),
       ...style
     }}>
 
     <div
-      className={concat('center__content', className)}
+      className='center__content'
       style={{
-        ...styles.content,
+        ...(!disabled ? styles.content : null),
         ...(width ? { width: width } : null),
         ...(maxWidth ? { maxWidth: maxWidth } : null)
       }}>
@@ -38,7 +39,12 @@ Center.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   width: PropTypes.string,
-  maxWidth: PropTypes.string
+  maxWidth: PropTypes.string,
+  disabled: PropTypes.bool
+}
+
+Center.defaultProps = {
+  disabled: false
 }
 
 export default Center

@@ -89,20 +89,20 @@ const Button = ({
     style={{
       ...styles.default,
       ...(styles.kind[kind || 'normal']),
+      ...style,
+      ...(hover ? hoverStyle : null),
+      ...(enabled ? enabledStyle : null),
+      ...(disabled ? disabledStyle : null),
+      ...(isActive ? activeStyle : null),
       ...(kind === 'outline' && color ? {
         border: `1px solid ${color}`
       } : null),
-      ...(background ? { background: background } : null),
+      ...(background && kind !== 'outline' ? { background: background } : null),
       ...(color ? { color: color } : null),
-      ...style,
       ...(hover ? (styles.kind[kind || 'normal'].hover) : null),
-      ...(hover ? hoverStyle : null),
       ...(enabled ? (styles.kind[kind || 'normal'].enabled) : null),
-      ...(enabled ? enabledStyle : null),
       ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null),
-      ...(disabled ? disabledStyle : null),
-      ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
-      ...(isActive ? activeStyle : null)
+      ...(isActive ? (styles.kind[kind || 'normal'].active) : null)
     }}>
 
     <style>

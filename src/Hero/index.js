@@ -2,47 +2,70 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-import { Gutter, Image } from '../'
+import { Gutter, Image, Center, ScrollButton } from '../'
 
 const Hero = ({
   className,
   background, color,
+  overlayColor, overlayOpacity = '0.5',
   style, titleStyle, descriptionStyle, imageStyle,
   children, title, description,
-  image
+  image,
+  height
 }) => {
+
+  console.log('overlayOpacity', overlayOpacity);
   return (
     <header
       className={concat('hero', className)}
       style={{
         ...styles.container,
         ...(color ? { color: color } : null),
-        ...style
+        ...style,
+        ...(height ? {
+          height,
+          padding: 0
+        } : null)
       }}>
 
-      { title
-        ? <h1 className='hero__title'
+      <Center style={{ left: 0 }} disabled={!height}>
+
+        { title
+          ? <h1 className='hero__title'
+            style={{
+              ...styles.title,
+              ...titleStyle
+            }}>
+            { title }
+          </h1> : null }
+
+        { description ? <Gutter /> : null}
+
+        { description
+          ? <p className='hero__description'
+            style={{
+              ...styles.description,
+              ...descriptionStyle
+            }}>
+            { description }
+          </p> : null }
+
+        { children ? <Gutter /> : null}
+
+        { children }
+
+      </Center>
+
+      { overlayColor
+        ? <div
+          className='hero__overlay'
           style={{
-            ...styles.title,
-            ...titleStyle
-          }}>
-          { title }
-        </h1> : null }
-
-      { description ? <Gutter /> : null}
-
-      { description
-        ? <p className='hero__description'
-          style={{
-            ...styles.description,
-            ...descriptionStyle
-          }}>
-          { description }
-        </p> : null }
-
-      { children ? <Gutter /> : null}
-
-      { children }
+            ...styles.overlay,
+            background: overlayColor,
+            opacity: overlayOpacity
+          }}
+        ></div>
+        : null }
 
       <Image
         className='hero__image'
@@ -56,6 +79,14 @@ const Hero = ({
           ...(background ? { background: background } : null)
         }}
       ></div>
+
+      { height
+        ? <ScrollButton
+          style = {{
+            position: 'absolute',
+            bottom: 0
+          }}/>
+        : null }
 
     </header>
   )
@@ -72,7 +103,10 @@ Hero.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
+  height: PropTypes.number,
+  overlayColor: PropTypes.string,
+  overlayOpacity: PropTypes.string
 }
 
 export default Hero

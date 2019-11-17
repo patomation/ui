@@ -2,26 +2,56 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import { ScrollButton, Center } from '../'
 
 const Section = ({
-  className, children, style
+  className, children, style,
+  background, color,
+  height
 }) =>
 
   <section
     className={concat('section', className)}
     style={{
       ...styles.container,
-      ...style
+      ...style,
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
+      ...(height ? {
+        height,
+        padding: 0,
+        position: 'relative'
+      } : null)
     }}>
 
-    {children}
+    <Center style={{ left: 0 }} disabled={!height}>
+      <div
+        className='section__content'
+        style={styles.content}>
+
+        {children}
+
+      </div>
+    </Center>
+
+    { height
+      ? <ScrollButton
+        color={color}
+        style = {{
+          position: 'absolute',
+          bottom: 0
+        }}/>
+      : null }
 
   </section>
 
 Section.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  style: PropTypes.object
+  style: PropTypes.object,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  height: PropTypes.number
 }
 
 export default Section

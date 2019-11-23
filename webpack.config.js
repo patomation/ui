@@ -5,7 +5,8 @@ module.exports = {
   entry: './demo/index.js',
   devServer: {
     inline: true,
-    port: 3000
+    port: 3000,
+    historyApiFallback: true,
   },
   module: {
     rules: [

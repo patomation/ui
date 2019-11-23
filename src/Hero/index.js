@@ -39,7 +39,7 @@ const Hero = ({
             { title }
           </h1> : null }
 
-        { description ? <Gutter /> : null}
+        { description && title ? <Gutter /> : null}
 
         { description
           ? <p className='hero__description'
@@ -50,7 +50,7 @@ const Hero = ({
             { description }
           </p> : null }
 
-        { children ? <Gutter /> : null}
+        { children && (title || description) ? <Gutter /> : null}
 
         { children }
 

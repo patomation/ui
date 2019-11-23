@@ -7,7 +7,7 @@ import { ScrollButton, Center } from '../'
 const Section = ({
   className, children, style,
   background, color,
-  height
+  height, maxWidth
 }) =>
 
   <section
@@ -27,7 +27,10 @@ const Section = ({
     <Center style={{ left: 0 }} disabled={!height}>
       <div
         className='section__content'
-        style={styles.content}>
+        style={{
+          ...styles.content,
+          ...(maxWidth ? { maxWidth} : null)
+        }}>
 
         {children}
 
@@ -51,7 +54,8 @@ Section.propTypes = {
   style: PropTypes.object,
   background: PropTypes.string,
   color: PropTypes.string,
-  height: PropTypes.number
+  height: PropTypes.number,
+  maxWidth: PropTypes.string
 }
 
 export default Section

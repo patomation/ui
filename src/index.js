@@ -1,4 +1,3 @@
-export { default as Animate } from './Animate'
 export { default as Badge } from './Badge'
 export { default as Brand } from './Brand'
 export { default as Breakpoints } from './Breakpoints'

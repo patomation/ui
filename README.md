@@ -42,7 +42,6 @@ export default MyComponent
 
 
 ## Components
- - [Animate](src/Animate/doc.md)
  - [Badge](src/Badge/doc.md)
  - [Brand](src/Brand/doc.md)
  - [Breakpoints](src/Breakpoints/doc.md)
@@ -74,13 +73,16 @@ export default MyComponent
  - [Input](src/Input/doc.md)
  - [Link](src/Link/doc.md)
  - [List](src/List/doc.md)
+ - [Loader](src/Loader/doc.md)
  - [LoginForm](src/LoginForm/doc.md)
  - [Modal](src/Modal/doc.md)
  - [Nav](src/Nav/doc.md)
  - [Panel](src/Panel/doc.md)
  - [RegisterForm](src/RegisterForm/doc.md)
  - [Row](src/Row/doc.md)
+ - [ScrollButton](src/ScrollButton/doc.md)
  - [Section](src/Section/doc.md)
+ - [Select](src/Select/doc.md)
  - [Shape](src/Shape/doc.md)
  - [SideBar](src/SideBar/doc.md)
  - [Spinner](src/Spinner/doc.md)

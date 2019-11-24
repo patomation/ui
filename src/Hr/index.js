@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* fancy line component
+*/
 const Hr = ({
   className, color, opacity, style
 }) => {
@@ -19,6 +21,9 @@ const Hr = ({
 }
 
 Hr.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,

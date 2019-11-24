@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import { Error } from '../'
-
+/**
+* A standardized imput component plus textarea
+*/
 const Input = ({
   type, name, onChange, onBlur, value, error, placeholder,
   className, onClick, background, color,
@@ -83,6 +85,9 @@ const Input = ({
 }
 
 Input.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   type: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,

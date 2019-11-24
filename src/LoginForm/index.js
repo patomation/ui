@@ -5,7 +5,9 @@ import concat from '../_utility/concat.js'
 import { Formik } from 'formik'
 import validationSchema from './validationSchema.js'
 import { Button, Input, Grid, Error } from '../'
-
+/**
+* a form for loggin in to things
+*/
 const LoginForm = ({
   className, background, color, style,
   onSubmit, error
@@ -82,6 +84,9 @@ const LoginForm = ({
 }
 
 LoginForm.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,

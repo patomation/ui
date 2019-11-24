@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import { Grid, Clickable } from '../'
-
+/**
+* a fancy file folder tab ui menu
+*/
 const Tabs = ({
   className,
   onClick,
@@ -41,6 +43,9 @@ const Tabs = ({
   </Grid>
 
 Tabs.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   /**
   * click event passes up item name and index

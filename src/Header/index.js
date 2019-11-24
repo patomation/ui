@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* Header component with custom flavor
+*/
 const Header = ({
   className, onClick, children,
   background, color, style
@@ -25,6 +27,9 @@ const Header = ({
 }
 
 Header.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),

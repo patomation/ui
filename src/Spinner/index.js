@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import Icon from '../Icon'
-
+/**
+* an icon that spins 
+*/
 const Spinner = ({
   icon, className, background, color, style
 }) => {
@@ -25,8 +27,11 @@ const Spinner = ({
 }
 
 Spinner.propTypes = {
-  icon: PropTypes.func,
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
+  icon: PropTypes.func,
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object

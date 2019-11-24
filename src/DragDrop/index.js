@@ -4,7 +4,9 @@ import styles from './styles.js'
 import concat from '../_utility/concat.js'
 
 import useToggle from '@patomation/usetoggle'
-
+/**
+* Makes child element draggable or a drop zone
+*/
 const DragDrop = ({
   className, children,
   background, color, style,
@@ -54,6 +56,9 @@ const DragDrop = ({
 }
 
 DragDrop.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,

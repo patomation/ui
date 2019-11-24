@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* A component that can collapse and hide content
+*/
 const Collapse = ({
   className, children, style,
   collapse, onComplete, speed
@@ -39,6 +41,9 @@ const Collapse = ({
 }
 
 Collapse.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   style: PropTypes.object,

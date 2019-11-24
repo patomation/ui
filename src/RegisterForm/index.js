@@ -5,7 +5,9 @@ import concat from '../_utility/concat.js'
 import { Formik } from 'formik'
 import validationSchema from './validationSchema.js'
 import { Button, Input, Grid } from '../'
-
+/**
+* A form to get users registered
+*/
 const RegisterForm = ({
   className, background, color, style,
   onSubmit
@@ -124,6 +126,9 @@ const RegisterForm = ({
 }
 
 RegisterForm.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,

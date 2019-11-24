@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* make any shape block that you need
+*/
 const Shape = ({
   className, children,
   onClick,
@@ -32,6 +34,9 @@ const Shape = ({
   </div>
 
 Shape.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   onClick: PropTypes.func,

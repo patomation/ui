@@ -64,13 +64,16 @@ const Badge = ({
 
 Badge.propTypes = {
   /**
-  * Exposes additional className
-  */
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   icon: PropTypes.string,
   onClick: PropTypes.func,
   background: PropTypes.string,
+  /**
+  *
+  */
   color: PropTypes.string,
   style: PropTypes.object
 }

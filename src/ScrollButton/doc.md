@@ -1,13 +1,9 @@
-## Spinner
-an icon that spins
+## ScrollButton
+An arrow button that scrolls to the bottom of itself revealing what is bellow
 
 ### Props:
 
-#### className
-Exposes ability to set a custom class name
- - type: string
-
-#### icon
+#### onClick
  - type: func
 
 #### background

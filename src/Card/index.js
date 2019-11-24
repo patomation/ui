@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import { Panel, Image } from '../'
-
+/**
+* A ui card component that displays an image title and text
+*/
 const Card = ({
   className,
   children, middle, bottom,
@@ -43,6 +45,9 @@ const Card = ({
   </Panel>
 
 Card.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   middle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),

@@ -4,7 +4,9 @@ import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import config from '../config'
 import { Icon, Image } from '../'
-
+/**
+* user icon or user photo component
+*/
 const User = ({
   className, style, image
 }) => {
@@ -30,6 +32,9 @@ const User = ({
 }
 
 User.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   style: PropTypes.object,
   image: PropTypes.string

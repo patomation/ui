@@ -67,6 +67,9 @@ const IconButton = ({
 }
 
 IconButton.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   onClick: PropTypes.func,
   className: PropTypes.string,
   background: PropTypes.string,

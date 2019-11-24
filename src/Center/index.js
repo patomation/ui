@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* Aligns any content to the center both vertically and horizontally
+*/
 const Center = ({
   className, children,
   background, color, style,
@@ -33,6 +35,9 @@ const Center = ({
   </div>
 
 Center.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,

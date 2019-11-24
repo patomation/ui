@@ -2,7 +2,9 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import { IconButton } from '../'
-
+/**
+* An arrow button that scrolls to the bottom of itself revealing what is bellow
+*/
 const ScrollButton = ({
   onClick,
   background, color = '#ffffff', style

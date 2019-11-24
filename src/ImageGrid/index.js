@@ -6,7 +6,9 @@ import concat from '../_utility/concat.js'
 import { Grid, Image } from '../'
 import config from '../config'
 import find from '@patomation/find'
-
+/**
+* a grid of images
+*/
 const ImageGrid = ({
   className, children, images,
   background, color, style,
@@ -49,6 +51,9 @@ const ImageGrid = ({
   </Grid>
 
 ImageGrid.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   images: PropTypes.array,

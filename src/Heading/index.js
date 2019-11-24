@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* Heading component h1 h2 h3 h4 ect
+*/
 const Heading = ({
   Tag, className, onClick, children,
   background, color, style
@@ -25,6 +27,9 @@ const Heading = ({
 }
 
 Heading.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   Tag: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,

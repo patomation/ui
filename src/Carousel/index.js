@@ -6,6 +6,9 @@ import ReactSlick from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { IconButton } from '../'
+/**
+* a react slick carousel component wrapper 
+*/
 
 const Arrow = ({ className, style, onClick, to, color }) => {
   return (
@@ -69,6 +72,9 @@ const Carousel = ({
     : null
 
 Carousel.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,

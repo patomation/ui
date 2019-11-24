@@ -9,6 +9,10 @@ import Grid from '../Grid'
 import Button from '../Button'
 import IconButton from '../IconButton'
 
+/**
+* A calendar ui component with selectable days
+*/
+
 const daysInMonth = (date) => {
   // Get total dates
   let totalDays = moment(date).daysInMonth()
@@ -163,6 +167,9 @@ const Calendar = ({
 }
 
 Calendar.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,

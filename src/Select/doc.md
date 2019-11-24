@@ -1,9 +1,9 @@
-## Input
-A standardized imput component plus textarea
+## Select
+a standardized dropdown component for using with forms
 
 ### Props:
 
-#### type
+#### className
 Exposes ability to set a custom class name
  - type: string
 
@@ -29,9 +29,6 @@ Exposes ability to set a custom class name
 #### placeholder
  - type: string
 
-#### className
- - type: string
-
 #### onClick
  - type: func
 
@@ -44,10 +41,10 @@ Exposes ability to set a custom class name
 #### containerStyle
  - type: object
 
-#### inputStyle
+#### selectStyle
  - type: object
 
-#### inputErrorStyle
+#### selectErrorStyle
  - type: object
 
 #### errorStyle
@@ -59,9 +56,9 @@ Exposes ability to set a custom class name
 #### label
  - type: string
 
-#### min
- - type: number
+#### optionStyle
+ - type: object
 
-#### max
- - type: number
+#### options
+ - type: array
 

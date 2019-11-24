@@ -9,7 +9,7 @@ import schema from './schema.js'
 import initialValues from './initialValues.js'
 
 /**
-* A simple dynamic form component
+* A simple dynamic form component using Formik
 */
 const Form = ({
   className, children,
@@ -97,8 +97,8 @@ const Form = ({
 
 Form.propTypes = {
   /**
-  * set parrent classname
-  */
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   /**
   * children appended to top of form before dynamic inputs

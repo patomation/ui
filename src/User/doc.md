@@ -1,9 +1,15 @@
 ## User
-
+user icon or user photo component
 
 ### Props:
 
 #### className
- - type: string,
-  style
+Exposes ability to set a custom class name
+ - type: string
+
+#### style
+ - type: object
+
+#### image
+ - type: string
 

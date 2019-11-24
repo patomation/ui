@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import extract from '../_utility/extract.js' // eslint-disable-line
-
+/**
+* gridifies any set of elements
+*/
 const Grid = ({
   className, children,
   background, color, style,
@@ -62,6 +64,9 @@ const Grid = ({
 }
 
 Grid.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,

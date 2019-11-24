@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+*  A sticky footer component obviously
+*/
 const Footer = ({
   className, children, onClick,
   background, color, style
@@ -25,6 +27,9 @@ const Footer = ({
 }
 
 Footer.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   onClick: PropTypes.func,

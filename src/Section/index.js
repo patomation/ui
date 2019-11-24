@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import { ScrollButton, Center } from '../'
-
+/**
+* fancy content section component to use with Hero
+*/
 const Section = ({
   className, children, style,
   background, color,
@@ -49,6 +51,9 @@ const Section = ({
   </section>
 
 Section.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   style: PropTypes.object,

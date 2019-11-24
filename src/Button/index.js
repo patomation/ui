@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 /**
-* stardardized button component
+* Standardized button component
 **/
 const Button = ({
   className, type, disabled, enabled, active,
@@ -122,6 +122,9 @@ const Button = ({
 }
 
 Button.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   type: PropTypes.string,
   disabled: PropTypes.bool,
@@ -136,7 +139,13 @@ Button.propTypes = {
   onMouseLeave: PropTypes.func,
   onDown: PropTypes.func,
   onUp: PropTypes.func,
+  /**
+  * text or html can be set between tags as a child
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * text set as a prop
+  **/
   title: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,

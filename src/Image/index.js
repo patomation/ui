@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* img component that handles different display modes
+*/
 const Image = ({
   className, src, alt,
   style, containerStyle, imageStyle,
@@ -68,6 +70,9 @@ const Image = ({
   </div>
 
 Image.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   src: PropTypes.string,
   alt: PropTypes.string,

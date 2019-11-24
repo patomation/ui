@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import { Panel, Center, IconButton, Clickable } from '../'
-
+/**
+* pop up modal with close button and overlay
+*/
 const Modal = ({
   show, onClose,
   className, children,
@@ -68,9 +70,12 @@ const Modal = ({
 }
 
 Modal.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
+  className: PropTypes.string,
   show: PropTypes.bool,
   onClose: PropTypes.func,
-  className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,
   color: PropTypes.string,

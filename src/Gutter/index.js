@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
+/**
+* A spacer component that adds a standard amount of padding between things
+*/
 const Gutter = ({
   className, style, disabled, vertical
 }) => {
@@ -21,6 +23,9 @@ const Gutter = ({
 }
 
 Gutter.propTypes = {
+  /**
+  * Exposes ability to set a custom class name
+  **/
   className: PropTypes.string,
   style: PropTypes.object,
   disabled: PropTypes.bool,

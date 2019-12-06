@@ -7,7 +7,7 @@ import { Error } from '../'
 * A standardized imput component plus textarea
 */
 const Input = ({
-  type, name, onChange, onBlur, value, error, placeholder,
+  type, name, onChange, onFocus, onBlur, value, error, placeholder,
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style,
   label, min, max
@@ -54,6 +54,7 @@ const Input = ({
           //   console.log(e);
           //   console.log(newevent);
           // }}
+          onFocus={onFocus}
           onBlur={onBlur}
           placeholder={placeholder}
           value={value}
@@ -91,6 +92,7 @@ Input.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
+  onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),

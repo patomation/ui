@@ -9,7 +9,7 @@ const Shape = ({
   className, children,
   onClick,
   background, color, style,
-  square, circle
+  square, circle, rectangle
 }) =>
 
   <div
@@ -26,7 +26,8 @@ const Shape = ({
         ...styles.shape,
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
-        ...(circle ? { borderRadius: '50%' } : null)
+        ...(circle ? { borderRadius: '50%' } : null),
+        ...(rectangle ? { paddingBottom: '56%'} : null)
       }}>
       {children}
     </div>
@@ -44,7 +45,8 @@ Shape.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   square: PropTypes.bool,
-  circle: PropTypes.bool
+  circle: PropTypes.bool,
+  rectangle: PropTypes.bool
 }
 
 export default Shape

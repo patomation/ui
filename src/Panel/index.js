@@ -9,7 +9,8 @@ import Hr from '../Hr'
 const Panel = ({
   className, children, header,
   style, containerStyle, contentStyle,
-  padding // Padding for inner content
+  padding, // Padding for inner content
+  onMouseEnter, onMouseLeave
 }) => {
   return (
     <div
@@ -18,7 +19,9 @@ const Panel = ({
         ...styles.container,
         ...style,
         ...containerStyle
-      }}>
+      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
 
       {(header
         ? <div
@@ -54,7 +57,9 @@ Panel.propTypes = {
   style: PropTypes.object,
   containerStyle: PropTypes.object,
   contentStyle: PropTypes.object,
-  padding: PropTypes.string
+  padding: PropTypes.string,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func
 }
 
 export default Panel

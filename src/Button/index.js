@@ -14,7 +14,7 @@ const Button = ({
   background, color, style,
   hoverStyle, disabledStyle, activeStyle, enabledStyle,
   onHover, kind,
-  center // If prop is used at all then a div will be added to the outside with textAlign center
+  center, right // If prop is used at all then a div will be added to the outside with textAlign center
 }) => {
   const [hover, setHover] = useState(false)
   const [touched, setTouched] = useState(false)
@@ -118,7 +118,12 @@ const Button = ({
   </button>
 
   // If center is defined wrap button with div with textAlign center
-  return center ? <div style={{ textAlign: 'center' }}> { button } </div> : button
+  return center || right
+    ? <div
+        style={{
+          textAlign: center ? 'center' : 'right'
+        }}> { button } </div>
+    : button
 }
 
 Button.propTypes = {
@@ -156,7 +161,8 @@ Button.propTypes = {
   enabledStyle: PropTypes.object,
   onHover: PropTypes.func,
   kind: PropTypes.string,
-  center: PropTypes.bool
+  center: PropTypes.bool,
+  right: PropTypes.bool
 }
 
 export default Button

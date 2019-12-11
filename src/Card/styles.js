@@ -1,6 +1,11 @@
 export default {
   container: {
-    width: '100%'
+    width: '100%',
+    userSelect: 'none',
+    WebkitUserSelect: 'none',
+    KhtmlUserSelect: 'none',
+    MozUserSelect: 'none',
+    MsUserSelect: 'none',
   },
   content: {
     padding: 0,
@@ -15,11 +20,7 @@ export default {
   image: {
 
   },
-  middle: {
-    padding: '1rem',
-    flex: '1 1 auto'
-  },
-  bottom: {
+  footer: {
     paddingBottom: '1rem',
     paddingLeft: '1rem',
     paddingRight: '1rem'

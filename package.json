@@ -10,6 +10,7 @@
     "build:demo": "webpack",
     "watch:src": "nodemon --watch ./src -x \"yarn build\"",
     "lint": "./node_modules/.bin/eslint .",
+    "lint-fix": "./node_modules/.bin/eslint . --fix",
     "dev": "yarn watch:src",
     "test": "jest",
     "coverage": "jest --coverage"

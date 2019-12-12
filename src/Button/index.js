@@ -89,9 +89,11 @@ const Button = ({
     }}
     onClick={onClick}
     onMouseEnter={() => {
-      setHover(true)
-      if (onMouseEnter) onMouseEnter() // I find it more usefull to bubble up these events
-      if (onHover) onHover(true) // This was here for testing. This may get depreciated.
+      if(disabled !== true) {
+        setHover(true)
+        if (onMouseEnter) onMouseEnter() // I find it more usefull to bubble up these events
+        if (onHover) onHover(true) // This was here for testing. This may get depreciated.
+      }
     }}
     onMouseLeave={() => {
       setHover(false)
@@ -114,8 +116,8 @@ const Button = ({
       ...(color ? { color: color } : null),
       ...(hover ? (styles.kind[kind || 'normal'].hover) : null),
       ...(enabled ? (styles.kind[kind || 'normal'].enabled) : null),
-      ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null),
-      ...(isActive ? (styles.kind[kind || 'normal'].active) : null)
+      ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
+      ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null)
     }}>
 
     <style>

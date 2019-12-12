@@ -5,7 +5,7 @@ export default {
     WebkitUserSelect: 'none',
     KhtmlUserSelect: 'none',
     MozUserSelect: 'none',
-    MsUserSelect: 'none',
+    MsUserSelect: 'none'
   },
   content: {
     padding: 0,

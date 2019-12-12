@@ -4,7 +4,7 @@ import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import Icon from '../Icon'
 /**
-* an icon that spins 
+* an icon that spins
 */
 const Spinner = ({
   icon, className, background, color, style

@@ -20,7 +20,7 @@ const Image = ({
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
-        textAlign: 'left',
+        textAlign: 'left'
       } : null),
       ...(circle === true ? {
         borderRadius: '50%'
@@ -43,29 +43,29 @@ const Image = ({
     }}>
     { !background
       ? <div
-          className='image__inner-container'
+        className='image__inner-container'
+        style={{
+          ...(circle === true || square === true ? {
+            paddingBottom: '100%'
+          } : null),
+          ...(rectangle === true ? {
+            paddingBottom: '56%'
+          } : null)
+        }}>
+        <img
+          src={src}
+          alt={alt || 'image'}
           style={{
-            ...(circle === true || square === true ? {
-                paddingBottom: '100%'
-              } : null),
-            ...(rectangle === true ? {
-                paddingBottom: '56%'
-              } : null),
-          }}>
-          <img
-            src={src}
-            alt={alt || 'image'}
-            style={{
-              ...styles.default.image,
-              ...(circle === true || square === true || rectangle === true ? {
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              } : null),
-              ...imageStyle
-            }} />
-        </div>
+            ...styles.default.image,
+            ...(circle === true || square === true || rectangle === true ? {
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            } : null),
+            ...imageStyle
+          }} />
+      </div>
       : null }
   </div>
 

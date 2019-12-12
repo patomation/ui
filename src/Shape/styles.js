@@ -3,7 +3,6 @@ export default {
     width: '100%'
   },
   shape: {
-    background: 'gold',
     position: 'relative',
     // overflow: 'hidden',
     height: '0',

@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { IconButton } from '../'
 /**
-* a react slick carousel component wrapper 
+* a react slick carousel component wrapper
 */
 
 const Arrow = ({ className, style, onClick, to, color }) => {

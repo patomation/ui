@@ -31,7 +31,7 @@ const Section = ({
         className='section__content'
         style={{
           ...styles.content,
-          ...(maxWidth ? { maxWidth} : null)
+          ...(maxWidth ? { maxWidth } : null)
         }}>
 
         {children}

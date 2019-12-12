@@ -10,10 +10,12 @@ if (module && module.hot) {
 }
 
 import AdminDemo from './AdminDemo'
+import Test from './pages/Test'
 
 render(
   <BrowserRouter>
-    <Route path='/' component={AdminDemo} />
+    <Route exact path='/' component={AdminDemo} />
+    <Route path='/test' component={Test} />
   </BrowserRouter>,
   document.getElementById('root')
 )

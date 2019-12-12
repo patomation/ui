@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import posed from 'react-pose'
+import config from '../config'
 import { Panel, Image, Icon, Shape, Gutter, Center } from '../'
 
-const Box = posed.div({
+const PoseDiv = posed.div({
   hover: {
     transform: 'translateY(-3px)',
     transition: { type: 'spring', stiffness: 100 }
@@ -13,7 +14,7 @@ const Box = posed.div({
   nohover: {
     transform: 'translateY(0px)',
     transition: { type: 'spring', stiffness: 100 }
- }
+  }
 })
 
 /**
@@ -21,99 +22,123 @@ const Box = posed.div({
 */
 const Card = ({
   className,
-  background, color, style,
+  background, color = '#000000', style,
   image, alt = '', icon,
+  iconColor, iconBackground,
   title, description, footer, children,
-  onClick
+  onClick, clickable
 }) => {
-
-  const [ hover, setHover ] = useState(false)
+  const [hover, setHover] = useState(false)
+  // onClick or clickable boolion will make ui clickable
+  const isClickable = onClick ? true : clickable
 
   return (
-  <Box
-    className={concat('card', className)}
-    style={{display: 'flex'}}
-    pose={ hover ? "hover" : "nohover" }
-    onClick={onClick} >
+    <PoseDiv
+      pose={ hover ? 'hover' : 'nohover' }
+      className={concat('card', className)}
+      style={{ display: 'flex' }}
+      onClick={onClick} >
 
-  <Panel
-    style={{
-      ...styles.container,
-      cursor: 'pointer',
-      ...(background ? { background: background } : null),
-      ...(color ? { color: color } : null),
-      ...style
-    }}
-    containerStyle={{ margin: 0 }}
-    contentStyle={styles.content}
-    onMouseEnter={() => { setHover(true) }}
-    onMouseLeave={() => { setHover(false) }}>
-
-    { image
-      ? <Image
-        className='card__image'
-        src={image}
-        alt={alt}
-        rectangle />
-      : <Shape rectangle background='gray'>
-          { icon
-            ? <Center style={{textAlign:'center'}}>
-                <Icon name={icon} responsive style={{width:'33%'}} />
-              </Center>
-            : null
+      <Panel
+        style={{
+          ...styles.container,
+          ...(isClickable ? { cursor: 'pointer' } : null),
+          ...(background ? { background: background } : null),
+          display: 'inline-block',
+          ...(color ? { color: color } : null),
+          ...style
+        }}
+        containerStyle={{ margin: 0 }}
+        contentStyle={styles.content}
+        onMouseEnter={() => {
+          if (isClickable) {
+            setHover(true)
           }
-        </Shape>
-    }
+        }}
+        onMouseLeave={() => {
+          setHover(false)
+        }}>
 
-
-    <div style={{
-      padding:'1rem'
-    }}>
-
-      { title
-        ? <h3
-            style={{
-              textDecoration: hover ? 'underline' : 'none'
-            }}>
-            { title }
-          </h3>
-
-        : <div
-            style={{
-              background: 'gray',
-              height: '1rem'
-            }}></div>
-      }
-      <Gutter half/>
-      { description
-        ? <p>{ description }</p>
-        : <>
-          <div
-            style={{
-              background: 'silver',
-              height: '0.75rem'
-            }}></div>
-          <Gutter half/>
-          <div
-            style={{
-              background: 'silver',
-              height: '0.75rem'
-            }}></div></>
+        { image
+          ? <Image
+            className='card__image'
+            src={image}
+            alt={alt}
+            rectangle />
+          : <Shape
+            rectangle
+            background={iconBackground || (icon ? '#ffffff' : 'gray')}>
+            { icon
+              ? <Center style={{ textAlign: 'center' }}>
+                { typeof icon === 'string'
+                  ? <Icon
+                    name={icon}
+                    color={iconColor || config.color.primary}
+                    responsive
+                    style={{ width: '33%' }} />
+                  : icon
+                }
+              </Center>
+              : null
+            }
+          </Shape>
         }
 
-    </div>
+        <div style={{
+          padding: '1rem'
+        }}>
 
-    { footer || children
-      ? <div
-        className='card__footer'
-        style={styles.footer}>
-        {footer || children}
-      </div>
-      : null }
+          { title
+            ? <h3
+              style={{
+                textDecoration: hover ? 'underline' : 'none',
+                display: 'inline-block' // Prevents external <a> tags from underlining
+              }}>
+              { title }
+            </h3>
 
-  </Panel>
-  </Box>
-)}
+            : <div
+              style={{
+                background: 'gray',
+                height: '1rem'
+              }}></div>
+          }
+          <Gutter half/>
+          { description
+            ? <p
+              style={{
+                display: 'inline-block' // Prevents external <a> tags from underlining
+              }}>
+              { description }
+            </p>
+            : <>
+              <div
+                style={{
+                  background: 'silver',
+                  height: '0.75rem'
+                }}></div>
+              <Gutter half/>
+              <div
+                style={{
+                  background: 'silver',
+                  height: '0.75rem'
+                }}></div></>
+          }
+
+        </div>
+
+        { footer || children
+          ? <div
+            className='card__footer'
+            style={styles.footer}>
+            {footer || children}
+          </div>
+          : null }
+
+      </Panel>
+    </PoseDiv>
+  )
+}
 
 Card.propTypes = {
   /**
@@ -121,8 +146,10 @@ Card.propTypes = {
   **/
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  middle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  bottom: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * like children any element can be used and it will put the item at the bottom of the card
+  **/
+  footer: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
@@ -135,9 +162,33 @@ Card.propTypes = {
   **/
   alt: PropTypes.string,
   /**
-  * an icon can be used instead of using an image
+  * an icon component or string name of a material icon can be used instead of an image
   **/
-  icon: PropTypes.string
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /**
+  * icon color
+  **/
+  iconColor: PropTypes.string,
+  /**
+  * icon background color
+  **/
+  iconBackground: PropTypes.string,
+  /**
+  * card title h3
+  **/
+  title: PropTypes.string,
+  /**
+  * a short description
+  **/
+  description: PropTypes.string,
+  /**
+  * on click event function prop
+  **/
+  onClick: PropTypes.func,
+  /**
+  * just case you dont want to use onclick but still want the ui to hover and look clickable
+  **/
+  clickable: PropTypes.bool
 }
 
 export default Card

@@ -13,7 +13,7 @@ const Gutter = ({
   const Tag = vertical ? 'span' : 'div'
 
   const { number, unit } = extract(config.size.gutters)
-  const padding = `${number * (half === true ? 0.5 : 1) }${unit}`
+  const padding = `${number * (half === true ? 0.5 : 1)}${unit}`
 
   return disabled !== true
     ? <Tag

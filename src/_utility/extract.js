@@ -1,6 +1,6 @@
 const extract = (string) => {
-  const number = string.match(/\d+/)[0]
-  const unit = string.replace(number, '')
+  const number = string ? string.match(/\d+/)[0] : null
+  const unit = string ? string.replace(number, '') : null
   return {
     number,
     unit

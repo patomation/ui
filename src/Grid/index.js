@@ -13,18 +13,11 @@ const Grid = ({
   onMouseEnter, onMouseLeave,
   breakWidth
 }) => {
-  // Extract number and unit
-  const extract = (string) => {
-    const number = string.match(/\d+/)[0]
-    const unit = string.replace(number, '')
-    return {
-      number,
-      unit
-    }
-  }
-
   // We have to subtract the gap amount for each column
-  const subtractGap = gap ? ((extract(gap).number * (col - 1)) / col) + extract(gap).unit : null
+  const { number, unit } = extract(gap === true ? '1rem' : gap)
+  const subtractGap = gap
+    ? ((number * (col - 1)) / col) + unit
+    : null
 
   const width = 100 / col
   const height = 100 / row // TODO actually have row prop do something
@@ -42,7 +35,7 @@ const Grid = ({
       className={concat('grid', className)}
       style={{
         ...styles.container,
-        gridGap: (gap || '0'),
+        gridGap: (gap === true ? '1rem' : gap || '0'),
         gridTemplateColumns: repeat(col, (subtractGap ? `calc(${width}% - ${subtractGap})` : `${width}%`)),
         ...(breakWidth ? {
           gridTemplateColumns: `repeat(auto-fit, minmax(${extract(breakWidth).number / (col || 2)}${extract(breakWidth).unit}, 1fr))`
@@ -74,7 +67,10 @@ Grid.propTypes = {
   style: PropTypes.object,
   col: PropTypes.number,
   row: PropTypes.number,
-  gap: PropTypes.string,
+  /**
+  * using true the gap will be the default 1rem otherwise you can set the gap to a custom amount
+  **/
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   breakWidth: PropTypes.string,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func

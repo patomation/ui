@@ -2,6 +2,19 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import posed from 'react-pose'
+
+const PosedButton = posed.button({
+  hover: {
+    transform: 'translateY(-2px)',
+    transition: { type: 'spring', stiffness: 100 }
+  },
+  nohover: {
+    transform: 'translateY(0px)',
+    transition: { type: 'spring', stiffness: 100 }
+  }
+})
+
 /**
 * Standardized button component
 **/
@@ -39,7 +52,7 @@ const Button = ({
     if (onUp) onUp()
   }
 
-  const button = <button
+  const button = <PosedButton pose={ hover ? 'hover' : 'nohover' }
     type={type}
     disabled={disabled}
     className={concat('button', className)}
@@ -115,14 +128,14 @@ const Button = ({
 
     { children || title }
 
-  </button>
+  </PosedButton>
 
   // If center is defined wrap button with div with textAlign center
   return center || right
     ? <div
-        style={{
-          textAlign: center ? 'center' : 'right'
-        }}> { button } </div>
+      style={{
+        textAlign: center ? 'center' : 'right'
+      }}> { button } </div>
     : button
 }
 

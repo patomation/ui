@@ -8,8 +8,8 @@ import concat from '../_utility/concat.js'
 const Shape = ({
   className, children,
   onClick,
-  background, color, style,
-  square, circle, rectangle
+  background = 'gold', color, style, width, maxWidth,
+  square, circle, rectangle, triangle
 }) =>
 
   <div
@@ -17,6 +17,11 @@ const Shape = ({
     className={concat('shape', className)}
     style={{
       ...styles.container,
+      width,
+      maxWidth,
+      ...((width || maxWidth) ? {
+        margin: '0 auto'
+      } : null),
       ...style
     }}>
 
@@ -24,12 +29,36 @@ const Shape = ({
       className='shape__shape'
       style={{
         ...styles.shape,
-        ...(background ? { background: background } : null),
+        background: background,
         ...(color ? { color: color } : null),
         ...(circle ? { borderRadius: '50%' } : null),
-        ...(rectangle ? { paddingBottom: '56%'} : null)
+        ...(rectangle ? { paddingBottom: '56%' } : null),
+        ...(triangle ? {
+          background: null,
+          width: '100%',
+          height: 0,
+          paddingLeft: '50%',
+          paddingBottom: '70%',
+          overflow: 'hidden'
+        } : null)
       }}>
-      {children}
+      { triangle
+        ? <div
+          style={{
+            content: '',
+            display: 'block',
+            width: '0',
+            height: '0',
+            marginLeft: '-500px',
+            borderLeft: '500px solid transparent',
+            borderRight: '500px solid transparent',
+            // Modifying this changes the geometry of the triangle
+            borderBottom: `700px solid ${background}`
+          }}>
+          {children}
+        </div>
+        : children
+      }
     </div>
 
   </div>
@@ -44,9 +73,30 @@ Shape.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
+  /**
+  * A square shape div
+  **/
   square: PropTypes.bool,
+  /**
+  * A circle shape div
+  **/
   circle: PropTypes.bool,
-  rectangle: PropTypes.bool
+  /**
+  * A rectangular shaped div
+  **/
+  rectangle: PropTypes.bool,
+  /**
+  * A traingle shaped div
+  **/
+  triangle: PropTypes.bool,
+  /**
+  * set the width of the shape
+  **/
+  width: PropTypes.string,
+  /**
+  * set the maximum width of the shape
+  **/
+  maxWidth: PropTypes.string
 }
 
 export default Shape

@@ -21,7 +21,7 @@ export default {
   },
   kind: {
     normal: {
-      background: config.color.button.background,
+      // background: config.color.button.background,
       color: config.color.button.color,
       active: {
         filter: 'brightness(130%)'
@@ -34,7 +34,7 @@ export default {
         cursor: 'auto'
       },
       enabled: {
-        background: '#40e0d0'
+        // background: '#40e0d0'
       }
     },
     outline: {

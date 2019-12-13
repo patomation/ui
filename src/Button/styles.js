@@ -34,7 +34,7 @@ export default {
         cursor: 'auto'
       },
       enabled: {
-        // background: '#40e0d0'
+        background: '#40e0d0'
       }
     },
     outline: {

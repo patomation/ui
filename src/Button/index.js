@@ -111,12 +111,12 @@ const Button = ({
       ...(color ? { color: color } : null),
       ...(hover ? (styles.kind[kind || 'normal'].hover) : null),
       ...(enabled ? (styles.kind[kind || 'normal'].enabled) : null),
-      ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
       ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null),
       ...style,
       ...(hover ? hoverStyle : null),
       ...(enabled ? enabledStyle : null),
       ...(disabled ? disabledStyle : null),
+      ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
       ...(isActive ? activeStyle : null),
     }}>
 

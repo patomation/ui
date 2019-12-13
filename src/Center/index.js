@@ -7,7 +7,7 @@ import concat from '../_utility/concat.js'
 */
 const Center = ({
   className, children,
-  background, color, style,
+  background, color, style, contentStyle,
   width, maxWidth,
   disabled
 }) =>
@@ -25,7 +25,8 @@ const Center = ({
       style={{
         ...(!disabled ? styles.content : null),
         ...(width ? { width: width } : null),
-        ...(maxWidth ? { maxWidth: maxWidth } : null)
+        ...(maxWidth ? { maxWidth: maxWidth } : null),
+        ...contentStyle
       }}>
 
       {children}
@@ -43,6 +44,7 @@ Center.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
+  contentStyle: PropTypes.object,
   width: PropTypes.string,
   maxWidth: PropTypes.string,
   disabled: PropTypes.bool

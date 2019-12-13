@@ -104,11 +104,6 @@ const Button = ({
     style={{
       ...styles.default,
       ...(styles.kind[kind || 'normal']),
-      ...style,
-      ...(hover ? hoverStyle : null),
-      ...(enabled ? enabledStyle : null),
-      ...(disabled ? disabledStyle : null),
-      ...(isActive ? activeStyle : null),
       ...(kind === 'outline' && color ? {
         border: `1px solid ${color}`
       } : null),
@@ -117,7 +112,12 @@ const Button = ({
       ...(hover ? (styles.kind[kind || 'normal'].hover) : null),
       ...(enabled ? (styles.kind[kind || 'normal'].enabled) : null),
       ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
-      ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null)
+      ...(disabled ? (styles.kind[kind || 'normal'].disabled) : null),
+      ...style,
+      ...(hover ? hoverStyle : null),
+      ...(enabled ? enabledStyle : null),
+      ...(disabled ? disabledStyle : null),
+      ...(isActive ? activeStyle : null),
     }}>
 
     <style>

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-import { Error } from '../'
+import { Error, Gutter } from '../'
 /**
 * A standardized imput component plus textarea
 */
@@ -10,6 +10,8 @@ const Input = ({
   type, name, onChange, onFocus, onBlur, value, error, placeholder,
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style,
+  textAlign,
+  rows = 3, cols,
   label, min, max
 }) => {
   const InputType = type === 'textarea' ? 'textarea' : 'input'
@@ -23,50 +25,38 @@ const Input = ({
         ...containerStyle
       }}>
 
-      { label ? <label className='input__label'>{label}</label> : null }
+      { label
+        ? <>
+          <label className='input__label'> {label} </label>
+          <Gutter half />
+         </>
+        : null }
 
-      <span style={{
-        ...styles.border,
-        ...(error ? (inputErrorStyle || styles.errorBorder) : null),
-        ...(type === 'textarea' ? { height: '6rem' } : null)
-      }}>
-        <InputType
-          className='input__input'
-          type={type}
-          name={name}
-          rows={10} // Todo look into if we need this anymore or should it be textarea ? rows
-          min={min}
-          max={max}
-          onChange={onChange}
-          // onChange={ e => {
-          //   //Convert strings to numbers
-          //   // onChange(e)
-          //   const newevent = {
-          //     ...e,
-          //     ...{
-          //       target: {
-          //         value: isNaN(e.target.value)
-          //           ? e.target.value // If Not a Number use uneffected value
-          //           : parseInt(e.target.value) //If number convert string to number
-          //       }
-          //     }
-          //   }
-          //   console.log(e);
-          //   console.log(newevent);
-          // }}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          placeholder={placeholder}
-          value={value}
-          onClick={onClick}
-          style={{
-            ...styles.input,
-            ...(type === 'textarea' ? styles.textarea : null),
-            ...(background ? { background: background } : null),
-            ...(color ? { color: color } : null),
-            ...inputStyle
-          }}/>
-      </span>
+      <InputType
+        className='input__input'
+        type={type}
+        name={name}
+        rows={rows} // textarea
+        cols={cols} // textarea
+        min={min}
+        max={max}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        placeholder={placeholder}
+        value={value}
+        onClick={onClick}
+        style={{
+          ...styles.input,
+          ...(type === 'textarea' ? styles.textarea : null),
+          ...(background ? { background: background } : null),
+          ...(color ? { color: color } : null),
+          textAlign,
+          ...inputStyle,
+          ...(error ? (inputErrorStyle || styles.errorBorder) : null),
+          ...(type === 'textarea' ? { height: 'auto' } : null)
+        }}/>
+
 
       { typeof error === 'string'
         ? <Error

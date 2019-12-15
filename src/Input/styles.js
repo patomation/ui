@@ -5,19 +5,12 @@ export default {
     width: '100%',
     display: 'block'
   },
-  border: {
-    display: 'block',
-    width: '100%',
+  input: {
+    height: '42px', //uniform height
     border: '1px solid rgba(0,0,0, 0.20)',
-    paddingRight: '1px', // border fix
     borderRadius: config.size.corners,
     WebkitBorderRadius: config.size.corners,
     MozBorderRadius: config.size.corners,
-    MozOverflow: 'hidden',
-    overflow: 'hidden',
-    height: '42px'
-  },
-  input: {
     WebkitAppearance: 'none', // Disable chrome styles
     MozAppearance: 'none', // Disable firefox styles
     border: 'none',
@@ -38,7 +31,8 @@ export default {
   },
   textarea: {
     resize: 'none',
-    paddingTop: '1rem'
+    padding: '1rem',
+    textAlign: 'left'
   },
 
   errorBorder: {

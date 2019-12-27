@@ -1,5 +1,5 @@
 {
-  "name": "@patomation/react-ui-components",
+  "name": "@patomation/ui",
   "version": "1.6.2",
   "main": "lib/index.js",
   "private": false,

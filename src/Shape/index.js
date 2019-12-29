@@ -9,7 +9,7 @@ const Shape = ({
   className, children,
   onClick,
   background = 'gold', color, style, width, maxWidth,
-  square, circle, rectangle, triangle
+  square, circle, rectangle, triangle, portrait
 }) =>
 
   <div
@@ -33,6 +33,7 @@ const Shape = ({
         ...(color ? { color: color } : null),
         ...(circle ? { borderRadius: '50%' } : null),
         ...(rectangle ? { paddingBottom: '56%' } : null),
+        ...(portrait ? { paddingBottom: '156%' } : null),
         ...(triangle ? {
           background: null,
           width: '100%',
@@ -89,6 +90,10 @@ Shape.propTypes = {
   * A traingle shaped div
   **/
   triangle: PropTypes.bool,
+  /**
+  * A portrait shaped div
+  **/
+  portrait: PropTypes.bool,
   /**
   * set the width of the shape
   **/

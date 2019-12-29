@@ -14,7 +14,7 @@
     "coverage": "jest --coverage",
     "demo": "webpack-dev-server --mode development --open --hot",
     "build:demo": "npm run doc && webpack",
-    "doc": "react-docgen ./src -o ./demo/doc2.json --pretty --exclude ['style.js','*.test.js','config.js']"
+    "doc": "react-docgen ./src -o ./demo/doc.json --pretty --exclude ['style.js','*.test.js','config.js']"
   },
   "dependencies": {
     "@patomation/find": "^1.1.0",

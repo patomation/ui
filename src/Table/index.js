@@ -73,9 +73,9 @@ Table.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
-  header: PropTypes.object,
-  data: PropTypes.object,
-  footer: PropTypes.object
+  header: PropTypes.array,
+  data: PropTypes.array,
+  footer: PropTypes.array
 }
 
 export default Table

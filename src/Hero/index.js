@@ -8,7 +8,7 @@ import { Gutter, Image, Center, ScrollButton } from '../'
 */
 const Hero = ({
   className,
-  background, color,
+  background = '#333', color,
   overlayColor, overlayOpacity = '0.5',
   style, titleStyle, descriptionStyle, imageStyle,
   children, title, description,
@@ -22,6 +22,7 @@ const Hero = ({
       style={{
         ...styles.container,
         ...(color ? { color: color } : null),
+        ...(background ? { background: background } : null),
         ...style,
         ...(height ? {
           height,

@@ -40,6 +40,8 @@ export default MyComponent
 
 ```
 
+## Deprecate List
+SideBar - included in Page component
 
 ## Components
  - [Badge](src/Badge/doc.md)

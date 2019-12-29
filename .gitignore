@@ -27,3 +27,4 @@ lib
 temp
 vim.exe.stackdump
 dist
+doc.json

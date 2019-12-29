@@ -21,6 +21,9 @@ const config = {
     indigo: '#610f7f',
     violet: '#2f0147', // Darkest
 
+    dark: 'rgba(32,32,43,1)',
+    light: 'rgba(228,248,235,1)',
+
     button: {
       color: '#ffffff',
       background: '#2f0147'

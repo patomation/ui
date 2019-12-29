@@ -8,7 +8,7 @@ import concat from '../_utility/concat.js'
 const Brand = ({
   className, children,
   onClick,
-  background, color, style
+  background, color = '#333', style
 }) =>
 
   <span

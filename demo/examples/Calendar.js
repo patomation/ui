@@ -11,7 +11,7 @@ const CalendarExample = () => {
 
       <h2>Demo</h2><Gutter/>
 
-      <Calendar />
+      <Calendar style={{maxWidth: '600px'}} />
 
     </div>
   )

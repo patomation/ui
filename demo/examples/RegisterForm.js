@@ -11,7 +11,7 @@ const RegisterFormExample = () => {
 
       <h2>Demo</h2><Gutter/>
 
-      <RegisterForm />
+      <RegisterForm style={{maxWidth: '400px'}} />
 
     </div>
   )

@@ -6,12 +6,20 @@ const NavExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Nav />
+        <Nav>
+          <div>Item1</div>
+          <div>Item2</div>
+          <div>Item3</div>
+        </Nav>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <Nav />
+      <Nav>
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+      </Nav>
 
     </div>
   )

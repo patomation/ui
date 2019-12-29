@@ -1,17 +1,26 @@
-import React from 'react'
-import { Modal, Code, Gutter } from '../../src'
+import React, { useState } from 'react'
+import { Modal, Code, Gutter, Button } from '../../src'
 
 const ModalExample = () => {
+  const [ show, setShow ] = useState(false)
+
   return (
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Modal />
+        const [ show, setShow ] = useState(false)
+
+        <Button title='show' onClick={() => {setShow(!show)}}/>
+        <Modal show={show} onClose={() => {setShow(false)}}>
+          This is the modal
+        </Modal>
       `}/>
 
       <h2>Demo</h2><Gutter/>
-
-      <Modal />
+      <Button title='show' onClick={() => {setShow(!show)}}/>
+      <Modal show={show} onClose={() => {setShow(false)}}>
+        This is the modal
+      </Modal>
 
     </div>
   )

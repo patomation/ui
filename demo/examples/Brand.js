@@ -6,12 +6,12 @@ const BrandExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Brand />
+        <Brand> Hekin Sweet Brand </Brand>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <Brand />
+      <Brand> Hekin Sweet Brand </Brand>
 
     </div>
   )

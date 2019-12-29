@@ -6,12 +6,20 @@ const CodeExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Code />
+        <Code block={\`
+          const CoolFunction = () => {
+            //my cool function
+          }
+        \`}>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <Code />
+      <Code block={`
+        const CoolFunction = () => {
+          //my cool function
+        }
+      `}/>
 
     </div>
   )

@@ -11,7 +11,7 @@ const LoginFormExample = () => {
 
       <h2>Demo</h2><Gutter/>
 
-      <LoginForm />
+      <LoginForm style={{maxWidth: '400px'}} />
 
     </div>
   )

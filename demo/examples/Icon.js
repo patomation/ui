@@ -6,12 +6,18 @@ const IconExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Icon />
+        <Icon name='work'/>
+
+        <Icon name='work' responsive style={{width:'300px'}}/>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <Icon />
+      Regular:
+      <Icon name='work'/>
+      <Gutter/>
+      Responsive:
+      <Icon name='work' responsive style={{width:'300px'}}/>
 
     </div>
   )

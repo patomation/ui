@@ -6,12 +6,16 @@ const SectionExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Section />
+        <Section>
+          My Section Example
+        </Section>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <Section />
+      <Section>
+        My Section Example
+      </Section>
 
     </div>
   )

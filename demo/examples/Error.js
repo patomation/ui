@@ -6,12 +6,12 @@ const ErrorExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <Error />
+        <Error>Error Message</Error>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <Error />
+      <Error>Error Message</Error>
 
     </div>
   )

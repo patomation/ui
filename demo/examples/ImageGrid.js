@@ -6,12 +6,26 @@ const ImageGridExample = () => {
     <div>
       <h2>Example</h2>
       <Code block={`
-        <ImageGrid />
+        <ImageGrid images={[
+          'https://i.imgur.com/AtllrRf.jpg',
+          'https://i.imgur.com/AtllrRf.jpg',
+          'https://i.imgur.com/AtllrRf.jpg',
+          'https://i.imgur.com/AtllrRf.jpg',
+          'https://i.imgur.com/AtllrRf.jpg',
+          'https://i.imgur.com/AtllrRf.jpg',
+        ]}/>
       `}/>
 
       <h2>Demo</h2><Gutter/>
 
-      <ImageGrid />
+      <ImageGrid images={[
+        'https://i.imgur.com/AtllrRf.jpg',
+        'https://i.imgur.com/AtllrRf.jpg',
+        'https://i.imgur.com/AtllrRf.jpg',
+        'https://i.imgur.com/AtllrRf.jpg',
+        'https://i.imgur.com/AtllrRf.jpg',
+        'https://i.imgur.com/AtllrRf.jpg',
+      ]}/>
 
     </div>
   )

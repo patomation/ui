@@ -61,8 +61,9 @@ const Form = ({
                     return <div
                       key={`field_${name}`}
                       className={`form__field_${name}`}>
-                      {labels ? <label className='form__feild__label'>{ label || name.replace(/^./, name[0].toUpperCase()) }</label> : null}
+
                       <Input
+                        label={labels ? label || name.replace(/^./, name[0].toUpperCase()) : null}
                         name={name}
                         type={type || 'text'}
                         placeholder={ placeholders ? placeholder || name.replace(/^./, name[0].toUpperCase()) : null }

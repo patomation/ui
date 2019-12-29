@@ -6,15 +6,15 @@ export default {
     display: 'block'
   },
   input: {
-    // height: '42px', // uniform height
-    // border: '1px solid rgba(0,0,0, 0.20)',
+    height: '42px', // uniform height
+    border: '1px solid rgba(0,0,0, 0.20)',
     borderRadius: config.size.corners,
     WebkitBorderRadius: config.size.corners,
     MozBorderRadius: config.size.corners,
     WebkitAppearance: 'none', // Disable chrome styles
     MozAppearance: 'none', // Disable firefox styles
-    border: 'none',
-    height: '100%',
+    // border: 'none',
+    // height: '100%',
     width: '100%',
     margin: 0,
     padding: 0,

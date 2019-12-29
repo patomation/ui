@@ -24,7 +24,7 @@ const Button = ({
   onMouseEnter, onMouseLeave,
   onDown, onUp,
   children, title, // Child or title works for the button label
-  background, color, style,
+  background = '#333', color, style,
   hoverStyle, disabledStyle, activeStyle, enabledStyle,
   onHover, kind,
   center, right // If prop is used at all then a div will be added to the outside with textAlign center
@@ -89,7 +89,7 @@ const Button = ({
     }}
     onClick={onClick}
     onMouseEnter={() => {
-      if(disabled !== true) {
+      if (disabled !== true) {
         setHover(true)
         if (onMouseEnter) onMouseEnter() // I find it more usefull to bubble up these events
         if (onHover) onHover(true) // This was here for testing. This may get depreciated.
@@ -107,7 +107,7 @@ const Button = ({
       ...(kind === 'outline' && color ? {
         border: `1px solid ${color}`
       } : null),
-      ...(background && kind !== 'outline' ? { background: background } : null),
+      ...(background && kind !== 'outline' && kind !== 'none' ? { background: background } : null),
       ...(color ? { color: color } : null),
       ...(hover ? (styles.kind[kind || 'normal'].hover) : null),
       ...(enabled ? (styles.kind[kind || 'normal'].enabled) : null),
@@ -117,7 +117,7 @@ const Button = ({
       ...(enabled ? enabledStyle : null),
       ...(disabled ? disabledStyle : null),
       ...(isActive ? (styles.kind[kind || 'normal'].active) : null),
-      ...(isActive ? activeStyle : null),
+      ...(isActive ? activeStyle : null)
     }}>
 
     <style>

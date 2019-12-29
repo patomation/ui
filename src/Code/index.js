@@ -2,16 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import { Panel } from '../'
+
 /**
 * A component for displaying code samples
 */
 const Code = ({
-  className, children, onClick,
-  background, color, style
+  className, block,
+  children,
+  background = 'gray', color = '#ffffff', style
 }) => {
   return (
-    <div
-      onClick={onClick}
+    <Panel
       className={concat('code', className)}
       style={{
         ...styles.container,
@@ -19,10 +21,12 @@ const Code = ({
         ...(color ? { color: color } : null),
         ...style
       }}>
+      <code>
 
-      {children}
+        {children || block}
 
-    </div>
+      </code>
+    </Panel>
   )
 }
 
@@ -31,8 +35,8 @@ Code.propTypes = {
   * Exposes ability to set a custom class name
   **/
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
+  children: PropTypes.string,
+  block: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object

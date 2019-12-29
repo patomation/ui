@@ -2,46 +2,48 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-
-import { Row, Content, Gutter } from '../'
+import { Row } from '../'
 
 const Page = ({
   className, children,
-  background, color, style,
-
+  background, color,
+  style,
   title, abilities, contentTitle, contentAbilities, sidebar
 }) =>
 
-<div
-  className={concat('page', className)}
-  style={{
-    ...styles.container,
-    ...(background ? { background: background } : null),
-    ...(color ? { color: color } : null),
-    padding: '1rem',
-    display: 'flex',
-    alignItems: 'stretch',
-    height: '100%',
-    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-    ...style
-  }}>
+  <div
+    className={concat('page', className)}
+    style={{
+      ...styles.container,
+      ...(background ? { background: background } : null),
+      ...(color ? { color: color } : null),
+      padding: '1rem',
+      display: 'flex',
+      alignItems: 'stretch',
+      height: '100%',
+      fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+      ...style
+    }}>
 
-  { sidebar
-    ? <nav
+    { sidebar
+      ? <nav
+        className='page__nav'
         style={{
-          marginRight:'1rem',
+          marginRight: '1rem',
           whiteSpace: 'nowrap'
         }}>
         { sidebar }
       </nav>
-    : null }
+      : null }
 
-  <main>
+    <main
+      className='page__main'
+      style={{ flexGrow: 1 }}>
 
-    { title
-      ? <Row style={{
-        marginBottom: '1rem'
-      }}>
+      { title
+        ? <Row style={{
+          marginBottom: '1rem'
+        }}>
           <h1
             style={{
               flexGrow: 1,
@@ -49,15 +51,15 @@ const Page = ({
               lineHeight: '1.5rem',
               height: '1.5rem'
             }}>
-              {title}
+            {title}
           </h1>
           { abilities }
         </Row> : null }
 
-    <div style={{padding: '1.5rem'}}>
+      <div style={{ padding: '1.5rem' }}>
 
-      { contentTitle
-        ? <Row style={{marginBottom: '1rem'}}>
+        { contentTitle
+          ? <Row style={{ marginBottom: '1rem' }}>
             <h2
               style={{
                 flexGrow: 1,
@@ -70,13 +72,13 @@ const Page = ({
             { contentAbilities }
           </Row> : null }
 
-      {children}
+        {children}
 
-    </div>
+      </div>
 
-  </main>
+    </main>
 
-</div>
+  </div>
 
 Page.propTypes = {
   className: PropTypes.string,
@@ -84,7 +86,12 @@ Page.propTypes = {
   onClick: PropTypes.func,
   background: PropTypes.string,
   color: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
+  title: PropTypes.string,
+  abilities: PropTypes.string,
+  contentTitle: PropTypes.string,
+  contentAbilities: PropTypes.string,
+  sidebar: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 }
 
 export default Page

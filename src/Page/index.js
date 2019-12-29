@@ -38,7 +38,7 @@ const Page = ({
 
     <main
       className='page__main'
-      style={{ flexGrow: 1 }}>
+      style={{ flexGrow: 1, maxWidth: '1000px' }}>
 
       { title
         ? <Row style={{

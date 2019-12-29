@@ -29,7 +29,7 @@ const Input = ({
         ? <>
           <label className='input__label'> {label} </label>
           <Gutter half />
-         </>
+        </>
         : null }
 
       <InputType
@@ -56,7 +56,6 @@ const Input = ({
           ...(error ? (inputErrorStyle || styles.errorBorder) : null),
           ...(type === 'textarea' ? { height: 'auto' } : null)
         }}/>
-
 
       { typeof error === 'string'
         ? <Error
@@ -98,7 +97,10 @@ Input.propTypes = {
   style: PropTypes.object,
   label: PropTypes.string,
   min: PropTypes.number,
-  max: PropTypes.number
+  max: PropTypes.number,
+  textAlign: PropTypes.string,
+  cols: PropTypes.number,
+  rows: PropTypes.number
 }
 
 export default Input

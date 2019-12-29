@@ -6,8 +6,8 @@ export default {
     display: 'block'
   },
   input: {
-    height: '42px', //uniform height
-    border: '1px solid rgba(0,0,0, 0.20)',
+    // height: '42px', // uniform height
+    // border: '1px solid rgba(0,0,0, 0.20)',
     borderRadius: config.size.corners,
     WebkitBorderRadius: config.size.corners,
     MozBorderRadius: config.size.corners,

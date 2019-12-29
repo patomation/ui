@@ -36,11 +36,11 @@ const sources = fs.readdirSync(sourcePath)
 sources.splice(sources.indexOf('index.js'), 1)
 sources.splice(sources.indexOf('config.js'), 1)
 sources.splice(sources.indexOf('_utility'), 1)
-
 sources.forEach((componentName) => {
-  console.log(componentName)
+  // console.log(componentName)
   // If blank example has not been maid yet
-  if (!examples.includes(componentName)) {
+  if (!examples.includes(`${componentName}.js`)) {
+    console.log('NEW example write:' + componentName);
     fs.writeFileSync(`${examplePath}/${componentName}.js`, exampleTemplate(componentName))
   }
 })

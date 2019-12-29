@@ -4,23 +4,24 @@
   "main": "lib/index.js",
   "private": false,
   "scripts": {
-    "demo": "webpack-dev-server --mode development --open --hot",
     "prepare": "npm run build",
     "build": "babel src --out-dir lib --ignore \"**/*.test.js\"",
-    "build:demo": "webpack",
     "watch:src": "nodemon --watch ./src -x \"yarn build\"",
     "lint": "./node_modules/.bin/eslint .",
     "lint-fix": "./node_modules/.bin/eslint . --fix",
     "dev": "yarn watch:src",
     "test": "jest",
     "coverage": "jest --coverage",
-    "doc": "react-docgen ./src -o ./demo/doc.json --pretty --exclude ['style.js','*.test.js','config.js']"
+    "demo": "webpack-dev-server --mode development --open --hot",
+    "build:demo": "npm run doc && webpack",
+    "doc": "react-docgen ./src -o ./demo/doc2.json --pretty --exclude ['style.js','*.test.js','config.js']"
   },
   "dependencies": {
     "@patomation/find": "^1.1.0",
     "@patomation/hotkey": "^1.3.1",
     "@patomation/usetoggle": "^1.2.0",
     "formik": "^1.5.8",
+    "highlight.js": "^9.17.1",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",

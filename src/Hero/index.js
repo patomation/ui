@@ -15,7 +15,6 @@ const Hero = ({
   image,
   height
 }) => {
-  console.log('overlayOpacity', overlayOpacity)
   return (
     <header
       className={concat('hero', className)}

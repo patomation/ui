@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 
-console.log(new Array(10));
-
 const Placeholder = ({
   background, color, style, lines = 1
 }) =>
@@ -16,15 +14,14 @@ const Placeholder = ({
       ...(color ? { color: color } : null),
       ...style
     }}>
-    { new Array(lines).fill(0).map( (_, index) => {
-      console.log(index);
+    { new Array(lines).fill(0).map((_, index) => {
       return <div
         className={'placeholder__line'}
         key = {'line' + index}
         style={{
           background: 'rgba(255,255,255,0.4)',
           height: '0.5rem',
-          marginBottom: '0.5rem',
+          marginBottom: '0.5rem'
         }}></div>
     })}
 

@@ -9,15 +9,9 @@ import Home from './pages/Home'
 
 import { Page, Button, Grid, Hr, Brand, Loader, Table, Gutter } from '../src'
 
+import Examples from './examples'
 import doc from './doc.json'
-
-const examples = {}
-const examples2 = {}
-Object.keys(doc).forEach( key => {
-  const { displayName } = doc[key]
-  // eslint-disable-next-line
-  examples[displayName] = lazy(() => import(`./examples/${displayName}`))
-})
+import Navigation from './components/Navigation'
 
 if (module && module.hot) {
   module.hot.accept()
@@ -31,20 +25,7 @@ const Layout = withRouter( ({children, location}) => {
   return (
     <Page
       title={name !== '' ? name : null}
-      sidebar={
-        <Grid gap>
-        <Link to='/'><Brand> UI </Brand></Link>
-        <Hr/>
-        {Object.keys(examples).map( name =>
-          <Link to={`/${name}`} key={name}>
-            <Button
-              title={name}
-              kind='none'
-               />
-           </Link>
-        )}
-        </Grid> }
-      >
+      sidebar={<Navigation />}>
 
       { description
         ? <p style={{paddingBottom: '1rem'}}>{description}</p>
@@ -78,19 +59,13 @@ const Layout = withRouter( ({children, location}) => {
   )
 })
 
-console.log('TEST', examples['Badge'].test2);
+
 render(
   <BrowserRouter>
     <Suspense fallback={<Loader/>}>
       <Layout>
         <Route exact path='/' component={Home} />
-        {Object.keys(examples).map( name =>
-          <Route
-            path={`/${name}`}
-            component={examples[name]}
-            key={name}/>
-        )}
-
+        <Examples/>
       </Layout>
     </Suspense>
   </BrowserRouter>,

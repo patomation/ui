@@ -1,10 +1,10 @@
 import React from 'react'
-import { List, Code, Gutter } from '../../src'
+import { List, Code, Gutter, Heading } from '../../src'
 
 const ListExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <List data={[
           'item 1',
@@ -15,7 +15,7 @@ const ListExample = () => {
         ]}/>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <List data={[
         'item 1',

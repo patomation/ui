@@ -1,10 +1,10 @@
 import React from 'react'
-import { Row, Code, Gutter, Icon, Brand } from '../../src'
+import { Row, Code, Gutter, Icon, Brand, Heading } from '../../src'
 
 const RowExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Row>
           <Brand> Awesome </Brand>
@@ -17,7 +17,7 @@ const RowExample = () => {
         </Row>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Row>
         <Brand> Awesome </Brand>

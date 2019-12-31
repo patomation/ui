@@ -1,10 +1,10 @@
 import React from 'react'
-import { Footer, Code, Gutter, Shape } from '../../src'
+import { Footer, Code, Gutter, Shape, Heading } from '../../src'
 
 const FooterExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Footer
           style={{
@@ -17,7 +17,7 @@ const FooterExample = () => {
         </Footer>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Shape portrait background='silver' maxWidth='300px'>
         <Footer style={{position:'absolute', bottom: '0', width: '100%', boxSizing: 'border-box'}}>Footer Items</Footer>

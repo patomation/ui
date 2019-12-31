@@ -1,10 +1,10 @@
 import React from 'react'
-import { Center, Code, Gutter, Shape } from '../../src'
+import { Center, Code, Gutter, Shape, Heading } from '../../src'
 
 const CenterExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Shape rectangle background='#333'>
 
@@ -15,7 +15,7 @@ const CenterExample = () => {
         </Shape>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Shape rectangle background='#333'>
 

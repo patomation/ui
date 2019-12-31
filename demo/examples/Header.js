@@ -1,10 +1,10 @@
 import React from 'react'
-import { Header, Code, Gutter, Shape, Icon, Brand, Row } from '../../src'
+import { Header, Code, Gutter, Shape, Icon, Brand, Row, Heading } from '../../src'
 
 const HeaderExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Header>
           <Row>
@@ -15,7 +15,7 @@ const HeaderExample = () => {
         </Header>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Shape portrait background='silver' maxWidth='300px'>
         <Header>

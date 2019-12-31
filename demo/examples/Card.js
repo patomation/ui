@@ -1,10 +1,10 @@
 import React from 'react'
-import { Card, Code, Gutter, Grid, Button, Icon } from '../../src'
+import { Card, Code, Gutter, Grid, Button, Icon, Heading } from '../../src'
 
 const CardExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Grid col={4} gap style={{ padding: '1rem' }}>
           <a href='/' style={{ display: 'flex' }}>
@@ -26,7 +26,7 @@ const CardExample = () => {
         </Grid>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Grid col={4} gap style={{ padding: '1rem' }}>
         <a href='/' style={{ display: 'flex' }}>

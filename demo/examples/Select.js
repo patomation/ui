@@ -1,15 +1,15 @@
 import React from 'react'
-import { Select, Code, Gutter } from '../../src'
+import { Select, Code, Gutter, Heading } from '../../src'
 
 const SelectExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Select />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Select />
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Gutter, Code, Grid } from '../../src'
+import { Gutter, Code, Grid, Heading } from '../../src'
 
 const GutterExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <div>Item One</div>
         <Gutter />
@@ -15,7 +15,7 @@ const GutterExample = () => {
         <div>Item Four</div>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Grid col={2} gap='3rem'>
         <div>

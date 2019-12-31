@@ -1,10 +1,10 @@
 import React from 'react'
-import { Nav, Code, Gutter } from '../../src'
+import { Nav, Code, Gutter, Heading } from '../../src'
 
 const NavExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Nav>
           <div>Item1</div>
@@ -13,7 +13,7 @@ const NavExample = () => {
         </Nav>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Nav>
         <div>Item1</div>

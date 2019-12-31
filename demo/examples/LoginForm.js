@@ -1,15 +1,15 @@
 import React from 'react'
-import { LoginForm, Code, Gutter } from '../../src'
+import { LoginForm, Code, Gutter, Heading } from '../../src'
 
 const LoginFormExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <LoginForm />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <LoginForm style={{maxWidth: '400px'}} />
 

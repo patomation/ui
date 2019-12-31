@@ -1,15 +1,15 @@
 import React from 'react'
-import { Brand, Code, Gutter } from '../../src'
+import { Brand, Code, Gutter, Heading } from '../../src'
 
 const BrandExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Brand> Hekin Sweet Brand </Brand>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Brand> Hekin Sweet Brand </Brand>
 

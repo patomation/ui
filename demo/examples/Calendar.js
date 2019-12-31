@@ -1,15 +1,15 @@
 import React from 'react'
-import { Calendar, Code, Gutter } from '../../src'
+import { Calendar, Code, Gutter, Heading } from '../../src'
 
 const CalendarExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Calendar />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Calendar style={{maxWidth: '600px'}} />
 

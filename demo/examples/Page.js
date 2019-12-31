@@ -1,12 +1,12 @@
 import React from 'react'
-import { Page, Code, Gutter, Device, Grid, Placeholder } from '../../src'
+import { Page, Code, Gutter, Device, Grid, Placeholder, Heading } from '../../src'
 
 const PageExample = () => {
   return (
     <div>
       <Grid col={2} gap>
-        <h2>Example</h2>
-        <h2>Demo</h2>
+        <Heading Tag='h2'>Example</Heading>
+        <Heading Tag='h2'>Demo</Heading>
         <Code block={`
           <Page
             title={'Page Title'}

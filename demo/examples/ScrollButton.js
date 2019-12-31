@@ -1,15 +1,15 @@
 import React from 'react'
-import { ScrollButton, Code, Gutter } from '../../src'
+import { ScrollButton, Code, Gutter, Heading } from '../../src'
 
 const ScrollButtonExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <ScrollButton />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <ScrollButton />
 

@@ -1,16 +1,16 @@
 import React from 'react'
-import { Device, Code, Gutter } from '../../src'
+import { Device, Code, Gutter, Heading } from '../../src'
 
 
 const DeviceExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Device />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Device />
 

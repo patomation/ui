@@ -1,16 +1,16 @@
 import React from 'react'
-import { Panel, Code, Gutter, Grid } from '../../src'
+import { Panel, Code, Gutter, Grid, Heading } from '../../src'
 
 const PanelExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Panel> Basic Panel </Panel>
         <Panel header='With a header'>Nice</Panel>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
       <Grid col={2}>
         <Panel> Basic Panel </Panel>
         <Panel header='With a header'>Nice</Panel>

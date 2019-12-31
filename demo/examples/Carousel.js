@@ -1,10 +1,10 @@
 import React from 'react'
-import { Carousel, Image, Code, Gutter } from '../../src'
+import { Carousel, Image, Code, Gutter, Heading } from '../../src'
 
 const CarouselExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Carousel style={{maxWidth: '800px'}}>
           <Image rectangle src='http://patomation.github.io/assets/images/Patrick-Profile-Picture-1.png' />
@@ -13,7 +13,7 @@ const CarouselExample = () => {
         </Carousel>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Carousel style={{maxWidth: '800px'}}>
         <Image rectangle src='http://patomation.github.io/assets/images/Patrick-Profile-Picture-1.png' />

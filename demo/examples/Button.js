@@ -1,17 +1,17 @@
 import React from 'react'
-import { Button, Code, Gutter, Grid } from '../../src'
+import { Button, Code, Gutter, Grid, Heading } from '../../src'
 
 const ButtonExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Button title='myButton' onClick={() => { /*do something*/ }}/>
         or
         <Button> Title </Button>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
       <Grid col={5} gap>
         <Button title='Regular' onClick={() => { alert('click') }}/>
         <Button kind='outline' title='Outline' onClick={() => { alert('click') }}/>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Loader, Code, Gutter, Shape, Button, Input, Grid } from '../../src'
+import { Loader, Code, Gutter, Shape, Button, Input, Grid, Heading } from '../../src'
 
 const LoaderExample = () => {
   const [ message, setMessage ] = useState('Loading ...')
@@ -10,12 +10,12 @@ const LoaderExample = () => {
 
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Loader />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
       <Grid col={5} gap>
         <Button title='Progress Bar' onClick={() => { setProgressBar(!progressBar) }} />
         <Button title='Complete' onClick={() => { setComplete(true) }} />

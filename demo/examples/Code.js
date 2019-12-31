@@ -1,10 +1,10 @@
 import React from 'react'
-import { Code, Gutter } from '../../src'
+import { Code, Gutter, Heading } from '../../src'
 
 const CodeExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Code block={\`
           const CoolFunction = () => {
@@ -13,7 +13,7 @@ const CodeExample = () => {
         \`}>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Code block={`
         const CoolFunction = () => {

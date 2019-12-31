@@ -7,11 +7,11 @@ import './favicon.ico'
 
 import Home from './pages/Home'
 
-import { Page, Button, Grid, Hr, Brand, Loader, Table, Gutter } from '../src'
+import { Page, Button, Grid, Hr, Brand, Loader, Table, Gutter, Heading, Row } from '../src'
 
 import Examples from './examples'
 import doc from './doc.json'
-import Navigation from './components/Navigation'
+import navigation from './navigation'
 
 if (module && module.hot) {
   module.hot.accept()
@@ -24,21 +24,37 @@ const Layout = withRouter( ({children, location}) => {
 
   return (
     <Page
-      title={name !== '' ? name : null}
-      sidebar={<Navigation />}>
+      title={name !== '' ? name : 'React UI Component Library'}
+      sidebar={
+        <Grid gap>
+
+          <Row>
+            <Link to='/' style={{flexGrow: 1}}><Brand> UI </Brand></Link>
+            <a href='https://github.com/patomation/ui' target='_blank'><Button kind='none' title='repo' /></a>
+          </Row>
+
+          <Hr/>
+          { Object.entries(navigation).map(([category, items]) =>
+            <Grid gap key={`navCat-${category}`}>
+              <div style={{color: 'gray'}}>{ category }</div>
+              { items.map( item =>
+                <Link to={`/${ item }`} key={`navLink-${ item }`}>
+                  <Button kind='none' style={{marginLeft: '1rem'}}> { item } </Button></Link>
+              )}
+            </Grid>
+          )}
+        </Grid>
+      }>
 
       { description
-        ? <p style={{paddingBottom: '1rem'}}>{description}</p>
+        ? <p>{description}</p>
         : null }
 
       { children }
 
-      { props ? <h2 style={{paddingTop:'1rem'}}> Props </h2> : null }
+      { props ? <Heading Tag='h2'> Props </Heading> : null }
       { props
         ? <Table
-            style={{
-              marginTop: '1rem'
-            }}
             header={[
               'Property',
               'Type',

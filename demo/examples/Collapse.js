@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Collapse, Code, Gutter, Grid, Shape, Button } from '../../src'
+import { Collapse, Code, Gutter, Grid, Shape, Button, Heading } from '../../src'
 
 const CollapseExample = () => {
 
   const [ collapse, setCollapse ] = useState(false)
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         const [ collapse, setCollapse ] = useState(false)
 
@@ -21,7 +21,7 @@ const CollapseExample = () => {
 
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
       <Button title={ collapse ? 'Show' : 'Collapse' } onClick={()=>{setCollapse(!collapse)}}/>
       <Collapse collapse={collapse}>
         <Grid col={3} gap>

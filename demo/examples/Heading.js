@@ -4,7 +4,7 @@ import { Heading, Code, Gutter, Grid } from '../../src'
 const HeadingExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Heading Tag='h1'>Heading 1</Heading>
         <Heading Tag='h2'>Heading 2</Heading>
@@ -14,7 +14,7 @@ const HeadingExample = () => {
         <Heading Tag='h6'>Heading 6</Heading>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
       <Grid gap>
         <Heading Tag='h1'>Heading 1</Heading>
         <Heading Tag='h2'>Heading 2</Heading>

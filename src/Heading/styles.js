@@ -1,5 +1,7 @@
 export default {
   container: {
-    display: 'inline-block'
+    display: 'inline-block',
+    marginTop: '1rem',
+    marginBottom: '1rem'
   }
 }

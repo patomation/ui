@@ -1,15 +1,15 @@
 import React from 'react'
-import { Badge, Code, Gutter, Button, Grid } from '../../src'
+import { Badge, Code, Gutter, Button, Grid, Heading } from '../../src'
 
 const BadgeExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Badge />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Grid col={5} gap>
         <Button>

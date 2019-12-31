@@ -9,11 +9,11 @@ Tested and linted JavaScript goodness.
 
 ## Installation
 ```
-yarn add @patomation/react-ui-components
+yarn add @patomation/ui
 ```
 or
 ```
-npm install @patomation/react-ui-components --save
+npm install @patomation/ui --save
 ```
 
 ## Usage

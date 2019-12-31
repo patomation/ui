@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import { IconButton, Code, Gutter, Badge } from '../../src'
+import { IconButton, Code, Gutter, Badge, Heading } from '../../src'
 
 const IconButtonExample = () => {
   const [ clicks, setClicks ] = useState(0)
 
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <IconButton icon='work' title='Get Shit Done' onClick={()=>{alert('NICE')}}/>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <IconButton icon='work'  badge={clicks} title='Get Shit Done' onClick={() => {setClicks(clicks+1)}}/>
       <Gutter/>

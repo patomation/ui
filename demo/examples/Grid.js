@@ -1,10 +1,10 @@
 import React from 'react'
-import { Grid, Code, Gutter, Shape } from '../../src'
+import { Grid, Code, Gutter, Shape, Heading } from '../../src'
 
 const GridExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Grid col={5} gap>
           <Shape background='gold'/>
@@ -15,7 +15,7 @@ const GridExample = () => {
         </Grid>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Grid col={5} gap>
         <Shape background='gold'/>

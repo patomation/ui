@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DragDrop, Code, Gutter, Grid, Shape, Badge } from '../../src'
+import { DragDrop, Code, Gutter, Grid, Shape, Badge, Heading } from '../../src'
 
 const DragDropExample = () => {
 
@@ -11,13 +11,13 @@ const DragDropExample = () => {
 
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <DragDrop draggable={true}>Draggable Item</DragDrop>
         <DragDrop draggable={false}>DropZone</DragDrop>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       Events:<Gutter half/>
 

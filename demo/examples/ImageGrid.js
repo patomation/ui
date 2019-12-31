@@ -1,10 +1,10 @@
 import React from 'react'
-import { ImageGrid, Code, Gutter } from '../../src'
+import { ImageGrid, Code, Gutter, Heading } from '../../src'
 
 const ImageGridExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <ImageGrid images={[
           'https://i.imgur.com/AtllrRf.jpg',
@@ -16,7 +16,7 @@ const ImageGridExample = () => {
         ]}/>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <ImageGrid images={[
         'https://i.imgur.com/AtllrRf.jpg',

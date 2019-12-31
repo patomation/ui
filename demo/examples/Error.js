@@ -1,15 +1,15 @@
 import React from 'react'
-import { Error, Code, Gutter } from '../../src'
+import { Error, Code, Gutter, Heading } from '../../src'
 
 const ErrorExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Error>Error Message</Error>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Error>Error Message</Error>
 

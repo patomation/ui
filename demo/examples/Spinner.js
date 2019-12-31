@@ -1,15 +1,15 @@
 import React from 'react'
-import { Spinner, Code, Gutter } from '../../src'
+import { Spinner, Code, Gutter, Heading } from '../../src'
 
 const SpinnerExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Spinner />
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <Spinner />
 

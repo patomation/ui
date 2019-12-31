@@ -1,10 +1,10 @@
 import React from 'react'
-import { Clickable, Code, Gutter, Grid, Image } from '../../src'
+import { Clickable, Code, Gutter, Grid, Image, Heading } from '../../src'
 
 const ClickableExample = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={`
         <Clickable onClick={() => { alert('NICE') }}>
           Clickable
@@ -12,7 +12,7 @@ const ClickableExample = () => {
         </Clickable>
       `}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
       <Grid col={2} gap>
         <Clickable onClick={() => { alert('NICE') }}>
           Clickable

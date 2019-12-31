@@ -8,7 +8,7 @@ import concat from '../_utility/concat.js'
 const Shape = ({
   className, children,
   onClick,
-  background = 'gold', color, style, width, maxWidth,
+  background = 'gold', color, style, innerStyle, width, maxWidth,
   square, circle, rectangle, triangle, portrait
 }) =>
 
@@ -41,7 +41,8 @@ const Shape = ({
           paddingLeft: '50%',
           paddingBottom: '70%',
           overflow: 'hidden'
-        } : null)
+        } : null),
+        ...innerStyle
       }}>
       { triangle
         ? <div
@@ -74,6 +75,7 @@ Shape.propTypes = {
   background: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.object,
+  innerStyle: PropTypes.object,
   /**
   * A square shape div
   **/

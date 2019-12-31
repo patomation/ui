@@ -20,7 +20,7 @@ const Device = ({
       width,
       ...(maxWidth ? {
         maxWidth,
-        margin: '0 auto',
+        margin: '0 auto'
       } : null),
       ...style
     }}>
@@ -44,13 +44,13 @@ const Device = ({
       portrait
       background='silver'
       style={{
-        padding: '1rem',
+        padding: '1rem'
       }}>
 
       {children}
 
     </Shape>
-    <Shape className='device__button' circle background='silver' width='10%' style={{paddingBottom: '1rem'}} />
+    <Shape className='device__button' circle background='silver' width='10%' style={{ paddingBottom: '1rem' }} />
   </div>
 
 Device.propTypes = {

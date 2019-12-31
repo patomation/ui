@@ -9,10 +9,15 @@ import extract from '../_utility/extract.js' // eslint-disable-line
 const Grid = ({
   className, children,
   background, color, style,
-  col, row, gap,
+  col, row, gap, auto,
   onMouseEnter, onMouseLeave,
   breakWidth
 }) => {
+  // auto columns
+  if (auto) {
+    col = children.length
+    gap = true
+  }
   // We have to subtract the gap amount for each column
   const { number, unit } = extract(gap === true ? '1rem' : gap)
   const subtractGap = gap
@@ -71,6 +76,10 @@ Grid.propTypes = {
   * using true the gap will be the default 1rem otherwise you can set the gap to a custom amount
   **/
   gap: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  /**
+  *  when auto property is set the grid col will be determined by the amount of children. and gap will be on by default
+  **/
+  auto: PropTypes.bool,
   breakWidth: PropTypes.string,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func

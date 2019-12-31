@@ -1,5 +1,5 @@
 import React from 'react'
-import { Center, Code, Gutter, Shape, Heading } from '../../src'
+import { Center, Code, Shape, Heading } from '../../src'
 
 const CenterExample = () => {
   return (

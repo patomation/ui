@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Loader, Code, Gutter, Shape, Button, Input, Grid, Heading } from '../../src'
 
 const LoaderExample = () => {
-  const [ message, setMessage ] = useState('Loading ...')
-  const [ spinner, setSpinner ] = useState(true)
-  const [ progressBar, setProgressBar ] = useState(true)
-  const [ complete, setComplete ] = useState(false)
-  const [ color, setColor ] = useState('green')
+  const [message, setMessage] = useState('Loading ...')
+  const [spinner, setSpinner] = useState(true)
+  const [progressBar, setProgressBar] = useState(true)
+  const [complete, setComplete] = useState(false)
+  const [color, setColor] = useState('green')
 
   return (
     <div>
@@ -20,8 +20,8 @@ const LoaderExample = () => {
         <Button title='Progress Bar' onClick={() => { setProgressBar(!progressBar) }} />
         <Button title='Complete' onClick={() => { setComplete(true) }} />
         <Button title='Spinner' onClick={() => { setSpinner(!spinner) }} />
-        <Input value={message} onChange={(e) => {setMessage(e.target.value)}} style={{display: 'inline'}}/>
-        <Input value={color} onChange={(e) => {setColor(e.target.value)}} style={{display: 'inline'}}/>
+        <Input value={message} onChange={(e) => { setMessage(e.target.value) }} style={{ display: 'inline' }}/>
+        <Input value={color} onChange={(e) => { setColor(e.target.value) }} style={{ display: 'inline' }}/>
       </Grid><Gutter />
 
       <Shape portrait background='silver' maxWidth='300px'>

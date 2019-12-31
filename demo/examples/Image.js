@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Code, Gutter, Grid, Heading } from '../../src'
+import { Image, Code, Grid, Heading } from '../../src'
 
 const ImageExample = () => {
   return (

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Modal, Code, Gutter, Button, Heading } from '../../src'
+import { Modal, Code, Button, Heading } from '../../src'
 
 const ModalExample = () => {
-  const [ show, setShow ] = useState(false)
+  const [show, setShow] = useState(false)
 
   return (
     <div>
@@ -17,8 +17,8 @@ const ModalExample = () => {
       `}/>
 
       <Heading Tag='h2'>Demo</Heading>
-      <Button title='show' onClick={() => {setShow(!show)}}/>
-      <Modal show={show} onClose={() => {setShow(false)}}>
+      <Button title='show' onClick={() => { setShow(!show) }}/>
+      <Modal show={show} onClose={() => { setShow(false) }}>
         This is the modal
       </Modal>
 

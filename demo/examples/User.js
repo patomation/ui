@@ -1,5 +1,5 @@
 import React from 'react'
-import { User, Code, Gutter, Heading } from '../../src'
+import { User, Code, Heading } from '../../src'
 
 const UserExample = () => {
   return (

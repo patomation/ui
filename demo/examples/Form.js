@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Code, Gutter, Heading } from '../../src'
+import { Form, Code, Heading } from '../../src'
 
 const FormExample = () => {
   return (
@@ -37,7 +37,7 @@ const FormExample = () => {
       <Heading Tag='h2'>Demo</Heading>
 
       <Form
-        style={{maxWidth: '400px'}}
+        style={{ maxWidth: '400px' }}
         labels={true}
         fields={[
           {

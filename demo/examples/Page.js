@@ -19,7 +19,7 @@ const PageExample = () => {
           </Page>
           `}/>
         <style>
-        {`
+          {`
           .device h1, nav, main {
             background: rgba(255,255,255,0.4);
             font-size: 0.75rem !important;
@@ -29,7 +29,7 @@ const PageExample = () => {
         <Device>
           <Page
             title={'Page Title'}
-            sidebar={<div style={{padding:'1rem'}}>
+            sidebar={<div style={{ padding: '1rem' }}>
               Side Bar <Gutter/>
               <Placeholder lines={30} />
             </div>}

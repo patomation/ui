@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageGrid, Code, Gutter, Heading } from '../../src'
+import { ImageGrid, Code, Heading } from '../../src'
 
 const ImageGridExample = () => {
   return (
@@ -24,7 +24,7 @@ const ImageGridExample = () => {
         'https://i.imgur.com/AtllrRf.jpg',
         'https://i.imgur.com/AtllrRf.jpg',
         'https://i.imgur.com/AtllrRf.jpg',
-        'https://i.imgur.com/AtllrRf.jpg',
+        'https://i.imgur.com/AtllrRf.jpg'
       ]}/>
 
     </div>

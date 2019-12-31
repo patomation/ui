@@ -1,5 +1,5 @@
 import React from 'react'
-import { Error, Code, Gutter, Heading } from '../../src'
+import { Error, Code, Heading } from '../../src'
 
 const ErrorExample = () => {
   return (

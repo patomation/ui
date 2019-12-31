@@ -1,68 +1,69 @@
 const navigation = {
-'General': [
-  'Brand',
-  'Button',
-  'Icon',
-  'IconButton',
-  'Image',
-],
-'Layout': [
-  'Header',
-  'Hero',
-  'Page',
-  'Nav',
-  'Panel',
-  'Footer',
-],
-'Data Entry': [
-  'Form',
-  'LoginForm',
-  'RegisterForm',
-  'Input',
-  'Select',
-],
-'Data Display': [
-  'Badge',
-  'Card',
-  'Calendar',
-  'Code',
-  'Error',
-  'Grid',
-  'List',
-  'Modal',
-  'Table',
-  'Tabs',
-  'ImageGrid',
-],
-'Feedback': [
-],
-'Tools': [
-  'Breakpoints',
-  'Device',
-],
-'Other': [
-  'Carousel',
-  'Center',
-  'Clickable',
-  'Collapse',
-  'DragDrop',
-  'Gutter',
-  'Heading',
-  'Hr',
-  'Loader',
-  'Placeholder',
-  'Row',
-  'ScrollButton',
-  'Shape',
-  'Spinner',
-],
-'Depricated': [
-  'Content',
-  'Section',
-  'Link',
-  'SideBar',
-  'User',
-],
+  General: [
+    'Brand',
+    'Button',
+    'Icon',
+    'IconButton',
+    'Image'
+  ],
+  Layout: [
+    'Grid',
+    'Header',
+    'Hero',
+    'Page',
+    'Nav',
+    'Footer'
+  ],
+  'Data Entry': [
+    'Form',
+    'LoginForm',
+    'RegisterForm',
+    'Input',
+    'Select'
+  ],
+  'Data Display': [
+    'Badge',
+    'Card',
+    'Calendar',
+    'Code',
+    'Error',
+    'List',
+    'Modal',
+    'Table',
+    'Tabs',
+    'ImageGrid'
+  ],
+  Feedback: [
+  ],
+  Tools: [
+    'Breakpoints',
+    'Device'
+  ],
+  Other: [
+    'ActionButton',
+    'Carousel',
+    'Center',
+    'Clickable',
+    'Collapse',
+    'DragDrop',
+    'Gutter',
+    'Heading',
+    'Hr',
+    'Loader',
+    'Panel',
+    'Placeholder',
+    'Row',
+    'ScrollButton',
+    'Shape',
+    'Spinner'
+  ],
+  Depricated: [
+    'Content',
+    'Section',
+    'Link',
+    'SideBar',
+    'User'
+  ]
 }
 
 export default navigation

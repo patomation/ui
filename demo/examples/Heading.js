@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Code, Gutter, Grid } from '../../src'
+import { Heading, Code, Grid } from '../../src'
 
 const HeadingExample = () => {
   return (

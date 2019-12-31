@@ -1,34 +1,31 @@
-import React from 'react'
+/* eslint-disable */
+import React, { useState } from 'react'
 
-import { Card, Grid, Button, Icon, Shape } from '../../src/'
+import { Card, Grid, Button, Icon, Shape, Device, Center, Clickable, ActionButton, Row } from '../../src/' // eslint-disable-line
 
 const Test = () => {
+  const [clicks, setClicks] = useState(0)
+
   return (
     <div>
-      <Shape
-        triangle
-        // maxWidth='500px'
-      />
+      <Device maxWidth='300px'>
 
-      <Grid col={4} gap style={{ padding: '1rem' }}>
-        <a href='/' style={{ display: 'flex' }}>
-          <Card
-            icon='work'
-            title='Motor Bikes'
-            description='everything you would want to know about them.'
-            clickable={true}/>
-        </a>
-        <Card
-          title='Lammas'
-          description='there everywhere'
-          onClick={() => { console.log('nice') }}
-          image='https://i.imgur.com/AtllrRf.jpg' />
-        <Card footer={<Button title='Nice' center/>}/>
-        <Card icon={<Icon name='favorite' iconBackground='red' />}>
-          <Button title='Cool Logo' right/>
-        </Card>
-      </Grid>
+        <Row>
+          <Icon name='error'/>
+          Error
+        </Row>
 
+        <Row>
+          <Icon name='info'/>
+          Info
+        </Row>
+
+        <Row>
+          <Icon name='warning'/>
+          Warning
+        </Row>
+
+      </Device>
     </div>
   )
 }

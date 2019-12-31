@@ -1,5 +1,5 @@
 import React from 'react'
-import { RegisterForm, Code, Gutter, Heading } from '../../src'
+import { RegisterForm, Code, Heading } from '../../src'
 
 const RegisterFormExample = () => {
   return (
@@ -11,7 +11,7 @@ const RegisterFormExample = () => {
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <RegisterForm style={{maxWidth: '400px'}} />
+      <RegisterForm style={{ maxWidth: '400px' }} />
 
     </div>
   )

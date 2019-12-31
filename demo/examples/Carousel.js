@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel, Image, Code, Gutter, Heading } from '../../src'
+import { Carousel, Image, Code, Heading } from '../../src'
 
 const CarouselExample = () => {
   return (
@@ -15,7 +15,7 @@ const CarouselExample = () => {
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <Carousel style={{maxWidth: '800px'}}>
+      <Carousel style={{ maxWidth: '800px' }}>
         <Image rectangle src='http://patomation.github.io/assets/images/Patrick-Profile-Picture-1.png' />
         <Image rectangle src='http://patomation.github.io/assets/images/Patrick-Profile-Picture-1.png' />
         <Image rectangle src='http://patomation.github.io/assets/images/Patrick-Profile-Picture-1.png' />

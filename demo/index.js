@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom'
 
@@ -6,8 +6,9 @@ import './style.scss'
 import './favicon.ico'
 
 import Home from './pages/Home'
+import Test from './pages/Test'
 
-import { Page, Button, Grid, Hr, Brand, Loader, Table, Gutter, Heading, Row } from '../src'
+import { Page, Button, Grid, Hr, Brand, Table, Heading, Row } from '../src'
 
 import Examples from './examples'
 import doc from './doc.json'
@@ -17,10 +18,10 @@ if (module && module.hot) {
   module.hot.accept()
 }
 
-const Layout = withRouter( ({children, location}) => {
-  const name = location.pathname.replace('/','')
-  const description  = location.pathname !== '/' ? doc['src\\'+name+'\\index.js'].description : null
-  const props = location.pathname !== '/' ? doc['src\\'+name+'\\index.js'].props : null
+const Layout = withRouter(({ children, location }) => {
+  const name = location.pathname.replace('/', '')
+  const description = doc['src\\' + name + '\\index.js'] ? doc['src\\' + name + '\\index.js'].description : null
+  const props = doc['src\\' + name + '\\index.js'] ? doc['src\\' + name + '\\index.js'].props : null
 
   return (
     <Page
@@ -29,17 +30,25 @@ const Layout = withRouter( ({children, location}) => {
         <Grid gap>
 
           <Row>
-            <Link to='/' style={{flexGrow: 1}}><Brand> UI </Brand></Link>
-            <a href='https://github.com/patomation/ui' target='_blank'><Button kind='none' title='repo' /></a>
+            <Link to='/' style={{ flexGrow: 1 }}><Brand> UI </Brand></Link>
+            <a href='https://github.com/patomation/ui' rel='noopener noreferrer' target='_blank'><Button kind='none' title='repo' /></a>
           </Row>
 
           <Hr/>
           { Object.entries(navigation).map(([category, items]) =>
             <Grid gap key={`navCat-${category}`}>
-              <div style={{color: 'gray'}}>{ category }</div>
-              { items.map( item =>
-                <Link to={`/${ item }`} key={`navLink-${ item }`}>
-                  <Button kind='none' style={{marginLeft: '1rem'}}> { item } </Button></Link>
+              <div style={{ color: 'gray' }}>{ category }</div>
+              { items.map(item =>
+                <Link to={`/${item}`} key={`navLink-${item}`}>
+                  <Button kind='none'
+                    style={{
+                      marginLeft: '1rem',
+                      ...(name === item ? {
+                        fontWeight: 'bold'
+                      } : null)
+                    }}
+                    title={item}/>
+                </Link>
               )}
             </Grid>
           )}
@@ -55,35 +64,33 @@ const Layout = withRouter( ({children, location}) => {
       { props ? <Heading Tag='h2'> Props </Heading> : null }
       { props
         ? <Table
-            header={[
-              'Property',
-              'Type',
-              'Required',
-              'Default',
-              'Description'
-            ]}
-            data={ Object.keys(props).map(key => [
-              key,
-              props[key].type.name,
-              `${props[key].required}`,
-              props[key].default,
-              props[key].description
-            ]) } />
+          header={[
+            'Property',
+            'Type',
+            'Required',
+            'Default',
+            'Description'
+          ]}
+          data={ Object.keys(props).map(key => [
+            key,
+            props[key].type.name,
+            props[key].required ? 'true' : null,
+            props[key].defaultValue ? props[key].defaultValue.value : null,
+            props[key].description
+          ]) } />
         : null }
 
     </Page>
   )
 })
 
-
 render(
   <BrowserRouter>
-    <Suspense fallback={<Loader/>}>
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Examples/>
-      </Layout>
-    </Suspense>
+    <Layout>
+      <Route exact path='/' component={Home} />
+      <Examples/>
+      <Route path='/test' component={Test} />
+    </Layout>
   </BrowserRouter>,
   document.getElementById('root')
 )

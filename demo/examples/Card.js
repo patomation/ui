@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Code, Gutter, Grid, Button, Icon, Heading } from '../../src'
+import { Card, Code, Grid, Button, Icon, Heading } from '../../src'
 
 const CardExample = () => {
   return (

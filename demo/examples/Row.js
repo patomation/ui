@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Code, Gutter, Icon, Brand, Heading } from '../../src'
+import { Row, Code, Icon, Brand, Heading } from '../../src'
 
 const RowExample = () => {
   return (

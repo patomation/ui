@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollButton, Code, Gutter, Heading } from '../../src'
+import { ScrollButton, Code, Heading } from '../../src'
 
 const ScrollButtonExample = () => {
   return (

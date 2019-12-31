@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, Code, Gutter, Heading } from '../../src'
+import { Section, Code, Heading } from '../../src'
 
 const SectionExample = () => {
   return (

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { IconButton, Code, Gutter, Badge, Heading } from '../../src'
+import { IconButton, Code, Gutter, Heading } from '../../src'
 
 const IconButtonExample = () => {
-  const [ clicks, setClicks ] = useState(0)
+  const [clicks, setClicks] = useState(0)
 
   return (
     <div>
@@ -13,10 +13,10 @@ const IconButtonExample = () => {
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <IconButton icon='work'  badge={clicks} title='Get Shit Done' onClick={() => {setClicks(clicks+1)}}/>
+      <IconButton icon='work' badge={clicks} title='Get Shit Done' onClick={() => { setClicks(clicks + 1) }}/>
       <Gutter/>
 
-      <IconButton icon='add_alert' badge={clicks} onClick={() => {setClicks(clicks+1)}} />
+      <IconButton icon='add_alert' badge={clicks} onClick={() => { setClicks(clicks + 1) }} />
     </div>
   )
 }

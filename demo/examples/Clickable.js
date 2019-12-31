@@ -1,5 +1,5 @@
 import React from 'react'
-import { Clickable, Code, Gutter, Grid, Image, Heading } from '../../src'
+import { Clickable, Code, Grid, Image, Heading } from '../../src'
 
 const ClickableExample = () => {
   return (

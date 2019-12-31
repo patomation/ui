@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Code, Gutter, Heading } from '../../src'
+import { Nav, Code, Heading } from '../../src'
 
 const NavExample = () => {
   return (

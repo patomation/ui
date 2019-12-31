@@ -1,5 +1,5 @@
 import React from 'react'
-import { Brand, Code, Gutter, Heading } from '../../src'
+import { Brand, Code, Heading } from '../../src'
 
 const BrandExample = () => {
   return (

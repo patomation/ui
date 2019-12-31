@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs')
 console.log('hello')
 
@@ -18,7 +19,6 @@ ${content}
 export default Navigation
 `
 
-
 const sourcePath = './src'
 const sources = fs.readdirSync(sourcePath)
 
@@ -30,9 +30,7 @@ sources.splice(sources.indexOf('_utility'), 1)
 let content = ''
 
 sources.forEach((componentName) => {
-
-  // content += `<Link to={'/${componentName}'} key={'navigation-link-${componentName}'}><Button kind='none'> ${componentName} </Button></Link>\r\n`
-  console.log(`'${componentName}',`);
-
+  content += `<Link to={'/${componentName}'} key={'navigation-link-${componentName}'}><Button kind='none'> ${componentName} </Button></Link>\r\n`
+  console.log(`'${componentName}',`)
 })
-// fs.writeFileSync(`./demo/components/Navigation.js`, template(content) )
+fs.writeFileSync('./demo/components/Navigation.js', template(content))

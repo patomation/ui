@@ -1,6 +1,5 @@
 import React from 'react'
-import { Device, Code, Gutter, Heading } from '../../src'
-
+import { Device, Code, Heading } from '../../src'
 
 const DeviceExample = () => {
   return (

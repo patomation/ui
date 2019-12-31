@@ -1,5 +1,5 @@
 import React from 'react'
-import { Panel, Code, Gutter, Grid, Heading } from '../../src'
+import { Panel, Code, Grid, Heading } from '../../src'
 
 const PanelExample = () => {
   return (

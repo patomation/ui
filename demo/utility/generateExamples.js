@@ -56,10 +56,10 @@ sources.forEach((componentName) => {
   // console.log(componentName)
   // If blank example has not been maid yet
   if (!examples.includes(`${componentName}.js`)) {
-    console.log('NEW example write:' + componentName);
+    console.log('NEW example write:' + componentName)
     fs.writeFileSync(`${examplePath}/${componentName}.js`, exampleTemplate(componentName))
   }
   indexImports += `import ${componentName} from './${componentName}'\r\n`
   indexContent += `<Route path={'/${componentName}'} component={${componentName}} key={${componentName}} />\r\n`
 })
-fs.writeFileSync(`${examplePath}/index.js`, indexTemplate(indexImports, indexContent) )
+fs.writeFileSync(`${examplePath}/index.js`, indexTemplate(indexImports, indexContent))

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Code, Gutter, Grid, Heading } from '../../src'
+import { Button, Code, Grid, Heading } from '../../src'
 
 const ButtonExample = () => {
   return (

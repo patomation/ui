@@ -1,5 +1,5 @@
 import React from 'react'
-import { SideBar, Code, Gutter, Heading } from '../../src'
+import { SideBar, Code, Heading } from '../../src'
 
 const SideBarExample = () => {
   return (

@@ -46,7 +46,7 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       hash: true,
-      title: 'React Ui Components | Kitchen Sink Demo',
+      title: 'UI | React Component Library',
       template: './demo/index.html',
       filename: './index.html'
     })

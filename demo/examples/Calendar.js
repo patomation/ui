@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calendar, Code, Gutter, Heading } from '../../src'
+import { Calendar, Code, Heading } from '../../src'
 
 const CalendarExample = () => {
   return (
@@ -11,7 +11,7 @@ const CalendarExample = () => {
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <Calendar style={{maxWidth: '600px'}} />
+      <Calendar style={{ maxWidth: '600px' }} />
 
     </div>
   )

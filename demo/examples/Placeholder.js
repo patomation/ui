@@ -1,6 +1,5 @@
 import React from 'react'
-import { Placeholder, Code, Gutter, Heading } from '../../src'
-
+import { Placeholder, Code, Heading } from '../../src'
 
 const PlaceholderExample = () => {
   return (

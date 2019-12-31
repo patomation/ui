@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, Code, Gutter, Shape, Button, Heading } from '../../src'
+import { Hero, Code, Shape, Button, Heading } from '../../src'
 
 const HeroExample = () => {
   return (

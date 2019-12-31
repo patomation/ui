@@ -17,7 +17,7 @@ const IconExample = () => {
       <Icon name='work'/>
       <Gutter/>
       Responsive:
-      <Icon name='work' responsive style={{width:'300px'}}/>
+      <Icon name='work' responsive style={{ width: '300px' }}/>
 
     </div>
   )

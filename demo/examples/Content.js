@@ -1,5 +1,5 @@
 import React from 'react'
-import { Content, Code, Gutter, Heading } from '../../src'
+import { Content, Code, Heading } from '../../src'
 
 const ContentExample = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spinner, Code, Gutter, Heading } from '../../src'
+import { Spinner, Code, Heading } from '../../src'
 
 const SpinnerExample = () => {
   return (

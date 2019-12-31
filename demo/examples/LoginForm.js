@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoginForm, Code, Gutter, Heading } from '../../src'
+import { LoginForm, Code, Heading } from '../../src'
 
 const LoginFormExample = () => {
   return (
@@ -11,7 +11,7 @@ const LoginFormExample = () => {
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <LoginForm style={{maxWidth: '400px'}} />
+      <LoginForm style={{ maxWidth: '400px' }} />
 
     </div>
   )

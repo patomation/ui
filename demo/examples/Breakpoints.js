@@ -1,5 +1,5 @@
 import React from 'react'
-import { Breakpoints, Code, Gutter, Heading } from '../../src'
+import { Breakpoints, Code, Heading } from '../../src'
 
 const BreakpointsExample = () => {
   return (

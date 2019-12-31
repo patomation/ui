@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Code, Gutter, Shape, Icon, Brand, Row, Heading } from '../../src'
+import { Header, Code, Shape, Icon, Brand, Row, Heading } from '../../src'
 
 const HeaderExample = () => {
   return (
@@ -21,7 +21,7 @@ const HeaderExample = () => {
         <Header>
           <Row>
             <Icon name='keyboard_arrow_left' color='#ffffff'/>
-            <Brand style={{textAlign:'center'}}>Header Stuff</Brand>
+            <Brand style={{ textAlign: 'center' }}>Header Stuff</Brand>
             <Icon name='menu' color='#ffffff'/>
           </Row>
         </Header>

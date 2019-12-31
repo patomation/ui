@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code, Gutter, Heading } from '../../src'
+import { Code, Heading } from '../../src'
 
 const Input = () => {
   return (
@@ -9,8 +9,6 @@ const Input = () => {
       `}/>
 
       <Heading Tag='h2'>Demo</Heading>
-
-
 
     </div>
   )

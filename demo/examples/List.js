@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Code, Gutter, Heading } from '../../src'
+import { List, Code, Heading } from '../../src'
 
 const ListExample = () => {
   return (
@@ -22,7 +22,7 @@ const ListExample = () => {
         'item 2',
         'item 3',
         'item 4',
-        'item 5',
+        'item 5'
       ]}/>
 
     </div>

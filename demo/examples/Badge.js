@@ -1,5 +1,5 @@
 import React from 'react'
-import { Badge, Code, Gutter, Button, Grid, Heading } from '../../src'
+import { Badge, Code, Button, Grid, Heading } from '../../src'
 
 const BadgeExample = () => {
   return (

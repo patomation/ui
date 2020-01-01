@@ -24,6 +24,15 @@ const config = {
     dark: 'rgba(32,32,43,1)',
     light: 'rgba(228,248,235,1)',
 
+    info: 'blue',
+    infoBackground: 'rgb(223,223,255)',
+    warning: 'orange',
+    warningBackground: 'rgb(255,226,198)',
+    error: 'red',
+    errorBackground: 'rgb(255,230,230)',
+    success: 'green',
+    successBackground: 'rgb(218,248,226)',
+
     button: {
       color: '#ffffff',
       background: '#2f0147'

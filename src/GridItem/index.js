@@ -52,7 +52,7 @@ GridItem.propTypes = {
   * Sets the grid-column-start property to auto unless start defined.
   * Sets the grid-column-end property to 'span <number>'
   **/
-  span: PropTypes.number,
+  span: PropTypes.number
 }
 
 export default GridItem

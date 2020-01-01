@@ -1,5 +1,0 @@
-## Breakpoints
-
-
-### Props:
-

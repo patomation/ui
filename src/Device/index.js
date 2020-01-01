@@ -44,14 +44,14 @@ const Device = ({
       portrait
       background='silver'
       style={{
-        padding: '1rem',
+        padding: '1rem'
       }}
       innerStyle={{
-        overFlow: 'hidden', //Not working??
+        overFlow: 'hidden' // Not working??
       }}>
       <div
         className='device__scroll'
-        >
+      >
         {children}
       </div>
     </Shape>

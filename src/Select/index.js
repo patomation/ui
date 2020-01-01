@@ -55,18 +55,20 @@ const Select = ({
             ...selectStyle
           }}>
 
-          {Object.entries(options).map(([value, label]) =>
-            <option
-              key={`option_${value}`}
-              value={value}
-              style={{
-                ...styles.option,
-                ...optionStyle
-              }}
-            >
-              {label}
-            </option>
-          )}
+          { options
+            ? Object.entries(options).map(([value, label]) =>
+              <option
+                key={`option_${value}`}
+                value={value}
+                style={{
+                  ...styles.option,
+                  ...optionStyle
+                }}>
+
+                {label}
+
+              </option>
+            ) : null }
 
         </select>
       </span>

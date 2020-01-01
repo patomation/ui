@@ -15,11 +15,7 @@ const CodeExample = () => {
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <Code block={`
-        const CoolFunction = () => {
-          //my cool function
-        }
-      `}/>
+      <Code />
 
     </div>
   )

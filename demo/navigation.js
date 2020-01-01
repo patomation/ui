@@ -8,6 +8,7 @@ const navigation = {
   ],
   Layout: [
     'Grid',
+    'GridItem',
     'Header',
     'Hero',
     'Page',
@@ -19,6 +20,7 @@ const navigation = {
     'LoginForm',
     'RegisterForm',
     'Input',
+    'Range',
     'Select'
   ],
   'Data Display': [
@@ -34,6 +36,7 @@ const navigation = {
     'ImageGrid'
   ],
   Feedback: [
+    'Alert'
   ],
   Tools: [
     'Breakpoints',

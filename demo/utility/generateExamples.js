@@ -5,18 +5,18 @@ console.log(fs.readdirSync('./src'))
 
 const exampleTemplate = (name) =>
 `import React from 'react'
-import { ${name}, Code, Gutter } from '../../src'
+import { ${name}, Code, Gutter, Heading } from '../../src'
 
 
 const ${name}Example = () => {
   return (
     <div>
-      <h2>Example</h2>
+      <Heading Tag='h2'>Example</Heading>
       <Code block={\`
         <${name} />
       \`}/>
 
-      <h2>Demo</h2><Gutter/>
+      <Heading Tag='h2'>Demo</Heading>
 
       <${name} />
 
@@ -60,6 +60,6 @@ sources.forEach((componentName) => {
     fs.writeFileSync(`${examplePath}/${componentName}.js`, exampleTemplate(componentName))
   }
   indexImports += `import ${componentName} from './${componentName}'\r\n`
-  indexContent += `<Route path={'/${componentName}'} component={${componentName}} key={${componentName}} />\r\n`
+  indexContent += `<Route path={'/${componentName}'} component={${componentName}} key={'route-${componentName}'} />\r\n`
 })
 fs.writeFileSync(`${examplePath}/index.js`, indexTemplate(indexImports, indexContent))

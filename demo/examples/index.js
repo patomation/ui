@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import ActionButton from './ActionButton'
+import Alert from './Alert'
 import Badge from './Badge'
 import Brand from './Brand'
 import Breakpoints from './Breakpoints'
@@ -19,6 +20,7 @@ import Error from './Error'
 import Footer from './Footer'
 import Form from './Form'
 import Grid from './Grid'
+import GridItem from './GridItem'
 import Gutter from './Gutter'
 import Header from './Header'
 import Heading from './Heading'
@@ -38,6 +40,7 @@ import Nav from './Nav'
 import Page from './Page'
 import Panel from './Panel'
 import Placeholder from './Placeholder'
+import Range from './Range'
 import RegisterForm from './RegisterForm'
 import Row from './Row'
 import ScrollButton from './ScrollButton'
@@ -51,55 +54,58 @@ import Tabs from './Tabs'
 import User from './User'
 
 const Examples = () => <>
-  <Route path={'/ActionButton'} component={ActionButton} key={ActionButton} />
-  <Route path={'/Badge'} component={Badge} key={Badge} />
-  <Route path={'/Brand'} component={Brand} key={Brand} />
-  <Route path={'/Breakpoints'} component={Breakpoints} key={Breakpoints} />
-  <Route path={'/Button'} component={Button} key={Button} />
-  <Route path={'/Calendar'} component={Calendar} key={Calendar} />
-  <Route path={'/Card'} component={Card} key={Card} />
-  <Route path={'/Carousel'} component={Carousel} key={Carousel} />
-  <Route path={'/Center'} component={Center} key={Center} />
-  <Route path={'/Clickable'} component={Clickable} key={Clickable} />
-  <Route path={'/Code'} component={Code} key={Code} />
-  <Route path={'/Collapse'} component={Collapse} key={Collapse} />
-  <Route path={'/Content'} component={Content} key={Content} />
-  <Route path={'/Device'} component={Device} key={Device} />
-  <Route path={'/DragDrop'} component={DragDrop} key={DragDrop} />
-  <Route path={'/Error'} component={Error} key={Error} />
-  <Route path={'/Footer'} component={Footer} key={Footer} />
-  <Route path={'/Form'} component={Form} key={Form} />
-  <Route path={'/Grid'} component={Grid} key={Grid} />
-  <Route path={'/Gutter'} component={Gutter} key={Gutter} />
-  <Route path={'/Header'} component={Header} key={Header} />
-  <Route path={'/Heading'} component={Heading} key={Heading} />
-  <Route path={'/Hero'} component={Hero} key={Hero} />
-  <Route path={'/Hr'} component={Hr} key={Hr} />
-  <Route path={'/Icon'} component={Icon} key={Icon} />
-  <Route path={'/IconButton'} component={IconButton} key={IconButton} />
-  <Route path={'/Image'} component={Image} key={Image} />
-  <Route path={'/ImageGrid'} component={ImageGrid} key={ImageGrid} />
-  <Route path={'/Input'} component={Input} key={Input} />
-  <Route path={'/Link'} component={Link} key={Link} />
-  <Route path={'/List'} component={List} key={List} />
-  <Route path={'/Loader'} component={Loader} key={Loader} />
-  <Route path={'/LoginForm'} component={LoginForm} key={LoginForm} />
-  <Route path={'/Modal'} component={Modal} key={Modal} />
-  <Route path={'/Nav'} component={Nav} key={Nav} />
-  <Route path={'/Page'} component={Page} key={Page} />
-  <Route path={'/Panel'} component={Panel} key={Panel} />
-  <Route path={'/Placeholder'} component={Placeholder} key={Placeholder} />
-  <Route path={'/RegisterForm'} component={RegisterForm} key={RegisterForm} />
-  <Route path={'/Row'} component={Row} key={Row} />
-  <Route path={'/ScrollButton'} component={ScrollButton} key={ScrollButton} />
-  <Route path={'/Section'} component={Section} key={Section} />
-  <Route path={'/Select'} component={Select} key={Select} />
-  <Route path={'/Shape'} component={Shape} key={Shape} />
-  <Route path={'/SideBar'} component={SideBar} key={SideBar} />
-  <Route path={'/Spinner'} component={Spinner} key={Spinner} />
-  <Route path={'/Table'} component={Table} key={Table} />
-  <Route path={'/Tabs'} component={Tabs} key={Tabs} />
-  <Route path={'/User'} component={User} key={User} />
+  <Route path={'/ActionButton'} component={ActionButton} key={'route-ActionButton'} />
+  <Route path={'/Alert'} component={Alert} key={'route-Alert'} />
+  <Route path={'/Badge'} component={Badge} key={'route-Badge'} />
+  <Route path={'/Brand'} component={Brand} key={'route-Brand'} />
+  <Route path={'/Breakpoints'} component={Breakpoints} key={'route-Breakpoints'} />
+  <Route path={'/Button'} component={Button} key={'route-Button'} />
+  <Route path={'/Calendar'} component={Calendar} key={'route-Calendar'} />
+  <Route path={'/Card'} component={Card} key={'route-Card'} />
+  <Route path={'/Carousel'} component={Carousel} key={'route-Carousel'} />
+  <Route path={'/Center'} component={Center} key={'route-Center'} />
+  <Route path={'/Clickable'} component={Clickable} key={'route-Clickable'} />
+  <Route path={'/Code'} component={Code} key={'route-Code'} />
+  <Route path={'/Collapse'} component={Collapse} key={'route-Collapse'} />
+  <Route path={'/Content'} component={Content} key={'route-Content'} />
+  <Route path={'/Device'} component={Device} key={'route-Device'} />
+  <Route path={'/DragDrop'} component={DragDrop} key={'route-DragDrop'} />
+  <Route path={'/Error'} component={Error} key={'route-Error'} />
+  <Route path={'/Footer'} component={Footer} key={'route-Footer'} />
+  <Route path={'/Form'} component={Form} key={'route-Form'} />
+  <Route path={'/Grid'} component={Grid} key={'route-Grid'} />
+  <Route path={'/GridItem'} component={GridItem} key={'route-GridItem'} />
+  <Route path={'/Gutter'} component={Gutter} key={'route-Gutter'} />
+  <Route path={'/Header'} component={Header} key={'route-Header'} />
+  <Route path={'/Heading'} component={Heading} key={'route-Heading'} />
+  <Route path={'/Hero'} component={Hero} key={'route-Hero'} />
+  <Route path={'/Hr'} component={Hr} key={'route-Hr'} />
+  <Route path={'/Icon'} component={Icon} key={'route-Icon'} />
+  <Route path={'/IconButton'} component={IconButton} key={'route-IconButton'} />
+  <Route path={'/Image'} component={Image} key={'route-Image'} />
+  <Route path={'/ImageGrid'} component={ImageGrid} key={'route-ImageGrid'} />
+  <Route path={'/Input'} component={Input} key={'route-Input'} />
+  <Route path={'/Link'} component={Link} key={'route-Link'} />
+  <Route path={'/List'} component={List} key={'route-List'} />
+  <Route path={'/Loader'} component={Loader} key={'route-Loader'} />
+  <Route path={'/LoginForm'} component={LoginForm} key={'route-LoginForm'} />
+  <Route path={'/Modal'} component={Modal} key={'route-Modal'} />
+  <Route path={'/Nav'} component={Nav} key={'route-Nav'} />
+  <Route path={'/Page'} component={Page} key={'route-Page'} />
+  <Route path={'/Panel'} component={Panel} key={'route-Panel'} />
+  <Route path={'/Placeholder'} component={Placeholder} key={'route-Placeholder'} />
+  <Route path={'/Range'} component={Range} key={'route-Range'} />
+  <Route path={'/RegisterForm'} component={RegisterForm} key={'route-RegisterForm'} />
+  <Route path={'/Row'} component={Row} key={'route-Row'} />
+  <Route path={'/ScrollButton'} component={ScrollButton} key={'route-ScrollButton'} />
+  <Route path={'/Section'} component={Section} key={'route-Section'} />
+  <Route path={'/Select'} component={Select} key={'route-Select'} />
+  <Route path={'/Shape'} component={Shape} key={'route-Shape'} />
+  <Route path={'/SideBar'} component={SideBar} key={'route-SideBar'} />
+  <Route path={'/Spinner'} component={Spinner} key={'route-Spinner'} />
+  <Route path={'/Table'} component={Table} key={'route-Table'} />
+  <Route path={'/Tabs'} component={Tabs} key={'route-Tabs'} />
+  <Route path={'/User'} component={User} key={'route-User'} />
 
 </>
 

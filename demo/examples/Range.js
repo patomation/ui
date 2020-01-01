@@ -1,22 +1,20 @@
 import React from 'react'
-import { Select, Code, Heading } from '../../src'
+import { Range, Code, Heading } from '../../src'
 
-const SelectExample = () => {
+const RangeExample = () => {
   return (
     <div>
       <Heading Tag='h2'>Example</Heading>
       <Code block={`
-        <Select />
+        <Range />
       `}/>
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <Select
-        // options={}
-      />
+      <Range />
 
     </div>
   )
 }
 
-export default SelectExample
+export default RangeExample

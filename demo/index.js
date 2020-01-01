@@ -73,7 +73,7 @@ const Layout = withRouter(({ children, location }) => {
           ]}
           data={ Object.keys(props).map(key => [
             key,
-            props[key].type.name,
+            props[key].type ? props[key].type.name : null,
             props[key].required ? 'true' : null,
             props[key].defaultValue ? props[key].defaultValue.value : null,
             props[key].description

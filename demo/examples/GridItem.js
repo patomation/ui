@@ -1,22 +1,20 @@
 import React from 'react'
-import { Select, Code, Heading } from '../../src'
+import { GridItem, Code, Heading } from '../../src'
 
-const SelectExample = () => {
+const GridItemExample = () => {
   return (
     <div>
       <Heading Tag='h2'>Example</Heading>
       <Code block={`
-        <Select />
+        <GridItem />
       `}/>
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <Select
-        // options={}
-      />
+      <GridItem />
 
     </div>
   )
 }
 
-export default SelectExample
+export default GridItemExample

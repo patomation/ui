@@ -180,7 +180,7 @@ Card.propTypes = {
   /**
   * icon color
   **/
-  iconSolor: PropTypes.string,
+  iconColor: PropTypes.string,
   /**
   * icon background color
   **/

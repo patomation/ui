@@ -105,17 +105,29 @@ Form.propTypes = {
   * children appended to top of form before dynamic inputs
   * optional inputs or elements can be added to the form if need be
   */
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /**
   * background color
+  **/
+  /**
+  * The background color of component
   **/
   background: PropTypes.string,
   /**
   * font color
   **/
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
   /**
   * style object can override parrent container styles
+  **/
+  /**
+  * Set any styles of the top level element of the component
   **/
   style: PropTypes.object,
   /**

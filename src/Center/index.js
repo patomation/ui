@@ -40,9 +40,21 @@ Center.propTypes = {
   * Exposes ability to set a custom class name
   **/
   className: PropTypes.string,
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   contentStyle: PropTypes.object,
   width: PropTypes.string,

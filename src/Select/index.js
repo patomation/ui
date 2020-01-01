@@ -100,12 +100,21 @@ Select.propTypes = {
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   placeholder: PropTypes.string,
   onClick: PropTypes.func,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
   containerStyle: PropTypes.object,
   selectStyle: PropTypes.object,
   selectErrorStyle: PropTypes.object,
   errorStyle: PropTypes.object,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   label: PropTypes.string,
   optionStyle: PropTypes.object,

@@ -76,6 +76,9 @@ Image.propTypes = {
   className: PropTypes.string,
   src: PropTypes.string,
   alt: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   containerStyle: PropTypes.object,
   imageStyle: PropTypes.object,
@@ -83,6 +86,9 @@ Image.propTypes = {
   circle: PropTypes.bool,
   square: PropTypes.bool,
   rectangle: PropTypes.bool,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.bool,
   maxWidth: PropTypes.string,
   width: PropTypes.string

@@ -43,11 +43,23 @@ Icon.propTypes = {
   * Exposes ability to set a custom class name
   **/
   className: PropTypes.string,
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.string,
   name: PropTypes.string,
   icon: PropTypes.func,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   responsive: PropTypes.bool
 }

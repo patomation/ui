@@ -171,8 +171,17 @@ Calendar.propTypes = {
   * Exposes ability to set a custom class name
   **/
   className: PropTypes.string,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   events: PropTypes.array,
   onClick: PropTypes.func,

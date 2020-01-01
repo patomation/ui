@@ -88,7 +88,13 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
   containerStyle: PropTypes.object,
   inputStyle: PropTypes.object,

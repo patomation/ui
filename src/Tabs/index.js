@@ -51,8 +51,17 @@ Tabs.propTypes = {
   * click event passes up item name and index
   **/
   onClick: PropTypes.func,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   /**
   * string names for tabs

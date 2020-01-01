@@ -57,7 +57,13 @@ List.propTypes = {
   **/
   className: PropTypes.string,
   data: PropTypes.array,
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   listStyle: PropTypes.object,
   itemStyle: PropTypes.object

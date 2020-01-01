@@ -44,22 +44,39 @@ const Device = ({
       portrait
       background='silver'
       style={{
-        padding: '1rem'
+        padding: '1rem',
+      }}
+      innerStyle={{
+        overFlow: 'hidden', //Not working??
       }}>
-
-      {children}
-
+      <div
+        className='device__scroll'
+        >
+        {children}
+      </div>
     </Shape>
     <Shape className='device__button' circle background='silver' width='10%' style={{ paddingBottom: '1rem' }} />
   </div>
 
 Device.propTypes = {
   className: PropTypes.string,
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
   width: PropTypes.string,
   maxWidth: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object
 }
 

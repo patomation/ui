@@ -32,8 +32,17 @@ Spinner.propTypes = {
   **/
   className: PropTypes.string,
   icon: PropTypes.func,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object
 }
 

@@ -39,6 +39,9 @@ Gutter.propTypes = {
   * Exposes ability to set a custom class name
   **/
   className: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   /**
   * A way to disable the padding style without having to remove the element

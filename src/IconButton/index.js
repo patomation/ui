@@ -72,8 +72,17 @@ IconButton.propTypes = {
   **/
   onClick: PropTypes.func,
   className: PropTypes.string,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   iconStyle: PropTypes.object,
   titleStyle: PropTypes.object,

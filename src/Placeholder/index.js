@@ -28,8 +28,17 @@ const Placeholder = ({
   </div>
 
 Placeholder.propTypes = {
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   lines: PropTypes.number
 }

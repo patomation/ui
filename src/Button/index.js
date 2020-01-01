@@ -162,13 +162,25 @@ Button.propTypes = {
   /**
   * text or html can be set between tags as a child
   **/
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /**
   * text set as a prop
   **/
   title: PropTypes.string,
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   hoverStyle: PropTypes.object,
   disabledStyle: PropTypes.object,

@@ -145,13 +145,25 @@ Card.propTypes = {
   * Exposes ability to set a custom class name
   **/
   className: PropTypes.string,
+  /**
+  * Individual component or set of components accepted as children
+  **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /**
   * like children any element can be used and it will put the item at the bottom of the card
   **/
   footer: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /**
+  * The background color of component
+  **/
   background: PropTypes.string,
+  /**
+  * The text color of component
+  **/
   color: PropTypes.string,
+  /**
+  * Set any styles of the top level element of the component
+  **/
   style: PropTypes.object,
   /**
   * Card image at the top
@@ -168,7 +180,7 @@ Card.propTypes = {
   /**
   * icon color
   **/
-  iconColor: PropTypes.string,
+  iconSolor: PropTypes.string,
   /**
   * icon background color
   **/

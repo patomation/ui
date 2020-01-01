@@ -128,7 +128,7 @@ const Range = ({
       style={{
         width: '100%'
       }}
-       />
+    />
 
   </div>
 
@@ -138,7 +138,10 @@ Range.propTypes = {
   * Individual component or set of components accepted as children
   **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
+  /**
+  * Callback for when the range slider value changes. returns event. look for event.target.value to get the new value
+  **/
+  onChange: PropTypes.func,
   /**
   * The background color of component
   **/
@@ -148,9 +151,26 @@ Range.propTypes = {
   **/
   color: PropTypes.string,
   /**
+  * The color of the thumb drag slider
+  **/
+  thumbColor: PropTypes.string,
+  /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object
+  style: PropTypes.object,
+  /**
+  * Minimum number range
+  **/
+  min: PropTypes.number,
+  /**
+  * Maximum number range
+  **/
+  max: PropTypes.number,
+  /**
+  * Range slider value
+  **/
+  value: PropTypes.number,
+  label: PropTypes.string
 }
 
 export default Range

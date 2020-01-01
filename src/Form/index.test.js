@@ -46,8 +46,8 @@ describe('<Form />', () => {
         }]}
         labels={true}
         placeholders={true}/>)
-    expect(component.find('label').first().text()).toEqual('Custom Label')
-    expect(component.find('label').at(1).text()).toEqual('Test2')
+    expect(component.find('label').first().text()).toEqual(' Custom Label ')
+    expect(component.find('label').at(1).text()).toEqual(' Test2 ')
     expect(component.find('Input').first().props().placeholder).toEqual('Custom Placeholder')
     expect(component.find('Input').at(1).props().placeholder).toEqual('Test2')
   })

@@ -127,7 +127,10 @@ const Code = ({
     `}</style>
     <pre>
       <code className='hljs'>
-        <div dangerouslySetInnerHTML={{ __html: hljs.highlightAuto(children || block).value }} />
+
+        { children || block
+          ? <div dangerouslySetInnerHTML={{ __html: hljs.highlightAuto(children || block).value }} />
+          : null }
 
       </code>
     </pre>

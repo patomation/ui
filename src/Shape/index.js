@@ -88,7 +88,7 @@ Shape.propTypes = {
   **/
   style: PropTypes.object,
   /**
-  * 
+  *
   **/
   innerStyle: PropTypes.object,
   /**

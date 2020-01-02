@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 
-const Placeholder = ({
+const Skeleton = ({
   background, color, style, lines = 1
 }) =>
 
   <div
-    className={'placeholder'}
+    className={'skeleton'}
     style={{
       ...styles.container,
       ...(background ? { background: background } : null),
@@ -16,18 +16,18 @@ const Placeholder = ({
     }}>
     { new Array(lines).fill(0).map((_, index) => {
       return <div
-        className={'placeholder__line'}
+        className={'skeleton__line'}
         key = {'line' + index}
         style={{
-          background: 'rgba(255,255,255,0.4)',
+          background: 'rgba(0,0,0,0.2)',
           height: '0.5rem',
-          marginBottom: '0.5rem'
+          marginBottom: '0.4rem'
         }}></div>
     })}
 
   </div>
 
-Placeholder.propTypes = {
+Skeleton.propTypes = {
   /**
   * The background color of component
   **/
@@ -43,4 +43,4 @@ Placeholder.propTypes = {
   lines: PropTypes.number
 }
 
-export default Placeholder
+export default Skeleton

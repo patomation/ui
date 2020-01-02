@@ -7,7 +7,9 @@ import concat from '../_utility/concat.js'
 */
 const Header = ({
   className, onClick, children,
-  background, color, style
+  background = '#333',
+  color = '#ffffff',
+  style
 }) => {
   return (
     <header

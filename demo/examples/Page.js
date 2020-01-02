@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, Code, Gutter, Device, Grid, Placeholder, Heading } from '../../src'
+import { Page, Code, Gutter, Device, Grid, Skeleton, Heading } from '../../src'
 
 const PageExample = () => {
   return (
@@ -31,12 +31,12 @@ const PageExample = () => {
             title={'Page Title'}
             sidebar={<div style={{ padding: '1rem' }}>
               Side Bar <Gutter/>
-              <Placeholder lines={30} />
+              <Skeleton lines={30} />
             </div>}
             style={{ height: 'auto' }}>
 
             Content <Gutter/>
-            <Placeholder lines={30} />
+            <Skeleton lines={30} />
 
           </Page>
         </Device>

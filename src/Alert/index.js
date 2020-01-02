@@ -29,12 +29,13 @@ const Alert = ({
 
   return open
     ? <Collapse
+      className={'alert'}
       collapse={collapse}
       onComplete={() => {
         setOpen(false)
       }}>
       <Row
-        className={'alert'}
+        className='alert__row'
         style={{
           ...styles.container,
           background: background || config.color[`${type}Background`],
@@ -64,6 +65,7 @@ const Alert = ({
         <div
           className='alert__content'
           style={{
+            width: '100%',
             ...(closeable ? { width: '75%' } : null),
             flexGrow: 1
           }}>

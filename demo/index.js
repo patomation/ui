@@ -8,7 +8,7 @@ import './favicon.ico'
 import Home from './pages/Home'
 import Test from './pages/Test'
 
-import { Page, Button, Grid, Hr, Brand, Table, Heading, Row } from '../src'
+import { Header, Page, Button, Grid, Hr, Brand, Table, Heading, Row } from '../src'
 
 import Examples from './examples'
 import doc from './doc.json'
@@ -17,6 +17,7 @@ import navigation from './navigation'
 if (module && module.hot) {
   module.hot.accept()
 }
+
 
 const Layout = withRouter(({ children, location }) => {
   const name = location.pathname.replace('/', '')

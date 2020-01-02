@@ -54,11 +54,11 @@ const navigation = {
     'Hr',
     'Loader',
     'Panel',
-    'Placeholder',
     'Row',
     'ScrollButton',
     'Shape',
-    'Spinner'
+    'Spinner',
+    'Skeleton'
   ],
   Depricated: [
     'Content',

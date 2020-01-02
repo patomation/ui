@@ -97,33 +97,17 @@ const Card = ({
               { title }
             </h3>
 
-            : <div
-              style={{
-                background: 'gray',
-                height: '1rem'
-              }}></div>
-          }
-          <Gutter half/>
+            : null }
+
           { description
             ? <p
               style={{
+                paddingTop: '0.5rem',
                 display: 'inline-block' // Prevents external <a> tags from underlining
               }}>
               { description }
             </p>
-            : <>
-              <div
-                style={{
-                  background: 'silver',
-                  height: '0.75rem'
-                }}></div>
-              <Gutter half/>
-              <div
-                style={{
-                  background: 'silver',
-                  height: '0.75rem'
-                }}></div></>
-          }
+            : null }
 
         </div>
 

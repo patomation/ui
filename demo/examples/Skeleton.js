@@ -1,20 +1,20 @@
 import React from 'react'
-import { Placeholder, Code, Heading } from '../../src'
+import { Skeleton, Code, Heading } from '../../src'
 
-const PlaceholderExample = () => {
+const SkeletonExample = () => {
   return (
     <div>
       <Heading Tag='h2'>Example</Heading>
       <Code block={`
-        <Placeholder />
+        <Skeleton lines={5} />
       `}/>
 
       <Heading Tag='h2'>Demo</Heading>
 
-      <Placeholder />
+      <Skeleton lines={5} />
 
     </div>
   )
 }
 
-export default PlaceholderExample
+export default SkeletonExample

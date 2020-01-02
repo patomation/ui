@@ -39,7 +39,6 @@ import Modal from './Modal'
 import Nav from './Nav'
 import Page from './Page'
 import Panel from './Panel'
-import Placeholder from './Placeholder'
 import Range from './Range'
 import RegisterForm from './RegisterForm'
 import Row from './Row'
@@ -48,6 +47,7 @@ import Section from './Section'
 import Select from './Select'
 import Shape from './Shape'
 import SideBar from './SideBar'
+import Skeleton from './Skeleton'
 import Spinner from './Spinner'
 import Table from './Table'
 import Tabs from './Tabs'
@@ -93,7 +93,6 @@ const Examples = () => <>
   <Route path={'/Nav'} component={Nav} key={'route-Nav'} />
   <Route path={'/Page'} component={Page} key={'route-Page'} />
   <Route path={'/Panel'} component={Panel} key={'route-Panel'} />
-  <Route path={'/Placeholder'} component={Placeholder} key={'route-Placeholder'} />
   <Route path={'/Range'} component={Range} key={'route-Range'} />
   <Route path={'/RegisterForm'} component={RegisterForm} key={'route-RegisterForm'} />
   <Route path={'/Row'} component={Row} key={'route-Row'} />
@@ -102,6 +101,7 @@ const Examples = () => <>
   <Route path={'/Select'} component={Select} key={'route-Select'} />
   <Route path={'/Shape'} component={Shape} key={'route-Shape'} />
   <Route path={'/SideBar'} component={SideBar} key={'route-SideBar'} />
+  <Route path={'/Skeleton'} component={Skeleton} key={'route-Skeleton'} />
   <Route path={'/Spinner'} component={Spinner} key={'route-Spinner'} />
   <Route path={'/Table'} component={Table} key={'route-Table'} />
   <Route path={'/Tabs'} component={Tabs} key={'route-Tabs'} />

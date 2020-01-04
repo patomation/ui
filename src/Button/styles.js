@@ -17,7 +17,7 @@ export default {
     KhtmlUserSelect: 'none',
     MozUserSelect: 'none',
     MsUserSelect: 'none',
-    transition: 'background 150ms ease-in-out, transform 150ms ease'
+    transition: 'background 150ms ease-in-out, color 150ms ease-in-out, transform 150ms ease'
   },
   kind: {
     normal: {

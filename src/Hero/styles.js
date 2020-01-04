@@ -1,7 +1,7 @@
 export default {
   container: {
     textAlign: 'center',
-    padding: '5rem 0 5rem 0',
+    padding: '10rem 0 10rem 0',
     position: 'relative',
     color: '#ffffff'
   },

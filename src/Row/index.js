@@ -2,11 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import config from '../config'
+
 /**
 * display flex row
 */
 const Row = ({
-  className, children, style
+  className, children, style, gap
 }) =>
 
   <div
@@ -16,7 +18,18 @@ const Row = ({
       ...style
     }}>
 
-    {children}
+    { gap
+      ? React.Children.map(children, child => {
+        return React.cloneElement(
+          child,
+          {
+            style: {
+              marginRight: config.size.gutters
+            }
+          })
+      })
+      : children
+    }
 
   </div>
 
@@ -32,7 +45,11 @@ Row.propTypes = {
   /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object
+  style: PropTypes.object,
+  /**
+  * If gap is defined a vertical gutter will get added to all children
+  **/
+  gap: PropTypes.bool
 }
 
 export default Row

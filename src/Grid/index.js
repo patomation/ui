@@ -11,7 +11,8 @@ const Grid = ({
   background, color, style,
   col, row, gap, auto,
   onMouseEnter, onMouseLeave,
-  breakWidth
+  breakWidth,
+  top
 }) => {
   // auto columns
   if (auto) {
@@ -48,6 +49,7 @@ const Grid = ({
         ...(row ? {
           gridTemplateRows: repeat(row, (subtractGap ? `calc(${height}% - ${subtractGap})` : `${height}%`))
         } : null),
+        ...(top ? { justifyContent: 'flex-start' } : null),
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
         ...style
@@ -94,7 +96,11 @@ Grid.propTypes = {
   auto: PropTypes.bool,
   breakWidth: PropTypes.string,
   onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func
+  onMouseLeave: PropTypes.func,
+  /**
+  * Align grid items to the top if true
+  **/
+  top: PropTypes.bool
 }
 
 export default Grid

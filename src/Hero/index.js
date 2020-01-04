@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import config from '../config.js'
 import { Gutter, Image, Center, ScrollButton } from '../'
 /**
 * image with a title and description
@@ -21,7 +22,7 @@ const Hero = ({
       style={{
         ...styles.container,
         ...(color ? { color: color } : null),
-        ...(background ? { background: background } : null),
+        fontFamily: config.fontFamily,
         ...style,
         ...(height ? {
           height,
@@ -46,6 +47,7 @@ const Hero = ({
           ? <p className='hero__description'
             style={{
               ...styles.description,
+              paddingTop: '2rem',
               ...descriptionStyle
             }}>
             { description }

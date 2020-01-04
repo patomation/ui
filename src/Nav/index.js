@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import config from '../config'
 /**
 * navigation component with custom child styles
 */
 const Nav = ({
   className, children,
-  background, color, style
+  background,
+  color = '#ffffff',
+  style
 }) =>
-// .nav > span {
-//   margin-right: 1rem !important;
-// }
   <nav
     className={concat('nav', className)}
     style={{
@@ -24,22 +24,30 @@ const Nav = ({
     <style>
       {`
       .nav a {
-        color: #ffffff;
+        color: ${color};
         text-decoration: none;
       }
       `}
 
     </style>
 
-    {React.Children.map(children, child => {
-      return React.cloneElement(
-        child,
-        {
-          style: {
-            marginRight: '1rem'
-          }
-        })
-    })}
+    <div
+      className='nav__container'
+      style={{
+        maxWidth: config.size.maxWidth,
+        margin: '0 auto',
+        display: 'flex'
+      }}>
+        { React.Children.map(children, child => {
+          return React.cloneElement(
+            child,
+            {
+              style: {
+                marginRight: '1rem'
+              }
+            })
+        })}
+    </div>
 
   </nav>
 

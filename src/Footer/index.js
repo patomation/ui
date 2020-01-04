@@ -2,16 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import config from '../config'
+
 /**
 *  A sticky footer component obviously
 */
 const Footer = ({
-  className, children, onClick,
+  className, children,
   background, color, style
 }) => {
   return (
     <footer
-      onClick={onClick}
       className={concat('footer', className)}
       style={{
         ...styles.container,
@@ -19,8 +20,14 @@ const Footer = ({
         ...(color ? { color: color } : null),
         ...style
       }}>
-
-      {children}
+      <div
+        className='footer__container'
+        style={{
+          maxWidth: config.size.maxWidth,
+          margin: '0 auto'
+        }}>
+        {children}
+      </div>
 
     </footer>
   )
@@ -35,7 +42,6 @@ Footer.propTypes = {
   * Individual component or set of components accepted as children
   **/
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
   /**
   * The background color of component
   **/

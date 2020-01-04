@@ -22,8 +22,8 @@ const PoseDiv = posed.div({
 */
 const Card = ({
   className,
-  background, color = '#000000', style,
-  image, alt = '', icon,
+  background, color = '#000000', style, border,
+  image, alt = '', icon, cover,
   iconColor, iconBackground,
   title, description, footer, children,
   onClick, clickable
@@ -46,6 +46,10 @@ const Card = ({
           ...(background ? { background: background } : null),
           display: 'inline-block',
           ...(color ? { color: color } : null),
+          ...(border === false ? {
+            border: 0,
+            boxShadow: 'none'
+          } : null),
           ...style
         }}
         containerStyle={{ margin: 0 }}
@@ -59,27 +63,29 @@ const Card = ({
           setHover(false)
         }}>
 
-        { image
-          ? <Image
-            className='card__image'
-            src={image}
-            alt={alt}
-            rectangle />
-          : <Shape
-            rectangle
-            background={iconBackground || (icon ? '#ffffff' : 'gray')}>
-            { icon
-              ? <Center style={{ textAlign: 'center' }}>
-                { typeof icon === 'string'
-                  ? <Icon
-                    name={icon}
-                    color={iconColor || config.color.primary}
-                    responsive
-                    style={{ width: '33%' }} />
-                  : icon
-                }
-              </Center>
-              : null
+        { cover
+          ? cover
+          : image
+            ? <Image
+              className='card__image'
+              src={image}
+              alt={alt}
+              rectangle />
+            : <Shape
+              rectangle
+              background={iconBackground || (icon ? '#ffffff' : 'gray')}>
+              { icon
+                ? <Center style={{ textAlign: 'center' }}>
+                  { typeof icon === 'string'
+                    ? <Icon
+                      name={icon}
+                      color={iconColor || config.color.primary}
+                      responsive
+                      style={{ width: '33%' }} />
+                    : icon
+                  }
+                </Center>
+                : null
             }
           </Shape>
         }
@@ -150,9 +156,17 @@ Card.propTypes = {
   **/
   style: PropTypes.object,
   /**
-  * Card image at the top
+  * The ability to turn off the border and boxshadow
+  **/
+  border: PropTypes.bool,
+  /**
+  * Card image at the top can be a source string
   **/
   image: PropTypes.string,
+  /**
+  * Card cover will replace the image or icon as the top element. use components
+  **/
+  cover: PropTypes.node,
   /**
   * Image alt text
   **/

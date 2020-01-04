@@ -2,13 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
+import config from '../config'
 import { Gutter } from '../'
 /**
 * fancy ul list component
 */
 const List = ({
   className, children, data,
-  style, listStyle, itemStyle
+  style, listStyle, itemStyle,
+  border
 }) => {
   return (
     <ul
@@ -16,6 +18,11 @@ const List = ({
       style={{
         ...styles.list,
         ...style,
+        ...( border
+          ? {
+            border: `${config.size.borders} solid ${config.color.border}`,
+            borderRadius: config.size.corners,
+          } : null ),
         ...listStyle
       }}>
 
@@ -24,7 +31,12 @@ const List = ({
           key={`item_${index}`}
           style={{
             ...styles.item,
-            ...itemStyle
+            padding: '0.5rem',
+            ...( border && index !== children.length - 1
+              ? {
+                borderBottom: `${config.size.borders} solid ${config.color.border}`,
+              } : null ),
+            ...itemStyle,
           }}>
 
           {item}
@@ -37,12 +49,15 @@ const List = ({
           key={`item_${index}`}
           style={{
             ...styles.item,
+            padding: '0.25rem',
+            ...( border && index !== children.length - 1
+              ? {
+                borderBottom: `${config.size.borders} solid ${config.color.border}`,
+              } : null ),
             ...itemStyle
           }}>
 
           {child}
-
-          { index !== children.length - 1 ? <Gutter/> : null }
 
         </li>
       ) : null}
@@ -66,7 +81,11 @@ List.propTypes = {
   **/
   style: PropTypes.object,
   listStyle: PropTypes.object,
-  itemStyle: PropTypes.object
+  itemStyle: PropTypes.object,
+  /**
+  * A boolean to control if the border shows
+  **/
+  border: PropTypes.bool
 }
 
 export default List

@@ -22,8 +22,17 @@ const Header = ({
         ...style
       }}>
 
-      {children}
+      <div
+        className='header__container'
+        style={{
+          maxWidth: config.size.maxWidth,
+          margin: '0 auto'
+        }}>
 
+        {children}
+
+      </div>
+      
     </header>
   )
 }

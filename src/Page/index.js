@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import concat from '../_utility/concat.js'
+import concat from '../_utility/concat'
+import ratio from '../_utility/ratio'
+import config from '../config'
 import { Row } from '../'
 
 const Page = ({
@@ -17,11 +19,15 @@ const Page = ({
       ...styles.container,
       ...(background ? { background: background } : null),
       ...(color ? { color: color } : null),
-      padding: '1rem',
+      padding: config.size.gutters,
       display: 'flex',
       alignItems: 'stretch',
       height: '100%',
-      fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+      fontFamily: config.fontFamily,
+      fontSize: config.size.pageText,
+      lineHeight: config.size.pageLineHeight,
+      paddingTop: '5rem',
+      paddingBottom: '5rem',
       ...style
     }}>
 
@@ -29,7 +35,7 @@ const Page = ({
       ? <nav
         className='page__nav'
         style={{
-          marginRight: '1rem',
+          marginRight: config.size.gutters,
           whiteSpace: 'nowrap'
         }}>
         { sidebar }
@@ -38,11 +44,14 @@ const Page = ({
 
     <main
       className='page__main'
-      style={{ flexGrow: 1, maxWidth: '1000px' }}>
+      style={{
+        flexGrow: 1,
+        maxWidth: config.size.maxWidth,
+        margin: '0 auto' }}>
 
       { title
         ? <Row style={{
-          marginBottom: '1rem'
+          marginBottom: config.size.gutters
         }}>
           <h1
             style={{
@@ -56,10 +65,14 @@ const Page = ({
           { abilities }
         </Row> : null }
 
-      <div style={{ padding: '1.5rem' }}>
+      <div style={{
+        padding: config.size.gutters,
+        paddingLeft: '5rem',
+        paddingRight: '5rem',
+      }}>
 
         { contentTitle
-          ? <Row style={{ marginBottom: '1rem' }}>
+          ? <Row style={{ marginBottom: config.size.gutters }}>
             <h2
               style={{
                 flexGrow: 1,

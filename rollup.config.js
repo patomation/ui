@@ -17,15 +17,10 @@ module.exports = {
   external: [
     'react',
     'react-dom',
+    'prop-types',
     '@patomation/find',
     '@patomation/usetoggle',
-    'formik',
-    'moment',
-    'node-sass',
-    'react-pose',
-    'react-slick',
-    'slick-carousel',
-    'yup'
+    'react-pose'
   ],
   plugins: [
     peerDepsExternal(),

@@ -6,7 +6,7 @@ import concat from '../_utility/concat.js'
 * fancy line component
 */
 const Hr = ({
-  className, color, opacity, style
+  className, color = '#000000', opacity = 0.3, style
 }) => {
   return (
     <hr
@@ -20,24 +20,22 @@ const Hr = ({
   )
 }
 
-Hr.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  opacity: PropTypes.number
-}
-Hr.defaultProps = {
-  color: '#000000',
-  opacity: 0.3
+if (process.env.NODE_ENV !== 'production') {
+  Hr.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    opacity: PropTypes.number
+  }
 }
 
 export default Hr

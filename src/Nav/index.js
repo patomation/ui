@@ -38,40 +38,41 @@ const Nav = ({
         margin: '0 auto',
         display: 'flex'
       }}>
-        { React.Children.map(children, child => {
-          return React.cloneElement(
-            child,
-            {
-              style: {
-                marginRight: '1rem'
-              }
-            })
-        })}
+      { React.Children.map(children, child => {
+        return React.cloneElement(
+          child,
+          {
+            style: {
+              marginRight: '1rem'
+            }
+          })
+      })}
     </div>
 
   </nav>
 
-Nav.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object
+if (process.env.NODE_ENV !== 'production') {
+  Nav.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object
+  }
 }
-
 export default Nav

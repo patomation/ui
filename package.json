@@ -1,9 +1,8 @@
 {
   "name": "@patomation/ui",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "main": "lib/index.esm.js",
   "module": "lib/index.esm.js",
-  "style": "lib/indes.esm.css",
   "private": false,
   "sidEffects": false,
   "scripts": {
@@ -22,7 +21,9 @@
   },
   "dependencies": {
     "@patomation/find": "^1.1.0",
-    "@patomation/usetoggle": "^1.2.0"
+    "@patomation/usetoggle": "^1.2.0",
+    "react-dom": "^16.12.0",
+    "react-pose": "^4.0.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -72,8 +73,7 @@
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-pose": "^4.0.10"
+    "react-dom": "^16.9.0"
   },
   "eslintConfig": {
     "extends": "react-app"

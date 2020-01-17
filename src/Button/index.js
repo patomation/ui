@@ -141,55 +141,56 @@ const Button = ({
     : button
 }
 
-Button.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  type: PropTypes.string,
-  disabled: PropTypes.bool,
-  enabled: PropTypes.bool,
-  active: PropTypes.bool,
-  onClick: PropTypes.func,
-  onMouseDown: PropTypes.func,
-  onMouseUp: PropTypes.func,
-  onTouchStart: PropTypes.func,
-  onTouchEnd: PropTypes.func,
-  onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func,
-  onDown: PropTypes.func,
-  onUp: PropTypes.func,
-  /**
-  * text or html can be set between tags as a child
-  **/
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * text set as a prop
-  **/
-  title: PropTypes.string,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  hoverStyle: PropTypes.object,
-  disabledStyle: PropTypes.object,
-  activeStyle: PropTypes.object,
-  enabledStyle: PropTypes.object,
-  onHover: PropTypes.func,
-  kind: PropTypes.string,
-  center: PropTypes.bool,
-  right: PropTypes.bool
+if (process.env.NODE_ENV !== 'production') {
+  Button.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    type: PropTypes.string,
+    disabled: PropTypes.bool,
+    enabled: PropTypes.bool,
+    active: PropTypes.bool,
+    onClick: PropTypes.func,
+    onMouseDown: PropTypes.func,
+    onMouseUp: PropTypes.func,
+    onTouchStart: PropTypes.func,
+    onTouchEnd: PropTypes.func,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func,
+    onDown: PropTypes.func,
+    onUp: PropTypes.func,
+    /**
+    * text or html can be set between tags as a child
+    **/
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * text set as a prop
+    **/
+    title: PropTypes.string,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    hoverStyle: PropTypes.object,
+    disabledStyle: PropTypes.object,
+    activeStyle: PropTypes.object,
+    enabledStyle: PropTypes.object,
+    onHover: PropTypes.func,
+    kind: PropTypes.string,
+    center: PropTypes.bool,
+    right: PropTypes.bool
+  }
 }
-
 export default Button

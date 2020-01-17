@@ -27,32 +27,34 @@ const GridItem = ({
 
   </div>
 
-GridItem.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  /**
-  * Set the grid-column-start property
-  **/
-  start: PropTypes.number,
-  /**
-  * Set the grid-column-end property
-  **/
-  end: PropTypes.number,
-  /**
-  * Sets the grid-column-start property to auto unless start defined.
-  * Sets the grid-column-end property to 'span <number>'
-  **/
-  span: PropTypes.number
+if (process.env.NODE_ENV !== 'production') {
+  GridItem.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    /**
+    * Set the grid-column-start property
+    **/
+    start: PropTypes.number,
+    /**
+    * Set the grid-column-end property
+    **/
+    end: PropTypes.number,
+    /**
+    * Sets the grid-column-start property to auto unless start defined.
+    * Sets the grid-column-end property to 'span <number>'
+    **/
+    span: PropTypes.number
+  }
 }
 
 export default GridItem

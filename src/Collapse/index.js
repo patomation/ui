@@ -7,7 +7,7 @@ import concat from '../_utility/concat.js'
 */
 const Collapse = ({
   className, children, style,
-  collapse, onComplete, speed
+  collapse, onComplete, speed = 400
 }) => {
   const [height, setHeight] = useState(null)
   let element = null
@@ -40,26 +40,24 @@ const Collapse = ({
   )
 }
 
-Collapse.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  collapse: PropTypes.bool,
-  onComplete: PropTypes.func,
-  speed: PropTypes.number
-}
-
-Collapse.defaultProps = {
-  speed: 400
+if (process.env.NODE_ENV !== 'production') {
+  Collapse.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    collapse: PropTypes.bool,
+    onComplete: PropTypes.func,
+    speed: PropTypes.number
+  }
 }
 
 export default Collapse

@@ -26,24 +26,26 @@ const Spinner = ({
   )
 }
 
-Spinner.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Spinner.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  icon: PropTypes.func,
-  /**
+    className: PropTypes.string,
+    icon: PropTypes.func,
+    /**
   * The background color of component
   **/
-  background: PropTypes.string,
-  /**
+    background: PropTypes.string,
+    /**
   * The text color of component
   **/
-  color: PropTypes.string,
-  /**
+    color: PropTypes.string,
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object
+    style: PropTypes.object
+  }
 }
 
 export default Spinner

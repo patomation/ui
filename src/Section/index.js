@@ -50,29 +50,31 @@ const Section = ({
 
   </section>
 
-Section.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Section.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  /**
+    className: PropTypes.string,
+    /**
   * Individual component or set of components accepted as children
   **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  /**
+    style: PropTypes.object,
+    /**
   * The background color of component
   **/
-  background: PropTypes.string,
-  /**
+    background: PropTypes.string,
+    /**
   * The text color of component
   **/
-  color: PropTypes.string,
-  height: PropTypes.number,
-  maxWidth: PropTypes.string
+    color: PropTypes.string,
+    height: PropTypes.number,
+    maxWidth: PropTypes.string
+  }
 }
 
 export default Section

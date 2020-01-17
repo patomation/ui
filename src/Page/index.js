@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat'
-import ratio from '../_utility/ratio'
 import config from '../config'
 import { Row } from '../'
 
@@ -47,7 +46,8 @@ const Page = ({
       style={{
         flexGrow: 1,
         maxWidth: config.size.maxWidth,
-        margin: '0 auto' }}>
+        margin: '0 auto'
+      }}>
 
       { title
         ? <Row style={{
@@ -68,7 +68,7 @@ const Page = ({
       <div style={{
         padding: config.size.gutters,
         paddingLeft: '5rem',
-        paddingRight: '5rem',
+        paddingRight: '5rem'
       }}>
 
         { contentTitle
@@ -93,30 +93,32 @@ const Page = ({
 
   </div>
 
-Page.propTypes = {
-  className: PropTypes.string,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  title: PropTypes.string,
-  abilities: PropTypes.string,
-  contentTitle: PropTypes.string,
-  contentAbilities: PropTypes.string,
-  sidebar: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+if (process.env.NODE_ENV !== 'production') {
+  Page.propTypes = {
+    className: PropTypes.string,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    onClick: PropTypes.func,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    title: PropTypes.string,
+    abilities: PropTypes.string,
+    contentTitle: PropTypes.string,
+    contentAbilities: PropTypes.string,
+    sidebar: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+  }
 }
 
 export default Page

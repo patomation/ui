@@ -66,35 +66,37 @@ const IconButton = ({
   )
 }
 
-IconButton.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  iconStyle: PropTypes.object,
-  titleStyle: PropTypes.object,
-  activeStyle: PropTypes.object,
-  name: PropTypes.string,
-  icon: PropTypes.string,
-  active: PropTypes.bool,
-  title: PropTypes.string,
-  width: PropTypes.string,
-  hoverColor: PropTypes.string,
-  badge: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
+if (process.env.NODE_ENV !== 'production') {
+  IconButton.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    onClick: PropTypes.func,
+    className: PropTypes.string,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    iconStyle: PropTypes.object,
+    titleStyle: PropTypes.object,
+    activeStyle: PropTypes.object,
+    name: PropTypes.string,
+    icon: PropTypes.string,
+    active: PropTypes.bool,
+    title: PropTypes.string,
+    width: PropTypes.string,
+    hoverColor: PropTypes.string,
+    badge: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
 
+  }
 }
 
 export default IconButton

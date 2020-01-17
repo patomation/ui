@@ -65,60 +65,62 @@ const Shape = ({
 
   </div>
 
-Shape.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Shape.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  /**
+    className: PropTypes.string,
+    /**
   * Individual component or set of components accepted as children
   **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
-  /**
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    onClick: PropTypes.func,
+    /**
   * The background color of component
   **/
-  background: PropTypes.string,
-  /**
+    background: PropTypes.string,
+    /**
   * The text color of component
   **/
-  color: PropTypes.string,
-  /**
+    color: PropTypes.string,
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  /**
+    style: PropTypes.object,
+    /**
   *
   **/
-  innerStyle: PropTypes.object,
-  /**
+    innerStyle: PropTypes.object,
+    /**
   * A square shape div
   **/
-  square: PropTypes.bool,
-  /**
+    square: PropTypes.bool,
+    /**
   * A circle shape div
   **/
-  circle: PropTypes.bool,
-  /**
+    circle: PropTypes.bool,
+    /**
   * A rectangular shaped div
   **/
-  rectangle: PropTypes.bool,
-  /**
+    rectangle: PropTypes.bool,
+    /**
   * A traingle shaped div
   **/
-  triangle: PropTypes.bool,
-  /**
+    triangle: PropTypes.bool,
+    /**
   * A portrait shaped div
   **/
-  portrait: PropTypes.bool,
-  /**
+    portrait: PropTypes.bool,
+    /**
   * set the width of the shape
   **/
-  width: PropTypes.string,
-  /**
+    width: PropTypes.string,
+    /**
   * set the maximum width of the shape
   **/
-  maxWidth: PropTypes.string
+    maxWidth: PropTypes.string
+  }
 }
 
 export default Shape

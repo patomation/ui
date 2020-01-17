@@ -27,20 +27,22 @@ const Skeleton = ({
 
   </div>
 
-Skeleton.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Skeleton.propTypes = {
   /**
   * The background color of component
   **/
-  background: PropTypes.string,
-  /**
+    background: PropTypes.string,
+    /**
   * The text color of component
   **/
-  color: PropTypes.string,
-  /**
+    color: PropTypes.string,
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  lines: PropTypes.number
+    style: PropTypes.object,
+    lines: PropTypes.number
+  }
 }
 
 export default Skeleton

@@ -31,16 +31,18 @@ const User = ({
   )
 }
 
-User.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  User.propTypes = {
   /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  image: PropTypes.string
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    image: PropTypes.string
+  }
 }
 
 export default User

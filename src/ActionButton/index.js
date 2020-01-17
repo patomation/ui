@@ -69,28 +69,30 @@ const ActionButton = ({
   )
 }
 
-ActionButton.propTypes = {
-  onClick: PropTypes.func,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  /**
-  * set the icon in the center
-  **/
-  icon: PropTypes.string,
-  /**
-  * set the width of the action button
-  **/
-  width: PropTypes.string
+if (process.env.NODE_ENV !== 'production') {
+  ActionButton.propTypes = {
+    onClick: PropTypes.func,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    /**
+    * set the icon in the center
+    **/
+    icon: PropTypes.string,
+    /**
+    * set the width of the action button
+    **/
+    width: PropTypes.string
+  }
 }
 
 export default ActionButton

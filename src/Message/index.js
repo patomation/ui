@@ -22,13 +22,15 @@ const Message = ({
 
   </div>
 
-Message.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  onClick: PropTypes.func,
-  background: PropTypes.string,
-  color: PropTypes.string,
-  style: PropTypes.object
+if (process.env.NODE_ENV !== 'production') {
+  Message.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    onClick: PropTypes.func,
+    background: PropTypes.string,
+    color: PropTypes.string,
+    style: PropTypes.object
+  }
 }
 
 export default Message

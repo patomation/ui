@@ -26,29 +26,30 @@ const Heading = ({
   )
 }
 
-Heading.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  Tag: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object
+if (process.env.NODE_ENV !== 'production') {
+  Heading.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    Tag: PropTypes.string,
+    className: PropTypes.string,
+    onClick: PropTypes.func,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object
+  }
 }
-
 export default Heading

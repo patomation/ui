@@ -10,8 +10,7 @@ const Typography = ({
   background, color, style,
   size = '1rem', bold = false
 }) => {
-
-  const {number, unit} = extract(size)
+  const { number, unit } = extract(size)
 
   return (
     <p
@@ -23,24 +22,28 @@ const Typography = ({
         display: 'inline-block',
         fontSize: `${number}${unit}`,
         // lineHeight: `${ ratio(number, 1) }${unit}`,
-        ...( bold ? {
+        ...(bold ? {
           fontWeight: 'bold'
-        } : null ),
+        } : null),
         ...style
       }}>
 
       {children}
 
     </p>
-)}
-Typography.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  background: PropTypes.string,
-  color: PropTypes.string,
-  style: PropTypes.object,
-  size: PropTypes.string,
-  bold: PropTypes.bool
+  )
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  Typography.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    background: PropTypes.string,
+    color: PropTypes.string,
+    style: PropTypes.object,
+    size: PropTypes.string,
+    bold: PropTypes.bool
+  }
 }
 
 export default Typography

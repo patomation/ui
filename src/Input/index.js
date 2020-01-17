@@ -74,39 +74,40 @@ const Input = ({
   )
 }
 
-Input.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  type: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  placeholder: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  containerStyle: PropTypes.object,
-  inputStyle: PropTypes.object,
-  inputErrorStyle: PropTypes.object,
-  errorStyle: PropTypes.object,
-  style: PropTypes.object,
-  label: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  textAlign: PropTypes.string,
-  cols: PropTypes.number,
-  rows: PropTypes.number
+if (process.env.NODE_ENV !== 'production') {
+  Input.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    type: PropTypes.string,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    placeholder: PropTypes.string,
+    className: PropTypes.string,
+    onClick: PropTypes.func,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    containerStyle: PropTypes.object,
+    inputStyle: PropTypes.object,
+    inputErrorStyle: PropTypes.object,
+    errorStyle: PropTypes.object,
+    style: PropTypes.object,
+    label: PropTypes.string,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    textAlign: PropTypes.string,
+    cols: PropTypes.number,
+    rows: PropTypes.number
+  }
 }
-
 export default Input

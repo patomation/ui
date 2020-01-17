@@ -90,37 +90,39 @@ const Select = ({
   )
 }
 
-Select.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Select.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  placeholder: PropTypes.string,
-  onClick: PropTypes.func,
-  /**
+    className: PropTypes.string,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    placeholder: PropTypes.string,
+    onClick: PropTypes.func,
+    /**
   * The background color of component
   **/
-  background: PropTypes.string,
-  /**
+    background: PropTypes.string,
+    /**
   * The text color of component
   **/
-  color: PropTypes.string,
-  containerStyle: PropTypes.object,
-  selectStyle: PropTypes.object,
-  selectErrorStyle: PropTypes.object,
-  errorStyle: PropTypes.object,
-  /**
+    color: PropTypes.string,
+    containerStyle: PropTypes.object,
+    selectStyle: PropTypes.object,
+    selectErrorStyle: PropTypes.object,
+    errorStyle: PropTypes.object,
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  label: PropTypes.string,
-  optionStyle: PropTypes.object,
-  options: PropTypes.array
+    style: PropTypes.object,
+    label: PropTypes.string,
+    optionStyle: PropTypes.object,
+    options: PropTypes.array
+  }
 }
 
 export default Select

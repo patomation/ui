@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import config from '../config'
-import { Gutter } from '../'
+
 /**
 * fancy ul list component
 */
@@ -18,11 +18,11 @@ const List = ({
       style={{
         ...styles.list,
         ...style,
-        ...( border
+        ...(border
           ? {
             border: `${config.size.borders} solid ${config.color.border}`,
-            borderRadius: config.size.corners,
-          } : null ),
+            borderRadius: config.size.corners
+          } : null),
         ...listStyle
       }}>
 
@@ -32,11 +32,11 @@ const List = ({
           style={{
             ...styles.item,
             padding: '0.5rem',
-            ...( border && index !== children.length - 1
+            ...(border && index !== children.length - 1
               ? {
-                borderBottom: `${config.size.borders} solid ${config.color.border}`,
-              } : null ),
-            ...itemStyle,
+                borderBottom: `${config.size.borders} solid ${config.color.border}`
+              } : null),
+            ...itemStyle
           }}>
 
           {item}
@@ -50,10 +50,10 @@ const List = ({
           style={{
             ...styles.item,
             padding: '0.25rem',
-            ...( border && index !== children.length - 1
+            ...(border && index !== children.length - 1
               ? {
-                borderBottom: `${config.size.borders} solid ${config.color.border}`,
-              } : null ),
+                borderBottom: `${config.size.borders} solid ${config.color.border}`
+              } : null),
             ...itemStyle
           }}>
 
@@ -66,26 +66,28 @@ const List = ({
   )
 }
 
-List.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  data: PropTypes.array,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  listStyle: PropTypes.object,
-  itemStyle: PropTypes.object,
-  /**
-  * A boolean to control if the border shows
-  **/
-  border: PropTypes.bool
+if (process.env.NODE_ENV !== 'production') {
+  List.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    data: PropTypes.array,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    listStyle: PropTypes.object,
+    itemStyle: PropTypes.object,
+    /**
+    * A boolean to control if the border shows
+    **/
+    border: PropTypes.bool
+  }
 }
 
 export default List

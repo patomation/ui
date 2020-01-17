@@ -96,44 +96,46 @@ const Alert = ({
     : null
 }
 
-Alert.propTypes = {
-  className: PropTypes.string,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
-  * Optional title that sits above the description/children
-  **/
-  title: PropTypes.string,
-  /**
-  * A false value will hide the icon while using a string can set the icon to any of the material icons
-  **/
-  icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  /**
-  * Exposes the ability to set the type af alert message. Must use 'info', 'warning', 'error' or 'success'
-  **/
-  type: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
-  /**
-  * A false value will hide the close icon making the alert unclosable
-  **/
-  closeable: PropTypes.bool,
-  /**
-  * A callback function when the element closes
-  **/
-  onClose: PropTypes.func,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object
+if (process.env.NODE_ENV !== 'production') {
+  Alert.propTypes = {
+    className: PropTypes.string,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
+    * Optional title that sits above the description/children
+    **/
+    title: PropTypes.string,
+    /**
+    * A false value will hide the icon while using a string can set the icon to any of the material icons
+    **/
+    icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    /**
+    * Exposes the ability to set the type af alert message. Must use 'info', 'warning', 'error' or 'success'
+    **/
+    type: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
+    /**
+    * A false value will hide the close icon making the alert unclosable
+    **/
+    closeable: PropTypes.bool,
+    /**
+    * A callback function when the element closes
+    **/
+    onClose: PropTypes.func,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object
+  }
 }
 
 export default Alert

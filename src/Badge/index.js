@@ -62,35 +62,34 @@ const Badge = ({
 
   </div>
 
-Badge.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  icon: PropTypes.string,
-  onClick: PropTypes.func,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  *
-  */
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object
-}
-
-Badge.defaultProps = {
+if (process.env.NODE_ENV !== 'production') {
+  Badge.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    icon: PropTypes.string,
+    onClick: PropTypes.func,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    *
+    */
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object
+  }
 }
 
 export default Badge

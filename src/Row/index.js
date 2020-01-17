@@ -33,23 +33,25 @@ const Row = ({
 
   </div>
 
-Row.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Row.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  /**
+    className: PropTypes.string,
+    /**
   * Individual component or set of components accepted as children
   **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  /**
+    style: PropTypes.object,
+    /**
   * If gap is defined a vertical gutter will get added to all children
   **/
-  gap: PropTypes.bool
+    gap: PropTypes.bool
+  }
 }
 
 export default Row

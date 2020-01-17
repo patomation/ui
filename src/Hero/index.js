@@ -95,36 +95,38 @@ const Hero = ({
   )
 }
 
-Hero.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-  className: PropTypes.string,
-  /**
-  * The background color of component
-  **/
-  background: PropTypes.string,
-  /**
-  * The text color of component
-  **/
-  color: PropTypes.string,
-  /**
-  * Set any styles of the top level element of the component
-  **/
-  style: PropTypes.object,
-  titleStyle: PropTypes.object,
-  descriptionStyle: PropTypes.object,
-  imageStyle: PropTypes.object,
-  /**
-  * Individual component or set of components accepted as children
-  **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  height: PropTypes.number,
-  overlayColor: PropTypes.string,
-  overlayOpacity: PropTypes.string
+if (process.env.NODE_ENV !== 'production') {
+  Hero.propTypes = {
+    /**
+    * Exposes ability to set a custom class name
+    **/
+    className: PropTypes.string,
+    /**
+    * The background color of component
+    **/
+    background: PropTypes.string,
+    /**
+    * The text color of component
+    **/
+    color: PropTypes.string,
+    /**
+    * Set any styles of the top level element of the component
+    **/
+    style: PropTypes.object,
+    titleStyle: PropTypes.object,
+    descriptionStyle: PropTypes.object,
+    imageStyle: PropTypes.object,
+    /**
+    * Individual component or set of components accepted as children
+    **/
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    height: PropTypes.number,
+    overlayColor: PropTypes.string,
+    overlayOpacity: PropTypes.string
+  }
 }
 
 export default Hero

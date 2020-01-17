@@ -10,7 +10,7 @@ const Tabs = ({
   className,
   onClick,
   background, color, style,
-  data, active, step
+  data = [], active, step
 }) =>
 
   <Grid
@@ -42,43 +42,41 @@ const Tabs = ({
 
   </Grid>
 
-Tabs.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Tabs.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  /**
+    className: PropTypes.string,
+    /**
   * click event passes up item name and index
   **/
-  onClick: PropTypes.func,
-  /**
+    onClick: PropTypes.func,
+    /**
   * The background color of component
   **/
-  background: PropTypes.string,
-  /**
+    background: PropTypes.string,
+    /**
   * The text color of component
   **/
-  color: PropTypes.string,
-  /**
+    color: PropTypes.string,
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  /**
+    style: PropTypes.object,
+    /**
   * string names for tabs
   **/
-  data: PropTypes.array,
-  /**
+    data: PropTypes.array,
+    /**
   * if defined, disable all those after active index
   **/
-  step: PropTypes.bool,
-  /**
+    step: PropTypes.bool,
+    /**
   * If matches one of the sting from data it will become active
   **/
-  active: PropTypes.string
-}
-
-Tabs.defaultProps = {
-  data: []
+    active: PropTypes.string
+  }
 }
 
 export default Tabs

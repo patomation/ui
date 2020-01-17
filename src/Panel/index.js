@@ -47,25 +47,27 @@ const Panel = ({
   )
 }
 
-Panel.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  Panel.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  /**
+    className: PropTypes.string,
+    /**
   * Individual component or set of components accepted as children
   **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  header: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    header: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  containerStyle: PropTypes.object,
-  contentStyle: PropTypes.object,
-  padding: PropTypes.string,
-  onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func
+    style: PropTypes.object,
+    containerStyle: PropTypes.object,
+    contentStyle: PropTypes.object,
+    padding: PropTypes.string,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func
+  }
 }
 
 export default Panel

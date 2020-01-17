@@ -8,7 +8,7 @@ import concat from '../_utility/concat.js'
 const SideBar = ({
   className, children, menu,
   style, menuStyle, contentStyle,
-  width,
+  width = '200px',
   right // Menu position. Defaults to left
 }) => {
   return (
@@ -52,34 +52,32 @@ const SideBar = ({
   )
 }
 
-SideBar.propTypes = {
+if (process.env.NODE_ENV !== 'production') {
+  SideBar.propTypes = {
   /**
   * Exposes ability to set a custom class name
   **/
-  className: PropTypes.string,
-  /**
+    className: PropTypes.string,
+    /**
   * Individual component or set of components accepted as children
   **/
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  menu: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  /**
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    menu: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    /**
   * Set any styles of the top level element of the component
   **/
-  style: PropTypes.object,
-  /**
+    style: PropTypes.object,
+    /**
   *
   **/
-  menuStyle: PropTypes.object,
-  /**
+    menuStyle: PropTypes.object,
+    /**
   *
   **/
-  contentStyle: PropTypes.object,
-  width: PropTypes.string,
-  right: PropTypes.bool
-}
-
-SideBar.defaultProps = {
-  width: '200px'
+    contentStyle: PropTypes.object,
+    width: PropTypes.string,
+    right: PropTypes.bool
+  }
 }
 
 export default SideBar

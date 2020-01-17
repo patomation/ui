@@ -6,7 +6,8 @@ module.exports = {
       {
         targets: {
           node: 'current'
-        }
+        },
+        modules: false
       }
     ]
   ]

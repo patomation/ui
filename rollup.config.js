@@ -6,9 +6,10 @@ import postcss from 'rollup-plugin-postcss'
 import filesize from 'rollup-plugin-filesize'
 import commonjs from 'rollup-plugin-commonjs'
 import autoprefixer from 'autoprefixer'
+import typescript from '@rollup/plugin-typescript'
 
 module.exports = {
-  input: './src/index.js',
+  input: './src/index.ts',
   output: {
     file: './lib/index.esm.js',
     format: 'esm',
@@ -23,6 +24,7 @@ module.exports = {
     'react-pose'
   ],
   plugins: [
+    typescript(),
     peerDepsExternal(),
     postcss({ extract: true, plugins: [autoprefixer] }),
     babel({ exclude: 'node_modules/**' }),

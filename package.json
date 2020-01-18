@@ -1,6 +1,6 @@
 {
   "name": "@patomation/ui",
-  "version": "1.8.6",
+  "version": "1.8.7",
   "main": "lib/index.esm.js",
   "module": "lib/index.esm.js",
   "private": false,
@@ -22,6 +22,7 @@
   "dependencies": {
     "@patomation/find": "^1.1.0",
     "@patomation/usetoggle": "^1.2.0",
+    "@types/react": "^16.9.17",
     "react-dom": "^16.12.0",
     "react-pose": "^4.0.10"
   },
@@ -30,6 +31,9 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@rollup/plugin-typescript": "^2.1.0",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.8",
     "autoprefixer": "^9.7.4",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -63,8 +67,9 @@
     "rollup-plugin-postcss": "^2.0.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
     "url-loader": "^2.1.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",

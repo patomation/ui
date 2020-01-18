@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es6", 
+        "module": "commonjs",
+        "jsx": "react",
+        "lib": ["es2015"],
+        "strict": true,
+        "noImplicitAny": false,
+        "declaration": true,
+        "outDir": "dist",
+        "sourceMap": true,
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}

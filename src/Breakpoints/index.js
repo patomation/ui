@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.js'
-import { config } from '../'
+import config from '../config'
 import mediaQuery from '../_utility/mediaQuery.js'
 
 const Breakpoints = () => {

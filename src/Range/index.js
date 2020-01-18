@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat'
-import { Gutter } from '../'
+import Gutter from '../Gutter'
 
 // I'm not sure if I want this to be a configurable prop
 const borderColor = 'rgba(0,0,0, 0.20)'

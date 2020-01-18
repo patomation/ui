@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import config from '../config'
-import { Icon, Image } from '../'
+
+import Icon from '../Icon'
+import Image from '../Image'
+
 /**
 * user icon or user photo component
 */

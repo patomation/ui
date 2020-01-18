@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-import { Error } from '../'
+
+import Error from '../Error'
+
 /**
 * a standardized dropdown component for using with forms
 */

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import { IconButton } from '../'
+import IconButton from '../IconButton'
 /**
 * An arrow button that scrolls to the bottom of itself revealing what is bellow
 */

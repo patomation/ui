@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat.js'
-import { Panel, Center, IconButton, Clickable } from '../'
+
+import Panel from '../Panel'
+import Center from '../Center'
+import IconButton from '../IconButton'
+import Clickable from '../Clickable'
+
 /**
 * pop up modal with close button and overlay
 */

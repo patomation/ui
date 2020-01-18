@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
 
-import { Shape } from '../'
+import Shape from '../Shape'
 
 const Device = ({
   children,

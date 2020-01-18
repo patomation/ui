@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import styles from './styles.js'
 import concat from '../_utility/concat'
 import config from '../config'
-import { Row } from '../'
+
+import Row from '../Row'
 
 const Page = ({
   className, children,

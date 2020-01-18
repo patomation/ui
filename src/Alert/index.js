@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import { Row, Icon, IconButton, Collapse } from '../'
+import Row from '../Row'
+import Icon from '../Icon'
+import IconButton from '../IconButton'
+import Collapse from '../Collapse'
 import config from '../config'
 
 const Alert = ({

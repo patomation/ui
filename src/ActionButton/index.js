@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import { Clickable, Shape, Center, Icon } from '../'
+
+import Clickable from '../Clickable'
+import Shape from '../Shape'
+import Center from '../Center'
+import Icon from '../Icon'
+
 import posed from 'react-pose'
 
 const PosedDiv = posed.div({

@@ -4,7 +4,12 @@ import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import posed from 'react-pose'
 import config from '../config'
-import { Panel, Image, Icon, Shape, Center } from '../'
+
+import Panel from '../Panel'
+import Image from '../Image'
+import Icon from '../Icon'
+import Shape from '../Shape'
+import Center from '../Center'
 
 const PoseDiv = posed.div({
   hover: {

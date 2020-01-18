@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.js'
-import { Shape, Icon } from '../'
+import Shape from '../Shape'
+import Icon from '../Icon'
 import concat from '../_utility/concat.js'
 /**
 * a badge component that can be added to Icons to convey information

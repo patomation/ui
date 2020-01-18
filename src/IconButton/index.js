@@ -4,7 +4,9 @@ import styles from './styles.js'
 import concat from '../_utility/concat.js'
 import config from '../config.js'
 
-import { Icon, Button, Badge } from '../'
+import Icon from '../Icon'
+import Button from '../Button'
+import Badge from '../Badge'
 /**
 * a clickable icon button with hover and an optional title
 **/

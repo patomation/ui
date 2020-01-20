@@ -8,6 +8,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "rollup -c",
+    "build:ts": "tsc",
     "watch:src": "nodemon --watch ./src -x \"yarn build\"",
     "lint": "./node_modules/.bin/eslint .",
     "lint-fix": "./node_modules/.bin/eslint . --fix",
@@ -17,7 +18,8 @@
     "demo": "webpack-dev-server --mode development --open --hot",
     "build:demo": "npm run doc && webpack",
     "demo:build": "http-server ./dist",
-    "doc": "react-docgen ./src -o ./demo/doc.json --pretty --exclude ['style.js','*.test.js','config.js']"
+    "doc": "react-docgen ./src -o ./demo/doc.json --pretty --exclude ['style.js','*.test.js','config.js']",
+    "doc2": "./node_modules/.bin/typedoc"
   },
   "dependencies": {
     "@patomation/find": "^1.1.0",
@@ -69,6 +71,7 @@
     "style-loader": "^0.23.1",
     "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
+    "typedoc": "^0.16.7",
     "typescript": "^3.7.5",
     "url-loader": "^2.1.0",
     "webpack": "^4.41.2",

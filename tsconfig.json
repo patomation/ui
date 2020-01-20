@@ -3,13 +3,12 @@
         "target": "es6", 
         "module": "commonjs",
         "jsx": "react",
-        "lib": ["es2015"],
-        "strict": true,
+        "strict": false,
         "noImplicitAny": false,
-        "declaration": true,
+        "declaration": false,
         "outDir": "dist",
         "sourceMap": true,
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
+    "exclude": ["node_modules", "**/*.spec.ts",  "**/*.d.ts"]
 }

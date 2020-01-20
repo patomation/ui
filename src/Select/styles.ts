@@ -17,21 +17,21 @@ export default {
     height: '42px'
   },
   select: {
-    WebkitAppearance: 'none', // Disable chrome styles
-    MozAppearance: 'none', // Disable firefox styles
+    WebkitAppearance: 'none' as 'none', // Disable chrome styles
+    MozAppearance: 'none' as 'none', // Disable firefox styles
     border: 'none',
     height: '100%',
     width: '100%',
     margin: 0,
     paddingLeft: '1rem',
     paddingRight: '1rem',
-    WebkitBoxSizing: 'border-box', /* Safari/Chrome, other WebKit */
-    MozBoxSizing: 'border-box', /* Firefox, other Gecko */
-    boxSizing: 'border-box', /* Opera/IE 8+ */
+    WebkitBoxSizing: 'border-box' as 'border-box', /* Safari/Chrome, other WebKit */
+    MozBoxSizing: 'border-box' as 'border-box', /* Firefox, other Gecko */
+    boxSizing: 'border-box' as 'border-box', /* Opera/IE 8+ */
     // width: '100%',
     fontFamily: 'sans-serif',
     fontSize: '1rem',
-    textAlign: 'center',
+    textAlign: 'center' as 'center',
     textDecoration: 'none'
   },
   option: {

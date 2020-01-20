@@ -1,12 +1,24 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import * as svgPaths from './svgPaths'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  name?: string
+  icon?: () => void
+  background?: string
+  color?: string
+  style?: object
+  responsive?: boolean
+}
 /**
 * svg material icon
 */
-const Icon = ({
+const Icon: FunctionComponent<Props> = ({
   className, children,
   name, icon,
   background, color, style,

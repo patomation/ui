@@ -1,13 +1,24 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  data?: any[]
+  style?: object
+  listStyle?: object
+  itemStyle?: object
+  border?: boolean
+}
+
 /**
 * fancy ul list component
 */
-const List = ({
+const List: FunctionComponent<Props> = ({
   className, children, data,
   style, listStyle, itemStyle,
   border
@@ -32,7 +43,7 @@ const List = ({
           style={{
             ...styles.item,
             padding: '0.5rem',
-            ...(border && index !== children.length - 1
+            ...(border && index !== React.Children.count(children) - 1
               ? {
                 borderBottom: `${config.size.borders} solid ${config.color.border}`
               } : null),
@@ -50,7 +61,7 @@ const List = ({
           style={{
             ...styles.item,
             padding: '0.25rem',
-            ...(border && index !== children.length - 1
+            ...(border && index !== React.Children.count(children) - 1
               ? {
                 borderBottom: `${config.size.borders} solid ${config.color.border}`
               } : null),

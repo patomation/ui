@@ -1,11 +1,23 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  menu?: [ReactNode] | ReactNode
+  style?: object
+  menuStyle?: object
+  contentStyle?: object
+  width?: string
+  right?: boolean
+}
 /**
 * a layout that makes a side menu and a content area
 */
-const SideBar = ({
+const SideBar: FunctionComponent<Props> = ({
   className, children, menu,
   style, menuStyle, contentStyle,
   width = '200px',

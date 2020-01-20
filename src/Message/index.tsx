@@ -1,8 +1,18 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 
-const Message = ({
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+}
+
+const Message: FunctionComponent<Props> = ({
   className, children,
   onClick,
   background, color, style

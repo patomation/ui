@@ -1,8 +1,8 @@
 export default {
   container: {
-    textAlign: 'center',
+    textAlign: 'center' as 'center',
     padding: '10rem 0 10rem 0',
-    position: 'relative',
+    position: 'relative' as 'relative',
     color: '#ffffff'
   },
   title: {
@@ -16,12 +16,12 @@ export default {
     lineHeight: '0.85rem'
   },
   image: {
-    position: 'absolute',
+    position: 'absolute' as 'absolute',
     left: 0,
     top: 0,
     width: '100%',
     height: '100%',
-    zIndex: '-10'
+    zIndex: -10
   },
   overlay: {
     position: 'absolute' as 'absolute',
@@ -29,7 +29,7 @@ export default {
     top: 0,
     width: '100%',
     height: '100%',
-    zIndex: '-1'
+    zIndex: -1
   },
   background: {
     position: 'absolute' as 'absolute',
@@ -37,6 +37,6 @@ export default {
     top: 0,
     width: '100%',
     height: '100%',
-    zIndex: '-20'
+    zIndex: -20
   }
 }

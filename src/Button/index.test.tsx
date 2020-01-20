@@ -26,7 +26,7 @@ describe('<Button />', () => {
   })
 
   it('clicks', () => {
-    let down = null
+    let down = false
     let mouseDown = false
     let mouseUp = false
 
@@ -44,13 +44,13 @@ describe('<Button />', () => {
   })
 
   it('touches but ignores mouse events', () => {
-    let down = null
+    let down = false
 
     const button = mount(<Button
       onDown={() => { down = true }}
       onUp={() => { down = false }}
-      touchStart={jest.fn()}
-      touchEnd={jest.fn()} />)
+      onTouchStart={jest.fn()}
+      onTouchEnd={jest.fn()} />)
     button.simulate('touchstart')
     expect(down).toEqual(true)
     button.simulate('mousedown')
@@ -62,7 +62,7 @@ describe('<Button />', () => {
   })
 
   it('touches and clicks with no error if no callback', () => {
-    let down = null
+    let down = false
     const button = mount(<Button onDown={() => { down = true }} onUp={() => { down = false }}/>)
     button.simulate('touchstart')
     expect(down).toEqual(true)

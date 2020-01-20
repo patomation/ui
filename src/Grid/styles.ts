@@ -1,7 +1,7 @@
 
 export default {
   container: {
-    display: '-ms-grid', // eslint-disable-line
+    // display: '-ms-grid', // eslint-disable-line
     display: 'grid', // eslint-disable-line
     // gridGap: '0',
     // gridTemplateColumns: repeat(columns, `${width}%` ),

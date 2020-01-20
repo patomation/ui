@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
@@ -9,10 +10,27 @@ import Image from '../Image'
 import Center from '../Center'
 import ScrollButton from '../ScrollButton'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  background?: string
+  color?: string
+  style?: object
+  titleStyle?: object
+  descriptionStyle?: object
+  imageStyle?: object
+  title?: string
+  description?: string
+  image?: string
+  height?: number
+  overlayColor?: string
+  overlayOpacity?: string
+}
+
 /**
 * image with a title and description
 */
-const Hero = ({
+const Hero: FunctionComponent<Props> = ({
   className,
   background = '#333', color,
   overlayColor, overlayOpacity = '0.5',
@@ -91,7 +109,7 @@ const Hero = ({
       { height
         ? <ScrollButton
           style = {{
-            position: 'absolute',
+            position: 'absolute' as 'absolute',
             bottom: 0
           }}/>
         : null }

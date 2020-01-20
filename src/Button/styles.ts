@@ -6,7 +6,7 @@ export default {
     fontFamily: 'sans-serif',
     fontSize: '1rem',
     cursor: 'pointer',
-    textAlign: 'center',
+    textAlign: 'center' as 'center',
     border: 'none',
     padding: '0.5rem 1rem',
     borderRadius: config.size.corners,
@@ -58,7 +58,7 @@ export default {
       background: 'none',
       opacity: '0.75',
       fontWeight: 'bold',
-      textAlign: 'center',
+      textAlign: 'center' as 'center',
       lineHeight: 0,
       active: {
         color: 'gold'

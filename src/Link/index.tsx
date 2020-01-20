@@ -1,12 +1,24 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (MouseEvent) => {}
+  onHover?: (boolean) => void
+  background?: string
+  color?: string
+  style?: object
+  href?: string
+  hoverStyle?: object
+}
 /**
 * a component for making nice links
 */
-const Link = ({
+const Link: FunctionComponent<Props> = ({
   className, children,
   onClick, background,
   color, style, href, hoverStyle,

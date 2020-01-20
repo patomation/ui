@@ -1,14 +1,37 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 
 import Error from '../Error'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  name?: string
+  onChange?: () => void
+  onBlur?: () => void
+  value?: string | number
+  error?: string | boolean
+  placeholder?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  containerStyle?: object
+  selectStyle?: object
+  selectErrorStyle?: object
+  errorStyle?: object
+  style?: object
+  label?: string
+  optionStyle?: object
+  options?: any[]
+}
+
 /**
 * a standardized dropdown component for using with forms
 */
-const Select = ({
+const Select: FunctionComponent<Props> = ({
   name, onChange, onBlur, value, error, placeholder,
   className, onClick, background, color,
   containerStyle, selectStyle, optionStyle, selectErrorStyle, errorStyle, style,

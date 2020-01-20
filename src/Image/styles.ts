@@ -11,8 +11,8 @@ export default {
 
   background: {
     container: {
-      position: 'absolute',
-      zIndex: '-10',
+      position: 'absolute' as 'absolute',
+      zIndex: -10,
       left: 0,
       top: 0,
       width: '100%',

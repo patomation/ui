@@ -1,11 +1,21 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+}
 /**
 * A component for displaying the company brand or logo
 */
-const Brand = ({
+const Brand: FunctionComponent<Props> = ({
   className, children,
   onClick,
   background, color = '#333', style

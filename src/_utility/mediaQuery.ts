@@ -3,7 +3,7 @@ import extract from './extract'
 type Declaration = (arg0: string, arg1: string) => string
 type ObjToCssDeclarationString = (arg0: object) => string
 type ObjToCssRuleString = (arg0: object) => string
-type Query = (arg0: string, arg1: string) => string
+type Query = (arg0: string | undefined, arg1: string | undefined) => string
 type MediaQuery = (arg0: { 
   min?: string,
   max?: string,
@@ -14,7 +14,7 @@ const declaration: Declaration = (property, value) =>
   `${property}: ${value};`
 
 const objToCssDeclarationString: ObjToCssDeclarationString = (props) =>
-  Object.entries(props).reduce((acc, [property, value]) => {
+  Object.entries(props).reduce((acc: any[], [property, value]) => {
     // convert camelCase to dashes
     property = property.replace(/[A-Z]/g, letter => '-' + letter.toLowerCase())
     acc.push(declaration(property, value))
@@ -22,7 +22,7 @@ const objToCssDeclarationString: ObjToCssDeclarationString = (props) =>
   }, []).join('\n')
 
 const objToCssRuleString: ObjToCssRuleString = (css) =>
-  Object.entries(css).reduce((acc, [selector, declarations]) => {
+  Object.entries(css).reduce((acc: any[], [selector, declarations]) => {
     acc.push(`
       ${selector} {
         ${objToCssDeclarationString(declarations)}

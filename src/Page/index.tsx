@@ -1,12 +1,27 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
 
 import Row from '../Row'
 
-const Page = ({
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+  title?: string
+  abilities?: string
+  contentTitle?: string
+  contentAbilities?: string
+  sidebar?: [ReactNode] | ReactNode
+}
+
+const Page: FunctionComponent<Props> = ({
   className, children,
   background, color,
   style,

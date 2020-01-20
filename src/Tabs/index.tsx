@@ -1,15 +1,28 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 
 import Grid from '../Grid'
 import Clickable from '../Clickable'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (any, number) => {}
+  background?: string
+  color?: string
+  style?: object
+  data?: any[]
+  step?: boolean
+  active?: string
+}
+
 /**
 * a fancy file folder tab ui menu
 */
-const Tabs = ({
+const Tabs: FunctionComponent<Props> = ({
   className,
   onClick,
   background, color, style,
@@ -30,7 +43,7 @@ const Tabs = ({
     {data.map((item, index) =>
       <Clickable
         className='tabs__tab'
-        disabled={step ? active === item || index > data.indexOf(active) : null}
+        disabled={step ? active === item || index > data.indexOf(active) : false}
         onClick={() => {
           if (onClick) onClick(item, index)
         }}

@@ -1,9 +1,39 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
 import posed from 'react-pose'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  type?: string
+  disabled?: boolean
+  enabled?: boolean
+  active?: boolean
+  onClick?: () => void
+  onMouseDown?: () => void
+  onMouseUp?: () => void
+  onTouchStart?: () => void
+  onTouchEnd?: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  onDown?: () => void
+  onUp?: () => void
+  onHover?: (boolean) => void
+  title?: string
+  background?: string
+  color?: string
+  style?: object
+  hoverStyle?: object
+  disabledStyle?: object
+  activeStyle?: object
+  enabledStyle?: object
+  kind?: string
+  center?: boolean
+  right?: boolean
+}
 
 const PosedButton = posed.button({
   hover: {
@@ -19,8 +49,8 @@ const PosedButton = posed.button({
 /**
 * Standardized button component
 **/
-const Button = ({
-  className, type, disabled, enabled, active,
+const Button: FunctionComponent<Props> = ({
+  className, type, disabled, enabled, active = false,
   onClick, onMouseDown, onMouseUp, onTouchStart, onTouchEnd,
   onMouseEnter, onMouseLeave,
   onDown, onUp,
@@ -32,9 +62,9 @@ const Button = ({
 }) => {
   const [hover, setHover] = useState(false)
   const [touched, setTouched] = useState(false)
-  const [isActive, setActive] = useState(active || false)
+  const [isActive, setActive] = useState(active)
 
-  // Allow it to be set to active from the ouseside
+  // Allow it to be set to active from the outside
   useEffect(() => {
     setActive(active)
   }, [active])

@@ -1,13 +1,28 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Gutter from '../Gutter'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onChange?: () => void
+  background?: string
+  color?: string
+  thumbColor?: string
+  style?: object
+  min?: number
+  max?: number
+  value?: number
+  label?: string
+}
+
 // I'm not sure if I want this to be a configurable prop
 const borderColor = 'rgba(0,0,0, 0.20)'
 
-const Range = ({
+const Range: FunctionComponent<Props> = ({
   className,
   background = '#ffffff', thumbColor = 'silver', color, style,
   min = '1',

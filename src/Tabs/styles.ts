@@ -7,7 +7,7 @@ export default {
     WebkitBoxShadow: `inset 0 -10px 10px -10px ${shadowColor}`,
     boxShadow: `inset 0 -10px 10px -10px ${shadowColor}`,
     overflow: 'hidden',
-    textAlign: 'center',
+    textAlign: 'center' as 'center',
     paddingTop: config.size.gutters,
     paddingLeft: config.size.gutters,
     paddingRight: config.size.gutters,

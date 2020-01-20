@@ -1,11 +1,18 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import ratio from '../_utility/ratio'
+
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+}
+
 /**
 * A component used to try to set the vertical rhythm of h1-6 and p components used as children
 **/
-const Rhythm = ({
+const Rhythm: FunctionComponent<Props> = ({
   children
 }) =>
 
@@ -42,6 +49,11 @@ const Rhythm = ({
       }
       .rhythm p {
         margin-bottom: ${ratio(1, 1)}rem !important;
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  
+}
       }
     `}
     </style>

@@ -1,11 +1,29 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+  innerStyle?: object
+  square?: boolean
+  circle?: boolean
+  rectangle?: boolean
+  triangle?: boolean
+  portrait?: boolean
+  width?: string
+  maxWidth?: string
+}
 /**
 * make any shape block that you need
 */
-const Shape = ({
+const Shape: FunctionComponent<Props> = ({
   className, children,
   onClick,
   background = 'gold', color, style, innerStyle, width, maxWidth,
@@ -35,7 +53,7 @@ const Shape = ({
         ...(rectangle ? { paddingBottom: '56%' } : null),
         ...(portrait ? { paddingBottom: '156%' } : null),
         ...(triangle ? {
-          background: null,
+          background: '',
           width: '100%',
           height: 0,
           paddingLeft: '50%',

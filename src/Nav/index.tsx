@@ -1,12 +1,21 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode, ReactElement } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  background?: string
+  color?: string
+  style?: object
+}
 /**
 * navigation component with custom child styles
 */
-const Nav = ({
+const Nav: FunctionComponent<Props> = ({
   className, children,
   background,
   color = '#ffffff',
@@ -38,9 +47,9 @@ const Nav = ({
         margin: '0 auto',
         display: 'flex'
       }}>
-      { React.Children.map(children, child => {
+      { React.Children.map(children, (child: ReactNode) => {
         return React.cloneElement(
-          child,
+          child as ReactElement<any>,
           {
             style: {
               marginRight: '1rem'

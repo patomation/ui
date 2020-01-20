@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -8,10 +8,29 @@ import config from '../config'
 import Icon from '../Icon'
 import Button from '../Button'
 import Badge from '../Badge'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  onClick?: () => void
+  className?: string
+  background?: string
+  color?: string
+  style?: object
+  iconStyle?: object
+  titleStyle?: object
+  activeStyle?: object
+  name?: string
+  icon?: string
+  active?: boolean
+  title?: string
+  width?: string
+  hoverColor?: string
+  badge?: boolean | number | string
+}
 /**
 * a clickable icon button with hover and an optional title
 **/
-const IconButton = ({
+const IconButton: FunctionComponent<Props> = ({
   onClick, className,
   background, color,
   style, iconStyle, titleStyle, activeStyle,
@@ -60,8 +79,8 @@ const IconButton = ({
 
       {badge
         ? <Badge
-          icon={typeof badge === 'string' ? badge : null}>
-          {typeof badge === 'number' ? badge : null}
+          icon={typeof badge === 'string' ? badge : ''}>
+          {typeof badge === 'number' ? badge : ''}
         </Badge>
         : null}
 

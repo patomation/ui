@@ -1,13 +1,21 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode, ReactElement } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  style?: object
+  gap?: boolean
+}
+
 /**
 * display flex row
 */
-const Row = ({
+const Row: FunctionComponent<Props> = ({
   className, children, style, gap
 }) =>
 
@@ -21,7 +29,7 @@ const Row = ({
     { gap
       ? React.Children.map(children, child => {
         return React.cloneElement(
-          child,
+          child as ReactElement<any>,
           {
             style: {
               marginRight: config.size.gutters

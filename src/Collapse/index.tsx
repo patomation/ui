@@ -1,17 +1,26 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  style?: object
+  collapse?: boolean
+  onComplete?: () => void
+  speed?: number
+}
 /**
 * A component that can collapse and hide content
 */
-const Collapse = ({
+const Collapse: FunctionComponent<Props> = ({
   className, children, style,
   collapse, onComplete, speed = 400
 }) => {
-  const [height, setHeight] = useState(null)
-  let element = null
+  const [height, setHeight] = useState('')
+  let element
   useEffect(() => {
     if (element) {
       setHeight(`${element.clientHeight}px`)

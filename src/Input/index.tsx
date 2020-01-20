@@ -1,13 +1,41 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Error from '../Error'
 import Gutter from '../Gutter'
+
+interface Props {
+  type?: string
+  name?: string
+  onChange?: () => void
+  onFocus?: () => void
+  onBlur?: () => void
+  value?: string | number
+  error?: string | boolean
+  placeholder?: string
+  className?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  containerStyle?: object
+  inputStyle?: object
+  inputErrorStyle?: object
+  errorStyle?: object
+  style?: object
+  label?: string
+  min?: number
+  max?: number
+  textAlign?: "center" | "left" | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "right" | "end" | "justify" | "match-parent" | "start" | undefined
+  cols?: number
+  rows?: number
+}
+
 /**
 * A standardized imput component plus textarea
 */
-const Input = ({
+const Input: FunctionComponent<Props> = ({
   type, name, onChange, onFocus, onBlur, value, error, placeholder,
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style,
@@ -49,7 +77,11 @@ const Input = ({
         onClick={onClick}
         style={{
           ...styles.input,
-          ...(type === 'textarea' ? styles.textarea : null),
+          ...(type === 'textarea' ? {
+            textAlign: 'left' as 'left',
+            resize: 'none',
+            padding: '1rem',
+          } : null),
           ...(background ? { background: background } : null),
           ...(color ? { color: color } : null),
           textAlign,
@@ -106,7 +138,7 @@ if (process.env.NODE_ENV !== 'production') {
     label: PropTypes.string,
     min: PropTypes.number,
     max: PropTypes.number,
-    textAlign: PropTypes.string,
+    // textAlign: PropTypes.string,
     cols: PropTypes.number,
     rows: PropTypes.number
   }

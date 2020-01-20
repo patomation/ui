@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, FunctionComponent, ReactNode, MouseEvent } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 
@@ -10,16 +10,16 @@ import Shape from '../Shape'
 
 import posed from 'react-pose'
 
-type OnClick = (arg0: object) => object
-
 interface Props {
-  onClick?: OnClick
+  children?: [ReactNode] | ReactNode
+  onClick?: ()=> {} | undefined
   background?: string
   color?: string
   style?: object
   icon?: string
   width?: string
 }
+
 
 const PosedDiv = posed.div({
   hover: {
@@ -35,7 +35,7 @@ const PosedDiv = posed.div({
 /**
 * an action button for the lower right hand corner that you can assign stuff to do things
 **/
-const ActionButton = ({
+const ActionButton: FunctionComponent<Props> = ({
   onClick,
   background, color, style,
   icon = 'add', width = '3rem'
@@ -49,7 +49,7 @@ const ActionButton = ({
       style={{
         ...styles.container,
         width,
-        position: 'absolute',
+        position: 'absolute' as 'absolute',
         bottom: '1rem',
         right: '1rem',
         ...style
@@ -72,7 +72,7 @@ const ActionButton = ({
           <Center
             className={'action-button__center'}
             style={{
-              textAlign: 'center'
+              textAlign: 'center' as 'center'
             }}>
             <Icon
               className={'action-button__icon'}

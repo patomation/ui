@@ -68,9 +68,10 @@ describe('<DragDrop />', () => {
 
     const component = shallow(
       <DragDrop
-        onDragStart={null}
-        onDragOver={null}
-        onDragLeave={null} />)
+        // onDragStart={null}
+        // onDragOver={null}
+        // onDragLeave={null}
+        />)
 
     act(() => {
       component.find('div.dragdrop').props().onDragStart({ dataTransfer: { setData: jest.fn() } })

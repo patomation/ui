@@ -1,13 +1,24 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import Shape from '../Shape'
 import Icon from '../Icon'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  icon?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+}
 /**
 * a badge component that can be added to Icons to convey information
 */
-const Badge = ({
+const Badge: FunctionComponent<Props> = ({
   className,
   children, icon,
   onClick,
@@ -17,8 +28,8 @@ const Badge = ({
     className={concat('badge', className)}
     style={{
       ...styles.container,
-      ...(background ? { background: background } : null),
-      ...(color ? { color: color } : null),
+      ...(background ? { background: background } : ''),
+      ...(color ? { color: color } : ''),
       ...style
     }}>
     { children === null || children === undefined || `${children}`.length === 1

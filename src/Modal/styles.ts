@@ -1,7 +1,7 @@
 export default {
   container: {
-    position: 'fixed',
-    zIndex: '200',
+    position: 'fixed' as 'fixed',
+    zIndex: 200,
     top: '0',
     left: '0',
     width: '100%',
@@ -14,14 +14,14 @@ export default {
     margin: '0 auto'
   },
   close: {
-    position: 'fixed',
+    position: 'fixed' as 'fixed',
     top: '1rem',
     right: '2rem',
     display: 'block',
     zIndex: 100
   },
   background: {
-    position: 'absolute',
+    position: 'absolute' as 'absolute',
     top: 0,
     left: 0,
     width: '100%',

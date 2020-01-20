@@ -1,33 +1,35 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode, DragEvent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
+import useToggle from '@patomation/usetoggle'
 
-interface Props {
-  className: string
-  children: object
-  background: string
-  color: string
-  style: object
-  onDragStart: (arg0: object) => object
-  onDragOver: (arg0: object) => object
-  onDrop: (arg0: object) => object
-  onDragLeave: () => object
-  onDrag: (arg0: object) => object
-  draggable: boolean
-}
+type SetData = (arg0: string, arg1: string) => void
 
-type DragStartEvent = {
+type DragStartEvent = DragEvent & {
   dataTransfer: {
-    setData: (arg0: string, arg1: string) => string
+    setData: SetData
   }
 }
 
-import useToggle from '@patomation/usetoggle'
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  background?: string
+  color?: string
+  style?: object
+  onDragStart?: (DragEvent) => void
+  onDragOver?: (DragEvent) => void
+  onDrop?: (DragEvent) => void
+  onDragLeave?: (DragEvent) => void
+  onDrag?: (DragEvent) => void
+  draggable?: boolean
+}
 /**
 * Makes child element draggable or a drop zone
 */
-const DragDrop = ({
+const DragDrop: FunctionComponent<Props> = ({
   className, children,
   background, color, style,
   onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
@@ -39,11 +41,11 @@ const DragDrop = ({
     <div
       className={concat('dragdrop', className)}
       draggable={draggable} // Use draggable prop but default to true
-      onDragStart={ (event: DragStartEvent) => {
+      onDragStart={(e: DragStartEvent) => {
         // Allow firefox to drag n drop - We have to setData with anything to make it work....
-        event.dataTransfer.setData('text', '')
+        e.dataTransfer.setData('text', '')
         // Buble up
-        if (onDragStart) onDragStart(event)
+        if (onDragStart) onDragStart(e)
       }}
       onDrag={onDrag}
       onDragOver={(e) => {
@@ -56,9 +58,9 @@ const DragDrop = ({
           if (onDragOver) onDragOver(e)
         }
       }}
-      onDragLeave={() => {
+      onDragLeave={(e) => {
         setOver(false)
-        if (onDragLeave) onDragLeave()
+        if (onDragLeave) onDragLeave(e)
       }}
       onDrop={onDrop}
       style={{

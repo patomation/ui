@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -8,10 +8,26 @@ import Center from '../Center'
 import Spinner from '../Spinner'
 import Gutter from '../Gutter'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+  message?: string
+  spinner?: boolean
+  progressBar?: boolean
+  progressBarColor?: string
+  progressBarTime?: number
+  complete?: boolean
+  onComplete?: () => void
+}
+
 /**
 * a loading component with loading bar and spinner
 */
-const Loader = ({
+const Loader: FunctionComponent<Props> = ({
   className, children,
   background, color, style,
   message, spinner = true,
@@ -44,7 +60,7 @@ const Loader = ({
         ...styles.container,
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
-        textAlign: 'center',
+        textAlign: 'center' as 'center',
         ...style
       }}>
       { message

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -9,16 +9,28 @@ import Center from '../Center'
 import IconButton from '../IconButton'
 import Clickable from '../Clickable'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  show?: boolean
+  onClose?: (bollean) => void
+  background?: string
+  color?: string
+  style?: object
+  maxWidth?: string
+  width?: string
+}
+
 /**
 * pop up modal with close button and overlay
 */
-const Modal = ({
-  show, onClose,
+const Modal: FunctionComponent<Props> = ({
+  show = false, onClose,
   className, children,
   background, color, style,
   width, maxWidth
 }) => {
-  const [open, setOpen] = useState(show || false)
+  const [open, setOpen] = useState(show)
 
   const close = () => {
     setOpen(false)

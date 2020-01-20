@@ -1,16 +1,34 @@
 import * as React from 'react'
-import { useRef } from 'react'
+import { useRef, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import IconButton from '../IconButton'
+
+type ScrollIntoView = (object) => void
+
+type HTMLRef = HTMLDivElement & {
+  ref: {
+    current: {
+      scrollIntoView: ScrollIntoView
+    }
+  } | null
+}
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  onClick?: (MouseEvent) => {}
+  background?: string
+  color?: string
+  style?: object
+}
 /**
 * An arrow button that scrolls to the bottom of itself revealing what is bellow
 */
-const ScrollButton = ({
+const ScrollButton: FunctionComponent<Props> = ({
   onClick,
   background, color = '#ffffff', style
 }) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLRef>(null)
 
   return (
     <div
@@ -20,9 +38,9 @@ const ScrollButton = ({
         ...styles.container,
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
-        position: 'relative',
+        position: 'relative' as 'relative',
         width: '100%',
-        textAlign: 'center',
+        textAlign: 'center' as 'center',
         ...style
       }}>
 
@@ -44,7 +62,7 @@ const ScrollButton = ({
         className='scroll-button__scroll-ref'
         ref={ref}
         style={{
-          position: 'absolute',
+          position: 'absolute' as 'absolute',
           bottom: '0'
         }}></div>
 

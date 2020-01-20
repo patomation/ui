@@ -3,7 +3,7 @@ export default {
     width: '100%'
   },
   shape: {
-    position: 'relative',
+    position: 'relative' as 'relative',
     // overflow: 'hidden',
     height: '0',
     width: '100%',

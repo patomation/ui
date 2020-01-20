@@ -1,8 +1,20 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 
-const Table = ({
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  background?: string
+  color?: string
+  style?: object
+  header?: any[]
+  data?: any[]
+  footer?: any[]
+}
+
+const Table: FunctionComponent<Props> = ({
   className,
   header, data, footer,
   background, color, style

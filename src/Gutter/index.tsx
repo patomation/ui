@@ -1,13 +1,23 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import extract from '../_utility/extract'
 import config from '../config'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  style?: object
+  disabled?: boolean
+  vertical?: boolean
+  half?: boolean
+}
 /**
 * A spacer component that adds a standard amount of padding between things
 */
-const Gutter = ({
+const Gutter: FunctionComponent<Props> = ({
   className, style, disabled, vertical, half
 }) => {
   const Tag = vertical ? 'span' : 'div'

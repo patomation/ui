@@ -1,7 +1,13 @@
 import * as React from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import config from '../config'
 import mediaQuery from '../_utility/mediaQuery'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  
+}
 
 const Breakpoints = () => {
   const { sm, md, lg, xl, xxl } = config.size.media

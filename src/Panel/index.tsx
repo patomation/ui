@@ -1,12 +1,25 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Hr from '../Hr'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  header?: [ReactNode] | ReactNode
+  style?: object
+  containerStyle?: object
+  contentStyle?: object
+  padding?: string
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+}
 /**
 * a nice box with border and rounded corners
 */
-const Panel = ({
+const Panel: FunctionComponent<Props> = ({
   className, children, header,
   style, containerStyle, contentStyle,
   padding, // Padding for inner content

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ReactNode, FunctionComponent } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -7,10 +8,17 @@ import config from '../config'
 import Icon from '../Icon'
 import Image from '../Image'
 
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  style?: object
+  image?: string
+}
+
 /**
 * user icon or user photo component
 */
-const User = ({
+const User: FunctionComponent<Props> = ({
   className, style, image
 }) => {
   return (

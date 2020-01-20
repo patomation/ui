@@ -1,28 +1,52 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import extract from '../_utility/extract' // eslint-disable-line
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  background?: string
+  color?: string
+  style?: object
+  col?: number
+  row?: number
+  gap?: string | boolean
+  auto?: boolean
+  breakWidth?: string
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  top?: boolean
+}
 /**
 * gridifies any set of elements
 */
-const Grid = ({
+const Grid: FunctionComponent<Props> = ({
   className, children,
   background, color, style,
-  col, row, gap, auto,
+  col = 1, row = 1, gap = false, auto,
   onMouseEnter, onMouseLeave,
   breakWidth,
   top
 }) => {
   // auto columns
   if (auto) {
-    col = children.length
+    col = React.Children.count(children) || 1
     gap = true
   }
   // We have to subtract the gap amount for each column
-  const { number, unit } = extract(gap === true ? '1rem' : gap)
+  const { 
+    number: gapNumber, 
+    unit: gapUnit } = extract(
+      gap === true
+      ? '1rem'
+      : gap === false
+      ? '0px'
+      : gap)
   const subtractGap = gap
-    ? ((number * (col - 1)) / col) + unit
+    ? ((gapNumber * (col - 1)) / col) + gapUnit
     : null
 
   const width = 100 / col

@@ -1,11 +1,29 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  src?: string
+  alt?: string
+  style?: object
+  containerStyle?: object
+  imageStyle?: object
+  bg?: boolean
+  circle?: boolean
+  square?: boolean
+  rectangle?: boolean
+  background?: boolean
+  maxWidth?: string
+  width?: string
+}
 /**
 * img component that handles different display modes
 */
-const Image = ({
+const Image: FunctionComponent<Props> = ({
   className, src, alt,
   style, containerStyle, imageStyle,
   bg, square, rectangle, background, circle, // Image modes
@@ -17,7 +35,7 @@ const Image = ({
     style={{
       ...styles.default.container,
       ...(circle === true || square === true || rectangle === true ? {
-        position: 'relative',
+        position: 'relative' as 'relative',
         overflow: 'hidden',
         width: '100%',
         textAlign: 'left'
@@ -58,7 +76,7 @@ const Image = ({
           style={{
             ...styles.default.image,
             ...(circle === true || square === true || rectangle === true ? {
-              position: 'absolute',
+              position: 'absolute' as 'absolute',
               width: '100%',
               height: '100%',
               objectFit: 'cover'

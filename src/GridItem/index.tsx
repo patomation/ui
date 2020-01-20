@@ -1,14 +1,24 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  style?: object
+  start?: number
+  end?: number
+  span?: number
+}
 
 /**
 * A block level component that is used inside of the grid component that gives you the option
 * to use span columns so you can set the width of the item to
 * span multiple columns and what not.
 **/
-const GridItem = ({
+const GridItem: FunctionComponent<Props> = ({
   className, children, style,
   start, end, span
 }) =>

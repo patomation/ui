@@ -1,8 +1,17 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 
-const Skeleton = ({
+interface Props {
+  children?: [ReactNode] | ReactNode
+  background?: string
+  color?: string
+  style?: object
+  lines?: number
+}
+
+const Skeleton: FunctionComponent<Props> = ({
   background, color, style, lines = 1
 }) =>
 

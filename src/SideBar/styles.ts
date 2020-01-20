@@ -8,9 +8,9 @@ export default {
     height: '100%',
     margin: 0,
     padding: 0,
-    position: 'fixed',
-    overflowY: 'auto', // Was scroll
-    overflowX: 'hidden'
+    position: 'fixed' as 'fixed',
+    overflowY: 'auto' as 'auto', // Was scroll
+    overflowX: 'hidden' as 'hidden'
   },
   content: {
     // display: 'flex', //We had this for some reason

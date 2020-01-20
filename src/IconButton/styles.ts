@@ -1,9 +1,9 @@
 export default {
   container: {
-    position: 'relative',
+    position: 'relative' as 'relative',
     display: 'inline-block',
     cursor: 'pointer',
-    textAlign: 'center'
+    textAlign: 'center' as 'center'
     // opacity: '0.5'
   },
   icon: {
@@ -12,7 +12,7 @@ export default {
     KhtmlUserSelect: 'none',
     MozUserSelect: 'none',
     MsUserSelect: 'none',
-    position: 'relative',
+    position: 'relative' as 'relative',
     // top: 'calc(50% - 10px)'
     // top: '50%',
     // transform: 'translateY(-50%)',
@@ -24,13 +24,13 @@ export default {
     // textAlign: 'left',
     paddingLeft: '1rem',
     // lineHeight: '20px',
-    // position: 'relative',
+    // position: 'relative' as 'relative',
     // top: 'calc(50% - 10px)',
-    userSelect: 'none',
-    WebkitUserSelect: 'none',
-    KhtmlUserSelect: 'none',
-    MozUserSelect: 'none',
-    MsUserSelect: 'none',
+    userSelect: 'none' as 'none',
+    WebkitUserSelect: 'none' as 'none',
+    KhtmlUserSelect: 'none' as 'none',
+    MozUserSelect: 'none' as 'none',
+    MsUserSelect: 'none' as 'none',
     display: 'inline-block'
   },
   active: {

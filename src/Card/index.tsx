@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -11,6 +11,26 @@ import Image from '../Image'
 import Icon from '../Icon'
 import Shape from '../Shape'
 import Center from '../Center'
+
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  footer?: [ReactNode] | ReactNode
+  background?: string
+  color?: string
+  style?: object
+  border?: boolean
+  image?: string
+  cover?: ReactNode
+  alt?: string
+  icon?: string | ReactNode
+  iconColor?: string
+  iconBackground?: string
+  title?: string
+  description?: string
+  onClick?: (MouseEvent) => {}
+  clickable?: boolean
+}
 
 const PoseDiv = posed.div({
   hover: {
@@ -26,7 +46,7 @@ const PoseDiv = posed.div({
 /**
 * A ui card component that displays an image title and text
 */
-const Card = ({
+const Card: FunctionComponent<Props> = ({
   className,
   background, color = '#000000', style, border,
   image, alt = '', icon, cover,
@@ -79,7 +99,7 @@ const Card = ({
             rectangle
             background={iconBackground || (icon ? '#ffffff' : 'gray')}>
             { icon
-              ? <Center style={{ textAlign: 'center' }}>
+              ? <Center style={{ textAlign: 'center' as 'center' }}>
                 { typeof icon === 'string'
                   ? <Icon
                     name={icon}

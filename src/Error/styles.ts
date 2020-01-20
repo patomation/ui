@@ -1,6 +1,6 @@
 export default {
   container: {
     color: 'red',
-    textAlign: 'center'
+    textAlign: 'center' as 'center'
   }
 }

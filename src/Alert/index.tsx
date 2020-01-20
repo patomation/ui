@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 import Row from '../Row'
@@ -8,7 +8,20 @@ import IconButton from '../IconButton'
 import Collapse from '../Collapse'
 import config from '../config'
 
-const Alert = ({
+interface Props {
+  children?: [ReactNode] | ReactNode
+  className?: string
+  title?: string
+  icon?: boolean | string
+  type?: 'info' | 'warning' | 'error' | 'success'
+  closeable?: boolean
+  onClose?: (boolean) => boolean
+  background?: string
+  color?: string
+  style?: object
+}
+
+const Alert: FunctionComponent<Props> = ({
   title, children,
   background, color, style,
   type = 'info',
@@ -49,7 +62,7 @@ const Alert = ({
           marginBottom: '1rem',
           border: `1px solid ${color || config.color[type]}`,
           borderRadius: '3px',
-          position: 'relative',
+          position: 'relative' as 'relative',
           ...style
         }}>
 
@@ -88,7 +101,7 @@ const Alert = ({
             onClick={close}
             icon='close'
             style={{
-              // position: 'absolute',
+              // position: 'absolute' as 'absolute',
               // right: '0.75rem',
               // top: '0.75rem'
               marginBottom: 'auto' // Make right close icon align to top

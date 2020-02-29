@@ -1,12 +1,12 @@
 // Setup file that gets run at the beginning of jest tests. see jest.config.js setupFiles
 
 // load global DOM document to use enzyme's mount()
-import 'jsdom-global/register'
+require('jsdom-global/register')
 
 // Import configure from enzyme
-import { configure } from 'enzyme'
+const { configure } = require('enzyme')
 // Import react adaptor
-import Adapter from 'enzyme-adapter-react-16'
+const Adapter = require('enzyme-adapter-react-16')
 
 // // Fixes Error: matchMedia not present, legacy browsers require a polyfill
 if (window) {

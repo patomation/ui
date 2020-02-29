@@ -20,7 +20,7 @@ interface Props {
   color?: string
   style?: object
   border?: boolean
-  image?: string
+  image?: string | ReactNode
   cover?: ReactNode
   alt?: string
   icon?: string | ReactNode
@@ -62,7 +62,10 @@ const Card: FunctionComponent<Props> = ({
     <PoseDiv
       pose={ hover ? 'hover' : 'nohover' }
       className={concat('card', className)}
-      style={{ display: 'flex' }}
+      style={{
+        display: 'flex',
+        ...style
+      }}
       onClick={onClick} >
 
       <Panel
@@ -75,8 +78,7 @@ const Card: FunctionComponent<Props> = ({
           ...(border === false ? {
             border: 0,
             boxShadow: 'none'
-          } : null),
-          ...style
+          } : null)
         }}
         containerStyle={{ margin: 0 }}
         contentStyle={styles.content}
@@ -89,12 +91,14 @@ const Card: FunctionComponent<Props> = ({
           setHover(false)
         }}>
 
-        { cover || (image
+        { cover || (typeof image === 'string'
           ? <Image
             className='card__image'
-            src={image}
+            src={image as string}
             alt={alt}
             rectangle />
+          : image // if image is defined and not a string
+          ? image // use image component
           : <Shape
             rectangle
             background={iconBackground || (icon ? '#ffffff' : 'gray')}>
@@ -122,7 +126,8 @@ const Card: FunctionComponent<Props> = ({
             ? <h3
               style={{
                 textDecoration: hover ? 'underline' : 'none',
-                display: 'inline-block' // Prevents external <a> tags from underlining
+                display: 'inline-block', // Prevents external <a> tags from underlining
+                width: '100%'
               }}>
               { title }
             </h3>
@@ -133,7 +138,8 @@ const Card: FunctionComponent<Props> = ({
             ? <p
               style={{
                 paddingTop: '0.5rem',
-                display: 'inline-block' // Prevents external <a> tags from underlining
+                display: 'inline-block', // Prevents external <a> tags from underlining
+                width: '100%'
               }}>
               { description }
             </p>

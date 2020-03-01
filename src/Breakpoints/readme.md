@@ -1,0 +1,7 @@
+
+Breakpoints example:
+
+```js
+<Breakpoints />
+
+```

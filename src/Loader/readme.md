@@ -1,0 +1,7 @@
+
+Loader example:
+
+```js
+<Loader />
+
+```

@@ -1,0 +1,7 @@
+
+User example:
+
+```js
+<User />
+
+```

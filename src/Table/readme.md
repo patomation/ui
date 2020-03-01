@@ -1,0 +1,7 @@
+
+Table example:
+
+```js
+<Table />
+
+```

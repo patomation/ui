@@ -1,0 +1,7 @@
+
+Clickable example:
+
+```js
+<Clickable />
+
+```

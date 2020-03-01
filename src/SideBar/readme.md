@@ -1,0 +1,7 @@
+
+SideBar example:
+
+```js
+<SideBar />
+
+```

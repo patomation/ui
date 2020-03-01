@@ -1,0 +1,7 @@
+
+Brand example:
+
+```js
+<Brand />
+
+```

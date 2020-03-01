@@ -1,0 +1,7 @@
+
+Grid example:
+
+```js
+<Grid />
+
+```

@@ -1,0 +1,7 @@
+
+Tabs example:
+
+```js
+<Tabs />
+
+```

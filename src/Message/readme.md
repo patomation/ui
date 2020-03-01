@@ -1,0 +1,7 @@
+
+Message example:
+
+```js
+<Message />
+
+```

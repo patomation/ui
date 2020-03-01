@@ -1,0 +1,7 @@
+
+Code example:
+
+```js
+<Code />
+
+```

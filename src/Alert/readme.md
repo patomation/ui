@@ -1,0 +1,7 @@
+
+Alert example:
+
+```js
+<Alert />
+
+```

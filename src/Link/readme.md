@@ -1,0 +1,7 @@
+
+Link example:
+
+```js
+<Link />
+
+```

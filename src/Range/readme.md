@@ -1,0 +1,7 @@
+
+Range example:
+
+```js
+<Range />
+
+```

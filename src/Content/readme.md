@@ -1,0 +1,7 @@
+
+Content example:
+
+```js
+<Content />
+
+```

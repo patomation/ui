@@ -1,0 +1,7 @@
+
+Gutter example:
+
+```js
+<Gutter />
+
+```

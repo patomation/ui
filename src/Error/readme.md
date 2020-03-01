@@ -1,0 +1,7 @@
+
+Error example:
+
+```js
+<Error />
+
+```

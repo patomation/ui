@@ -13,6 +13,7 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -41,7 +42,8 @@ module.exports = {
     alias: {
       // Use ONE local version of react when linking to other libraries. Use this react.
       react: path.resolve('./node_modules/react')
-    }
+    },
+    extensions: ['.ts', '.tsx', '.js']
   },
   plugins: [
     new HtmlWebPackPlugin({

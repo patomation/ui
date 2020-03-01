@@ -1,14 +1,16 @@
 {
-    "compilerOptions": {
-        "target": "es6", 
-        "module": "commonjs",
-        "jsx": "react",
-        "strict": false,
-        "noImplicitAny": false,
-        "declaration": false,
-        "outDir": "dist",
-        "sourceMap": true,
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts",  "**/*.d.ts"]
+  "extends": "tsconfigs/browser-executable",
+  "compilerOptions": {
+    "strictFunctionTypes": false,
+    "module": "commonjs", // allows us to use imports in test files. rollup.config should overried this to ESNext
+    "target": "es6", 
+    "jsx": "react",
+    "strict": false,
+    "noImplicitAny": false,
+    "declaration": false,
+    "outDir": "dist",
+    "sourceMap": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts",  "**/*.d.ts"]
 }

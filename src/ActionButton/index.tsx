@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, FunctionComponent, ReactNode, MouseEvent } from 'react'
+import { useState, FunctionComponent, ReactNode } from 'react'
 import * as PropTypes from 'prop-types'
 import styles from './styles'
 
@@ -12,14 +12,13 @@ import posed from 'react-pose'
 
 interface Props {
   children?: [ReactNode] | ReactNode
-  onClick?: ()=> {} | undefined
+  onClick?: () => {} | undefined
   background?: string
   color?: string
   style?: object
   icon?: string
   width?: string
 }
-
 
 const PosedDiv = posed.div({
   hover: {
@@ -39,7 +38,7 @@ const ActionButton: FunctionComponent<Props> = ({
   onClick,
   background, color, style,
   icon = 'add', width = '3rem'
-}: Props ) => {
+}: Props) => {
   const [hover, setHover] = useState<boolean>(false)
 
   return (

@@ -84,12 +84,12 @@ const Hero: FunctionComponent<Props> = ({
 
       { overlayColor
         ? <div
-            className='hero__overlay'
-            style={{
-              ...styles.overlay,
-              background: overlayColor,
-              opacity: overlayOpacity
-            }}
+          className='hero__overlay'
+          style={{
+            ...styles.overlay,
+            background: overlayColor,
+            opacity: overlayOpacity
+          }}
         ></div>
         : null }
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Error from '../Error'
@@ -27,7 +27,7 @@ interface Props {
   label?: string
   min?: number
   max?: number
-  textAlign?: "center" | "left" | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "right" | "end" | "justify" | "match-parent" | "start" | undefined
+  textAlign?: 'center' | 'left' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'unset' | 'right' | 'end' | 'justify' | 'match-parent' | 'start' | undefined
   cols?: number
   rows?: number
 }
@@ -80,7 +80,7 @@ const Input: FunctionComponent<Props> = ({
           ...(type === 'textarea' ? {
             textAlign: 'left' as 'left',
             resize: 'none',
-            padding: '1rem',
+            padding: '1rem'
           } : null),
           ...(background ? { background: background } : null),
           ...(color ? { color: color } : null),

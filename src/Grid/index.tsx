@@ -37,25 +37,26 @@ const Grid: FunctionComponent<Props> = ({
     gap = true
   }
   // We have to subtract the gap amount for each column
-  const { 
-    number: gapNumber, 
-    unit: gapUnit } = extract(
-      gap === true
+  const {
+    number: gapNumber,
+    unit: gapUnit
+  } = extract(
+    gap === true
       ? '1rem'
       : gap === false
-      ? '0px'
-      : gap)
+        ? '0px'
+        : gap)
   const subtractGap = gap
-    ? ((gapNumber * (col - 1)) / col) + gapUnit
+    ? `${((gapNumber * (col - 1)) / col)}${gapUnit}`
     : null
 
   const width = 100 / col
   const height = 100 / row // TODO actually have row prop do something
 
-  const repeat = (amount, string) => {
+  const repeat = (amount: number, string: string): string => {
     let content = ''
     for (var i = 0; i < amount; i++) {
-      content += (string + ' ')
+      content += `${string} ` // add a space behind
     }
     return content
   }

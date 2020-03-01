@@ -26,10 +26,10 @@ const GridItemExample = () => {
         textAlign: 'center',
         color: '#ffffff'
       }}>
-        <div style={{background: 'orange', padding: '1rem'}}>Item One</div>
-        <div style={{background: 'red', padding: '1rem'}}>Item Two</div>
+        <div style={{ background: 'orange', padding: '1rem' }}>Item One</div>
+        <div style={{ background: 'red', padding: '1rem' }}>Item Two</div>
         <GridItem span={2}>
-          <div style={{background: 'purple', padding: '1rem'}}>
+          <div style={{ background: 'purple', padding: '1rem' }}>
             Item Three (Grid item with span 2)
           </div>
         </GridItem>

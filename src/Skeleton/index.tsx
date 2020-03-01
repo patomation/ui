@@ -26,7 +26,7 @@ const Skeleton: FunctionComponent<Props> = ({
     { new Array(lines).fill(0).map((_, index) => {
       return <div
         className={'skeleton__line'}
-        key = {'line' + index}
+        key = {`line${index}`}
         style={{
           background: 'rgba(0,0,0,0.2)',
           height: '0.5rem',

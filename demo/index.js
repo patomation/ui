@@ -18,7 +18,6 @@ if (module && module.hot) {
   module.hot.accept()
 }
 
-
 const Layout = withRouter(({ children, location }) => {
   const name = location.pathname.replace('/', '')
   const description = doc['src\\' + name + '\\index.js'] ? doc['src\\' + name + '\\index.js'].description : null

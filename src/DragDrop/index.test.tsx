@@ -71,7 +71,7 @@ describe('<DragDrop />', () => {
         // onDragStart={null}
         // onDragOver={null}
         // onDragLeave={null}
-        />)
+      />)
 
     act(() => {
       component.find('div.dragdrop').props().onDragStart({ dataTransfer: { setData: jest.fn() } })

@@ -2,9 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
-import concat from '../_utility/concat'
 import extract from '../_utility/extract'
-import ratio from '../_utility/ratio'
 
 interface Props {
   children?: [ReactNode] | ReactNode

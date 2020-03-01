@@ -65,18 +65,18 @@ const Button: FunctionComponent<Props> = ({
   const [isActive, setActive] = useState(active)
 
   // Allow it to be set to active from the outside
-  useEffect(() => {
+  useEffect((): void => {
     setActive(active)
   }, [active])
 
-  const handleDown = () => {
+  const handleDown = (): void => {
     // Make ui active
     setActive(true)
     // Handle callback
     if (onDown) onDown()
   }
 
-  const handleUp = () => {
+  const handleUp = (): void => {
     // Make ui de-active
     setActive(false)
     // Handle callback
@@ -120,7 +120,7 @@ const Button: FunctionComponent<Props> = ({
     }}
     onClick={onClick}
     onMouseEnter={() => {
-      if (disabled !== true) {
+      if (!disabled) {
         setHover(true)
         if (onMouseEnter) onMouseEnter() // I find it more usefull to bubble up these events
         if (onHover) onHover(true) // This was here for testing. This may get depreciated.

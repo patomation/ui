@@ -75,7 +75,7 @@ const Card: FunctionComponent<Props> = ({
           ...(background ? { background: background } : null),
           display: 'inline-block',
           ...(color ? { color: color } : null),
-          ...(border === false ? {
+          ...(!border ? {
             border: 0,
             boxShadow: 'none'
           } : null)
@@ -94,12 +94,10 @@ const Card: FunctionComponent<Props> = ({
         { cover || (typeof image === 'string'
           ? <Image
             className='card__image'
-            src={image as string}
+            src={image}
             alt={alt}
             rectangle />
-          : image // if image is defined and not a string
-          ? image // use image component
-          : <Shape
+          : image || <Shape
             rectangle
             background={iconBackground || (icon ? '#ffffff' : 'gray')}>
             { icon

@@ -6,10 +6,10 @@ import mediaQuery from '../_utility/mediaQuery'
 
 interface Props {
   children?: [ReactNode] | ReactNode
-  
+
 }
 
-const Breakpoints = () => {
+const Breakpoints: FunctionComponent = () => {
   const { sm, md, lg, xl, xxl } = config.size.media
 
   return (<>

@@ -39,7 +39,7 @@ const Alert: FunctionComponent<Props> = ({
   const [open, setOpen] = useState(true)
   const [collapse, setCollapse] = useState(false)
 
-  const close = () => {
+  const close = (): void => {
     setCollapse(true)
     if (onClose) onClose(false)
   }

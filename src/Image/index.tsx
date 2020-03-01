@@ -34,16 +34,16 @@ const Image: FunctionComponent<Props> = ({
     className={concat('image__container', className)}
     style={{
       ...styles.default.container,
-      ...(circle === true || square === true || rectangle === true ? {
+      ...(circle || square || rectangle ? {
         position: 'relative' as 'relative',
         overflow: 'hidden',
         width: '100%',
         textAlign: 'left'
       } : null),
-      ...(circle === true ? {
+      ...(circle ? {
         borderRadius: '50%'
       } : null),
-      ...(background === true ? {
+      ...(background ? {
         background: `url(${src}) no-repeat center center fixed`,
         ...styles.background.container
       } : null),
@@ -63,10 +63,10 @@ const Image: FunctionComponent<Props> = ({
       ? <div
         className='image__inner-container'
         style={{
-          ...(circle === true || square === true ? {
+          ...(circle || square ? {
             paddingBottom: '100%'
           } : null),
-          ...(rectangle === true ? {
+          ...(rectangle ? {
             paddingBottom: '56%'
           } : null)
         }}>
@@ -75,7 +75,7 @@ const Image: FunctionComponent<Props> = ({
           alt={alt || 'image'}
           style={{
             ...styles.default.image,
-            ...(circle === true || square === true || rectangle === true ? {
+            ...(circle || square || rectangle ? {
               position: 'absolute' as 'absolute',
               width: '100%',
               height: '100%',

@@ -4,9 +4,9 @@ type Declaration = (arg0: string, arg1: string) => string
 type ObjToCssDeclarationString = (arg0: object) => string
 type ObjToCssRuleString = (arg0: object) => string
 type Query = (arg0: string | undefined, arg1: string | undefined) => string
-type MediaQuery = (arg0: { 
-  min?: string,
-  max?: string,
+type MediaQuery = (arg0: {
+  min?: string
+  max?: string
   css: object
 }) => string
 

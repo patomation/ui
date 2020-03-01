@@ -1,15 +1,14 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import * as svgPaths from './svgPaths'
 
 interface Props {
-  children?: [ReactNode] | ReactNode
+  children?: string
   className?: string
   name?: string
-  icon?: () => void
+  icon?: string
   background?: string
   color?: string
   style?: object
@@ -25,7 +24,7 @@ const Icon: FunctionComponent<Props> = ({
   responsive
 }) => {
   if (name === 'play') name = 'play_arrow'
-
+  // badcomment
   const { path, size } = svgPaths[children || name || icon] || { path: null, size: null }
 
   return path && size
@@ -50,31 +49,4 @@ const Icon: FunctionComponent<Props> = ({
     </svg> : null
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  Icon.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * Individual component or set of components accepted as children
-    **/
-    children: PropTypes.string,
-    name: PropTypes.string,
-    icon: PropTypes.func,
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    responsive: PropTypes.bool
-  }
-}
 export default Icon

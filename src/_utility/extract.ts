@@ -4,7 +4,7 @@ type Extract = (arg0: string) => {
 }
 
 const extract: Extract = (string) => {
-  const number = string ? parseFloat( string.match(/\d+/)![0] ) : 0
+  const number = string ? parseFloat(string.match(/\d+/)[0]) : 0
   const unit = string ? string.replace(`${number}`, '') : ''
   return {
     number,

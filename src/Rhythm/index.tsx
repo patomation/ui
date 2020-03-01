@@ -4,7 +4,6 @@ import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import ratio from '../_utility/ratio'
 
-
 interface Props {
   children?: [ReactNode] | ReactNode
 }

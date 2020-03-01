@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Icon from '../Icon'

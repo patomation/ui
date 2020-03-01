@@ -8,9 +8,9 @@ export default {
   input: {
     height: '42px', // uniform height
     border: '1px solid rgba(0,0,0, 0.20)',
-    borderRadius: config.size.corners as string,
-    WebkitBorderRadius: config.size.corners as string,
-    MozBorderRadius: config.size.corners as string,
+    borderRadius: config.size.corners,
+    WebkitBorderRadius: config.size.corners,
+    MozBorderRadius: config.size.corners,
     WebkitAppearance: 'none' as 'none', // Disable chrome styles
     MozAppearance: 'none' as 'none', // Disable firefox styles
     // border: 'none',
@@ -31,7 +31,6 @@ export default {
   },
   textarea: {
 
-    
   },
 
   errorBorder: {

@@ -55,7 +55,7 @@ const Home = () =>
         color='#333'
         title='Documentation'>
 
-          <h1>{docCoverage(doc).coverage}</h1>
+        <h1>{docCoverage(doc).coverage}</h1>
 
       </Card>
       <Card
@@ -64,12 +64,12 @@ const Home = () =>
         color='#333'
         title='Test Coverage'>
 
-          <Grid col={2}>
-            <p>Stms:</p> <p>91%</p>
-            <p>Branch:</p> <p>75%</p>
-            <p>Funcs:</p> <p>83%</p>
-            <p>Lines:</p> <p>92%</p>
-          </Grid>
+        <Grid col={2}>
+          <p>Stms:</p> <p>91%</p>
+          <p>Branch:</p> <p>75%</p>
+          <p>Funcs:</p> <p>83%</p>
+          <p>Lines:</p> <p>92%</p>
+        </Grid>
 
       </Card>
 

@@ -34,7 +34,7 @@ const DragDrop: FunctionComponent<Props> = ({
   background, color, style,
   onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
   draggable = true
-}: Props ) => {
+}: Props) => {
   const [over, setOver] = useToggle(false)
 
   return (
@@ -65,7 +65,7 @@ const DragDrop: FunctionComponent<Props> = ({
       onDrop={onDrop}
       style={{
         ...styles.container,
-        ...(draggable !== false ? { cursor: 'grab' } : null),
+        ...(draggable ? { cursor: 'grab' } : null),
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
         ...style

@@ -32,7 +32,7 @@ const Modal: FunctionComponent<Props> = ({
 }) => {
   const [open, setOpen] = useState(show)
 
-  const close = () => {
+  const close = (): void => {
     setOpen(false)
     if (onClose) onClose(false)
   }

@@ -1,6 +1,6 @@
 {
   "name": "@patomation/ui",
-  "version": "1.8.7",
+  "version": "2.0.0-beta1",
   "main": "lib/index.esm.js",
   "module": "lib/index.esm.js",
   "private": false,

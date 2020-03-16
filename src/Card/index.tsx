@@ -191,7 +191,7 @@ if (process.env.NODE_ENV !== 'production') {
     /**
     * Card image at the top can be a source string
     **/
-    image: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /**
     * Card cover will replace the image or icon as the top element. use components
     **/

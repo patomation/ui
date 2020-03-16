@@ -2,7 +2,7 @@ import * as React from 'react'
 import { FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
-import * as svgPaths from './svgPaths'
+import svgPaths from './svgPaths'
 
 interface Props {
   children?: string

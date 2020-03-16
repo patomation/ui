@@ -90,3 +90,9 @@ SideBar - included in Page component
  - [Spinner](src/Spinner/doc.md)
  - [Tabs](src/Tabs/doc.md)
  - [User](src/User/doc.md)
+
+# Troubleshooting
+
+Error: ENOSPC: System limit for number of file watchers reached, watch
+fix: ```echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p```
+https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details

@@ -1,14 +1,13 @@
 {
   "name": "@patomation/ui",
-  "version": "2.0.0-beta3",
-  "main": "lib/index.esm.js",
-  "module": "lib/index.esm.js",
+  "version": "2.0.0-beta4",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "private": false,
   "sidEffects": false,
   "scripts": {
     "prepare": "npm run build",
-    "build": "rollup -c",
-    "build:ts": "tsc",
+    "build": "tsc",
     "start": "npm run watch:src",
     "watch:src": "nodemon --watch ./src --ext .js,.ts,.tsx -x \"npm run build\"",
     "lint": "eslint --ext .js,.ts,.tsx .",
@@ -22,7 +21,7 @@
       "pre-commit": "npm run test && npm run lint"
     }
   },
-  "files":[
+  "files": [
     "lib"
   ],
   "dependencies": {
@@ -38,14 +37,11 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@commitlint/config-conventional": "^8.3.4",
-    "@rollup/plugin-typescript": "^2.1.0",
     "@types/jest": "^24.9.0",
     "@types/node": "^13.1.8",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "autoprefixer": "^9.7.4",
     "babel-jest": "^24.9.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
@@ -57,38 +53,17 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
-    "file-loader": "^3.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "http-server": "^0.12.0",
     "husky": "^4.2.3",
     "jest": "^24.9.0",
     "jsdom": "^15.1.1",
     "jsdom-global": "^3.0.2",
     "nodemon": "^1.19.4",
-    "react-docgen": "5.0.0",
     "react-router-dom": "^5.1.2",
-    "rollup": "^1.29.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-filesize": "^6.2.1",
-    "rollup-plugin-local-resolve": "^1.0.7",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
     "ts-jest": "^24.3.0",
-    "ts-loader": "^6.2.1",
     "tsconfigs": "^4.0.2",
-    "typedoc": "^0.16.7",
-    "typescript": "^3.7.5",
-    "url-loader": "^2.1.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.2"
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
-    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },

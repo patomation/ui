@@ -5,7 +5,7 @@ import styles from './styles'
 interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
-  type?: string
+  type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
   enabled?: boolean
   active?: boolean
@@ -67,7 +67,7 @@ const Button: FunctionComponent<Props> = ({
   }
 
   return <button
-    // type={type}
+    type={type}
     disabled={disabled}
     className={className}
     onTouchStart={(): void => {

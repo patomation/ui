@@ -1,9 +1,7 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode, ReactElement } from 'react'
-import styles from './styles'
 import concat from '../_utility/concat'
-import config from '../config'
 
 interface Props {
   children?: [ReactNode] | ReactNode
@@ -24,7 +22,7 @@ const Nav: FunctionComponent<Props> = ({
   <nav
     className={concat('nav', className)}
     style={{
-      ...styles.container,
+      // ...styles.container,
       ...(background ? { background: background } : null),
       ...(color ? { color: color } : null),
       ...style
@@ -43,16 +41,16 @@ const Nav: FunctionComponent<Props> = ({
     <div
       className='nav__container'
       style={{
-        maxWidth: config.size.maxWidth,
-        margin: '0 auto',
-        display: 'flex'
+        display: 'flex',
+        // justifyContent: 'space-between'
+        justifyContent: 'flex-end'
       }}>
       { React.Children.map(children, (child: ReactNode) => {
         return React.cloneElement(
           child as ReactElement<any>,
           {
             style: {
-              marginRight: '1rem'
+              // marginRight: '1rem'
             }
           })
       })}

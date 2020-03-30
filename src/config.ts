@@ -29,7 +29,7 @@ const config = {
     }
   },
   color: {
-    primary: '#2f0147',
+    primary: '#000000',
 
     dust: '#e2c2c6', // Lightest
     tuscany: '#b9929f',

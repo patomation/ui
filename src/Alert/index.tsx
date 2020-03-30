@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import Row from '../Row'
 import Icon from '../Icon'
@@ -13,7 +12,7 @@ interface Props {
   className?: string
   title?: string
   icon?: boolean | string
-  type?: 'info' | 'warning' | 'error' | 'success'
+  kind?: 'info' | 'warning' | 'error' | 'success'
   closeable?: boolean
   onClose?: (boolean) => boolean
   background?: string
@@ -24,7 +23,7 @@ interface Props {
 const Alert: FunctionComponent<Props> = ({
   title, children,
   background, color, style,
-  type = 'info',
+  kind = 'info',
   onClose,
   icon = true,
   closeable = true
@@ -55,12 +54,12 @@ const Alert: FunctionComponent<Props> = ({
         className='alert__row'
         style={{
           ...styles.container,
-          background: background || config.color[`${type}Background`],
+          background: background || config.color[`${kind}Background`],
           ...(color ? { color: color } : null),
           padding: '0.75rem',
           paddingRight: '1rem',
           marginBottom: '1rem',
-          border: `1px solid ${color || config.color[type]}`,
+          border: `1px solid ${color || config.color[kind]}`,
           borderRadius: '3px',
           position: 'relative' as 'relative',
           ...style
@@ -69,10 +68,10 @@ const Alert: FunctionComponent<Props> = ({
         { icon !== false
           ? <Icon
             className='alert__icon'
-            color={color || config.color[type]}
+            color={color || config.color[kind]}
             name={ typeof icon === 'string'
               ? icon
-              : icons[type] }
+              : icons[kind] }
             style={{
               paddingRight: '0.75rem',
               marginBottom: 'auto' // Make left icon align to top
@@ -111,48 +110,6 @@ const Alert: FunctionComponent<Props> = ({
       </Row>
     </Collapse>
     : null
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Alert.propTypes = {
-    className: PropTypes.string,
-    /**
-    * Individual component or set of components accepted as children
-    **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    /**
-    * Optional title that sits above the description/children
-    **/
-    title: PropTypes.string,
-    /**
-    * A false value will hide the icon while using a string can set the icon to any of the material icons
-    **/
-    icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    /**
-    * Exposes the ability to set the type af alert message. Must use 'info', 'warning', 'error' or 'success'
-    **/
-    type: PropTypes.oneOf(['info', 'warning', 'error', 'success']),
-    /**
-    * A false value will hide the close icon making the alert unclosable
-    **/
-    closeable: PropTypes.bool,
-    /**
-    * A callback function when the element closes
-    **/
-    onClose: PropTypes.func,
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object
-  }
 }
 
 export default Alert

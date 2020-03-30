@@ -42,7 +42,7 @@ const List: FunctionComponent<Props> = ({
           key={`item_${index}`}
           style={{
             ...styles.item,
-            padding: '0.5rem',
+            padding: '0.25rem',
             ...(border && index !== React.Children.count(children) - 1
               ? {
                 borderBottom: `${config.size.borders} solid ${config.color.border}`

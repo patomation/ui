@@ -16,7 +16,7 @@ interface Props {
   error?: string | boolean
   placeholder?: string
   className?: string
-  onClick?: (MouseEvent) => {}
+  onClick?: (MouseEvent) => void
   background?: string
   color?: string
   containerStyle?: object

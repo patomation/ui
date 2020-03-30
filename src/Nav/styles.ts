@@ -2,9 +2,9 @@ import config from '../config'
 
 export default {
   container: {
-    color: '#ffffff',
+    color: 'red',
     background: config.color.violet,
     padding: config.size.gutters,
-    alignItems: 'center'
+    justifyContent: 'space-between'
   }
 }

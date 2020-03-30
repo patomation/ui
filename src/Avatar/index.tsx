@@ -12,13 +12,14 @@ interface Props {
   className?: string
   style?: object
   image?: string | ReactNode
+  onClick?: () => void
 }
 
 /**
 * user icon or user photo component
 */
 const Avatar: FunctionComponent<Props> = ({
-  className, style, image
+  className, style, image, onClick
 }) => {
   return (
     <div
@@ -27,7 +28,8 @@ const Avatar: FunctionComponent<Props> = ({
         ...styles.container,
         ...(!image ? { background: '#ffffff' } : null),
         ...style
-      }}>
+      }}
+      onClick={onClick}>
       { image
         ? typeof image === 'string'
           // handle image src strings

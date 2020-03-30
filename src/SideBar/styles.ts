@@ -3,8 +3,8 @@ export default {
     height: '100%'
   },
   menu: {
-    backgroundColor: '#36494e',
-    color: '#a9cef4',
+    backgroundColor: '#000000',
+    color: '#ffffff',
     height: '100%',
     margin: 0,
     padding: 0,
@@ -15,6 +15,7 @@ export default {
   content: {
     // display: 'flex', //We had this for some reason
     flexFlow: 'column',
-    height: '100%'
+    height: '100%',
+    background: 'gray'
   }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, InputHTMLAttributes } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Error from '../Error'
@@ -9,7 +9,7 @@ import Gutter from '../Gutter'
 interface Props {
   type?: string
   name?: string
-  onChange?: () => void
+  onChange?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>['onChange']
   onFocus?: () => void
   onBlur?: () => void
   value?: string | number
@@ -27,13 +27,16 @@ interface Props {
   label?: string
   min?: number
   max?: number
+  step?: number
   textAlign?: 'center' | 'left' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'unset' | 'right' | 'end' | 'justify' | 'match-parent' | 'start' | undefined
   cols?: number
   rows?: number
+  prefix?: string
+  suffix?: string
 }
 
 /**
-* A standardized imput component plus textarea
+* A standardized input component plus textarea
 */
 const Input: FunctionComponent<Props> = ({
   type, name, onChange, onFocus, onBlur, value, error, placeholder,
@@ -41,7 +44,8 @@ const Input: FunctionComponent<Props> = ({
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style,
   textAlign,
   rows = 3, cols,
-  label, min, max
+  label, min, max, step,
+  prefix, suffix
 }) => {
   const InputType = type === 'textarea' ? 'textarea' : 'input'
 
@@ -50,6 +54,7 @@ const Input: FunctionComponent<Props> = ({
       className={concat('input', className)}
       style={{
         ...styles.container,
+        position: 'relative',
         ...style,
         ...containerStyle
       }}>
@@ -61,6 +66,18 @@ const Input: FunctionComponent<Props> = ({
         </>
         : null }
 
+      { prefix
+        ? <span
+          style={{
+            position: 'absolute',
+            bottom: '0.75rem',
+            left: '0.75rem'
+          }}>
+          {prefix}
+        </span>
+        : null
+      }
+
       <InputType
         className='input__input'
         type={type}
@@ -69,6 +86,7 @@ const Input: FunctionComponent<Props> = ({
         cols={cols} // textarea
         min={min}
         max={max}
+        step={step}
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
@@ -77,6 +95,9 @@ const Input: FunctionComponent<Props> = ({
         onClick={onClick}
         style={{
           ...styles.input,
+          ...(prefix ? {
+            paddingLeft: '2rem'
+          } : null),
           ...(type === 'textarea' ? {
             textAlign: 'left' as 'left',
             resize: 'none',

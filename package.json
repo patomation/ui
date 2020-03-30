@@ -9,16 +9,12 @@
     "prepare": "npm run build",
     "build": "rollup -c",
     "build:ts": "tsc",
-    "watch:src": "nodemon --watch ./src -x \"yarn build\"",
+    "start": "npm run watch:src",
+    "watch:src": "nodemon --watch ./src --ext .js,.ts,.tsx -x \"npm run build\"",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "dev": "yarn watch:src",
     "test": "jest",
-    "coverage": "jest --coverage",
-    "demo": "webpack-dev-server --mode development --open --hot",
-    "build:demo": "npm run doc && webpack",
-    "demo:build": "http-server ./dist",
-    "doc": "react-docgen ./src -o ./demo/doc.json --pretty --exclude ['style.js','*.test.js','config.js']",
-    "doc2": "./node_modules/.bin/typedoc"
+    "coverage": "jest --coverage"
   },
   "husky": {
     "hooks": {
@@ -26,6 +22,9 @@
       "pre-commit": "npm run test && npm run lint"
     }
   },
+  "files":[
+    "lib"
+  ],
   "dependencies": {
     "@patomation/find": "^1.1.0",
     "@patomation/usetoggle": "^1.2.0",
@@ -65,7 +64,7 @@
     "jest": "^24.9.0",
     "jsdom": "^15.1.1",
     "jsdom-global": "^3.0.2",
-    "nodemon": "^1.19.1",
+    "nodemon": "^1.19.4",
     "react-docgen": "5.0.0",
     "react-router-dom": "^5.1.2",
     "rollup": "^1.29.0",

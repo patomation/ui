@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useRef, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import IconButton from '../IconButton'
 
@@ -68,24 +67,6 @@ const ScrollButton: FunctionComponent<Props> = ({
 
     </div>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  ScrollButton.propTypes = {
-    onClick: PropTypes.func,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object
-  }
 }
 
 export default ScrollButton

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import ratio from '../_utility/ratio'
@@ -60,14 +59,5 @@ interface Props {
     {children}
 
   </article>
-
-if (process.env.NODE_ENV !== 'production') {
-  Rhythm.propTypes = {
-  /**
-  * Children will get vertical rhythm / padding to make it look nice
-  **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-  }
-}
 
 export default Rhythm

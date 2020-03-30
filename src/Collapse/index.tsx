@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
 
@@ -48,26 +47,6 @@ const Collapse: FunctionComponent<Props> = ({
 
     </div>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Collapse.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * Individual component or set of components accepted as children
-    **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    collapse: PropTypes.bool,
-    onComplete: PropTypes.func,
-    speed: PropTypes.number
-  }
 }
 
 export default Collapse

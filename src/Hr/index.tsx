@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -27,24 +26,6 @@ const Hr: FunctionComponent<Props> = ({
         ...style
       }} />
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Hr.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    opacity: PropTypes.number
-  }
 }
 
 export default Hr

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -87,30 +86,4 @@ const Image: FunctionComponent<Props> = ({
       : null }
   </div>
 
-if (process.env.NODE_ENV !== 'production') {
-  Image.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    src: PropTypes.string,
-    alt: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    containerStyle: PropTypes.object,
-    imageStyle: PropTypes.object,
-    bg: PropTypes.bool,
-    circle: PropTypes.bool,
-    square: PropTypes.bool,
-    rectangle: PropTypes.bool,
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.bool,
-    maxWidth: PropTypes.string,
-    width: PropTypes.string
-  }
-}
 export default Image

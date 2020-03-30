@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
 
@@ -84,35 +83,6 @@ const Modal: FunctionComponent<Props> = ({
     )
   } else {
     return null
-  }
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Modal.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    show: PropTypes.bool,
-    onClose: PropTypes.func,
-    /**
-    * Individual component or set of components accepted as children
-    **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    maxWidth: PropTypes.string,
-    width: PropTypes.string
   }
 }
 

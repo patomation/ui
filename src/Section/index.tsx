@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -62,32 +61,5 @@ const Section: FunctionComponent<Props> = ({
       : null }
 
   </section>
-
-if (process.env.NODE_ENV !== 'production') {
-  Section.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-    className: PropTypes.string,
-    /**
-  * Individual component or set of components accepted as children
-  **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    height: PropTypes.number,
-    maxWidth: PropTypes.string
-  }
-}
 
 export default Section

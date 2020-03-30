@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -33,28 +32,6 @@ const Spinner: FunctionComponent<Props> = ({
         }} />
     </div>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Spinner.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-    className: PropTypes.string,
-    icon: PropTypes.string,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object
-  }
 }
 
 export default Spinner

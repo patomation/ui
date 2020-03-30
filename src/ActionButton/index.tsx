@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 
 import Clickable from '../Clickable'
@@ -83,32 +82,6 @@ const ActionButton: FunctionComponent<Props> = ({
       </PosedDiv>
     </Clickable>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  ActionButton.propTypes = {
-    onClick: PropTypes.func,
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    /**
-    * set the icon in the center
-    **/
-    icon: PropTypes.string,
-    /**
-    * set the width of the action button
-    **/
-    width: PropTypes.string
-  }
 }
 
 export default ActionButton

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import extract from '../_utility/extract'
@@ -41,18 +40,6 @@ const Typography: FunctionComponent<Props> = ({
 
     </p>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Typography.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    background: PropTypes.string,
-    color: PropTypes.string,
-    style: PropTypes.object,
-    size: PropTypes.string,
-    bold: PropTypes.bool
-  }
 }
 
 export default Typography

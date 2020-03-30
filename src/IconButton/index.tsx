@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
@@ -86,39 +85,6 @@ const IconButton: FunctionComponent<Props> = ({
 
     </Button>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  IconButton.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    onClick: PropTypes.func,
-    className: PropTypes.string,
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    iconStyle: PropTypes.object,
-    titleStyle: PropTypes.object,
-    activeStyle: PropTypes.object,
-    name: PropTypes.string,
-    icon: PropTypes.string,
-    active: PropTypes.bool,
-    title: PropTypes.string,
-    width: PropTypes.string,
-    hoverColor: PropTypes.string,
-    badge: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
-
-  }
 }
 
 export default IconButton

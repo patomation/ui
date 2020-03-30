@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, useEffect, FunctionComponent, ReactNode } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
 
@@ -92,42 +91,6 @@ const Loader: FunctionComponent<Props> = ({
 
     </Center>
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Loader.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * Individual component or set of components accepted as children
-    **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    onClick: PropTypes.func,
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    message: PropTypes.string,
-    spinner: PropTypes.bool,
-    progressBar: PropTypes.bool,
-    progressBarColor: PropTypes.string,
-    progressBarTime: PropTypes.number,
-    /*
-    * Make progress bar finish quickly if were done with it.
-    */
-    complete: PropTypes.bool,
-    onComplete: PropTypes.func
-  }
 }
 
 export default Loader

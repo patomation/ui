@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -22,7 +21,7 @@ const Center: FunctionComponent<Props> = ({
   className, children,
   background, color, style, contentStyle,
   width, maxWidth,
-  disabled
+  disabled = false
 }) =>
   <div
     className={concat('center', className)}
@@ -47,37 +46,5 @@ const Center: FunctionComponent<Props> = ({
     </div>
 
   </div>
-
-if (process.env.NODE_ENV !== 'production') {
-  Center.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * Individual component or set of components accepted as children
-    **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    /**
-    * The background color of component
-    **/
-    background: PropTypes.string,
-    /**
-    * The text color of component
-    **/
-    color: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    contentStyle: PropTypes.object,
-    width: PropTypes.string,
-    maxWidth: PropTypes.string,
-    disabled: PropTypes.bool
-  }
-}
-Center.defaultProps = {
-  disabled: false
-}
 
 export default Center

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 
@@ -35,23 +34,5 @@ const Skeleton: FunctionComponent<Props> = ({
     })}
 
   </div>
-
-if (process.env.NODE_ENV !== 'production') {
-  Skeleton.propTypes = {
-  /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object,
-    lines: PropTypes.number
-  }
-}
 
 export default Skeleton

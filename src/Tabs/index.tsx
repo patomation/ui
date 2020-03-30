@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -57,42 +56,5 @@ const Tabs: FunctionComponent<Props> = ({
     )}
 
   </Grid>
-
-if (process.env.NODE_ENV !== 'production') {
-  Tabs.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-    className: PropTypes.string,
-    /**
-  * click event passes up item name and index
-  **/
-    onClick: PropTypes.func,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object,
-    /**
-  * string names for tabs
-  **/
-    data: PropTypes.array,
-    /**
-  * if defined, disable all those after active index
-  **/
-    step: PropTypes.bool,
-    /**
-  * If matches one of the sting from data it will become active
-  **/
-    active: PropTypes.string
-  }
-}
 
 export default Tabs

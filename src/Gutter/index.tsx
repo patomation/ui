@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -42,31 +41,6 @@ const Gutter: FunctionComponent<Props> = ({
       }}>
     </Tag>
     : null
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Gutter.propTypes = {
-    /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    /**
-    * A way to disable the padding style without having to remove the element
-    **/
-    disabled: PropTypes.bool,
-    /**
-    * Vertical gutter spacing option
-    **/
-    vertical: PropTypes.bool,
-    /**
-    * devides the gutter amount in half
-    **/
-    half: PropTypes.bool
-  }
 }
 
 export default Gutter

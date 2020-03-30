@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -82,63 +81,5 @@ const Shape: FunctionComponent<Props> = ({
     </div>
 
   </div>
-
-if (process.env.NODE_ENV !== 'production') {
-  Shape.propTypes = {
-  /**
-  * Exposes ability to set a custom class name
-  **/
-    className: PropTypes.string,
-    /**
-  * Individual component or set of components accepted as children
-  **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    onClick: PropTypes.func,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object,
-    /**
-  *
-  **/
-    innerStyle: PropTypes.object,
-    /**
-  * A square shape div
-  **/
-    square: PropTypes.bool,
-    /**
-  * A circle shape div
-  **/
-    circle: PropTypes.bool,
-    /**
-  * A rectangular shaped div
-  **/
-    rectangle: PropTypes.bool,
-    /**
-  * A traingle shaped div
-  **/
-    triangle: PropTypes.bool,
-    /**
-  * A portrait shaped div
-  **/
-    portrait: PropTypes.bool,
-    /**
-  * set the width of the shape
-  **/
-    width: PropTypes.string,
-    /**
-  * set the maximum width of the shape
-  **/
-    maxWidth: PropTypes.string
-  }
-}
 
 export default Shape

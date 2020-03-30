@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 
@@ -79,26 +78,5 @@ const Table: FunctionComponent<Props> = ({
       : null }
 
   </table>
-
-if (process.env.NODE_ENV !== 'production') {
-  Table.propTypes = {
-    className: PropTypes.string,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object,
-    header: PropTypes.array,
-    data: PropTypes.array,
-    footer: PropTypes.array
-  }
-}
 
 export default Table

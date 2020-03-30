@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
@@ -147,46 +146,4 @@ const Range: FunctionComponent<Props> = ({
 
   </div>
 
-if (process.env.NODE_ENV !== 'production') {
-  Range.propTypes = {
-    className: PropTypes.string,
-    /**
-  * Individual component or set of components accepted as children
-  **/
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    /**
-  * Callback for when the range slider value changes. returns event. look for event.target.value to get the new value
-  **/
-    onChange: PropTypes.func,
-    /**
-  * The background color of component
-  **/
-    background: PropTypes.string,
-    /**
-  * The text color of component
-  **/
-    color: PropTypes.string,
-    /**
-  * The color of the thumb drag slider
-  **/
-    thumbColor: PropTypes.string,
-    /**
-  * Set any styles of the top level element of the component
-  **/
-    style: PropTypes.object,
-    /**
-  * Minimum number range
-  **/
-    min: PropTypes.number,
-    /**
-  * Maximum number range
-  **/
-    max: PropTypes.number,
-    /**
-  * Range slider value
-  **/
-    value: PropTypes.number,
-    label: PropTypes.string
-  }
-}
 export default Range

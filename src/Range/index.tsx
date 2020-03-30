@@ -8,7 +8,7 @@ import Gutter from '../Gutter'
 interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
-  onChange?: () => void
+  onChange?: React.ChangeEventHandler
   background?: string
   color?: string
   thumbColor?: string

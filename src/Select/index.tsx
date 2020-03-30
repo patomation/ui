@@ -10,7 +10,7 @@ interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
   name?: string
-  onChange?: () => void
+  onChange?: React.ChangeEventHandler
   onBlur?: () => void
   value?: string | number
   error?: string | boolean

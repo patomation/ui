@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
 
-import User from './index'
+import Avatar from './index'
 
-describe('<User />', () => {
+describe('<Avatar />', () => {
   it('renders', () => {
-    mount(<User />)
+    mount(<Avatar />)
   })
 })

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ReactNode, FunctionComponent } from 'react'
-import * as PropTypes from 'prop-types'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
@@ -12,48 +11,39 @@ interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
   style?: object
-  image?: string
+  image?: string | ReactNode
 }
 
 /**
 * user icon or user photo component
 */
-const User: FunctionComponent<Props> = ({
+const Avatar: FunctionComponent<Props> = ({
   className, style, image
 }) => {
   return (
     <div
-      className={concat('user', className)}
+      className={concat('avatar', className)}
       style={{
         ...styles.container,
         ...(!image ? { background: '#ffffff' } : null),
         ...style
       }}>
       { image
-        ? <Image
-          square
-          className='user__image'
-          alt='user'
-          style={styles.image}
-          src={image} />
+        ? typeof image === 'string'
+          // handle image src strings
+          ? <Image
+            square
+            className='user__image'
+            alt='user'
+            style={styles.image}
+            src={image} />
+          // Handle react image elements
+          : image
+        // If no image defined use an icon
         : <Icon name='face' color={config.color.primary} responsive />
       }
     </div>
   )
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  User.propTypes = {
-  /**
-    * Exposes ability to set a custom class name
-    **/
-    className: PropTypes.string,
-    /**
-    * Set any styles of the top level element of the component
-    **/
-    style: PropTypes.object,
-    image: PropTypes.string
-  }
-}
-
-export default User
+export default Avatar

@@ -70,7 +70,7 @@ const Loader: FunctionComponent<Props> = ({
         : null }
 
       { spinner
-        ? <Spinner color={color}/>
+        ? <Spinner color={color} style={{ display: 'block' }}/>
         : null }
 
       { progressBar

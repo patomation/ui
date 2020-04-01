@@ -10,15 +10,21 @@ interface Props {
   background?: string
   color?: string
   style?: object
+  iconStyle?: object
 }
 /**
 * an icon that spins
 */
 const Spinner: FunctionComponent<Props> = ({
-  icon, className, background, color, style
+  icon, className, background, color,
+  style, iconStyle
 }) => {
   return (
-    <div className={concat('spinner', className)}>
+    <span
+      className={concat('spinner', className)}
+      style={{
+        ...style
+      }}>
       <style>{styles.keyframes.spinCounterClockwise}</style>
 
       <Icon
@@ -28,9 +34,9 @@ const Spinner: FunctionComponent<Props> = ({
           ...styles.container,
           ...(background ? { background: background } : null),
           ...(color ? { color: color } : null),
-          ...style
+          ...iconStyle
         }} />
-    </div>
+    </span>
   )
 }
 

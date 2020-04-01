@@ -32,6 +32,7 @@ interface Props {
   rows?: number
   prefix?: string
   suffix?: string
+  disabled?: boolean
 }
 
 /**
@@ -44,7 +45,8 @@ const Input: FunctionComponent<Props> = ({
   textAlign,
   rows = 3, cols,
   label, min, max, step,
-  prefix, suffix
+  prefix, suffix,
+  disabled
 }) => {
   const InputType = type === 'textarea' ? 'textarea' : 'input'
 
@@ -108,7 +110,8 @@ const Input: FunctionComponent<Props> = ({
           ...inputStyle,
           ...(error ? (inputErrorStyle || styles.errorBorder) : null),
           ...(type === 'textarea' ? { height: 'auto' } : null)
-        }}/>
+        }}
+        disabled={disabled}/>
 
       { typeof error === 'string'
         ? <Error

@@ -12,6 +12,6 @@ describe('<Spinner />', () => {
   it('accepts background && color prop', () => {
     const component = mount(<Spinner background="blue" color="red" />)
     expect(component.find(Icon).props().style.background).toEqual('blue')
-    expect(component.find(Icon).props().style.color).toEqual('red')
+    expect(component.find(Icon).find('svg').prop('fill')).toEqual('red')
   })
 })

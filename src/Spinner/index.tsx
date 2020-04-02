@@ -30,10 +30,10 @@ const Spinner: FunctionComponent<Props> = ({
       <Icon
         className='spinner__icon'
         name={icon || 'sync'}
+        color={color}
         style={{
           ...styles.container,
           ...(background ? { background: background } : null),
-          ...(color ? { color: color } : null),
           ...iconStyle
         }} />
     </span>

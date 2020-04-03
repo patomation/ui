@@ -15,6 +15,7 @@ type DragStartEvent = DragEvent & {
 interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
+  id?: string
   background?: string
   color?: string
   style?: object
@@ -29,7 +30,7 @@ interface Props {
 * Makes child element draggable or a drop zone
 */
 const DragDrop: FunctionComponent<Props> = ({
-  className, children,
+  className, id, children,
   background, color, style,
   onDragStart, onDragOver, onDrop, onDragLeave, onDrag,
   draggable = true
@@ -38,6 +39,7 @@ const DragDrop: FunctionComponent<Props> = ({
 
   return (
     <div
+      id={id}
       className={concat('dragdrop', className)}
       draggable={draggable} // Use draggable prop but default to true
       onDragStart={(e: DragStartEvent) => {

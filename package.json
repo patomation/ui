@@ -58,7 +58,7 @@
     "jest": "25.3.0",
     "jsdom": "16.2.2",
     "jsdom-global": "3.0.2",
-    "minimist": "1.2.3",
+    "minimist": "1.2.5",
     "nodemon": "2.0.3",
     "react-router-dom": "5.1.2",
     "ts-jest": "25.3.1",

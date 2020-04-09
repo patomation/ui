@@ -2,6 +2,6 @@
 IconButton example:
 
 ```js
-<IconButton />
+<IconButton name='star'/>
 
 ```

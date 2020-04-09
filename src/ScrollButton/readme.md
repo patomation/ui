@@ -2,6 +2,6 @@
 ScrollButton example:
 
 ```js
-<ScrollButton />
+<ScrollButton color='#000000' />
 
 ```

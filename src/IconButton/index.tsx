@@ -41,11 +41,13 @@ const IconButton: FunctionComponent<Props> = ({
 
   return (
     <Button
-      kind='none'
       className={concat('iconbutton', className)}
       onClick={onClick}
       style={{
         ...styles.container,
+        padding: 0,
+        background: 'none',
+        border: 0,
         ...(background ? { background: background } : null),
         ...(color ? { color: color } : null),
         ...(width ? { width: width } : null),

@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styles from './styles'
 import Shape from '../Shape'
 import Icon from '../Icon'
 import concat from '../_utility/concat'
 
 interface Props {
-  children?: [ReactNode] | ReactNode
+  children?: string
   className?: string
   icon?: string
   onClick?: (MouseEvent) => {}
@@ -31,7 +31,7 @@ const Badge: FunctionComponent<Props> = ({
       ...(color ? { color: color } : ''),
       ...style
     }}>
-    { children === null || children === undefined || `${children}`.length === 1
+    { children === null || children === undefined || children.length === 1
       ? <Shape // Shows a circle if icon or count character length = 1
         className='badge__shape'
         circle

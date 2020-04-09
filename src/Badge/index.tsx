@@ -6,7 +6,7 @@ import Icon from '../Icon'
 import concat from '../_utility/concat'
 
 interface Props {
-  children?: string
+  children?: string | number
   className?: string
   icon?: string
   onClick?: (MouseEvent) => {}
@@ -31,7 +31,7 @@ const Badge: FunctionComponent<Props> = ({
       ...(color ? { color: color } : ''),
       ...style
     }}>
-    { children === null || children === undefined || children.length === 1
+    { children === null || children === undefined || (children as string).length === 1
       ? <Shape // Shows a circle if icon or count character length = 1
         className='badge__shape'
         circle

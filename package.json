@@ -13,7 +13,9 @@
     "lint": "eslint --ext .js,.ts,.tsx .",
     "dev": "yarn watch:src",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "husky": {
     "hooks": {
@@ -54,16 +56,21 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-standard": "4.0.1",
+    "html-webpack-plugin": "4.0.4",
     "husky": "4.2.3",
     "jest": "25.3.0",
     "jsdom": "16.2.2",
     "jsdom-global": "3.0.2",
     "minimist": "1.2.5",
     "nodemon": "2.0.3",
+    "react-docgen-typescript": "1.16.3",
     "react-router-dom": "5.1.2",
+    "react-styleguidist": "11.0.5",
     "ts-jest": "25.3.1",
+    "ts-loader": "6.2.2",
     "tsconfigs": "4.0.2",
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "webpack": "4.42.1"
   },
   "peerDependencies": {
     "react": "^16.13.1",

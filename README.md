@@ -16,7 +16,7 @@ or
 npm install @patomation/ui --save
 ```
 
-## Usage
+## Basic Usage
 
 ```javascript
 import { Hero, Button, Icon, Footer } from '@patomation/react-ui-components'
@@ -40,56 +40,7 @@ export default MyComponent
 
 ```
 
-## Deprecate List
-SideBar - included in Page component
-
-## Components
- - [Badge](src/Badge/doc.md)
- - [Brand](src/Brand/doc.md)
- - [Breakpoints](src/Breakpoints/doc.md)
- - [Button](src/Button/doc.md)
- - [Calendar](src/Calendar/doc.md)
- - [Card](src/Card/doc.md)
- - [Carousel](src/Carousel/doc.md)
- - [Center](src/Center/doc.md)
- - [Clickable](src/Clickable/doc.md)
- - [Code](src/Code/doc.md)
- - [Collapse](src/Collapse/doc.md)
- - [config.js](src/config.js/doc.md)
- - [Content](src/Content/doc.md)
- - [DragDrop](src/DragDrop/doc.md)
- - [Error](src/Error/doc.md)
- - [Footer](src/Footer/doc.md)
- - [Form](src/Form/doc.md)
- - [Grid](src/Grid/doc.md)
- - [Gutter](src/Gutter/doc.md)
- - [Header](src/Header/doc.md)
- - [Heading](src/Heading/doc.md)
- - [Hero](src/Hero/doc.md)
- - [Hr](src/Hr/doc.md)
- - [Icon](src/Icon/doc.md)
- - [IconButton](src/IconButton/doc.md)
- - [Image](src/Image/doc.md)
- - [ImageGrid](src/ImageGrid/doc.md)
- - [index.js](src/index.js/doc.md)
- - [Input](src/Input/doc.md)
- - [Link](src/Link/doc.md)
- - [List](src/List/doc.md)
- - [Loader](src/Loader/doc.md)
- - [LoginForm](src/LoginForm/doc.md)
- - [Modal](src/Modal/doc.md)
- - [Nav](src/Nav/doc.md)
- - [Panel](src/Panel/doc.md)
- - [RegisterForm](src/RegisterForm/doc.md)
- - [Row](src/Row/doc.md)
- - [ScrollButton](src/ScrollButton/doc.md)
- - [Section](src/Section/doc.md)
- - [Select](src/Select/doc.md)
- - [Shape](src/Shape/doc.md)
- - [SideBar](src/SideBar/doc.md)
- - [Spinner](src/Spinner/doc.md)
- - [Tabs](src/Tabs/doc.md)
- - [User](src/User/doc.md)
+# [Full Documentation](https://ui.patomation.com)
 
 # Troubleshooting
 

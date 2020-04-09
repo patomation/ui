@@ -1,0 +1,7 @@
+
+Shape example:
+
+```js
+<Shape />
+
+```

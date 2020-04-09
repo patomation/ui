@@ -1,0 +1,7 @@
+
+Image example:
+
+```js
+<Image />
+
+```

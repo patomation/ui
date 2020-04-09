@@ -1,0 +1,7 @@
+
+Center example:
+
+```js
+<Center />
+
+```

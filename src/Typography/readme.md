@@ -1,0 +1,7 @@
+
+Typography example:
+
+```js
+<Typography />
+
+```

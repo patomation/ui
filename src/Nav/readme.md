@@ -1,0 +1,7 @@
+
+Nav example:
+
+```js
+<Nav />
+
+```

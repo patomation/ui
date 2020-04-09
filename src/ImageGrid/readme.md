@@ -1,0 +1,7 @@
+
+ImageGrid example:
+
+```js
+<ImageGrid />
+
+```

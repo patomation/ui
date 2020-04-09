@@ -1,0 +1,7 @@
+
+Spinner example:
+
+```js
+<Spinner />
+
+```

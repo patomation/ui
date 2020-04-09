@@ -1,0 +1,7 @@
+
+Collapse example:
+
+```js
+<Collapse />
+
+```

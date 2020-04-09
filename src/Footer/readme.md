@@ -1,0 +1,7 @@
+
+Footer example:
+
+```js
+<Footer />
+
+```

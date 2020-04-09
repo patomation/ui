@@ -1,0 +1,7 @@
+
+Skeleton example:
+
+```js
+<Skeleton />
+
+```

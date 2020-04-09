@@ -1,0 +1,7 @@
+
+Rhythm example:
+
+```js
+<Rhythm />
+
+```

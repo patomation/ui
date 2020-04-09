@@ -1,0 +1,7 @@
+
+Device example:
+
+```js
+<Device />
+
+```

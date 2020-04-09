@@ -1,0 +1,7 @@
+
+Hr example:
+
+```js
+<Hr />
+
+```

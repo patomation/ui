@@ -1,0 +1,7 @@
+
+Section example:
+
+```js
+<Section />
+
+```

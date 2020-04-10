@@ -6,7 +6,6 @@ import Clickable from '../Clickable'
 import Center from '../Center'
 import Shape from '../Shape'
 import { Add } from '../icons/Add'
-import posed from 'react-pose'
 
 interface Props {
   onClick?: () => {} | undefined
@@ -16,17 +15,6 @@ interface Props {
   icon?: ReactNode
   width?: string
 }
-
-const PosedDiv = posed.div({
-  hover: {
-    transform: 'scale(1.1)',
-    transition: { type: 'spring', stiffness: 100 }
-  },
-  nohover: {
-    transform: 'scale(1)',
-    transition: { type: 'spring', stiffness: 100 }
-  }
-})
 
 /**
 * an action button for the lower right hand corner that you can assign stuff to do things
@@ -50,8 +38,11 @@ const ActionButton: FunctionComponent<Props> = ({
         right: '1rem',
         ...style
       }}>
-      <PosedDiv
-        pose={ hover ? 'hover' : 'nohover' }
+      <div
+        style={{
+          scale: hover ? '110%' : '100%',
+          transition: 'scale 500ms ease'
+        }}
         onMouseEnter={() => {
           setHover(true)
         }}
@@ -83,7 +74,7 @@ const ActionButton: FunctionComponent<Props> = ({
 
           </Center>
         </Shape>
-      </PosedDiv>
+      </div>
     </Clickable>
   )
 }

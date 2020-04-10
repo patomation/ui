@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useState, FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
-import posed from 'react-pose'
 
 import Panel from '../Panel'
 import Image from '../Image'
@@ -29,17 +28,6 @@ interface Props {
   clickable?: boolean
 }
 
-const PoseDiv = posed.div({
-  hover: {
-    transform: 'translateY(-3px)',
-    transition: { type: 'spring', stiffness: 100 }
-  },
-  nohover: {
-    transform: 'translateY(0px)',
-    transition: { type: 'spring', stiffness: 100 }
-  }
-})
-
 /**
 * A ui card component that displays an image title and text
 */
@@ -56,10 +44,12 @@ const Card: FunctionComponent<Props> = ({
   const isClickable = onClick ? true : clickable
 
   return (
-    <PoseDiv
-      pose={ hover ? 'hover' : 'nohover' }
+    <div
       className={concat('card', className)}
       style={{
+        // scale: hover ? '105%' : '100%',
+        transform: hover ? 'translateY(-10px)' : 'translateY(0px)',
+        transition: 'transform 500ms ease',
         display: 'flex',
         ...style
       }}
@@ -144,7 +134,7 @@ const Card: FunctionComponent<Props> = ({
           : null }
 
       </Panel>
-    </PoseDiv>
+    </div>
   )
 }
 

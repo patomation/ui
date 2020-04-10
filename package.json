@@ -8,7 +8,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
-    "start": "npm run watch:src",
+    "start": "npm run styleguide",
     "watch:src": "nodemon --watch ./src --ext .js,.ts,.tsx -x \"npm run build\"",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "dev": "yarn watch:src",
@@ -31,7 +31,8 @@
     "@patomation/usetoggle": "^1.2.0",
     "@types/react": "^16.9.33",
     "react-dom": "^16.13.1",
-    "react-pose": "^4.0.10"
+    "react-pose": "^4.0.10",
+    "webpack-bundle-analyzer": "^3.6.1"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",

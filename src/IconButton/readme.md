@@ -2,6 +2,6 @@
 IconButton example:
 
 ```js
-<IconButton name='star'/>
+<IconButton name='star' onClick={()=> alert('nice')}/>
 
 ```

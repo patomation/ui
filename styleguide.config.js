@@ -1,4 +1,5 @@
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const parserOptions = {}
 
 const propParser = require('react-docgen-typescript')
@@ -23,6 +24,14 @@ module.exports = {
     },
     resolve: {
       extensions: ['.ts', '.tsx']
-    }
+    },
+    plugins: [
+      new BundleAnalyzerPlugin({
+        statsOptions: {
+          exclude: /node_modules/
+        },
+        openAnalyzer: false
+      })
+    ]
   }
 }

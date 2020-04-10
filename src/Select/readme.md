@@ -2,6 +2,13 @@
 Select example:
 
 ```js
-<Select />
+<Select
+  label='A select input'
+  options={[
+    'one',
+    'two',
+    'three'
+  ]}
+/>
 
 ```

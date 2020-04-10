@@ -2,6 +2,6 @@
 Icon example:
 
 ```js
-<Icon />
+<Icon name='work'/>
 
 ```

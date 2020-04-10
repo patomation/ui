@@ -23,8 +23,9 @@ const Icon: FunctionComponent<Props> = ({
   background, color, style,
   responsive
 }) => {
+  // rename some of the icons
   if (name === 'play') name = 'play_arrow'
-  // badcomment
+
   const { path, size } = svgPaths[children || name || icon] || { path: null, size: null }
 
   return path && size

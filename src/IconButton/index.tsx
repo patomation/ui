@@ -1,15 +1,16 @@
 import * as React from 'react'
-import { useState, FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
-import config from '../config'
+// import config from '../config'
 
-import Icon from '../Icon'
+import { Cake } from '../icons/Cake'
 import Button from '../Button'
 import Badge from '../Badge'
 
 interface Props {
-  children?: [ReactNode] | ReactNode
+  children?: ReactNode
+  icon?: ReactNode
   onClick?: () => void
   className?: string
   background?: string
@@ -19,7 +20,6 @@ interface Props {
   titleStyle?: object
   activeStyle?: object
   name?: string
-  icon?: string
   active?: boolean
   title?: string
   width?: string
@@ -34,11 +34,10 @@ const IconButton: FunctionComponent<Props> = ({
   background, color,
   style, iconStyle, titleStyle, activeStyle,
   hoverColor,
-  name, icon, active, title, width,
+  icon, children,
+  active, title, width,
   badge
 }) => {
-  const [hover, setHover] = useState(false)
-
   return (
     <Button
       className={concat('iconbutton', className)}
@@ -54,20 +53,21 @@ const IconButton: FunctionComponent<Props> = ({
         ...style,
         ...(active ? styles.active : null),
         ...(active ? activeStyle : null)
-      }}
-      onHover={setHover}>
+      }}>
 
-      <Icon
-        className='iconbutton__icon'
-        responsive={!!width}
-        color={ hover
-          ? (hoverColor || color || config.color.primary)
-          : (color || config.color.primary) }
-        style={{
-          ...styles.icon,
-          ...iconStyle
-        }}
-        name={icon || name}/>
+      { icon !== undefined
+        ? icon
+        : children !== undefined
+          ? children
+          : <Cake
+            className='iconbutton__icon'
+            responsive={!!width}
+            style={{
+              ...styles.icon,
+              ...iconStyle
+            }}
+            name={icon || name}/>
+      }
 
       {title ? <div
         className='iconbutton__title'

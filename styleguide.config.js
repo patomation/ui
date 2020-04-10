@@ -11,6 +11,7 @@ const propParser = require('react-docgen-typescript')
 
 module.exports = {
   components: 'src/**/*.tsx',
+  skipComponentsWithoutExample: true,
   propsParser: propParser,
   webpackConfig: {
     module: {

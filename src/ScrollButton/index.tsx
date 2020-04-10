@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useRef, FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import IconButton from '../IconButton'
-
+import { KeyboardArrowDown } from '../icons'
 type ScrollIntoView = (object) => void
 
 type HTMLRef = HTMLDivElement & {
@@ -45,12 +45,14 @@ const ScrollButton: FunctionComponent<Props> = ({
 
       <IconButton
         className='scroll-button__icon'
-        width='3rem'
-        name='keyboard_arrow_down'
-        color={color}
-        style={{
-          paddingBottom: '1rem'
-        }}
+        icon={
+          <KeyboardArrowDown
+            color={color}
+            width='3rem'
+            style={{
+              paddingBottom: '1rem'
+            }}/>
+        }
         onClick={() => {
           ref.current.scrollIntoView({
             behavior: 'smooth'

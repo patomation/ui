@@ -1,7 +1,0 @@
-
-Icon example:
-
-```js
-<Icon />
-
-```

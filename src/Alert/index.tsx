@@ -2,16 +2,20 @@ import * as React from 'react'
 import { useState, FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import Row from '../Row'
-import Icon from '../Icon'
 import IconButton from '../IconButton'
 import Collapse from '../Collapse'
 import config from '../config'
+import { Info } from '../icons/Info'
+import { Warning } from '../icons/Warning'
+import { CheckCircle } from '../icons/CheckCircle'
+import { Error } from '../icons/Error'
+import { Close } from '../icons/Close'
 
 interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
   title?: string
-  icon?: boolean | string
+  icon?: boolean | ReactNode
   kind?: 'info' | 'warning' | 'error' | 'success'
   closeable?: boolean
   onClose?: (boolean) => boolean
@@ -28,19 +32,38 @@ const Alert: FunctionComponent<Props> = ({
   icon = true,
   closeable = true
 }) => {
-  const icons = {
-    info: 'info',
-    warning: 'warning',
-    success: 'check_circle',
-    error: 'error'
-  }
-
   const [open, setOpen] = useState(true)
   const [collapse, setCollapse] = useState(false)
 
   const close = (): void => {
     setCollapse(true)
     if (onClose) onClose(false)
+  }
+
+  let DefaultIcon
+  const iconProps = {
+    className: 'alert__icon',
+    color: color || config.color[kind],
+    style: {
+      paddingRight: '0.75rem',
+      marginBottom: 'auto' // Make left icon align to top
+    }
+  }
+  switch (kind) {
+    case 'info':
+      DefaultIcon = <Info {...iconProps}/>
+      break
+    case 'warning':
+      DefaultIcon = <Warning {...iconProps}/>
+      break
+    case 'error':
+      DefaultIcon = <Error {...iconProps}/>
+      break
+    case 'success':
+      DefaultIcon = <CheckCircle {...iconProps}/>
+      break
+    default:
+      break
   }
 
   return open
@@ -65,18 +88,12 @@ const Alert: FunctionComponent<Props> = ({
           ...style
         }}>
 
-        { icon !== false
-          ? <Icon
-            className='alert__icon'
-            color={color || config.color[kind]}
-            name={ typeof icon === 'string'
-              ? icon
-              : icons[kind] }
-            style={{
-              paddingRight: '0.75rem',
-              marginBottom: 'auto' // Make left icon align to top
-            }}/>
-          : null }
+        { (icon !== false && icon === true)
+          // use default icon
+          ? DefaultIcon
+          // use prop provided icon from the parent
+          : icon
+        }
 
         <div
           className='alert__content'
@@ -96,9 +113,8 @@ const Alert: FunctionComponent<Props> = ({
         { closeable
           ? <IconButton
             className='modal__close'
-            color='rgba(0,0,0,0.5)'
             onClick={close}
-            icon='close'
+            icon={<Close color='rgba(0,0,0,0.5)'/>}
             style={{
               // position: 'absolute' as 'absolute',
               // right: '0.75rem',

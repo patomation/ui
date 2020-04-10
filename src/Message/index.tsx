@@ -1,9 +1,12 @@
 import * as React from 'react'
 import { FunctionComponent, ReactNode } from 'react'
-import Icon from '../Icon'
 import Row from '../Row'
 import styles from './styles'
 import config from '../config'
+import { Info } from '../icons/Info'
+import { Warning } from '../icons/Warning'
+import { CheckCircle } from '../icons/CheckCircle'
+import { Error } from '../icons/Error'
 
 interface Props {
   children?: [ReactNode] | ReactNode
@@ -14,7 +17,7 @@ interface Props {
   style?: object
   kind?: 'info' | 'warning' | 'error' | 'success'
   title?: string
-  icon?: boolean | string
+  icon?: ReactNode
 }
 
 const Message: FunctionComponent<Props> = ({
@@ -25,11 +28,30 @@ const Message: FunctionComponent<Props> = ({
   title,
   icon
 }) => {
-  const icons = {
-    info: 'info',
-    warning: 'warning',
-    success: 'check_circle',
-    error: 'error'
+  let DefaultIcon
+  const iconProps = {
+    className: 'alert__icon',
+    color: color || config.color[kind],
+    style: {
+      paddingRight: '0.75rem',
+      marginBottom: 'auto' // Make left icon align to top
+    }
+  }
+  switch (kind) {
+    case 'info':
+      DefaultIcon = <Info {...iconProps}/>
+      break
+    case 'warning':
+      DefaultIcon = <Warning {...iconProps}/>
+      break
+    case 'error':
+      DefaultIcon = <Error {...iconProps}/>
+      break
+    case 'success':
+      DefaultIcon = <CheckCircle {...iconProps}/>
+      break
+    default:
+      break
   }
 
   return (
@@ -57,17 +79,12 @@ const Message: FunctionComponent<Props> = ({
           ...style
         }}>
 
-        { icon !== false
-          ? <Icon
-            className='alert__icon'
-            color={color || config.color[kind]}
-            name={ typeof icon === 'string'
-              ? icon
-              : icons[kind] }
-            style={{
-              marginBottom: 'auto' // Make left icon align to top
-            }}/>
-          : null }
+        { icon !== false && icon === undefined
+          // use default icon
+          ? DefaultIcon
+          // use prop provided icon from the parent
+          : icon
+        }
 
         <div
           className='alert__content'

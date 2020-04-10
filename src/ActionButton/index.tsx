@@ -4,18 +4,16 @@ import styles from './styles'
 
 import Clickable from '../Clickable'
 import Center from '../Center'
-import Icon from '../Icon'
 import Shape from '../Shape'
-
+import { Add } from '../icons/Add'
 import posed from 'react-pose'
 
 interface Props {
-  children?: [ReactNode] | ReactNode
   onClick?: () => {} | undefined
   background?: string
   color?: string
   style?: object
-  icon?: string
+  icon?: ReactNode
   width?: string
 }
 
@@ -36,7 +34,7 @@ const PosedDiv = posed.div({
 const ActionButton: FunctionComponent<Props> = ({
   onClick,
   background, color, style,
-  icon = 'add', width = '3rem'
+  icon, width = '3rem'
 }: Props) => {
   const [hover, setHover] = useState<boolean>(false)
 
@@ -72,11 +70,17 @@ const ActionButton: FunctionComponent<Props> = ({
             style={{
               textAlign: 'center' as 'center'
             }}>
-            <Icon
-              className={'action-button__icon'}
-              name={icon}
-              color={color}
-              responsive/>
+
+            { icon !== undefined
+              // use Provided icon
+              ? icon
+              // Use default icon
+              : <Add
+                className={'action-button__icon'}
+                color={color}
+                responsive />
+            }
+
           </Center>
         </Shape>
       </PosedDiv>

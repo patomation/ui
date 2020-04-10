@@ -3,8 +3,7 @@ import { ReactNode, FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
-
-import Icon from '../Icon'
+import { Face } from '../icons/index'
 import Image from '../Image'
 
 interface Props {
@@ -42,7 +41,7 @@ const Avatar: FunctionComponent<Props> = ({
           // Handle react image elements
           : image
         // If no image defined use an icon
-        : <Icon name='face' color={config.color.primary} responsive />
+        : <Face color={config.color.primary} responsive />
       }
     </div>
   )

@@ -3,11 +3,9 @@ import { useState, FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import posed from 'react-pose'
-import config from '../config'
 
 import Panel from '../Panel'
 import Image from '../Image'
-import Icon from '../Icon'
 import Shape from '../Shape'
 import Center from '../Center'
 
@@ -22,7 +20,7 @@ interface Props {
   image?: string | ReactNode
   cover?: ReactNode
   alt?: string
-  icon?: string | ReactNode
+  icon?: ReactNode
   iconColor?: string
   iconBackground?: string
   title?: string
@@ -101,14 +99,7 @@ const Card: FunctionComponent<Props> = ({
             background={iconBackground || (icon ? '#ffffff' : 'gray')}>
             { icon
               ? <Center style={{ textAlign: 'center' as 'center' }}>
-                { typeof icon === 'string'
-                  ? <Icon
-                    name={icon}
-                    color={iconColor || config.color.primary}
-                    responsive
-                    style={{ width: '33%' }} />
-                  : icon
-                }
+                { icon }
               </Center>
               : null
             }

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import Badge from './index'
+import { Star } from '../icons'
 
 describe('<Badge />', () => {
   it('renders', () => {
@@ -19,9 +20,9 @@ describe('<Badge />', () => {
   })
 
   it('renders as circle and icon', () => {
-    const component = shallow(<Badge icon='star'/>)
+    const component = shallow(<Badge icon={<Star/>}/>)
     // expect(component.find('.icon').props().name).toEqual('star')
-    expect(component.find('.badge__icon')).toHaveLength(1)
+    expect(component.find(Star)).toHaveLength(1)
   })
 
   it('renders as circle when 1 character', () => {

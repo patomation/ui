@@ -2,37 +2,37 @@
 Badge example:
 
 ```js
-import Icon from '../Icon';
+import { Notifications, Star } from '../icons/index';
 import Grid from '../Grid';
 <Grid auto>
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>
-    <Icon name='notifications'/>
+    <Notifications/>
     <Badge/>
   </div>
 
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>
-    <Icon name='notifications'/>
+    <Notifications/>
     <Badge>9</Badge>
   </div>
 
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>
-    <Icon name='notifications'/>
+    <Notifications/>
     <Badge>10</Badge>
   </div>
 
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>
-    <Icon name='notifications'/>
+    <Notifications/>
     <Badge>100</Badge>
   </div>
 
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>
-    <Icon name='notifications'/>
+    <Notifications/>
     <Badge>9999</Badge>
   </div>
 
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>
-      <Icon name='notifications'/>
-      <Badge icon='star'/>
+      <Notifications/>
+      <Badge icon={<Star/>}/>
   </div>
 </Grid>
 ```

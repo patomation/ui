@@ -2,7 +2,7 @@ import * as React from 'react'
 import { mount } from 'enzyme'
 
 import Spinner from './index'
-import { Icon } from '../'
+import { Sync } from '../icons/index'
 
 describe('<Spinner />', () => {
   it('renders', () => {
@@ -11,7 +11,7 @@ describe('<Spinner />', () => {
 
   it('accepts background && color prop', () => {
     const component = mount(<Spinner background="blue" color="red" />)
-    expect(component.find(Icon).props().style.background).toEqual('blue')
-    expect(component.find(Icon).find('svg').prop('fill')).toEqual('red')
+    expect(component.find(Sync).props().style.background).toEqual('blue')
+    expect(component.find(Sync).find('svg').prop('fill')).toEqual('red')
   })
 })

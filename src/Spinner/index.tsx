@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
-import Icon from '../Icon'
+import { Sync } from '../icons/index'
 
 interface Props {
   className?: string
-  icon?: string
+  icon?: ReactNode
   background?: string
   color?: string
   style?: object
@@ -26,16 +26,18 @@ const Spinner: FunctionComponent<Props> = ({
         ...style
       }}>
       <style>{styles.keyframes.spinCounterClockwise}</style>
+      { icon === undefined
+        ? <Sync
+          className='spinner__icon'
+          color={color}
+          style={{
+            ...styles.container,
+            ...(background ? { background: background } : null),
+            ...iconStyle
+          }} />
+        : icon
+      }
 
-      <Icon
-        className='spinner__icon'
-        name={icon || 'sync'}
-        color={color}
-        style={{
-          ...styles.container,
-          ...(background ? { background: background } : null),
-          ...iconStyle
-        }} />
     </span>
   )
 }

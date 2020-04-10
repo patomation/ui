@@ -1,14 +1,13 @@
 import * as React from 'react'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import Shape from '../Shape'
-import Icon from '../Icon'
 import concat from '../_utility/concat'
 
 interface Props {
   children?: string | number
   className?: string
-  icon?: string
+  icon?: ReactNode
   onClick?: (MouseEvent) => {}
   background?: string
   color?: string
@@ -55,12 +54,8 @@ const Badge: FunctionComponent<Props> = ({
               top: '0'
             } : null)
           }}>
-          {icon
-            ? <Icon
-              className='badge__icon'
-              responsive={true}
-              style={styles.icon}
-              name={icon} />
+          {icon !== undefined
+            ? icon
             : children}
         </div>
       </Shape>

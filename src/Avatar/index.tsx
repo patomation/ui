@@ -3,7 +3,7 @@ import { ReactNode, FunctionComponent } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import config from '../config'
-import { Face } from '../icons/index'
+import { Face } from '../icons/Face'
 import Image from '../Image'
 
 interface Props {

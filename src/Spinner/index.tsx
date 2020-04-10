@@ -2,7 +2,7 @@ import * as React from 'react'
 import { FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
-import { Sync } from '../icons/index'
+import { Sync } from '../icons/Sync'
 
 interface Props {
   className?: string

@@ -2,7 +2,8 @@
 Badge example:
 
 ```js
-import { Notifications, Star } from '../icons/index';
+import { Star } from '../icons/Star';
+import { Notifications } from '../icons/Notifications';
 import Grid from '../Grid';
 <Grid auto>
   <div style={{ position: 'relative', width: '20px', height: '20px'}}>

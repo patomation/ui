@@ -5,7 +5,7 @@ import styles from './styles'
 import Clickable from '../Clickable'
 import Center from '../Center'
 import Shape from '../Shape'
-import { Add } from '../icons/index'
+import { Add } from '../icons/Add'
 import posed from 'react-pose'
 
 interface Props {

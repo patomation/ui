@@ -5,7 +5,11 @@ import Row from '../Row'
 import IconButton from '../IconButton'
 import Collapse from '../Collapse'
 import config from '../config'
-import { Info, Warning, CheckCircle, Error, Close } from '../icons/index'
+import { Info } from '../icons/Info'
+import { Warning } from '../icons/Warning'
+import { CheckCircle } from '../icons/CheckCircle'
+import { Error } from '../icons/Error'
+import { Close } from '../icons/Close'
 
 interface Props {
   children?: [ReactNode] | ReactNode

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { mount } from 'enzyme'
 
 import Spinner from './index'
-import { Sync } from '../icons/index'
+import { Sync } from '../icons/Sync'
 
 describe('<Spinner />', () => {
   it('renders', () => {

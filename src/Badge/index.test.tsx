@@ -2,7 +2,7 @@ import * as React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import Badge from './index'
-import { Star } from '../icons'
+import { Star } from '../icons/Star'
 
 describe('<Badge />', () => {
   it('renders', () => {

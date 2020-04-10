@@ -3,7 +3,10 @@ import { FunctionComponent, ReactNode } from 'react'
 import Row from '../Row'
 import styles from './styles'
 import config from '../config'
-import { Info, Warning, CheckCircle, Error } from '../icons/index'
+import { Info } from '../icons/Info'
+import { Warning } from '../icons/Warning'
+import { CheckCircle } from '../icons/CheckCircle'
+import { Error } from '../icons/Error'
 
 interface Props {
   children?: [ReactNode] | ReactNode

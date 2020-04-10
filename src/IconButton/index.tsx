@@ -4,7 +4,7 @@ import styles from './styles'
 import concat from '../_utility/concat'
 // import config from '../config'
 
-import { Cake } from '../icons/index'
+import { Cake } from '../icons/Cake'
 import Button from '../Button'
 import Badge from '../Badge'
 

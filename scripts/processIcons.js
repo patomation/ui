@@ -12,7 +12,7 @@ export const ${name} = createIcon({
   size: '${size}'
 })
 `
-const indexTemplate = (name) => `export { ${name} } from './${name}'\n`
+const indexTemplate = (name) => `export * as ${name} from './${name}'\n`
 
 Object.entries(svgPaths).map(([key, item]) => {
   let name = key.replace(/_([a-z])/g, function (g) { return g[1].toUpperCase() })

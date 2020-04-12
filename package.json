@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "private": false,
-  "sidEffects": false,
+  "sidEffects": "false",
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useRef, FunctionComponent, ReactNode } from 'react'
 import styles from './styles'
 import IconButton from '../IconButton'
-import { KeyboardArrowDown } from '../icons'
+import { KeyboardArrowDown } from '../icons/KeyboardArrowDown'
 type ScrollIntoView = (object) => void
 
 type HTMLRef = HTMLDivElement & {

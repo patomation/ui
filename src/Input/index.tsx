@@ -12,6 +12,7 @@ interface Props {
   onFocus?: () => void
   onBlur?: () => void
   value?: string | number
+  defaultValue?: string | number
   error?: string | boolean
   placeholder?: string
   className?: string
@@ -39,7 +40,7 @@ interface Props {
 * A standardized input component plus textarea
 */
 const Input: FunctionComponent<Props> = ({
-  type, name, onChange, onFocus, onBlur, value, error, placeholder,
+  type, name, onChange, onFocus, onBlur, value, defaultValue, error, placeholder,
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style,
   textAlign,
@@ -93,6 +94,7 @@ const Input: FunctionComponent<Props> = ({
         onBlur={onBlur}
         placeholder={placeholder}
         value={value}
+        defaultValue={defaultValue}
         onClick={onClick}
         style={{
           ...styles.input,

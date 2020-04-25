@@ -38,7 +38,7 @@
     "@commitlint/config-conventional": "8.3.4",
     "@types/jest": "25.2.1",
     "@types/node": "13.11.1",
-    "@types/react": "^16.9.33",
+    "@types/react": "16.9.34",
     "@typescript-eslint/eslint-plugin": "2.27.0",
     "acorn": "7.1.1",
     "autoprefixer": "9.7.6",
@@ -63,7 +63,7 @@
     "minimist": "1.2.5",
     "nodemon": "2.0.3",
     "react-docgen-typescript": "1.16.3",
-    "react-dom": "^16.13.1",
+    "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
     "react-styleguidist": "11.0.5",
     "ts-jest": "25.3.1",
@@ -71,7 +71,7 @@
     "tsconfigs": "4.0.2",
     "typescript": "3.8.3",
     "webpack": "4.42.1",
-    "webpack-bundle-analyzer": "^3.6.1"
+    "webpack-bundle-analyzer": "3.6.1"
   },
   "peerDependencies": {
     "react": "^16.13.1",

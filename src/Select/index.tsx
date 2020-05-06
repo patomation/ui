@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode, InputHTMLAttributes } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 
@@ -9,7 +9,7 @@ interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
   name?: string
-  onChange?: React.ChangeEventHandler
+  onChange?: InputHTMLAttributes<HTMLSelectElement>['onChange']
   onBlur?: () => void
   value?: string | number
   error?: string | boolean

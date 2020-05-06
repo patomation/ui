@@ -6,9 +6,8 @@ import Error from '../Error'
 import Gutter from '../Gutter'
 
 interface Props {
-  type?: InputHTMLAttributes<HTMLInputElement>['type']
   name?: string
-  onChange?: InputHTMLAttributes<HTMLInputElement>['onChange']
+  onChange?: InputHTMLAttributes<HTMLTextAreaElement>['onChange']
   onFocus?: () => void
   onBlur?: () => void
   value?: string | number
@@ -29,6 +28,8 @@ interface Props {
   max?: number
   step?: number
   textAlign?: 'center' | 'left' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'unset' | 'right' | 'end' | 'justify' | 'match-parent' | 'start' | undefined
+  cols?: number
+  rows?: number
   prefix?: string
   suffix?: string
   disabled?: boolean
@@ -38,17 +39,17 @@ interface Props {
 * A standardized input component plus textarea
 */
 const Input: FunctionComponent<Props> = ({
-  type, name, onChange, onFocus, onBlur, value, defaultValue, error, placeholder,
+  name, onChange, onFocus, onBlur, value, defaultValue, error, placeholder,
   className, onClick, background, color,
   containerStyle, inputStyle, inputErrorStyle, errorStyle, style,
   textAlign,
+  rows = 3, cols,
   label, min, max, step,
-  prefix, suffix,
   disabled
 }) => {
   return (
     <div
-      className={concat('input', className)}
+      className={concat('text-area', className)}
       style={{
         ...styles.container,
         position: 'relative',
@@ -58,30 +59,16 @@ const Input: FunctionComponent<Props> = ({
 
       { label
         ? <>
-          <label className='input__label'> {label} </label>
+          <label className='text-area__label'> {label} </label>
           <Gutter half />
         </>
         : null }
 
-      { prefix
-        ? <span
-          style={{
-            position: 'absolute',
-            bottom: '0.75rem',
-            left: '0.75rem'
-          }}>
-          {prefix}
-        </span>
-        : null
-      }
-
-      <input
-        className='input__input'
-        type={type}
+      <textarea
+        className='textarea__input'
         name={name}
-        min={min}
-        max={max}
-        step={step}
+        rows={rows} // textarea
+        cols={cols} // textarea
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
@@ -91,14 +78,14 @@ const Input: FunctionComponent<Props> = ({
         onClick={onClick}
         style={{
           ...styles.input,
-          ...(prefix ? {
-            paddingLeft: '2rem'
-          } : null),
+          textAlign: textAlign || 'left' as 'left',
+          resize: 'none',
+          padding: '1rem',
           ...(background ? { background: background } : null),
           ...(color ? { color: color } : null),
-          textAlign,
           ...inputStyle,
-          ...(error ? (inputErrorStyle || styles.errorBorder) : null)
+          ...(error ? (inputErrorStyle || styles.errorBorder) : null),
+          height: 'auto'
         }}
         disabled={disabled}/>
 

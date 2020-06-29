@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FunctionComponent, InputHTMLAttributes } from 'react'
+import { FunctionComponent, InputHTMLAttributes, ReactNode } from 'react'
 import styles from './styles'
 import concat from '../_utility/concat'
 import Error from '../Error'
@@ -29,7 +29,7 @@ interface Props {
   max?: number
   step?: number
   textAlign?: 'center' | 'left' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'unset' | 'right' | 'end' | 'justify' | 'match-parent' | 'start' | undefined
-  prefix?: string
+  prefix?: string | [ReactNode] | ReactNode
   suffix?: string
   disabled?: boolean
 }

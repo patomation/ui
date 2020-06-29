@@ -29,7 +29,7 @@ interface Props {
   max?: number
   step?: number
   textAlign?: 'center' | 'left' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'unset' | 'right' | 'end' | 'justify' | 'match-parent' | 'start' | undefined
-  prefix?: string | [ReactNode] | ReactNode
+  prefix?: string | [ReactNode] | ReactNode | Element
   suffix?: string
   disabled?: boolean
 }

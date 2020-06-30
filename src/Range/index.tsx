@@ -140,7 +140,8 @@ const Range: FunctionComponent<Props> = ({
       value={value}
       onChange={onChange}
       style={{
-        width: '100%'
+        width: '100%',
+        background: 'none'
       }}
     />
 

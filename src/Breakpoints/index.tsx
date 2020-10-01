@@ -1,13 +1,8 @@
 import * as React from 'react'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import styles from './styles'
 import config from '../config'
 import mediaQuery from '../_utility/mediaQuery'
-
-interface Props {
-  children?: [ReactNode] | ReactNode
-
-}
 
 const Breakpoints: FunctionComponent = () => {
   const { sm, md, lg, xl, xxl } = config.size.media
@@ -74,7 +69,7 @@ const Breakpoints: FunctionComponent = () => {
         ...styles.container
       }}>
 
-  Breakpoints
+      Breakpoints
       <span className='breakpoint-tool-xs'>xs</span>
       <span className='breakpoint-tool-sm'>sm</span>
       <span className='breakpoint-tool-md'>md</span>

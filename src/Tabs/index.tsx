@@ -9,7 +9,7 @@ import Clickable from '../Clickable'
 interface Props {
   children?: [ReactNode] | ReactNode
   className?: string
-  onClick?: (any, number) => {}
+  onClick?: (dataItem: any, index: number) => void
   background?: string
   color?: string
   style?: object

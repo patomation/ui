@@ -34,6 +34,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/restrict-template-expressions': 0, // Turning this off for now.
     '@typescript-eslint/strict-boolean-expressions': 0, // Turning this off for now.
-    'react/prop-types': 0, // will be generating proptypes from typescript
+    'react/prop-types': 0 // will be generating proptypes from typescript
   }
 }

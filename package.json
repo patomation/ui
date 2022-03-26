@@ -60,7 +60,7 @@
     "jest": "26.4.2",
     "jsdom": "16.4.0",
     "jsdom-global": "3.0.2",
-    "minimist": "1.2.5",
+    "minimist": "1.2.6",
     "nodemon": "2.0.4",
     "react-docgen-typescript": "1.20.5",
     "react-dom": "16.13.1",
